@@ -28,11 +28,11 @@ else
   .product__flip
     .product__front
       .product__front-inner
-        include ../../svg/logo-cart.svg
-        p.product__flip-phrase 
+        //- include ../../svg/logo-cart.svg
+        p.product__flip-phrase
           | Não entorte o pescoço para colocar um cabo na tv
-        span.product__flip-action (clique para revelar o nome)  
-    .product__back       
+        span.product__flip-action (clique para revelar o nome)
+    .product__back
       span.product__id(data-product-id= dataProductId)
       .product__header
         .product__media
@@ -60,8 +60,8 @@ else
                 span.price__list R$ 5,99 no boleto
                 span.price__instament 12x R$ 13,24 sem juros
       .product__reviews
-      
+
       .product__actions
           a.button.product__link(title= title, href= href) Ver Produto
           a.button.button--primary.product__buy(href= href, data-product-id= dataProductId) Compre Rápido
-        
+

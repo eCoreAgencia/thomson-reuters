@@ -1,0 +1,27 @@
+.category-nav {
+  width: 100%;
+
+  &__title {
+    color: $c-black;
+    font-family: "Knowledge Black";
+    font-size: 25px;
+    font-weight: 900;
+  }
+  &__items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  &__link {
+    display: flex;
+    flex-direction: column;
+    width: 215px;
+  }
+  &__icon {
+    display: inline-block;
+  }
+  li {
+    display: inline-flex;
+  }
+}

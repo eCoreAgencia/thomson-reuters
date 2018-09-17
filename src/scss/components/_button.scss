@@ -1,11 +1,45 @@
 .button {
-    &--primary {
-        color: $c-white;
-        background-color: #004774;
-        border-color: #004774;
-        &:hover {
-            background-color: darken(#004774, 10%);
-            color: $c-white;
-        }
-    }
+  background: transparent;
+  border: 0;
+  justify-content: flex-start;
+  &__shelf {
+    margin: 10px auto 24px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  &__buy {
+    width: 150px;
+    height: 35px;
+    background-color: $c-green;
+    border-radius: 20px;
+    color: $c-white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // font-family: "Knowledge - Black";
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+  }
+  &__preview {
+    display: flex;
+    width: 150px;
+    height: 35px;
+    border: 1px solid $c-gray-dark;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    color: $c-gray-dark;
+    // font-family: "Knowledge - Black";
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
 }

@@ -1,5 +1,7 @@
 body {
   font-family: $f-base;
+  background-color: $c-mainbg;
+  width: 100vw;
 }
 
 a {
@@ -11,7 +13,7 @@ a {
 
 a:hover {
   color: #0056b3;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a.button {
@@ -64,11 +66,11 @@ $family-sans-serif: $f-base;
   margin: 0 auto;
   width: 100%;
   max-width: #{$g-max-width + ($g-spacing * 2)};
-  
+
 
   @media screen and (min-width: $g-max-width) {
   }
-  
+
 }
 
 * {
