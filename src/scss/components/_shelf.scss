@@ -1,13 +1,9 @@
 .shelf {
   width: 100%;
 	ul {
-		display: flex;
-		width: 100%;
-		justify-content: space-between;
-	}
-
-	li {
-
+		// display: flex;
+		// width: 100%;
+		// justify-content: space-between;
 	}
 
 	&__carousel--full {
@@ -18,7 +14,6 @@
       padding: 1px;
 		}
 	}
-
 	.prateleira {
 		& > h2 {
 			display: none;

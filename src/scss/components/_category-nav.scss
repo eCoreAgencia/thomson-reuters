@@ -1,11 +1,12 @@
 .category-nav {
   width: 100%;
 
-  &__title {
+  &__main-title {
     color: $c-black;
-    font-family: "Knowledge Black";
+    font-family: "Knowledge-Black";
     font-size: 25px;
     font-weight: 900;
+    margin-bottom: 40px;
   }
   &__items {
     display: flex;
@@ -14,14 +15,31 @@
     text-align: center;
   }
   &__link {
-    display: flex;
+    display: grid;
+    grid-template-rows: 100px 1fr;
     flex-direction: column;
-    width: 215px;
+    margin-right: auto;
+    min-width: 215px;
   }
   &__icon {
     display: inline-block;
+    align-self: center;
+  }
+  &__title {
+    font-family: "Knowledge-Black";
+    font-size: 20px;
+    font-weight: 900;
+    color: $c-gray-dark;
   }
   li {
     display: inline-flex;
+  }
+
+  .slick-prev {
+    left: -55px;
+  }
+
+  .slick-next {
+    right: -55px;
   }
 }

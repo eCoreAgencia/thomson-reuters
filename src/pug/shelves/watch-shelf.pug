@@ -1,0 +1,40 @@
+include ../helpers.pug
+
+if (global.process.env.NODE_ENV === 'production')
+  - var title = '$product.HtmlEscapedName'
+  - var href = '$product.Uri'
+  - var dataProductId = '$product.Id'
+  - var listPrice = '$product.ListPrice'
+  - var bestPrice = '$product.BestPrice'
+  - var flags = '$product.HightLight'
+  - var getImageTag = '$product.GetImageTag(2)'
+  - var getImageTag2 = '$product.GetImageTag(2)'
+  - var categoryName = '+ $product.CategoryName'
+  - var categoryHref = '$product.CategoryLink'
+
+else
+  - var title = 'Curso Revisão e Treino 2ª Fase OAB - Caderno…'
+  - var href = '/produto.html'
+  - var author = 'Vários Autores'
+  - var dataProductId = Math.floor(Math.random() * 9999999)
+  - var listPrice = 'R$ 299,99'
+  - var bestPrice = 'R$ 199,99'
+  - var flags = '<p class="flag destaque">destaque</p>'
+  - var getImageTag =  '<img src="http://via.placeholder.com/111x160"" width="111" height="160" />'
+  - var getImageTag2 = '<img src="http://via.placeholder.com/279x365" width="279" height="365" />'
+  - var categoryName = '+ Iluminação'
+  - var categoryHref = '/category.html'
+
+.product
+  .product__watch
+    span.product__watch-id(data-product-id= dataProductId)
+    .product__watch-media
+      a.product__watch-link(href= href)
+        != getImageTag
+    .product__watch-info
+      h3.product__watch-name
+        a.product__watch-link(title= title, href= href)= title
+      .product__watch-author
+        a.product__watch-author-link(title=author, href=href)= author
+      .button__preview Degustação
+

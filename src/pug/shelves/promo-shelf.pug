@@ -25,41 +25,42 @@ else
   - var categoryName = 'penal'
   - var categoryHref = '/category.html'
 
-.product__promo
-  //- .product__promo-shelf(style= "background: url(/arquivos/bannerpromo/"+dataProductId+".png)")
-  .product__promo-shelf(style= "background: url(http://via.placeholder.com/545x350)")
-    span.product__promo-shelf-id(data-product-id= dataProductId)
-    a.product__promo-category(title=categoryName, href=categoryHref)
-      != categoryName
-    .product__promo-info
-      h3.product__promo-name
-        a.product__promo-link(title= title, href= href)= title
-    .product__promo-price
-      if ( global.process.env.NODE_ENV === 'production' )
-        != '\n#if ($product.IsInStock)'
-        != '\n#if ($product.HasBestPrice)'
-        != '\n    	<span class="price__best">Por R$' + bestPrice + '</span>'
-        //- != '\n  	#if ($product.HasBestPrice)'
-        //- != '\n    	<span class="price__list-line">De ' + listPrice + '</span>'
-        //- != '\n    	<span class="price__best">Por R$' + bestPrice + '</span>'
-        //- != '\n    #else'
-        //- != '\n    	<span class="price__list">' + listPrice + '</span>'
-        //- != '\n    #end'
-        //- != '\n    #if ($product.NumbersOfInstallment > 1)'
-        //- != '\n      <span class="price__installment">'
-        //- != '\n        ou ${product.NumbersOfInstallment}X de ${product.InstallmentValue}'
-        //- != '\n      </span>'
-        //- != '\n    #end'
-        //- != '\n  </div>'
-        //- != '\n#else'
-        //- != '\n  <span class="product__unavailable>Indisponível</span>"'
-        != '\n#end\n'
-        != '\n#end\n'
-      else
-        .price
-          span.price__best <p>Por</p> R$ 238,50
-    .button
-      a.button__buy(href= href) Comprar
+.product
+  .product__promo
+    //- .product__promo-shelf(style= "background: url(/arquivos/bannerpromo/"+dataProductId+".png)")
+    .product__promo-shelf(style= "background: url(http://via.placeholder.com/545x350)")
+      span.product__promo-shelf-id(data-product-id= dataProductId)
+      a.product__promo-category(title=categoryName, href=categoryHref)
+        != categoryName
+      .product__promo-info
+        h3.product__promo-name
+          a.product__promo-link(title= title, href= href)= title
+      .product__promo-price
+        if ( global.process.env.NODE_ENV === 'production' )
+          != '\n#if ($product.IsInStock)'
+          != '\n#if ($product.HasBestPrice)'
+          != '\n    	<span class="price__best">Por R$' + bestPrice + '</span>'
+          //- != '\n  	#if ($product.HasBestPrice)'
+          //- != '\n    	<span class="price__list-line">De ' + listPrice + '</span>'
+          //- != '\n    	<span class="price__best">Por R$' + bestPrice + '</span>'
+          //- != '\n    #else'
+          //- != '\n    	<span class="price__list">' + listPrice + '</span>'
+          //- != '\n    #end'
+          //- != '\n    #if ($product.NumbersOfInstallment > 1)'
+          //- != '\n      <span class="price__installment">'
+          //- != '\n        ou ${product.NumbersOfInstallment}X de ${product.InstallmentValue}'
+          //- != '\n      </span>'
+          //- != '\n    #end'
+          //- != '\n  </div>'
+          //- != '\n#else'
+          //- != '\n  <span class="product__unavailable>Indisponível</span>"'
+          != '\n#end\n'
+          != '\n#end\n'
+        else
+          .price
+            span.price__best <p>Por</p> R$ 238,50
+      .button
+        a.button__buy(href= href) Comprar
 
 
 

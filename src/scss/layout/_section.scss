@@ -6,6 +6,10 @@
   &__areas {
     background: $c-white;
     height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   &__title {
     text-align: left;
@@ -22,6 +26,19 @@
 
 	&__shelf-banners {
 		margin: 40px 0;
-	}
+  }
+
+  &__split {
+    background: $c-white;
+  }
+
+  &__split-the-grid{
+    @include atMedium{
+      height:485px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      padding: 38px 0 54px 0;
+    }
+  }
 
 }

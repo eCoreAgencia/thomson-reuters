@@ -12,12 +12,14 @@
 		}
 		.icon-phone{
 			display: flex;
-			align-items: center;
+      align-items: center;
+      font-style: normal;
 			svg {
 				width: 13px;
 				margin-right: 5px;
 			}
-		}
+    }
+
 	}
 
 	.main-header {
