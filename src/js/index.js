@@ -16,6 +16,7 @@ import './components/buy-by-category/main'
 
 
 import './pages/home';
+import './pages/not-found';
 import './pages/empty-search';
 
 

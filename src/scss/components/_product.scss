@@ -22,15 +22,17 @@
   }
   &__media {
     display: block;
-    width: 111px;
-    height: 160px;
+    // width: 111px;
+    // height: 160px;
     margin: 16px auto;
   }
   &__link {
-    // font-family: "Knowledge - Medium";
+    font-family: "Knowledge-Medium";
     font-size: 13px;
     font-weight: 500;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: $c-gray-dark;
     margin: auto;
     width: 100%;
@@ -45,7 +47,7 @@
     width: 238px;
     height: 15px;
     color: $c-gray-lighter;
-    // font-family: "Knowledge - Regular";
+    font-family: "Knowledge-Regular";
     font-size: 13px;
     font-weight: 400;
     overflow: hidden;
@@ -59,7 +61,7 @@
   .price {
     &__list-line {
       color: $c-gray-dark;
-      // font-family: "Knowledge - Regular";
+      font-family: "Knowledge-Regular";
       font-size: 13px;
       font-weight: 400;
       line-height: 18px;
@@ -72,7 +74,7 @@
     &__best {
       display: block;
       color: $c-orange;
-      // font-family: "Knowledge-Black";
+      font-family: "Knowledge-Black";
       font-size: 16px;
       font-weight: 900;
       line-height: 18px;
@@ -80,7 +82,7 @@
     }
     &__installment {
       color: $c-gray-dark;
-      // font-family: "Knowledge - Regular";
+      font-family: "Knowledge-Regular";
       font-size: 13px;
       font-weight: 400;
       line-height: 18px;
@@ -143,16 +145,21 @@
   &__promo-price {
     grid-area: price;
     font-family: "Rubik", sans-serif;
-    font-size: 30px;
     color: $c-orange;
-    font-weight: 700;
-    line-height: 30px;
     margin-bottom: 16px;
     p {
+      display: inline-block;
       font-size: 20px;
-      color: $c-white;
-      display: inline;
+      color: #ffffff;
       font-weight: 500;
+      letter-spacing: 1.3px;
+    }
+    .price__best {
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      font-size: 30px;
+      line-height: 30px;
+      display: inline-block;
     }
   }
 
@@ -163,8 +170,8 @@
   }
   &__watch-media {
     display: block;
-    width: 111px;
-    height: 160px;
+    // width: 111px;
+    // height: 160px;
   }
   &__watch-link {
     display: block;
@@ -181,14 +188,13 @@
   &__watch-info {
     padding: 20px;
   }
+  &__watch-author {
+    margin-bottom: 10px;
+  }
   &__watch-author-link {
     color: $c-gray-lighter;
     font-family: Rubik;
     font-size: 13px;
     font-weight: 400;
-  }
-  .button__preview{
-    width: 135px;
-    margin: 10px 0;
   }
 }

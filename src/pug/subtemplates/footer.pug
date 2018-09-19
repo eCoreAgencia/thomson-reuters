@@ -1,85 +1,88 @@
-footer.footer
-  .footer__area.footer__top
-    .container
-      .footer__contact
-        .footer__contact-text
-          span.footer__contact-title
-            strong OPA!
-            | Precisa de ajuda?
-          span.footer__contact-subtitle
-            | Chama a gente! Não somos robô, queremos te ouvir.
-        .footer__contact-bar
-          span.contact__phone.contact__box
-            i.icon-phone
-            strong Televendas:
-            span (24) 99259 1944
-          span.contact__help.contact__box
-            i.icon-help
-            strong SAC:
-            span (24) 2255 0796
-          span.contact__whatsapp.contact__box
-            i.icon-whatsapp
-            strong Whatsapp:
-            span (24) 99259 1944
-  .footer__area.footer__main
-    .container
-      .footer__inner
-        .footer__box
-          h3.footer__title Central de Ajuda
-          .footer__menu
-            ul.menu-list
-              li
-                a(href="/institucional") Institucional
-              li
-                a(href="/privacidade") Privacidade
-              li
-                a(href="/trocas-devolucao") Trocas e Devolução
-              li
-                a(href="/duvidas-frequentes") Dúvidas Frequentes
-              li
-                a(href="/fale-conosco") Fale Conosco
-        .footer__box
-          h3.footer__title Formas de Pagamento
-          .footer__media
-            img(src="/arquivos/payments.png")/
-        .footer__box
-          h3.footer__title Sua compra segura
-          .footer__media
-            img(src="/arquivos/security.png")/
-        .footer__box
-          h3.footer__title Fique por dentro das nossas novidades
-          .footer__newsletter
-            .newsletter
-              .newsletter__inner
-                .field.is-horizontal
-                  .field-body
-                    .field
-                      .control
-                        input.input(type="text", placeholder="Nome")/
-                    .field
-                      .control
-                        input.input(type="email", placeholder="E-mail")/
-                    button.button.button--newsletter Cadastrar
-            .social-links
-              span.social-links__text Me segue ;)
+footer.main-footer
+  .main-footer__area.main-footer__top
+    .wrapper
+      .main-footer__news Receba nossos Lançamentos
+        .search-bar.search-bar--narrow
+          input(type="search", name="search").search-bar__input
+          a(href="#").search-button.search-button__footer
+      .main-footer__ct Conecte-se Conosco
+        i.simple-social-facebook
+        i.simple-social-twitter
 
-              ul.social-links__list
-                li.social-links__item
-                  a(href="")
-                    //- include ../../svg/ic_instagram.svg
-                li.social-links__item
-                  a(href="")
-                    //- include ../../svg/ic_facebook.svg
-                li.social-links__item
-                  a(href="")
-                    //- include ../../svg/ic_youtube.svg
-  .footer__area.footer__copyright
-    .container
-      .footer__inner
-        .footer__copyright-text
-          | Casa e Garagem - CNPJ: 00.000.000/0000-00 Todos os direitos reservados. 2018
-        .footer__develop
-          a.logo__ecore(href="", target="_blank")
-            img(src="/arquivos/ecore-logo.png")/
-          a.logo__vtex(href="", target="_blank")
-            img(src="/arquivos/vtex-logo.png")/
+  .main-footer__area.main-footer__main
+    .wrapper--block
+      .main-footer__inner
+        .main-footer__box
+          .main-footer__logo
+            span
+             include ../../svg/small-logo-thomson.svg
+            span
+              include ../../svg/thomson-name-medium.svg
+          .main-footer__social
+            i.simple-social-linkedin
+            i.simple-social-instagram
+            i.simple-social-twitter
+          .main-footer__title Nossas Áreas
+            .dropdown-select Selecione
+              a(href="#" , onclick="dropThis()").search-button.search-button__footer--down
+            .dropdown-area-content#dropDownArea
+            //- MAKE LI HERE
+        .main-footer__box
+          .main-footer__institucional
+            h3.main-footer__title Intitucional
+            ul.main-footer__list
+              li.main-footer__item
+                a(href="http://", target="_blank", rel="noopener noreferrer") Quem Somos
+              li.main-footer__item
+                a(href="http://", target="_blank", rel="noopener noreferrer") Política de Privacidade
+              li.main-footer__item
+                a(href="http://", target="_blank", rel="noopener noreferrer") Contrato de Compra - Livros
+              li.main-footer__item
+                a(href="http://", target="_blank", rel="noopener noreferrer") Contrato de Compra - Ebook
+              li.main-footer__item
+                a(href="http://", target="_blank", rel="noopener noreferrer") Parceiros
+              li.main-footer__item
+                a(href="http://", target="_blank", rel="noopener noreferrer") Eventos
+              li.main-footer__item
+                a(href="http://", target="_blank", rel="noopener noreferrer") Livreiros
+
+
+        .main-footer__box
+          .main-footer__duvidas
+              h3.main-footer__title Dúvidas
+              ul.main-footer__list
+                li.main-footer__item
+                  a(href="http://", target="_blank", rel="noopener noreferrer") Perguntas Frequentes
+                li.main-footer__item
+                  a(href="http://", target="_blank", rel="noopener noreferrer") Fale Conosco
+                li.main-footer__item
+                  a(href="http://", target="_blank", rel="noopener noreferrer") Central de Atendimento
+                li.main-footer__item--bold
+                  a(href="http://", target="_blank", rel="noopener noreferrer") 0800-702-2433
+                li.main-footer__item
+                  a(href="http://", target="_blank", rel="noopener noreferrer") (0800 somente para telefone fixo)
+        .main-footer__box--split
+           .main-footer__title Pagamento
+              ul.main-footer__list--flex
+                li.main-footer__item
+                  include ../../svg/visa-icon.svg
+                li.main-footer__item
+                  include ../../svg/master-icon.svg
+                li.main-footer__item
+                  include ../../svg/dinners-icon.svg
+                li.main-footer__item
+                  include ../../svg/amex-icon.svg
+                li.main-footer__item
+                  include ../../svg/boleto-icon.svg
+           .main-footer__title Segurança
+              ul.main-footer__list--flex
+                li.main-footer__item
+                  img(src="/arquivos/cloudflare-icon.png", alt="")
+                li.main-footer__item--split
+                  include ../../svg/ecore-icon.svg
+                  include ../../svg/vtex-icon.svg
+  .main-footer__area.main-footer__copyright
+    .wrapper
+      p.main-footer__copyright-text
+        | Todos os direitos reservados. Infracommerce Negócios e Soluções em Internet Ltda. CNPJ 15.427.207/0001-14 - Av. Doutor Cardoso De Melo, 1855, 15 andar Conjunto 151, Jardim Paulistano - 04548-005 - São Paulo/SP. É vedada a sua reprodução, total ou parcial. O preço válido será o da finalização da compra.
+      include ../../svg/infra-icon.svg

@@ -14,7 +14,11 @@
 		&:focus{
 			outline: none;
 		}
-	}
+  }
+
+  &--narrow {
+    width: 361px;
+  }
 
 	// BULMA SELECT MOD
 	.select {
@@ -39,17 +43,5 @@
 		&:focus {
 			border-color: #666;
 		}
-	}
-	.search-button{
-		margin: auto 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-		width: 31px;
-		height: 30px;
-		background-color: #666666;
-    border-radius: 50%;
-    font-size: .9em;
-    color: $c-white;
 	}
 }

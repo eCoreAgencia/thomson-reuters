@@ -2,6 +2,29 @@ extends ../layouts/default.pug
 
 block vars
   - var pageTitle = '404'
-  - var bodyClass = '404'
+  - var bodyClass = 'not-found'
 
 block content
+  .section__page.section__not-found
+    h2.not-found__title 404
+    p.not-found__text Ops! Desculpe, não encontramos a página que você estava procurando.
+    a(href="/").button__gray ir para home
+  section.section__page.section-kits
+    section.section__page.section__shelf
+    .wrapper--block
+      .filter
+        h2.filter__title Kits e Coleções
+        ul.filter__opt
+          //- li.filter__opt-item
+          //-   a(href="") E-books
+          li.filter__opt-item
+            a(href="") Kits e coleções
+          li.filter__opt-item
+            a(href="") Comercial
+      .shelf.shelf__carousel--full
+        +vtex-controller('<vtex:contentPlaceHolder id="Colecao Kits" />')
+          .prateleira
+           ul
+              each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                li
+                  include ../shelves/kit-shelf

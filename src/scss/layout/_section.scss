@@ -40,5 +40,14 @@
       padding: 38px 0 54px 0;
     }
   }
-
+  &__not-found {
+    font-weight: bold;
+    display: grid;
+    align-items: center;
+    grid-auto-rows: min-content;
+    grid-gap: 20px;
+    justify-content: center;
+    padding: 60px 0;
+    background-color: $c-white;
+  }
 }

@@ -9,14 +9,17 @@
 	}
 	&__opt {
 		display: flex;
-		width: 285px;
 		justify-content: space-between;
 	}
 	&__opt-item{
-		font-family: "Knowledge - Bold";
+		font-family: "Knowledge-Bold";
 		font-size: 13px;
 		font-weight: 700;
-		text-transform: uppercase;
+    text-transform: uppercase;
+    margin-right: 28px;
+    &:last-child{
+      margin-right: 0;
+    }
 		a {
 			text-decoration: none;
 			color: $c-gray-dark;

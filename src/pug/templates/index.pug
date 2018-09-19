@@ -1,7 +1,7 @@
 extends ../layouts/default.pug
 
 block vars
-  - var pageTitle = 'Categoria'
+  - var pageTitle = 'Home'
   - var bodyClass = 'home '
 
 block content
@@ -85,8 +85,8 @@ block content
       .filter
         h2.filter__title Kits e Coleções
         ul.filter__opt
-          li.filter__opt-item
-            a(href="") E-books
+          //- li.filter__opt-item
+          //-   a(href="") E-books
           li.filter__opt-item
             a(href="") Kits e coleções
           li.filter__opt-item
@@ -97,7 +97,7 @@ block content
            ul
               each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
                 li
-                  include ../shelves/product-shelf
+                  include ../shelves/kit-shelf
   section.section__page.section__split
     .wrapper--block.section__split-the-grid
       .most-visited
@@ -118,30 +118,18 @@ block content
                     li.most-visited__item
                       include ../shelves/watch-shelf
       .weekly-authors
-        h2.weekly-authors__title
+        h2.weekly-authors__title Autores da Semana
         ul.weekly-authors__list
           li.weekly-authors__items
-            a.weekly-authors__link(href="")
-              span.weekly-authors__photo
-              span.weekly-authors__name
+            a.weekly-authors__link(href="") Nome do Autor
           li.weekly-authors__items
-            a.weekly-authors__link(href="")
-              span.weekly-authors__photo
-              span.weekly-authors__name
+            a.weekly-authors__link(href="") Nome do Autor
           li.weekly-authors__items
-            a.weekly-authors__link(href="")
-              span.weekly-authors__photo
-              span.weekly-authors__name
+            a.weekly-authors__link(href="") Nome do Autor
           li.weekly-authors__items
-            a.weekly-authors__link(href="")
-              span.weekly-authors__photo
-              span.weekly-authors__name
+            a.weekly-authors__link(href="") Nome do Autor
           li.weekly-authors__items
-            a.weekly-authors__link(href="")
-              span.weekly-authors__photo
-              span.weekly-authors__name
-
-
+            a.weekly-authors__link(href="") Nome do Autor
 
 
 
