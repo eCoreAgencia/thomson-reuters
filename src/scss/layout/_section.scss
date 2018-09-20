@@ -50,4 +50,14 @@
     padding: 60px 0;
     background-color: $c-white;
   }
+  &__empty-search {
+    display: grid;
+    align-items: center;
+    grid-auto-rows: min-content;
+    grid-gap: 20px;
+    justify-content: center;
+    padding: 60px 0;
+    background-color: $c-white;
+    text-align: center;
+  }
 }

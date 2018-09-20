@@ -6,3 +6,19 @@ $(document).ready(function(){
 		$(".box-emptySearch p span em").text(word);
     }
 });
+
+
+$(document).ready(function(){
+  if($('body').hasClass('empty-search')){
+    if($('li.helperComplement')[0]){
+      $('li.helperComplement').remove();
+    }
+    $('.shelf__carousel--full ul').slick({
+      arrows: true,
+      slideToShow: 4,
+      slidesToScroll: 1,
+      infinite: true,
+      variableWidth: true,
+    });
+  }
+})

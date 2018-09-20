@@ -40,10 +40,11 @@ block content
         .shelf
           .shelf__banners
             +vtex-controller('<vtex:contentPlaceHolder id="Promo Box 1" />')
-              include ../shelves/promo-shelf
+              .shelf__banners-static
+                img(src='https://placehold.it/545x350')/
             +vtex-controller('<vtex:contentPlaceHolder id="Promo Box 2" />')
-              include ../shelves/promo-shelf
-              //- include ../shelves/promo-shelf-lançamento
+              .shelf__banners-static
+                img(src='https://placehold.it/545x350')/
   section.section__page.section__areas
     .wrapper--block
       .category-nav
@@ -102,7 +103,7 @@ block content
     .wrapper--block.section__split-the-grid
       .most-visited
         .most-visited__header
-         +vtex-controller('<vtex:contentPlaceHolder id="Colecao Kits" />')
+         +vtex-controller('<vtex:contentPlaceHolder id="Colecao Kits 2" />')
           h2.most-visited__title Livros mais visitados
           ul.most-visited__select
             li.most-visited__opt

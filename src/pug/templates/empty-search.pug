@@ -5,8 +5,42 @@ block vars
   - var bodyClass = 'catalog empty-search'
 
 block content
-    section.section__page.section__not-found
-      i.simple-magnifier
+  .crumb-section.wrapper--block
+    +vtex-controller('<vtex.cmc:breadCrumb />')
+      .bread-crumb
+        ul
+          li
+              a(title='casaegaragem', href='/') thomsonreuters
+          li
+              a(title='Thomson Reuters', href='https://casaegaragem.vtexcommercestable.com.br/casa-e-jardim') Thomson Reuters
+          li.last
+              strong
+                  a(title='Black & Decker', href='https://casaegaragem.vtexcommercestable.com.br/casa-e-jardim/black---decker?O=OrderByTopSaleDESC&PS=12') Resultados para
+  section.section__page.section__empty-search
+    i.simple-magnifier.empty-search__icon
+    p.empty-search__text Não encontramos nenhum resultado.
+    p.empty-search__text--small Que tal realizar uma nova busca?
+    input.empty-search__search.search-bar(type="search", name="searchInsideEmpty")
+  section.section__page.section-kits
+  section.section__page.section__shelf
+  .wrapper--block
+    .filter
+      h2.filter__title Kits e Coleções
+      ul.filter__opt
+        //- li.filter__opt-item
+        //-   a(href="") E-books
+        li.filter__opt-item
+          a(href="") Kits e coleções
+        li.filter__opt-item
+          a(href="") Comercial
+    .shelf.shelf__carousel--full
+      +vtex-controller('<vtex:contentPlaceHolder id="Colecao Kits" />')
+        .prateleira
+          ul
+            each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+              li
+                include ../shelves/kit-shelf
+
 
 
 

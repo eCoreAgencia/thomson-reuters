@@ -1,8 +1,635 @@
 extends ../layouts/default.pug
 
+
+block head
+  link(rel="stylesheet", href="https://io.vtex.com.br/vtex-id-ui/3.15.3/style/vtexid.css")
 block vars
-  - var pageTitle = '404'
-  - var bodyClass = '404'
+  - var pageTitle = 'Login'
+  - var bodyClass = 'login'
 
 block content
   +vtex-controller('<vtex.cmc:userLogin/>')
+    #vtexIdContainer.ng-scope
+  .vtexIdUI.ng-scope.vtexIdUI-show-app(ng-class="{'vtexIdUI-shake': userError}", ng-controller='MainController', style='height: 321px;')
+    #vtexIdUI-loading-modal.vtexIdUI-loading-modal
+    #vtexIdUI-main-content.vtexIdUI-main-content
+      div
+        // ngInclude: 'includes/access-key-confirmation.html'
+        #vtexIdUI-confirm-access-code.vtexIdUI-auth-code.vtexIdUI-page.ng-scope.vtexIdUI-page-inactive(ng-controller='AccessKeyConfirmationController')
+          .modal-header
+            h4.ng-hide(ng-show='isLoginAccessKey')
+              span.vtexIdUI-heading(data-i18n='vtexid.accessTokenTitle') Informar chave de acesso
+            h4.ng-hide(ng-show='isLinkOAuthFlow')
+              span.vtexIdUI-heading(data-i18n='vtexid.confirmationAccount') Confirmação de conta
+            h4.ng-hide(ng-show='isChangePswdAccessKey')
+              span.vtexIdUI-heading(data-i18n='vtexid.changePswdTitle') Alterar senha
+            .vtexIdUI-loading(ng-class="{'vtexIdUI-loading-show': isValidatingAccessKey}")
+          form.ng-pristine.ng-invalid.ng-invalid-required(ng-submit='confirmAccessKey()', ng-disabled='isValidatingAccessKey')
+            .modal-body
+              label.info-code.text-center(for='access-code')
+                .connect-alert.ng-hide(ng-show='isLinkOAuthFlow')
+                  span(data-i18n='vtexid.linkOAuthMsgPT1') Vamos conectar seu registro de
+                  strong.ng-binding
+                  span(data-i18n='vtexid.linkOAuthMsgPT2') ao seu email cadastrado
+                  .emails-join
+                    i.vtexid-icon-switch.center-icon
+                    .email-join-address.muted.ng-binding
+                      i(ng-class='vtexid-icon-empty')
+                    .email-join-address.muted.ng-binding
+                      i.vtexid-icon-mail
+                span(data-i18n='vtexid.insertAccessToken') Agora é só informar o código recebido em:
+                br
+                strong.ng-binding
+              .vtexIdUI-code-field
+                input#access-code.input-fit.input-block-level.ng-pristine.ng-invalid.ng-invalid-required(required='', autofocus='', autocomplete='off', ng-model='accessKey', type='text', tabindex='1')
+              // Usuário informou uma chave de acesso inválida.
+              .alert.ng-hide(ng-show='invalidAccessToken', data-i18n='vtexid.invalidAccessToken') Chave de acesso inválida. Verifique a digitação.
+              // Usuário informou uma chave de acesso inválida 3 vezes.
+              .alert.alert-wrong-access-key.ng-hide(ng-show='tooMuchWrongPswds')
+                span(data-i18n='vtexid.tooMuchWrongPswds') Você errou quatro vezes. Enviaremos uma nova chave para o email:
+                strong.ng-binding
+              p.alert.alert-warning.ng-hide(ng-show='blockedUser')
+                i.icon-warning-sign
+                span(data-i18n='vtexid.blockedUser') Você errou sua senha 4 vezes. Seu usuário foi bloqueado por uma hora
+            .modal-footer
+              a.vtexIdUI-back-link.pull-left.dead-link(tabindex='3', href='#', ng-click="updatePage('auth-selector', false, true)")
+                i.vtexid-icon-arrow-left
+                span(data-i18n='vtexid.backLink') Voltar
+              // ngIf: isLoginAccessKey
+              // ngIf: isChangePswdAccessKey
+              // ngIf: isLinkOAuthFlow
+              // /ngInclude: 'includes/access-key-confirmation.html'
+      div
+        // ngInclude: 'includes/auth-selector.html'
+        #vtexIdUI-auth-selector.vtexIdUI-page.ng-scope.vtexIdUI-page-active(ng-controller='SelectAuthController')
+          .modal-header
+            button.close.vtexIdUI-close.ng-hide(type='button', ng-show='canClose', data-dismiss='modal') ×
+            .vtexIdUI-header.row-fluid
+              .vtexIdUI-user.ng-hide(ng-show='auth.email && auth.systemProvidedEmail')
+                .vtexIdUI-user-email.pull-left.muted
+                  i.vtexid-icon-user.muted
+                  span.ng-binding
+            h4.vtexIdUI-heading
+              span(data-i18n='vtexid.selectAuthOption', ng-show='!auth.title') Use uma das opções para confirmar sua identidade
+              span.ng-binding.ng-hide(ng-show='auth.title')
+            .vtexIdUI-loading(ng-class="{'vtexIdUI-loading-show': isSendingEmailConfirmation}")
+          #reCaptchaDiv(style='display: none')
+          .modal-body
+            ul.vtexIdUI-providers-list
+              li(ng-show='auth.showAccessKeyAuthentication')
+                button#loginWithAccessKeyBtn.btn.btn-block.btn-large.btn-success.vtexIdUI-send-email(ng-disabled='isSendingEmailConfirmation', tabindex='1', ng-click='emailAuth()')
+                  i.vtexid-icon-mail
+                  span(data-i18n='vtexid.getEmailAccessToken') Receber chave de acesso rápido por email
+              // ngRepeat: provider in auth.oAuthProviders
+              li.ng-scope(ng-repeat='provider in auth.oAuthProviders', repeat-done='updateI18n()')
+                button#vtexIdUI-google-plus.btn.btn-block.btn-large.vtexIdUI-providers-btn(tabindex='2', ng-click='oAuthMethod(provider)')
+                  // classe do icone
+                  i.vtexid-icon-google-plus.vtexIdUI-providers-i
+                  p
+                    span(data-i18n='vtexid.enterWith') Entrar com
+                    span.vtexIdUI-providers-name.ng-binding Google
+              // end ngRepeat: provider in auth.oAuthProviders
+              li.ng-scope(ng-repeat='provider in auth.oAuthProviders', repeat-done='updateI18n()')
+                button#vtexIdUI-facebook.btn.btn-block.btn-large.vtexIdUI-providers-btn(tabindex='2', ng-click='oAuthMethod(provider)')
+                  // classe do icone
+                  i.vtexid-icon-facebook.vtexIdUI-providers-i
+                  p
+                    span(data-i18n='vtexid.enterWith') Entrar com
+                    span.vtexIdUI-providers-name.ng-binding Facebook
+              // end ngRepeat: provider in auth.oAuthProviders
+              // ngRepeat: provider in auth.samlProviders
+              li(ng-show='auth.showClassicAuthentication')
+                button#loginWithUserAndPasswordBtn.btn.btn-block.btn-large.vtexIdUI-others-send-email(tabindex='3', ng-click='classicLogin()')
+                  span(data-i18n='vtexid.classicAuthText') Entrar com email e senha
+              li.ng-hide(ng-show='auth.showGuestUserAuthentication')
+                button#guestUser.btn.btn-block.btn-large.vtexIdUI-guest-user(tabindex='4', ng-click='guestUser()')
+                  span(data-i18n='vtexid.guestUser') Continuar sem autenticação
+        // /ngInclude: 'includes/auth-selector.html'
+      div
+        // ngInclude: 'includes/classic-authentication.html'
+        #vtexIdUI-classic-login.vtexIdUI-classic-login.vtexIdUI-page.ng-scope.vtexIdUI-page-inactive(ng-controller='ClassicLoginController')
+          form#vtexIdUI-form-classic-login.ng-pristine.ng-invalid.ng-invalid-required(ng-disabled='isSendingClassicForm', ng-submit='authenticatePswd()', autocomplete='on', form-autofill-fix='', method='POST')
+            .modal-header
+              button.close.vtexIdUI-close.ng-hide(type='button', ng-show='canClose', data-dismiss='modal') ×
+              .vtexIdUI-header.row-fluid
+                .vtexIdUI-user.ng-hide(ng-show='auth.email && auth.systemProvidedEmail')
+                  .vtexIdUI-user-email.pull-left.muted
+                    i.vtexid-icon-user.muted
+                    span.ng-binding
+              h4
+                span.vtexIdUI-heading(data-i18n='vtexid.classicAuthText') Entrar com email e senha
+              .vtexIdUI-loading(ng-class="{'vtexIdUI-loading-show': isSendingClassicForm}")
+            .modal-body
+              .control-group.vtexIdUI-classic-login-control.email-model(ng-show='!auth.systemProvidedEmail')
+                label.control-label(for='inputEmail')
+                  span(data-i18n='vtexid.email') Seu email
+                .controls
+                  input#inputEmail.ng-pristine.ng-valid.ng-valid-email(autofocus='', type='email', tabindex='1', ng-model='auth.email', data-i18n='[placeholder]vtexid.egEmail', placeholder='Ex: jose@email.com')
+              .control-group.vtexIdUI-classic-login-control
+                label.control-label(for='inputPassword')
+                  span(data-i18n='vtexid.password') Senha
+                  a.dead-link.pull-right(href='#', data-i18n='vtexid.forgotPswd', tabindex='4', ng-click='changePswd()') Esqueci minha senha
+                .controls
+                  input#inputPassword.ng-pristine.ng-invalid.ng-invalid-required(type='password', tabindex='2', autocomplete='off', required='', ng-model='password')
+                a.dead-link.pull-right(data-i18n='vtexid.forgotPswdHelper', href='#', tabindex='5', ng-click='changePswd()') Não tem uma senha? Cadastre agora
+              p.alert.alert-info.ng-hide(ng-show='wrongPswdSubmits == 3')
+                i.icon-warning-sign
+                span(data-i18n='vtexid.threeWrongPswds')
+                  | Você já errou sua senha 3 vezes. Caso erre mais uma iremos bloquear seu usuário por uma hora. Tente alterar sua senha
+              p.alert.alert-warning.alert-wrong-pswd.ng-hide(ng-show='classicAuthError')
+                i.icon-warning-sign
+                span(data-i18n='vtexid.invalidAuth') Usuário e/ou senha errada
+              p.alert.alert-warning.ng-hide(ng-show='userVTEXNotAllowed')
+                i.icon-warning-sign
+                span(data-i18n='vtexid.methodNotAllowedForVTEXUsers') Usuários VTEX não podem se autenticar por usuário e senha.
+              p.alert.alert-warning.ng-hide(ng-show='blockedUser')
+                i.icon-warning-sign
+                span(data-i18n='vtexid.blockedUser') Você errou sua senha 4 vezes. Seu usuário foi bloqueado por uma hora
+            .modal-footer
+              a.vtexIdUI-back-link.pull-left.dead-link(tabindex='6', href='#', ng-show="auth.flow !== 'classicLogin'", ng-click="updatePage('auth-selector', false, true)")
+                i.vtexid-icon-arrow-left
+                span(data-i18n='vtexid.backLink') Voltar
+              button#classicLoginBtn.btn.btn-large.btn-success.pull-right(ng-disabled='isSendingClassicForm', type='submit', tabindex='3', data-i18n='vtexid.enter') Entrar
+        // /ngInclude: 'includes/classic-authentication.html'
+      div
+        // ngInclude: 'includes/confirm-email.html'
+        #vtexIdUI-email-confirmation.vtexIdUI-confirm-email.vtexIdUI-page.ng-scope.vtexIdUI-page-inactive(ng-controller='ConfirmEmailController')
+          .modal-header
+            button.close.vtexIdUI-close.ng-hide(type='button', ng-show='canClose', data-dismiss='modal') ×
+            h4
+              span.vtexIdUI-heading(data-i18n='vtexid.getEmailTitle') Por favor informe seu email
+            .vtexIdUI-loading(ng-class="{'vtexIdUI-loading-show': isSendingEmailConfirmation}")
+          form.ng-pristine.ng-invalid.ng-invalid-required(ng-disabled='isSendingEmailConfirmation', ng-submit='validateEmail()', autocomplete='on')
+            .modal-body.form-vertical
+              // Usuário informou um email que não é um VtexID válido
+              .controls.vtexIdUI-email-field
+                input#appendedInputButton.input-block-level.ng-pristine.ng-invalid.ng-invalid-required.ng-valid-email(autofocus='', ng-model='auth.email', tabindex='1', required='', type='email', data-i18n='[placeholder]vtexid.egEmail', placeholder='Ex: jose@email.com')
+              p.alert.ng-hide(ng-show='invalidEmail', data-i18n='vtexid.invalidEmail') Email inválido
+              p.alert.alert-warning.ng-hide(ng-show='blockedUser')
+                i.icon-warning-sign
+                span(data-i18n='vtexid.blockedUser') Você errou sua senha 4 vezes. Seu usuário foi bloqueado por uma hora
+            .modal-footer
+              a.vtexIdUI-back-link.pull-left.dead-link(tabindex='3', href='#', ng-click="updatePage('auth-selector', false, true)")
+                i.vtexid-icon-arrow-left
+                span(data-i18n='vtexid.backLink') Voltar
+              button#sendAccessKeyBtn.btn.btn-large.btn-success.pull-right(ng-disabled='isSendingEmailConfirmation', type='submit', tabindex='2', data-i18n='vtexid.confirm') Confirmar
+        // /ngInclude: 'includes/confirm-email.html'
+      div
+        // ngInclude: 'includes/confirm-mfa-phone-number.html'
+        #vtexIdUI-mfa-phone-number-confirmation.vtexIdUI-confirm-email.vtexIdUI-page.ng-scope.vtexIdUI-page-inactive(ng-controller='ConfirmMfaPhoneNumberController')
+          .modal-header
+            button.close.vtexIdUI-close.ng-hide(type='button', ng-show='canClose', data-dismiss='modal') ×
+            h4
+              span.vtexIdUI-heading(data-i18n='vtexid.phoneTitle1') Por favor, informe seu número de telefone
+              |  (
+              span.vtexIdUI-heading.boldText(data-i18n='vtexid.phoneTitle2') Somente números
+              | )
+            .vtexIdUI-loading(ng-class="{'vtexIdUI-loading-show': isSendingEmailConfirmation}")
+          form.ng-pristine.ng-valid(ng-disabled='isSendingEmailConfirmation', ng-submit='submitPhoneNumber()', autocomplete='on')
+            .phone-body.zIndex11
+              // Usuário informou um email que não é um VtexID válido
+              .dowpDown-body
+                .phone-input
+                  .tel-input-color(ng-class="{'tel-input-color': !phoneNumber}")
+                    input#phoneIntTelInput.ng-pristine.ng-valid(ng-model='phoneNumber', type='tel', ng-init='intlTelInput(s)', ""='')
+                  p.alert.ng-hide(ng-show='showPhoneNumberError', data-i18n='vtexid.emptyFieldError') Campo vazio
+                  p.alert.ng-hide(ng-show='phoneNumberInvalidChar', data-i18n='vtexid.invalidPhoneNumber') Telefone com caracteres inválido
+              // Load jQuery from CDN so can run demo immediately
+            .modal-footer.zIndex10
+              a.vtexIdUI-back-link.pull-left.dead-link(href='#', ng-click="updatePage('force-mfa-new-user', false, true)")
+                i.vtexIdUI-back-link.vtexid-icon-arrow-left
+                span(data-i18n='vtexid.backLink') Voltar
+              button#sendAccessKeyBtn.btn.btn-large.btn-success.pull-right(ng-disabled='isSendingPhoneConfirmation', type='submit', tabindex='2', data-i18n='vtexid.confirm') Confirmar
+          // /ngInclude: 'includes/confirm-mfa-phone-number.html'
+      div
+        // ngInclude: 'includes/confirm-mfa-code.html'
+        #vtexIdUI-mfa-code-confirmation.vtexIdUI-confirm-email.vtexIdUI-page.ng-scope.vtexIdUI-page-inactive(ng-controller='ConfirmMfaCodeController')
+          .modal-header
+            button.close.vtexIdUI-close.ng-hide(type='button', ng-show='canClose', data-dismiss='modal') ×
+            h4
+              div(ng-show='!applicationCode')
+                span.vtexIdUI-heading(data-i18n='vtexid.cornfirmPhoneCode') Por favor, informe o código enviado para seu telefone
+                br
+                .ng-hide(ng-show='showPoneNumber')
+                  span
+                    | (
+                    strong
+                      span.ng-binding
+                    |  )
+                  a.vtexIdUI-back-link.dead-link(tabindex='3', href='#', ng-click="updatePage('mfa-phone-number-confirmation', false, true)")
+              .ng-hide(ng-show='applicationCode')
+                span.vtexIdUI-heading(data-i18n='vtexid.putAppCode') Coloque o código gerado pelo aplicativo
+                br
+            .vtexIdUI-loading(ng-class="{'vtexIdUI-loading-show': isSubmittingForm}")
+          form.ng-pristine.ng-valid(ng-disabled='isSendingEmailConfirmation', ng-submit="onMfaCodeButtonPress('sendAccessKeyBtn')", autocomplete='on')
+            .modal-body.form-vertical
+              // Usuário informou um email que não é um VtexID válido
+              .controls.vtexIdUI-mfa-field
+                .alignItems
+                  input#mfaCodeInput.input-block-level.ng-pristine.ng-valid(type='tel', pattern='[0-9]*', autofocus='', ng-model='mfaCode', tabindex='1', data-i18n='[placeholder]vtexid.egMfaCode', placeholder='Ex:123456')
+                  .top5.text-center.minHeight35
+                    div(ng-show='!applicationCode')
+                      a.vtexIdUI-back-link.dead-link(ng-show='!isResendCode', tabindex='6', href='#', ng-click='resendCode()')
+                        span(data-i18n='vtexid.reSendCodeToPhone') Reenviar código
+                      span.mfa-alert-success.ng-hide(ng-show='isResendCode', data-i18n='vtexid.reSendedCodeToPhone') Código enviado
+                      p.ng-hide(ng-show='showPhoneProblemsMessage', data-i18n='vtexid.didntReceiveSms') Não recebeu o SMS?
+                      p.mfa-alert-success.ng-hide(ng-show='showPhoneProblemsMessage')
+                        a(href='http://help.vtex.com/pt/tutorial/habilitar-login-por-autenticacao-de-2-fatores', target='_blank')
+                          span(data-i18n='vtexid.setUpApp') Configure o aplicativo
+                      p.ng-hide(ng-show='showPhoneProblemsMessage', data-i18n='vtexid.or') ou
+                      p.mfa-alert-success.ng-hide(ng-show='showPhoneProblemsMessage')
+                        a#sendeditPhoneConfiguration.vtexIdUI-back-link.dead-link(ng-disabled='submittingForm', tabindex='2', type='button', data-i18n='vtexid.tryAccesKey', ng-click='reloadButton()') Tente login por acesskey
+              .minHeight35
+                .alert-mfa.ng-hide(ng-show='invalidAccessTokenLogin')
+                  span(data-i18n='vtexid.invalidAccessToken') Chave de acesso inválida. Verifique a digitação.
+                .alert-mfa.ng-hide(ng-show='invalidAccessTokenConfigurePhone')
+                  span(data-i18n='vtexid.configurePhoneNumberMessage') Para configurar telefone insira o código enviado para seu telefone
+                .alert-mfa.ng-hide(ng-show='wrongTries == 3')
+                  span(data-i18n='vtexid.almostLimitWrongTriesWarning')
+                    | Você já errou o código enviado para seu celular 3 vezes. Caso erre mais uma iremos bloquear seu usuário por uma hora
+                .alert-mfa.ng-hide(ng-show='wrongTries >= 4')
+                  span(data-i18n='vtexid.limitWrongTriesWarning') Você errou sua senha 4 vezes. Seu usuário foi bloqueado por uma hora
+            .modal-footer
+              a.vtexIdUI-back-link.pull-left.dead-link.ng-hide(ng-show='isSetApplication', href='#', ng-click="updatePage('configure-mfa-application', false, true)")
+                i.vtexIdUI-back-link.vtexid-icon-arrow-left
+                span(data-i18n='vtexid.backLink') Voltar
+              button#sendAccessKeyBtn.btn.btn-large.btn-success.pull-right(ng-disabled='submittingForm || isUserBlocked', tabindex='2', type='button', data-i18n='vtexid.enter', ng-click="onMfaCodeButtonPress('sendAccessKeyBtn')") Entrar
+              a#sendeditPhoneConfiguration.vtexIdUI-back-link.dead-link.pull-left.ng-hide(ng-show='false', ng-disabled='submittingForm || isUserBlocked', tabindex='2', type='button', data-i18n='vtexid.configPhoneNUmber', ng-click="(submittingForm || isUserBlocked) || onMfaCodeButtonPress('sendeditPhoneConfiguration')") Configure o telefone
+        div
+        // /ngInclude: 'includes/confirm-mfa-code.html'
+      div
+        // ngInclude: 'includes/logout.html'
+        #vtexIdUI-logout.vtexIdUI-no-permission.vtexIdUI-page.ng-scope.vtexIdUI-page-inactive(ng-controller='LogoutController')
+          .modal-header
+            h4.vtexIdUI-heading
+              span(data-i18n='vtexid.needPermission', ng-show='!auth.title') Você precisa de permissões
+              span.ng-binding.ng-hide(ng-show='auth.title')
+              small.pull-right(data-i18n='vtexid.error403') Erro 403
+          .alert.alert-info.alert-general.alert-modal-body.clearfix
+            i.vtexid-icon-sad.logout-icon.pull-left
+            p
+              span(data-i18n='vtexid.accDontHaveAccess') Sua conta de email não tem acesso a esta página no momento.
+              br
+              small(data-i18n='vtexid.tryAnotherAcc') Tente entrar com outra conta de email ou falar com o suporte.
+          .modal-footer
+            button#logoutBtn.btn.btn-large.btn-success.pull-right(data-i18n='vtexid.logout', ng-click='logout()') Sair
+        // /ngInclude: 'includes/logout.html'
+      div
+        // ngInclude: 'includes/multiple-oauth.html'
+        #vtexIdUI-multiple-link-account.vtexIdUI-multiple-link-account.vtexIdUI-page.ng-scope.vtexIdUI-page-inactive(ng-controller='MultipleOAuthController')
+          .modal-header
+            h4
+              span.vtexIdUI-heading(data-i18n='vtexid.changeAccount') Escolha uma conta
+          .modal-body
+            p(data-i18n='vtexid.changeAccountDescription') Agora você só precisa escolher a conta que deseja usar:
+            ul.account-list.text-center
+              // ngRepeat: email in shared.multipleOAuthReturn
+            p.info-why.muted
+              small
+                i.vtexid-icon-info
+                span(data-i18n='vtexid.infoWhyMultipleLinkPtOne') Isto é necessário, pois você usa seu registro de
+                strong.ng-binding
+                span(data-i18n='vtexid.infoWhyMultipleLinkPtTwo') para identificar-se conosco em mais de uma conta.
+        // /ngInclude: 'includes/multiple-oauth.html'
+      div
+        // ngInclude: 'includes/recovery-password.html'
+        #vtexIdUI-change-pswd.vtexIdUI-change-pswd.vtexIdUI-page.ng-scope.vtexIdUI-page-inactive(ng-controller='ChangePswdController')
+          .modal-header
+            button.close.vtexIdUI-close.ng-hide(type='button', ng-show='canClose', data-dismiss='modal') ×
+            .vtexIdUI-header.row-fluid
+              .vtexIdUI-user.ng-hide(ng-show='auth.email')
+                .vtexIdUI-user-email.pull-left.muted
+                  i.vtexid-icon-user.muted
+                  span.ng-binding
+            h4
+              span.vtexIdUI-heading(data-i18n='vtexid.changePswd') Cadastrar nova senha
+            .vtexIdUI-loading(ng-class="{'vtexIdUI-loading-show': isRecoveringPswd}")
+          form.ng-pristine.ng-invalid.ng-invalid-required(ng-submit='tryChangePswd()', ng-disabled='isRecoveringPswd')
+            .modal-body
+              p.info-why.muted
+                small
+                  i.vtexid-icon-lock.muted
+                  span(data-i18n='vtexid.confirmChangePswdText') Enviaremos uma chave de validação para seu e-mail
+              .control-group
+                label.control-label(for='inputNewPassword')
+                  span(data-i18n='vtexid.newPassword') Nova senha
+                .controls
+                  input#inputNewPassword.ng-pristine.ng-invalid.ng-invalid-required(type='password', autocomplete='off', required='', ngminlength='8', ng-model='newPassword', ng-change='onChangePassword()')
+              .control-group
+                label.control-label(for='inputConfirmNewPassword')
+                  span(data-i18n='vtexid.confirmNewPassword') Confirmar nova senha
+                .controls
+                  input#inputConfirmNewPassword.ng-pristine.ng-invalid.ng-invalid-required(type='password', autocomplete='off', required='', ngminlength='8', ng-model='confirmNewPassword')
+              .vtexid-password-requirements
+                span.vtexid-password-requirements-description(data-i18n='vtexid.passwordRequirements') Sua senha deve ter
+                ul.vtexid-password-requirements-list
+                  li
+                    span.vtexid-icon-checkmark.ng-hide(ng-show='passwordHasMinLength') OK
+                    span(ng-show='!passwordHasMinLength')
+                    span.vtexid-instruction(data-i18n='vtexid.password8char') Mínimo de 8 caracteres
+                  li
+                    span.vtexid-icon-checkmark.ng-hide(ng-show='passwordHasNumber') OK
+                    span(ng-show='!passwordHasNumber')
+                    span.vtexid-instruction(data-i18n='vtexid.passwordNumber') 1 número
+                  li
+                    span.vtexid-icon-checkmark.ng-hide(ng-show='passwordHasLowerCaseLetter') OK
+                    span(ng-show='!passwordHasLowerCaseLetter')
+                    span.vtexid-instruction(data-i18n='vtexid.passwordLowercase') 1 letra minúscula
+                  li
+                    span.vtexid-icon-checkmark.ng-hide(ng-show='passwordHasUpperCaseLetter') OK
+                    span(ng-show='!passwordHasUpperCaseLetter')
+                    span.vtexid-instruction(data-i18n='vtexid.passwordUppercase') 1 letra maiúscula
+              p.alert.ng-hide(ng-show='dontMatchPswd', data-i18n='vtexid.dontMatchPswd') As senhas não são iguais
+              // ngIf: shared.forceNewPswd
+              p.alert.alert-warning.ng-hide(ng-show='blockedUser')
+                i.icon-warning-sign
+                span(data-i18n='vtexid.blockedUser') Você errou sua senha 4 vezes. Seu usuário foi bloqueado por uma hora
+            .modal-footer
+              a.vtexIdUI-back-link.pull-left.dead-link(href='#', ng-click="updatePage('classic-login', false, true)")
+                i.vtexid-icon-arrow-left
+                span(data-i18n='vtexid.backLink') Voltar
+              button#tryChangePswdBtn.btn.btn-large.btn-success.pull-right(type='submit', data-i18n='vtexid.changePswd', ng-disabled='isRecoveringPswd') Cadastrar nova senha
+        // /ngInclude: 'includes/recovery-password.html'
+      div
+        // ngInclude: 'includes/change-expired-password.html'
+        #vtexIdUI-change-exp-pswd.vtexIdUI-change-exp-pswd.vtexIdUI-page.ng-scope.vtexIdUI-page-inactive(ng-controller='ChangeExpPswdController')
+          .modal-header
+            button.close.vtexIdUI-close.ng-hide(type='button', ng-show='canClose', data-dismiss='modal') ×
+            .vtexIdUI-header.row-fluid
+              .vtexIdUI-user.ng-hide(ng-show='auth.email')
+                .vtexIdUI-user-email.pull-left.muted
+                  i.vtexid-icon-user.muted
+                  span.ng-binding
+            h4
+              span.vtexIdUI-heading(data-i18n='vtexid.changeExpPswdTitle') Sua senha expirou
+            .vtexIdUI-loading(ng-class="{'vtexIdUI-loading-show': isRecoveringPswd}")
+          form.ng-pristine.ng-invalid.ng-invalid-required(ng-submit='tryChangePswd()', ng-disabled='isRecoveringPswd')
+            .modal-body
+              p.info-why.muted
+                span(data-i18n='vtexid.expiredPasswordInfo')
+                  | Sua senha expirou. Por favor, escolha um novo. Lembre-se, sua nova senha deve ser diferente das senhas anteriores que você usou.
+              .control-group
+                label.control-label(for='expiredpass_inputNewPassword')
+                  span(data-i18n='vtexid.newPassword') Nova senha
+                .controls
+                  input#expiredpass_inputNewPassword.ng-pristine.ng-invalid.ng-invalid-required(type='password', autocomplete='off', required='', ngminlength='8', ng-model='newPassword', ng-change='onChangePassword()')
+              .control-group
+                label.control-label(for='expiredpass_inputConfirmNewPassword')
+                  span(data-i18n='vtexid.confirmNewPassword') Confirmar nova senha
+                .controls
+                  input#expiredpass_inputConfirmNewPassword.ng-pristine.ng-invalid.ng-invalid-required(type='password', autocomplete='off', required='', ngminlength='8', ng-model='confirmNewPassword')
+              .vtexid-password-requirements
+                span.vtexid-password-requirements-description(data-i18n='vtexid.passwordRequirements') Sua senha deve ter
+                ul.vtexid-password-requirements-list
+                  li
+                    span.vtexid-icon-checkmark.ng-hide(ng-show='passwordHasMinLength') OK
+                    span(ng-show='!passwordHasMinLength')
+                    span.vtexid-instruction(data-i18n='vtexid.password8char') Mínimo de 8 caracteres
+                  li
+                    span.vtexid-icon-checkmark.ng-hide(ng-show='passwordHasNumber') OK
+                    span(ng-show='!passwordHasNumber')
+                    span.vtexid-instruction(data-i18n='vtexid.passwordNumber') 1 número
+                  li
+                    span.vtexid-icon-checkmark.ng-hide(ng-show='passwordHasLowerCaseLetter') OK
+                    span(ng-show='!passwordHasLowerCaseLetter')
+                    span.vtexid-instruction(data-i18n='vtexid.passwordLowercase') 1 letra minúscula
+                  li
+                    span.vtexid-icon-checkmark.ng-hide(ng-show='passwordHasUpperCaseLetter') OK
+                    span(ng-show='!passwordHasUpperCaseLetter')
+                    span.vtexid-instruction(data-i18n='vtexid.passwordUppercase') 1 letra maiúscula
+              p.alert.ng-hide(ng-show='dontMatchPswd', data-i18n='vtexid.dontMatchPswd') As senhas não são iguais
+              p.alert.ng-hide(ng-show='passwordAlreadyUsed', data-i18n='vtexid.passwordAlreadyUsed') Senha já utilizada.
+              // ngIf: shared.forceNewPswd
+              p.alert.alert-warning.ng-hide(ng-show='blockedUser')
+                i.icon-warning-sign
+                span(data-i18n='vtexid.blockedUser') Você errou sua senha 4 vezes. Seu usuário foi bloqueado por uma hora
+            .modal-footer
+              a.vtexIdUI-back-link.pull-left.dead-link(href='#', ng-click="updatePage('classic-login', false, true)")
+                i.vtexid-icon-arrow-left
+                span(data-i18n='vtexid.backLink') Voltar
+              button#tryChangeExpPswdBtn.btn.btn-large.btn-success.pull-right(type='submit', data-i18n='vtexid.changePswd') Cadastrar nova senha
+        // /ngInclude: 'includes/change-expired-password.html'
+      div
+        // ngInclude: 'includes/force-mfa-new-user.html'
+        #vtexIdUI-force-mfa-new-user.vtexIdUI-confirm-email.vtexIdUI-page.ng-scope.vtexIdUI-page-inactive(ng-controller='ForceMfaNewUserController')
+          form.ng-pristine.ng-valid(ng-disabled='isSendingEmailConfirmation', ng-submit='LogIn()', autocomplete='on')
+            .modal-require-mfa
+              div
+                button.close.vtexIdUI-close.ng-hide(type='button', ng-show='canClose', data-dismiss='modal') ×
+                h4
+                  span.vtexIdUI-heading.forceLetterSpacing(data-i18n='vtexid.optionalRegisteMfaRequired') Torne a sua conta mais segura ativando a autenticacação de 2 passos
+                  br
+                div
+                  .hover
+                    a.vtexIdUI-back-link.dead-link.top10
+                      span(ng-mouseover='onMouseOver()', data-i18n='vtexid.WhatIsMfa') O que é isso?
+                    .appear
+                      h4
+                        span.mfaExplanationText(data-i18n='vtexid.mfaExplanation1')
+                          | A autenticação de 2 passos garante que apenas você consiga acessar sua conta, pois exige que o usuário forneça duas informações distintas de autenticação:
+                      span
+                        span.mfaExplanationText.boldText(data-i18n='vtexid.mfaUserAndPassword') - Usuário e senha
+                        br
+                        span
+                          span.mfaExplanationText.boldText(data-i18n='vtexid.mfaPhoneMessage') - Mensagem de telefone ou por aplicativo
+                .top5
+                  .grayColor.paddgIfSmall.paddingtop25
+                    // Usuário informou um email que não é um VtexID válido
+                    button#sendeditPhoneConfiguration.btn.btn-large.btn-primary.pull-left.vtexIdUI-back-phone-button.leftAlign(ng-disabled='submittingForm', tabindex='2', type='button', data-i18n='vtexid.configMultifactor', ng-click='SetPhoneNumber()') Configurar
+                    button#sendAccessKeyBtn.btn.btn-large.btn-success.vtexIdUI-back-phone-button.force-mfa-login-button.leftAlign(ng-disabled='submittingForm', tabindex='1', type='button', data-i18n='vtexid.enterForceMfa', ng-click='skipButtonPress()') Pular
+        // /ngInclude: 'includes/force-mfa-new-user.html'
+      div
+        // ngInclude: 'includes/force-mfa-mandatory.html'
+        #vtexIdUI-force-mfa-mandatory.vtexIdUI-confirm-email.vtexIdUI-page.unsetOverflow.ng-scope.vtexIdUI-page-inactive(ng-controller='ForceMfaMandatoryController')
+          .modal-require-mfa
+            button.close.vtexIdUI-close.ng-hide(type='button', ng-show='canClose', data-dismiss='modal') ×
+            h4
+              span.vtexIdUI-heading.forceLetterSpacing4(data-i18n='vtexid.optionalRegisteMfaRequired1') Torne a sua conta mais segura. A verificaçao em dois passos agora é
+              span.vtexIdUI-heading.forceLetterSpacing4.boldText(data-i18n='vtexid.mandatoryLow') obrigatória
+              span.vtexIdUI-heading.forceLetterSpacing4(data-i18n='vtexid.optionalRegisteMfaRequired2') para o login com usuário e senha
+              br
+            div
+              .hover
+                a.vtexIdUI-back-link.dead-link.top10
+                  span(ng-mouseover='onMouseOver()', data-i18n='vtexid.WhatIsMfa') O que é isso?
+                .appear
+                  h4
+                    span.mfaExplanationText(data-i18n='vtexid.mfaExplanation1')
+                      | A autenticação de 2 passos garante que apenas você consiga acessar sua conta, pois exige que o usuário forneça duas informações distintas de autenticação:
+                  span
+                    span.mfaExplanationText.boldText(data-i18n='vtexid.mfaUserAndPassword') - Usuário e senha
+                    br
+                    span
+                      span.mfaExplanationText.boldText(data-i18n='vtexid.mfaPhoneMessage') - Mensagem de telefone ou por aplicativo
+            .top5
+              .grayColor.paddingtop45.top10
+                // Usuário informou um email que não é um VtexID válido
+                .width110
+                  a#sendeditPhoneConfiguration.vtexIdUI-back-link.dead-link.pull-left.margin10(ng-disabled='submittingForm', tabindex='2', type='button', data-i18n='vtexid.otherWaysToLogin', ng-click='reloadButton()') Outras formas de login
+                button#sendAccessKeyBtn.btn.btn-large.btn-success.vtexIdUI-back-phone-button.force-mfa-login-button(ng-disabled='submittingForm', tabindex='1', type='button', data-i18n='vtexid.configMultifactor', ng-click='SetPhoneNumber() ') Configurar
+        // /ngInclude: 'includes/force-mfa-mandatory.html'
+      div
+        // ngInclude: 'includes/configure-user-MFA.html'
+        #vtexIdUI-configure-user-MFA.vtexIdUI-confirm-email.vtexIdUI-page.ng-scope.vtexIdUI-page-inactive(ng-controller='ConfigureUserMFAController')
+          .modal-header
+            button.close.vtexIdUI-close.ng-hide(type='button', ng-show='canClose', data-dismiss='modal') ×
+            .vtexIdUI-header.row-fluid
+              h4
+                span.vtexIdUI-heading(data-i18n='vtexid.MFAConfiguration') Configuração do telefone
+                br
+          .show-message-redirect-body
+            div
+              button.close.vtexIdUI-close.ng-hide(type='button', ng-show='canClose', data-dismiss='modal') ×
+              .grayColor.paddgIfSmall
+                // Usuário informou um email que não é um VtexID válido
+                button#sendeditPhoneConfiguration.btn.btn-large.btn-primary.pull-left.vtexIdUI-back-phone-button.leftAlign(ng-disabled='submittingForm', tabindex='2', type='button', data-i18n='vtexid.editPhoneNumber', ng-click='ChangePhoneNumber()') Editar telefone
+                button#sendAccessKeyBtn.btn.btn-large.btn-delete.vtexIdUI-back-phone-button.force-mfa-login-button.leftAlign(ng-disabled='submittingForm', tabindex='1', type='button', data-i18n='vtexid.removeMfa', ng-click='removeUserAccountMfa()') Remover telefone
+        // /ngInclude: 'includes/configure-user-MFA.html'
+      div
+        // ngInclude: 'includes/show-message-and-redirect.html'
+        #vtexIdUI-show-message-and-redirect.vtexIdUI-confirm-email.vtexIdUI-page.ng-scope.vtexIdUI-page-inactive(ng-controller='ShowMessageAndRedirectController')
+          .modal-header
+            button.close.vtexIdUI-close.ng-hide(type='button', ng-show='canClose', data-dismiss='modal') ×
+            .vtexIdUI-header.row-fluid
+              h4
+                span.vtexIdUI-heading.ng-hide(ng-show='showRemovedMessage', data-i18n='vtexid.phoneRemoved') Telefone removido
+                span.vtexIdUI-heading.ng-hide(ng-show='showEditedMessasge', data-i18n='vtexid.phoneEdited') Telefone atualizado
+                .vtexid-icon-redirect-checkmark.pull-right
+            .vtexIdUI-loading.vtexIdUI-loading-show(ng-class="{'vtexIdUI-loading-show': isLogginIn}")
+          .show-message-redirect-body
+            .vtexIdUI-header.row-fluid
+              h4.paddingtop25
+                span.vtexIdUI-heading(data-i18n='vtexid.redirectingLoggedUser') Estamos redirecionando você para seu destino
+                br
+        // /ngInclude: 'includes/show-message-and-redirect.html'
+      div
+        // ngInclude: 'includes/reload-page-message.html'
+        #vtexIdUI-realod-page-message.vtexIdUI-confirm-email.vtexIdUI-page.ng-scope.vtexIdUI-page-inactive(ng-controller='RealoadPageMessagecontroller')
+          .modal-header
+            button.close.vtexIdUI-close.ng-hide(type='button', ng-show='canClose', data-dismiss='modal') ×
+            .vtexIdUI-header.row-fluid
+              h4
+                span.vtexIdUI-heading(data-i18n='vtexid.reloadingPage') Estamos recarregando a página
+                .vtexid-icon-redirect-checkmark.pull-right
+            .vtexIdUI-loading.vtexIdUI-loading-show(ng-class="{'vtexIdUI-loading-show': isLogginIn}")
+          .show-message-redirect-body
+            .vtexIdUI-header.row-fluid
+              h4.paddingtop25
+                span.vtexIdUI-heading(data-i18n='vtexid.redirectingLoggedUser') Estamos redirecionando você para seu destino
+                br
+        // /ngInclude: 'includes/reload-page-message.html'
+      div
+        // ngInclude: 'includes/jsError-component.html'
+        #vtexIdUI-jsError-component.vtexIdUI-page.ng-scope.vtexIdUI-page-inactive(ng-controller='JsErrorComponentController')
+          .textAlign.top5.height170.control-label
+            h4
+              i.vtexid-icon-sad.muted
+              span.vtexid-password-requirements-description(data-i18n='vtexid.jsErrorHappend') algum erro ocorreu
+              br
+            .grayColor.paddingtop15
+              button.btn.btn-large.btn-primary(ng-click='onRefeshButtonPress()', tabindex='1', type='button', data-i18n='vtexid.tyAgain') Tentar novamente
+        // /ngInclude: 'includes/jsError-component.html'
+      div
+        // ngInclude: 'includes/choose-mfa-login-type.html'
+        #vtexIdUI-choose-mfa-login-type.vtexIdUI-confirm-email.vtexIdUI-page.ng-scope.vtexIdUI-page-inactive(ng-controller='ChooseMfaLoginType')
+          form.ng-pristine.ng-valid(ng-disabled='isSendingEmailConfirmation', ng-submit='LogIn()', autocomplete='on')
+            .modal-header
+              button.close.vtexIdUI-close.ng-hide(type='button', ng-show='canClose', data-dismiss='modal') ×
+              .vtexIdUI-header.row-fluid
+                h4
+                  b
+                    a.pull-left.dead-link(href='#', ng-click='onBackArrowClick()')
+                      i.vtexid-icon-arrow-left
+                      span(data-i18n='vtexid.backLink') Voltar
+                    span.paddingLeft60(data-i18n='vtexid.loginTypesTitle') Formas de LogIn
+            .modal-choose-require-body(style='height: 380px')
+              div
+                button.close.vtexIdUI-close.ng-hide(type='button', ng-show='canClose', data-dismiss='modal') ×
+                div
+                  // Usuário informou um email que não é um VtexID válido
+                  div
+                    h4.textAlign.top10
+                      b
+                        span(data-i18n='vtexid.AppMessage') Mensagem por aplicativo
+                    ul
+                      li
+                        span(data-i18n='vtexid.openGoogleAuth') Baixe o aplicativo Google Authenticator
+                      li
+                        span(data-i18n='vtexid.setUpApp') Configure o aplicativo
+                      li
+                        span(data-i18n='vtexid.LoginWithApp') Utilize o app para logar
+                    button#sendAccessKeyBtn.btn.btn-medium.pull-left.btn-success.pull-right(style='position: relative;\
+                    width: 100%;', ng-disabled='submittingForm', tabindex='1', type='button', data-i18n='vtexid.setUpApp', ng-click='ConfigureAplicattionButtonPress()') Configure o aplicativo
+                  hr(style='position: relative;\
+                  top: 20px;\
+                  width: 100%;')
+                  .top10
+                    h4.textAlign.top10
+                      b
+                        span(data-i18n='vtexid.PhoneMessage') Mensagem de celular
+                    ul
+                      li
+                        span(data-i18n='vtexid.registePhoneNumber') Cadastre seu número de telefone
+                      li
+                        span(data-i18n='vtexid.receiveAppCode') Receba códigos no seu celular para logar
+                    button#sendeditPhoneConfiguration.btn.btn-small.btn-primary.top10(style='position: relative;\
+                    width: 100%;', ng-disabled='submittingForm', tabindex='2', type='button', data-i18n='vtexid.registePhoneNumber', ng-click='ConfigurePhoneButtonPress()') Cadastre seu número de telefone
+        // /ngInclude: 'includes/choose-mfa-login-type.html'
+      div
+        // ngInclude: 'includes/configure-mfa-application.html'
+        #vtexIdUI-configure-mfa-application.vtexIdUI-confirm-email.vtexIdUI-page.ng-scope.vtexIdUI-page-inactive(ng-controller='ConfigureMfaApplication')
+          form.ng-pristine.ng-valid(ng-disabled='isSendingEmailConfirmation', ng-submit='LogIn()', autocomplete='on')
+            .modal-header
+              button.close.vtexIdUI-close.ng-hide(type='button', ng-show='canClose', data-dismiss='modal') ×
+              .vtexIdUI-header.row-fluid
+                h4
+                  b
+                    span(data-i18n='vtexid.loginTypesTitle') Formas de LogIn
+            .modal-choose-require-body(style='height: 355px')
+              .textAlign
+                div
+                  ul(style='margin-bottom:0px')
+                    li
+                      span(data-i18n='vtexid.downloadGoogleAuth') Baixe o aplicativo do google authenticator
+                      a(href='https://itunes.apple.com/br/app/google-authenticator/id388497605?mt=8', target='_blank')
+                        | AppStore
+                      |  /
+                      a(href='https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=pt_BR', target='_blank')
+                        | Google Play
+                    li
+                      span(data-i18n='vtexid.configureNewAccountApp') Configure uma nova conta no aplicativo
+                    li
+                      span(data-i18n='vtexid.ReadQrCode') Leia o seguinte QRCode
+                div(style='width: 100%')
+                  img(src='', width='200 ', height='200 ')
+                  div
+                  a.vtexIdUI-back-link.dead-link.textAlign(ng-show='!showUserSecret', tabindex='6', href='#', ng-click='onShowUserSecretButtonClick()')
+                    span(data-i18n='vtexid.cantReadCode') Não consegue ler o código?
+                .ng-hide(ng-show='showUserSecret')
+                  span(data-i18n='vtexid.putTheFollowingCode') Coloque manualmente o seguinte código
+                  input.textAlign.top10.ng-pristine.ng-valid(readonly='', style='background-color: #eee', ng-model='manualEntryCode')
+          .modal-footer
+            button#classicLoginBtn.btn.btn-large.btn-success.pull-right(ng-disabled='isSendingClassicForm', type='submit', tabindex='3', data-i18n='vtexid.continue', ng-click='onContinueButtonClick()') Continuar
+        // /ngInclude: 'includes/configure-mfa-application.html'
+      div
+        // ngInclude: 'includes/force.mfa.date.remider.html'
+        #vtexIdUI-force-mfa-date-reminder.vtexIdUI-confirm-email.vtexIdUI-page.ng-scope.vtexIdUI-page-inactive(ng-controller='ForceMfaDateReminderController')
+          form.ng-pristine.ng-valid(ng-disabled='isSendingEmailConfirmation', ng-submit='LogIn()', autocomplete='on')
+            .modal-require-mfa
+              div
+                button.close.vtexIdUI-close.ng-hide(type='button', ng-show='canClose', data-dismiss='modal') ×
+                h4
+                  p.boldText(data-i18n='vtexid.attention') Atenção
+                  span.vtexIdUI-heading.forceLetterSpacing(data-i18n='vtexid.mfaDateReminderMessage')
+                    | Você tem certeza de que deseja continuar sem a autenticação de dois passos? Ela será
+                  span.vtexIdUI-heading.forceLetterSpacing.boldText(data-i18n='vtexid.mandatory') Obrigatória
+                  span.vtexIdUI-heading.forceLetterSpacing.boldText(data-i18n='vtexid.mfaDateReminderMessage2')  a partir de 16 de novembro, depois das 14h
+                  br
+                .top5
+                  .grayColor.paddgIfSmall.paddingtop25
+                    // Usuário informou um email que não é um VtexID válido
+                    button#sendeditPhoneConfiguration.btn.btn-large.btn-primary.pull-left.vtexIdUI-back-phone-button.leftAlign(ng-disabled='submittingForm', tabindex='2', type='button', data-i18n='vtexid.configMultifactor', ng-click='SetPhoneNumber()') Configurar
+                    button#sendAccessKeyBtn.btn.btn-large.btn-success.vtexIdUI-back-phone-button.force-mfa-login-button.leftAlign(ng-disabled='submittingForm', tabindex='1', type='button', data-i18n='vtexid.continue', ng-click='LogIn()') Continuar
+        // /ngInclude: 'includes/force.mfa.date.remider.html'
+      i.vtexid-icon-lock.bottom-icon
+
