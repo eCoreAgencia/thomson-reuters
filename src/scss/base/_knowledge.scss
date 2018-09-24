@@ -1,21 +1,21 @@
 
 @font-face {
   font-family: 'Knowledge-Black';
-  src: url('/arquivos/Knowledge-Black.eot') format('embedded-opentype');
+  src: url('/arquivos/Knowledge-Black.eot.css') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Knowledge-Bold';
-  src: url('Knowledge-Bold.eot') format('embedded-opentype');
+  src: url('Knowledge-Bold.eot.css') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Knowledge-Light';
-  src: url('Knowledge-Light.eot') format('embedded-opentype');
+  src: url('Knowledge-Light.eot.css') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -23,7 +23,7 @@
 
 @font-face {
   font-family: 'Knowledge-Medium';
-  src: url('Knowledge-Medium.eot') format('embedded-opentype');
+  src: url('Knowledge-Medium.eot.css') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -31,14 +31,14 @@
 
 @font-face {
   font-family: 'Knowledge-Regular';
-  src: url('Knowledge-Regular.eot') format('embedded-opentype');
+  src: url('Knowledge-Regular.eot.css') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Knowledge-Regular';
-  src:  url('Knowledge-Regular.otf')  format('opentype'),
+  src:  url('Knowledge-Regular.otf.css')  format('opentype'),
 	     url("data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAJjMAA8AAAABgewAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAACYsAAAABoA
 AAAcT4U/K0dERUYAAGaoAAAALAAAACwG4ARqR1BPUwAAZ7QAADD6AACxOkyl8p1HU1VCAABm1AAA
 AN8AAAHelSON1E9TLzIAAAHQAAAAWgAAAGCdfYyPY21hcAAABxgAAAK/AAADzkQ8Pc1nYXNwAABm
@@ -735,7 +735,7 @@ MtfKsDLk2eYXHIdaOVaOHGZ1sfLkcPMLjueYX3A81/yC48j/AW02mKkAAHjaY2BgYGQAgmOp20+B
 
 @font-face {
   font-family: 'Knowledge-Medium';
-  src:  url('Knowledge-Medium.otf')  format('opentype'),
+  src:  url('Knowledge-Medium.otf.css')  format('opentype'),
 	     url("data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAJoYAA8AAAABepQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAACZ/AAAABoA
 AAAcT4U/J0dERUYAAGfMAAAALAAAACwG4ARqR1BPUwAAaPAAADELAACp5PhU61VHU1VCAABn+AAA
 APUAAAIS9Aj9mU9TLzIAAAHQAAAAWQAAAGCi4Y2cY21hcAAABxwAAAK/AAADzkQ8Pc1nYXNwAABn
@@ -1438,7 +1438,7 @@ CDYAAA==") format('woff'), url('Knowledge-Medium.ttf')  format('truetype'), url(
 
 @font-face {
   font-family: 'Knowledge-Light';
-  src:  url('Knowledge-Light.otf')  format('opentype'),
+  src:  url('Knowledge-Light.otf.css')  format('opentype'),
 	     url("data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAJswAA8AAAABf3gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAACbFAAAABoA
 AAAcT4U/JUdERUYAAGhcAAAALAAAACwG4ARqR1BPUwAAaYAAADGRAACp8K2xd+JHU1VCAABoiAAA
 APUAAAIS9Aj9mU9TLzIAAAHQAAAAVgAAAGChGYw/Y21hcAAABxgAAAK/AAADzkQ8Pc1nYXNwAABo
@@ -2142,7 +2142,7 @@ WplWZznM/ArZ+eZXyC4wv0I24v8AnJhtggAAAHjaY2BgYGQAgmOp20+B6CP9h9fCaABVbAg0AAA=") f
 
 @font-face {
   font-family: 'Knowledge-Bold';
-  src:  url('Knowledge-Bold.otf')  format('opentype'),
+  src:  url('Knowledge-Bold.otf.css')  format('opentype'),
 	     url("data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAI1gAA8AAAABYqgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAACNRAAAABoA
 AAAcT4U/I0dERUYAAGNIAAAALAAAACwG4ARqR1BPUwAAZGwAACjXAACUohKVtCNHU1VCAABjdAAA
 APUAAAIS9Aj9mU9TLzIAAAHQAAAAWAAAAGCjqYyGY21hcAAABvAAAAK/AAADzkQ8Pc1nYXNwAABj
@@ -2784,7 +2784,7 @@ j+xv7XPmY30Pw159D8O/2t/b7ebf7Bv2TfMXeQODOWDfs/vNf9m/BLrYHoHCQKE9Q9+rMC5QEiix
 
 @font-face {
   font-family: 'Knowledge-Black';
-  src:  url('Knowledge-Black.otf')  format('opentype'),
+  src:  url('Knowledge-Black.otf.css')  format('opentype'),
 	     url("data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAJnQAA8AAAABfHQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAACZtAAAABoA
 AAAcT4U/IUdERUYAAGXYAAAALAAAACwG4ARqR1BPUwAAZvwAADK1AACueLrGnBlHU1VCAABmBAAA
 APUAAAIS9Aj9mU9TLzIAAAHQAAAAWAAAAGCdcYySY21hcAAABxwAAAK/AAADzkQ8Pc1nYXNwAABl

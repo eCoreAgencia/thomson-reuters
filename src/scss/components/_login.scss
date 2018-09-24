@@ -2,89 +2,99 @@ body.login {
   .vtexIdUI.ng-scope.vtexIdUI-show-app {
     border: 0 !important;
     box-shadow: 0 !important;
-    z-index: 9999999;
-    //  DESCOMENTARR
   }
   .vtexIdUI-heading {
-    padding-top: 6px!important;
+    padding-top: 6px !important;
     span:first-child {
-      font-size: 0!important ;
-      &::after{
-        content: "Login /Cadastre-se"!important;
-        color: $c-gray-dark!important;
-        font-family: 'Knowledge-Black', 'Rubik', Arial!important;
-        font-size: 25px!important;
-        text-align: center!important;
-        font-weight: bold!important ;
+      font-size: 0 !important ;
+      &::after {
+        content: "Login /Cadastre-se" !important;
+        color: $c-gray-dark !important;
+        font-family: "Knowledge-Black", "Rubik", Arial !important;
+        font-size: 25px !important;
+        text-align: center !important;
+        font-weight: bold !important ;
         display: inline;
       }
     }
   }
   .vtexIdUI-header.row-fluid {
-    display: none!important;
+    display: none !important;
   }
   .modal-header {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
   }
-  .close.vtexIdUI-close.ng-hide{
+  .close.vtexIdUI-close.ng-hide {
     border: 0 !important;
     background-color: transparent !important;
     color: $c-gray-lighter;
     font-size: 37px !important;
     font-weight: 300 !important;
-    padding: 0px 13px!important;
+    padding: 0px 13px !important;
   }
-  .btn.btn-block.btn-large{
+  .btn.btn-block.btn-large {
     box-shadow: none !important;
     border: 0 !important;
     text-shadow: none !important;
-    height: 42px!important;
+    height: 42px !important;
     &#loginWithAccessKeyBtn {
       font-weight: lighter;
       background-image: none !important;
-      background: linear-gradient(to left, #666, #666 85%, #4d4d4d 50%, #4d4d4d 50%)!important;
-      font-size: 0px!important;
-      position: relative!important;
+      background: linear-gradient(
+        to left,
+        #666,
+        #666 85%,
+        #4d4d4d 50%,
+        #4d4d4d 50%
+      ) !important;
+      font-size: 0px !important;
+      position: relative !important;
       ::before {
-        content: "Receber chave por e-mail"!important;
-        display: block!important;
-        color: $c-white!important;
-        font-size: 20px!important;
+        content: "Receber chave por e-mail" !important;
+        display: block !important;
+        color: $c-white !important;
+        font-size: 20px !important;
       }
-      &::after{
-        content: "\e01f"!important;
-        font-family: "simple-line-icons"!important;
-        color: $c-white!important;
-        display: inline-flex!important;
-        position: absolute!important;
-        top: 10px!important;
-        left: 15px!important;
-        font-size: 24px!important;
+      &::after {
+        content: "\e01f" !important;
+        font-family: "simple-line-icons" !important;
+        color: $c-white !important;
+        display: inline-flex !important;
+        position: absolute !important;
+        top: 10px !important;
+        left: 15px !important;
+        font-size: 24px !important;
       }
     }
-    &#vtexIdUI-google-plus{
+    &#vtexIdUI-google-plus {
       font-weight: lighter;
       background-image: none !important;
-      background: linear-gradient(to left, #DD4A39, #DD4A39 85%, #672a18 50%, #672a18 50%)!important;
-      font-size: 0px!important;
-      position: relative!important;
+      background: linear-gradient(
+        to left,
+        #dd4a39,
+        #dd4a39 85%,
+        #672a18 50%,
+        #672a18 50%
+      ) !important;
+      font-size: 0px !important;
+      position: relative !important;
       ::before {
-        content: "Entrar com o Google"!important;
-        display: block!important;
-        color: $c-white!important;
-        font-size: 20px!important;
+        content: "Entrar com o Google" !important;
+        display: block !important;
+        color: $c-white !important;
+        font-size: 20px !important;
       }
-      &::after{
-        content: "\e60d"!important;
-        font-family: "simple-line-icons"!important;
-        color: $c-white!important;
-        display: inline-flex!important;
-        position: absolute!important;
-        top: 10px!important;
-        left: 15px!important;
-        font-size: 24px!important;
+      &::after {
+        content: "\e60d" !important;
+        font-family: "simple-line-icons" !important;
+        color: $c-white !important;
+        display: inline-flex !important;
+        position: absolute !important;
+        top: 10px !important;
+        left: 15px !important;
+        font-size: 24px !important;
       }
       p {
         span {
@@ -92,27 +102,33 @@ body.login {
         }
       }
     }
-    &#vtexIdUI-facebook{
+    &#vtexIdUI-facebook {
       font-weight: lighter;
       background-image: none !important;
-      background: linear-gradient(to left, #3A5999, #3A5999 85%, #28447F 50%, #28447F 50%)!important;
-      font-size: 0px!important;
-      position: relative!important;
+      background: linear-gradient(
+        to left,
+        #3a5999,
+        #3a5999 85%,
+        #28447f 50%,
+        #28447f 50%
+      ) !important;
+      font-size: 0px !important;
+      position: relative !important;
       ::before {
-        content: "Entrar com o Facebook"!important;
-        display: block!important;
-        color: $c-white!important;
-        font-size: 20px!important;
+        content: "Entrar com o Facebook" !important;
+        display: block !important;
+        color: $c-white !important;
+        font-size: 20px !important;
       }
-      &::after{
-        content: "\e00b"!important;
-        font-family: "simple-line-icons"!important;
-        color: $c-white!important;
-        display: inline-flex!important;
-        position: absolute!important;
-        top: 10px!important;
-        left: 15px!important;
-        font-size: 24px!important;
+      &::after {
+        content: "\e00b" !important;
+        font-family: "simple-line-icons" !important;
+        color: $c-white !important;
+        display: inline-flex !important;
+        position: absolute !important;
+        top: 10px !important;
+        left: 15px !important;
+        font-size: 24px !important;
       }
       p {
         span {
@@ -120,27 +136,33 @@ body.login {
         }
       }
     }
-    &#loginWithUserAndPasswordBtn{
+    &#loginWithUserAndPasswordBtn {
       font-weight: lighter;
       background-image: none !important;
-      background: linear-gradient(to left, #FF7F01, #FF7F01 85%, #FF5801 50%, #FF5801 50%)!important;
-      font-size: 0px!important;
-      position: relative!important;
+      background: linear-gradient(
+        to left,
+        #ff7f01,
+        #ff7f01 85%,
+        #ff5801 50%,
+        #ff5801 50%
+      ) !important;
+      font-size: 0px !important;
+      position: relative !important;
       ::before {
-        content: "Entrar com o E-mail e senha"!important;
-        display: block!important;
-        color: $c-white!important;
-        font-size: 20px!important;
+        content: "Entrar com o E-mail e senha" !important;
+        display: block !important;
+        color: $c-white !important;
+        font-size: 20px !important;
       }
-      &::after{
-        content: "\e066"!important;
-        font-family: "simple-line-icons"!important;
-        color: $c-white!important;
-        display: inline-flex!important;
-        position: absolute!important;
-        top: 10px!important;
-        left: 15px!important;
-        font-size: 24px!important;
+      &::after {
+        content: "\e066" !important;
+        font-family: "simple-line-icons" !important;
+        color: $c-white !important;
+        display: inline-flex !important;
+        position: absolute !important;
+        top: 10px !important;
+        left: 15px !important;
+        font-size: 24px !important;
       }
       p {
         span {
@@ -149,11 +171,40 @@ body.login {
       }
     }
   }
-  .vtexid-icon-mail{
-    display: none!important;
+  .vtexid-icon-mail {
+    display: none !important;
   }
   .vtexIdUI-providers-i {
-    opacity: 0!important;
+    opacity: 0 !important;
+  }
+  .vtexIdUI-form-classic-login {
+  }
+
+  // LOGIN COM EMAIL E SENHA
+
+  .vtexIdUI-classic-login {
+    z-index: 99999;
+    .modal-header {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: left !important;
+    }
+    .vtexIdUI-heading {
+      color: $c-gray-dark !important;
+      font-family: "Knowledge-Black", "Rubik", Arial !important;
+      font-size: 25px !important;
+      text-align: center !important;
+      font-weight: bold !important ;
+      display: inline !important ;
+    }
+    .control-label {
+      color: $c-gray-dark !important;
+      font-family: "Knowledge-bold", "Rubik", Arial !important;
+      font-size: 17px;
+      font-weight: normal !important;
+    }
+    .ng-pristine {
+      border-radius: 20px;
+    }
   }
 }
-

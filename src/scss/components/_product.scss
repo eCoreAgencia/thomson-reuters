@@ -1,5 +1,4 @@
 .product {
-  display: block;
   &__shelf {
     display: grid;
     background-color: $c-white;
@@ -90,6 +89,11 @@
       display: block;
       margin-top: 6px;
     }
+  }
+  &__unavailable {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   // STYLES FOR CUSTOM SHELF BANNERS
@@ -196,5 +200,84 @@
     font-family: Rubik;
     font-size: 13px;
     font-weight: 400;
+  }
+
+  // PRODUCT PAGEEEEEEEEEE
+  &__name {
+    &--pgprod {
+      color: #414141;
+      font-family: "Knowledge-Medium";
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: -0.4px;
+      text-align: left;
+      border-bottom: 1px solid $c-grey-simple;
+    }
+  }
+
+  // GRID DENTRO DE INFO
+  &__info {
+    &--pgprod {
+      display: grid;
+      grid-auto-rows: min-content;
+    }
+  }
+  // PRICE DO CONTROLE VTEX
+  .descricao-preco {
+    display: grid;
+    justify-content: flex-start;
+    text-align: left;
+    font-family: "Knowledge-Regular";
+    em {
+      font-style: normal;
+    }
+    .valor-de {
+      color: $c-gray-dark;
+      font-family: "Knowledge-Regular";
+      font-size: 13px;
+      font-weight: 400;
+      text-decoration: line-through;
+    }
+    .valor-por,
+    .valor-por strong {
+      color: $c-orange;
+      font-family: "Knowledge - Regular";
+      font-size: 25px;
+      font-weight: 400;
+    }
+    .valor-dividido, .valor-dividido strong {
+      color: $c-gray-dark;
+      font-family: "Knowledge-Regular";
+      font-size: 13px;
+      font-weight: 400;
+    }
+  }
+
+  // THE MAIN GRID
+  &__main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+  }
+
+  // ORGANIZANDO OS THUMBS
+  &__media-top {
+    #show {
+      display: grid;
+      grid-template-columns: .2fr 1fr;
+    }
+    .thumbs {
+      order: -1;
+    }
+  }
+
+  // BUY-BUTTON INJECT STYLES
+  &__action-bottom--pgprod{
+    .buy-button {
+      @extend .button__buy;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }

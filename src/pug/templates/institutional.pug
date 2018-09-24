@@ -1,60 +1,176 @@
 extends ../layouts/default.pug
 
 block vars
-	- var pageTitle = 'Categoria'
-	- var bodyClass = 'institucional'
+  - var pageTitle = 'Categoria'
+  - var bodyClass = 'institucional'
 
 block content
-	.container
-		section.section__page.section__institutional
-			.columns
-				aside.sidebar.institutional__sidebar.column.is-3
-					.menu
-						ul.menu-list
-							li
-								a(href="/institucional") Institucional
-							li
-								a(href="/privacidade") Privacidade
-							li
-								a(href="/trocas-devolucao") Trocas e Devolução
-							li
-								a(href="/duvidas-frequentes") Dúvidas Frequentes
-							li
-								a(href="/fale-conosco") Fale Conosco
-				.institutional__content.column
-					.banner.institutional__banner
-						+vtex-controller('<vtex:contentPlaceHolder id="Banner Institucional" />')
-					.institutional__text
-						+vtex-controller('<vtex:contentPlaceHolder id="Conteúdo Institucional" />')
-							h3.title Quem Somos
-							p Somos especialistas em Ferramentas, Materiais para Construção e Utilidades.
-							p Atuamos há mais de 5 anos levando produtos das melhores marcas do segmento para as mãos do profissional, para a sua casa e para sua empresa.
-							p Nosso foco está nas PESSOAS. Temos uma equipe altamente comprometida em oferecer atendimento de excelência, personalizado e focado na solução do seu problema e em sua satisfação.
-							p “Atendimento de loja de bairro. Preço e comodidade da Internet.”
-		section.section__page
-				.diff.container
-						.diff__container.diff__container--no-shadow
-								.diff__box
-										.diff__icon.diff__icon--boleto
-												//- include ../../svg/coupon.svg
-										.diff__info
-												span.diff__title 10% de desconto no boleto
-												span.diff__subtitle em todos os produtos do site
-								.diff__box
-										.diff__icon.diff__icon--frete
-												//- include ../../svg/truck.svg
-										.diff__info
-												span.diff__title frete grátis
-												span.diff__subtitle a partir de R$ 299 para o Sudeste
-								.diff__box
-										.diff__icon.diff__icon--troca
-												//- include ../../svg/refresh.svg
-										.diff__info
-												span.diff__title troca grátis (7 dias)
-												span.diff__subtitle Tranquilidade na sua primeira compra
-								.diff__box
-										.diff__icon.diff__icon--atacado
-												//- include ../../svg/percent.svg
-										.diff__info
-												span.diff__title Compre no Atacado
-												span.diff__subtitle Receba descontos especiais
+  .crumb-section.wrapper--block
+    +vtex-controller('<vtex.cmc:breadCrumb />')
+      .bread-crumb
+        ul
+          li
+            a(title='casaegaragem', href='/') thomsonreuters
+          li
+            a(title='Thomson Reuters', href='https://casaegaragem.vtexcommercestable.com.br/casa-e-jardim') Thomson Reuters
+          li.last
+            strong
+              a(title='Black & Decker', href='https://casaegaragem.vtexcommercestable.com.br/casa-e-jardim/black---decker?O=OrderByTopSaleDESC&PS=12') Resultados para
+  section.section__page.section__institutional.wrapper
+    aside.sidebar.institutional__sidebar
+      .institucional__menu
+        ul.institucional__list
+            a(href="http://").institucional__title Institucional
+            li.institucional__item(data-link = "quem")
+              a(href="/institucional") Quem Somos
+            li.institucional__item(data-link = "privacy")
+              a(href="/privacidade") Política De Privacidade
+            li.institucional__item(data-link = "bookpolicy")
+              a(href="/trocas-devolucao") Contrato De Compra - Livros
+            li.institucional__item(data-link = "ebookpolicy")
+              a(href="/duvidas-frequentes") Contrato De Compra - Ebook
+            li.institucional__item(data-link = "partners")
+              a(href="/fale-conosco") Parceiros
+            li.institucional__item(data-link = "events")
+              a(href="/fale-conosco") Eventos
+            li.institucional__item(data-link = "bookers")
+              a(href="/fale-conosco") Livreiros
+        ul.institucional__list
+          a(href="http://").institucional__title(data-link = "myservices") Meus Serviços
+            li.institucional__item
+              a(href="/institucional")(data-link = "returnpolicy") Trocas e Devoluções
+            li.institucional__item
+              a(href="/privacidade")(data-link = "delivery") Entrega
+    .institutional__content
+      .banner.institutional__banner
+        +vtex-controller('<vtex:contentPlaceHolder id="Banner Institucional" />')
+      .institutional__text
+        h3.title
+        ul.list
+          +vtex-controller('<vtex:contentPlaceHolder id="Conteúdo Institucional" />')
+            li.list__block
+              a.list__tlt Quem Somos
+                i.simple-arrow-right
+              ul.list__content
+                li.list__content-txt
+                  h3 1. Qual o prazo para reembolso da compra?
+                  p
+                    |  Toda compra feito pelo site Livraria RT é reembolsada por deposito em conta corrente em nome do cliente.
+                    |  O prazo para o pagamento ocorrer é de até 15 dias uteis, após a solicitação do reembolso.
+
+                  h3 2. Como efetuar uma devolução por insatisfação ou arrependimento?
+                  p
+                    |  Em consonância com o Código de Defesa do Consumidor, a Livraria RT Virtual estabelece um período de sete dias para que o cliente manifeste a sua insatisfação com o produto, a contar da data do recebimento, desde que o produto devolvido esteja em perfeito estado de conservação.
+                    |  Recomendamos, portanto, o manuseio cuidadoso de produtos a respeito dos quais você não tem certeza que atendem às suas expectativas.
+
+                  h3 3. Meu produto veio com defeito. Como proceder?
+                  p
+                    |  Os livros têm garantia por tempo ilimitado, desde que seja comprovado algum defeito originário do processo gráfico (como folhas em branco, páginas coladas ou falhas na encadernação) e desde que haja exemplares disponíveis da mesma edição para substituição. Recomendamos que os produtos sejam conferidos imediatamente após seu recebimento. Para solicitar a troca do seu material contatar o canal de atendimento ao cliente.
+            li.list__block
+              a.list__tlt Politica de Privacidade
+                i.simple-arrow-right
+              ul.list__content
+                li.list__content-txt
+                  h3 1. Qual o prazo para reembolso da compra?
+                  p
+                    |  Toda compra feito pelo site Livraria RT é reembolsada por deposito em conta corrente em nome do cliente.
+                    |  O prazo para o pagamento ocorrer é de até 15 dias uteis, após a solicitação do reembolso.
+
+                  h3 2. Como efetuar uma devolução por insatisfação ou arrependimento?
+                  p
+                    |  Em consonância com o Código de Defesa do Consumidor, a Livraria RT Virtual estabelece um período de sete dias para que o cliente manifeste a sua insatisfação com o produto, a contar da data do recebimento, desde que o produto devolvido esteja em perfeito estado de conservação.
+                    |  Recomendamos, portanto, o manuseio cuidadoso de produtos a respeito dos quais você não tem certeza que atendem às suas expectativas.
+
+                  h3 3. Meu produto veio com defeito. Como proceder?
+                  p
+                    |  Os livros têm garantia por tempo ilimitado, desde que seja comprovado algum defeito originário do processo gráfico (como folhas em branco, páginas coladas ou falhas na encadernação) e desde que haja exemplares disponíveis da mesma edição para substituição. Recomendamos que os produtos sejam conferidos imediatamente após seu recebimento. Para solicitar a troca do seu material contatar o canal de atendimento ao cliente.
+            li.list__block
+              a.list__tlt Contrato De Compra - Livros
+                i.simple-arrow-right
+              ul.list__content
+                li.list__content-txt
+                  h3 1. Qual o prazo para reembolso da compra?
+                  p
+                    |  Toda compra feito pelo site Livraria RT é reembolsada por deposito em conta corrente em nome do cliente.
+                    |  O prazo para o pagamento ocorrer é de até 15 dias uteis, após a solicitação do reembolso.
+
+                  h3 2. Como efetuar uma devolução por insatisfação ou arrependimento?
+                  p
+                    |  Em consonância com o Código de Defesa do Consumidor, a Livraria RT Virtual estabelece um período de sete dias para que o cliente manifeste a sua insatisfação com o produto, a contar da data do recebimento, desde que o produto devolvido esteja em perfeito estado de conservação.
+                    |  Recomendamos, portanto, o manuseio cuidadoso de produtos a respeito dos quais você não tem certeza que atendem às suas expectativas.
+
+                  h3 3. Meu produto veio com defeito. Como proceder?
+                  p
+                    |  Os livros têm garantia por tempo ilimitado, desde que seja comprovado algum defeito originário do processo gráfico (como folhas em branco, páginas coladas ou falhas na encadernação) e desde que haja exemplares disponíveis da mesma edição para substituição. Recomendamos que os produtos sejam conferidos imediatamente após seu recebimento. Para solicitar a troca do seu material contatar o canal de atendimento ao cliente.
+            li.list__block
+              a.list__tlt Contrato De Compra - Ebook
+                i.simple-arrow-right
+              ul.list__content
+                li.list__content-txt
+                  h3 1. Qual o prazo para reembolso da compra?
+                  p
+                    |  Toda compra feito pelo site Livraria RT é reembolsada por deposito em conta corrente em nome do cliente.
+                    |  O prazo para o pagamento ocorrer é de até 15 dias uteis, após a solicitação do reembolso.
+
+                  h3 2. Como efetuar uma devolução por insatisfação ou arrependimento?
+                  p
+                    |  Em consonância com o Código de Defesa do Consumidor, a Livraria RT Virtual estabelece um período de sete dias para que o cliente manifeste a sua insatisfação com o produto, a contar da data do recebimento, desde que o produto devolvido esteja em perfeito estado de conservação.
+                    |  Recomendamos, portanto, o manuseio cuidadoso de produtos a respeito dos quais você não tem certeza que atendem às suas expectativas.
+
+                  h3 3. Meu produto veio com defeito. Como proceder?
+                  p
+                    |  Os livros têm garantia por tempo ilimitado, desde que seja comprovado algum defeito originário do processo gráfico (como folhas em branco, páginas coladas ou falhas na encadernação) e desde que haja exemplares disponíveis da mesma edição para substituição. Recomendamos que os produtos sejam conferidos imediatamente após seu recebimento. Para solicitar a troca do seu material contatar o canal de atendimento ao cliente.
+            li.list__block
+              a.list__tlt Parceiros
+                i.simple-arrow-right
+              ul.list__content
+                li.list__content-txt
+                  h3 1. Qual o prazo para reembolso da compra?
+                  p
+                    |  Toda compra feito pelo site Livraria RT é reembolsada por deposito em conta corrente em nome do cliente.
+                    |  O prazo para o pagamento ocorrer é de até 15 dias uteis, após a solicitação do reembolso.
+
+                  h3 2. Como efetuar uma devolução por insatisfação ou arrependimento?
+                  p
+                    |  Em consonância com o Código de Defesa do Consumidor, a Livraria RT Virtual estabelece um período de sete dias para que o cliente manifeste a sua insatisfação com o produto, a contar da data do recebimento, desde que o produto devolvido esteja em perfeito estado de conservação.
+                    |  Recomendamos, portanto, o manuseio cuidadoso de produtos a respeito dos quais você não tem certeza que atendem às suas expectativas.
+
+                  h3 3. Meu produto veio com defeito. Como proceder?
+                  p
+                    |  Os livros têm garantia por tempo ilimitado, desde que seja comprovado algum defeito originário do processo gráfico (como folhas em branco, páginas coladas ou falhas na encadernação) e desde que haja exemplares disponíveis da mesma edição para substituição. Recomendamos que os produtos sejam conferidos imediatamente após seu recebimento. Para solicitar a troca do seu material contatar o canal de atendimento ao cliente.
+            li.list__block
+              a.list__tlt Eventos
+                i.simple-arrow-right
+              ul.list__content
+                li.list__content-txt
+                  h3 1. Qual o prazo para reembolso da compra?
+                  p
+                    |  Toda compra feito pelo site Livraria RT é reembolsada por deposito em conta corrente em nome do cliente.
+                    |  O prazo para o pagamento ocorrer é de até 15 dias uteis, após a solicitação do reembolso.
+
+                  h3 2. Como efetuar uma devolução por insatisfação ou arrependimento?
+                  p
+                    |  Em consonância com o Código de Defesa do Consumidor, a Livraria RT Virtual estabelece um período de sete dias para que o cliente manifeste a sua insatisfação com o produto, a contar da data do recebimento, desde que o produto devolvido esteja em perfeito estado de conservação.
+                    |  Recomendamos, portanto, o manuseio cuidadoso de produtos a respeito dos quais você não tem certeza que atendem às suas expectativas.
+
+                  h3 3. Meu produto veio com defeito. Como proceder?
+                  p
+                    |  Os livros têm garantia por tempo ilimitado, desde que seja comprovado algum defeito originário do processo gráfico (como folhas em branco, páginas coladas ou falhas na encadernação) e desde que haja exemplares disponíveis da mesma edição para substituição. Recomendamos que os produtos sejam conferidos imediatamente após seu recebimento. Para solicitar a troca do seu material contatar o canal de atendimento ao cliente.
+            li.list__block
+              a.list__tlt Livreiros
+                i.simple-arrow-right
+              ul.list__content
+                li.list__content-txt
+                  h3 1. Qual o prazo para reembolso da compra?
+                  p
+                    |  Toda compra feito pelo site Livraria RT é reembolsada por deposito em conta corrente em nome do cliente.
+                    |  O prazo para o pagamento ocorrer é de até 15 dias uteis, após a solicitação do reembolso.
+
+                  h3 2. Como efetuar uma devolução por insatisfação ou arrependimento?
+                  p
+                    |  Em consonância com o Código de Defesa do Consumidor, a Livraria RT Virtual estabelece um período de sete dias para que o cliente manifeste a sua insatisfação com o produto, a contar da data do recebimento, desde que o produto devolvido esteja em perfeito estado de conservação.
+                    |  Recomendamos, portanto, o manuseio cuidadoso de produtos a respeito dos quais você não tem certeza que atendem às suas expectativas.
+
+                  h3 3. Meu produto veio com defeito. Como proceder?
+                  p
+                    |  Os livros têm garantia por tempo ilimitado, desde que seja comprovado algum defeito originário do processo gráfico (como folhas em branco, páginas coladas ou falhas na encadernação) e desde que haja exemplares disponíveis da mesma edição para substituição. Recomendamos que os produtos sejam conferidos imediatamente após seu recebimento. Para solicitar a troca do seu material contatar o canal de atendimento ao cliente.

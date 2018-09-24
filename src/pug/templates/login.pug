@@ -633,3 +633,52 @@ block content
         // /ngInclude: 'includes/force.mfa.date.remider.html'
       i.vtexid-icon-lock.bottom-icon
 
+
+
+
+    #vtexIdUI-classic-login.vtexIdUI-classic-login.vtexIdUI-page.ng-scope.vtexIdUI-page-active(ng-controller='ClassicLoginController', style='')
+      form#vtexIdUI-form-classic-login.ng-pristine.ng-invalid.ng-invalid-required(ng-disabled='isSendingClassicForm', ng-submit='authenticatePswd()', autocomplete='on', form-autofill-fix='', method='POST')
+        .modal-header
+          button.close.vtexIdUI-close.ng-hide(type='button', ng-show='canClose', data-dismiss='modal') ×
+          .vtexIdUI-header.row-fluid
+            .vtexIdUI-user.ng-hide(ng-show='auth.email && auth.systemProvidedEmail')
+              .vtexIdUI-user-email.pull-left.muted
+                i.vtexid-icon-user.muted
+                span.ng-binding
+          h4
+            span.vtexIdUI-heading(data-i18n='vtexid.classicAuthText') Entrar com email e senha
+          .vtexIdUI-loading(ng-class="{'vtexIdUI-loading-show': isSendingClassicForm}")
+        .modal-body
+          .control-group.vtexIdUI-classic-login-control.email-model(ng-show='!auth.systemProvidedEmail')
+            label.control-label(for='inputEmail')
+              span(data-i18n='vtexid.email') Seu email
+            .controls
+              input#inputEmail.ng-pristine.ng-valid.ng-valid-email(autofocus='', type='email', tabindex='1', ng-model='auth.email', data-i18n='[placeholder]vtexid.egEmail', placeholder='Ex: jose@email.com')
+          .control-group.vtexIdUI-classic-login-control
+            label.control-label(for='inputPassword')
+              span(data-i18n='vtexid.password') Senha
+              a.dead-link.pull-right(href='#', data-i18n='vtexid.forgotPswd', tabindex='4', ng-click='changePswd()') Esqueci minha senha
+            .controls
+              input#inputPassword.ng-pristine.ng-invalid.ng-invalid-required(type='password', tabindex='2', autocomplete='off', required='', ng-model='password')
+            a.dead-link.pull-right(data-i18n='vtexid.forgotPswdHelper', href='#', tabindex='5', ng-click='changePswd()') Não tem uma senha? Cadastre agora
+          p.alert.alert-info.ng-hide(ng-show='wrongPswdSubmits == 3')
+            i.icon-warning-sign
+            span(data-i18n='vtexid.threeWrongPswds')
+              | Você já errou sua senha 3 vezes. Caso erre mais uma iremos bloquear seu usuário por uma hora. Tente alterar sua senha
+          p.alert.alert-warning.alert-wrong-pswd.ng-hide(ng-show='classicAuthError')
+            i.icon-warning-sign
+            span(data-i18n='vtexid.invalidAuth') Usuário e/ou senha errada
+          p.alert.alert-warning.ng-hide(ng-show='userVTEXNotAllowed')
+            i.icon-warning-sign
+            span(data-i18n='vtexid.methodNotAllowedForVTEXUsers') Usuários VTEX não podem se autenticar por usuário e senha.
+          p.alert.alert-warning.ng-hide(ng-show='blockedUser')
+            i.icon-warning-sign
+            span(data-i18n='vtexid.blockedUser') Você errou sua senha 4 vezes. Seu usuário foi bloqueado por uma hora
+        .modal-footer
+          a.vtexIdUI-back-link.pull-left.dead-link(tabindex='6', href='#', ng-show="auth.flow !== 'classicLogin'", ng-click="updatePage('auth-selector', false, true)")
+            i.vtexid-icon-arrow-left
+            span(data-i18n='vtexid.backLink') Voltar
+          button#classicLoginBtn.btn.btn-large.btn-success.pull-right(ng-disabled='isSendingClassicForm', type='submit', tabindex='3', data-i18n='vtexid.enter') Entrar
+
+
+

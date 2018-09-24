@@ -113,11 +113,12 @@ block content
         ul.most-visited__grid
           .shelf
             .shelf__visited
-              .prateleira
-                ul.most-visited__list
-                  each val in [1, 2, 3, 4]
-                    li.most-visited__item
-                      include ../shelves/watch-shelf
+              +vtex-controller('<vtex:contentPlaceHolder id="Colecao Kits 2" />')
+                .prateleira
+                  ul.most-visited__list
+                    each val in [1, 2, 3, 4]
+                      li.most-visited__item
+                        include ../shelves/watch-shelf
       .weekly-authors
         h2.weekly-authors__title Autores da Semana
         ul.weekly-authors__list

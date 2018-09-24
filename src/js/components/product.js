@@ -29,9 +29,7 @@ if ($('body').hasClass('product')) {
     slideToShow: 4,
     slidesToScroll: 1,
     infinite: true,
-    variableWidth: true,
-    prevArrow: shelf__prev,
-    nextArrow:shelf__next
+    variableWidth: true
   });
 
   class Product {
