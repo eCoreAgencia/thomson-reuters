@@ -70,6 +70,10 @@
       text-transform: capitalize;
       text-align: center;
     }
+    &__list {
+      padding-top: 18px;
+      @extend .price__best;
+    }
     &__best {
       display: block;
       color: $c-orange;
@@ -228,10 +232,11 @@
     justify-content: flex-start;
     text-align: left;
     font-family: "Knowledge-Regular";
+    margin: 18px 0;
     em {
       font-style: normal;
     }
-    .valor-de {
+    .valor-de, .valor-de strong {
       color: $c-gray-dark;
       font-family: "Knowledge-Regular";
       font-size: 13px;
@@ -251,8 +256,11 @@
       font-size: 13px;
       font-weight: 400;
     }
-  }
 
+  }
+  .preco-a-vista {
+    display: none !important;
+  }
   // THE MAIN GRID
   &__main {
     display: grid;

@@ -29,7 +29,7 @@ block content
           li.filter__opt-item
             a(href="") Outlet
       .shelf.shelf__carousel--full
-        +vtex-controller('<vtex:contentPlaceHolder id="Colecao Novidades" />')
+        +vtex-controller('<vtex:contentPlaceHolder id="product shelf" />')
           .prateleira
             ul
               each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -49,7 +49,7 @@ block content
     .wrapper--block
       .category-nav
         h2.category-nav__main-title Áreas de interesse
-        +vtex-controller('<vtex:contentPlaceHolder id="category-nav" />')
+        +vtex-controller('<vtex.cmc:areasDeInteresse />')
           ul.category-nav__list
             li.category-nav__items
               a.category-nav__link
@@ -103,7 +103,6 @@ block content
     .wrapper--block.section__split-the-grid
       .most-visited
         .most-visited__header
-         +vtex-controller('<vtex:contentPlaceHolder id="Colecao Kits 2" />')
           h2.most-visited__title Livros mais visitados
           ul.most-visited__select
             li.most-visited__opt
@@ -113,7 +112,7 @@ block content
         ul.most-visited__grid
           .shelf
             .shelf__visited
-              +vtex-controller('<vtex:contentPlaceHolder id="Colecao Kits 2" />')
+              +vtex-controller('<vtex:contentPlaceHolder id="most visited" />')
                 .prateleira
                   ul.most-visited__list
                     each val in [1, 2, 3, 4]

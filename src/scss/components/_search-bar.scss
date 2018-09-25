@@ -1,20 +1,24 @@
 .search-bar {
-	width: 482px;
-	height: 40px;
-	border-radius: 20px;
-	background-color: #f4f4f4;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	&__input {
-		background-color: transparent;
-		flex: 2;
-		border: 0;
-		padding: 0 10px;
-		&:focus{
-			outline: none;
-		}
+
+  @include atMedium{
+    width: 482px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__input {
+      background-color: transparent;
+      flex: 2;
+      border: 0;
+      padding: 0 10px;
+      &:focus{
+        outline: none;
+      }
+    }
   }
+
 
   &--narrow {
     width: 361px;
