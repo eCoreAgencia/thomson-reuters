@@ -1,12 +1,14 @@
 .header {
   .tip-bar {
-    display:none;
+    display: none;
     @include atMedium {
       background-color: $c-mainbg;
       display: flex;
       justify-content: space-between;
       font-size: 10px;
-      flex-direction: column;
+	  flex-direction: column;
+	  height: 30px;
+	  align-items: center;
     }
 
     &__login {
@@ -29,33 +31,139 @@
     }
   }
 
+  &__menu-icon {
+    width: 20px;
+    height: 19px;
+    position: relative;
+    z-index: 10;
+    left: 10px;
+    margin: auto 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: $c-gray-dark;
+      transform-origin: 0 0;
+      transition: transform 0.3s ease-out;
+    }
+    &__middle {
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: $c-gray-dark;
+      transition: all 0.3s ease-out;
+      transform-origin: 0 50%;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: $c-gray-dark;
+      transform-origin: 0% 100%;
+      transition: transform 0.3s ease-out;
+    }
+    @include atMedium {
+      display: none;
+    }
+  }
+
+  &__menu-icon--close-x {
+    &::before {
+      transform: rotate(45deg) scaleX(1.25);
+    }
+
+    .header__menu-icon__middle {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    &::after {
+      transform: rotate(-45deg) scale(1.25) translateY(1px);
+    }
+  }
+
   .main-header {
-    height: 80px;
     display: flex;
     align-items: center;
-    background-color: $c-white;
+    min-height: 50px;
+    height: 100%;
+    position: relative;
+    @include atMedium{
+      height: 80px;
+      display: flex;
+      align-items: center;
+      background-color: $c-white;
+    }
 
+    &__logos {
+      display: flex;
+	  flex-direction: column;
+	  flex-basis: 56.5%;
+      @include atMedium {
+		margin-left: 0;
+		flex-basis: 20.83%;
+      }
+    }
     &__logos-link {
       display: flex;
       flex-direction: column;
-      line-height: 0.5em;
+      .logo1, .logo2 {
+        line-height: normal;
+        display: flex;
+      }
+      .logo1 svg{
+		width: 24.03%;
+        height: auto;
+      }
+      .logo2 svg {
+        width: 100%;
+        height: 100%;
+      }
+      @include atMedium {
+        line-height: 0.5em;
+
+        .logo1 svg{
+          width: auto;
+        }
+        .logo2 svg {
+          width: auto;
+        }
+      }
     }
 
     &__carrinho {
       font-size: 30px;
       color: $c-gray-dark;
       position: relative;
+      font-size: 25px;
+      @include atMedium{
+		font-size: 30px;
+		order: 3;
+      }
       &:after {
-        position: absolute;
-        top: -6px;
-        right: -12px;
         display: inline-block;
         content: "";
         width: 20px;
         height: 20px;
         background-color: $c-orange;
         border-radius: 50%;
+        @include atMedium{
+
+        }
       }
+    }
+
+    &__menu-content{
+      width: 100%
     }
   }
 }

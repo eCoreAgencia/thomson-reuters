@@ -1,50 +1,55 @@
 header.header
-  .tip-bar
-    .wrapper
-      span.tip-bar__ct-phone
-        i.simple-phone
-        p 0800-702-2433
-      a(href="/login").tip-bar__login
-          | LOGIN / CADASTRE-SE
-  .main-header
-    .wrapper
-      h1.main-header__logos
-        a.main-header__logos-link(href="/")
-          span.logo1
-            include ../../svg/name-logo.svg
-          span.logo2
-            include ../../svg/name-logo-revista.svg
-      .search-bar
-        .control
-          .select
-            select
-              option(value="todos") Todos
-              option(value="outros") Outros
-        input(type="search", name="search").search-bar__input/
-        a(href="#").search-button
-          i.simple-magnifier
-      .main-header__carrinho
-        i.simple-bag
-  .menu
-    .wrapper
-      nav.menu__nav
-        ul.menu__list
-          li.menu__list-item
-            a(href="http://") Área de Interesse
-          li.menu__list-item
-            a(href="http://") Lançamentos
-          li.menu__list-item
-            a(href="http://") Mais Vendidos
-          li.menu__list-item
-            a(href="http://") Kits e Coleções
-          li.menu__list-item
-            a(href="http://") Monte seu Kit
-          li.menu__list-item
-            a(href="http://") OAB e concursos
-          li.menu__list-item
-            a(href="http://") Autores
-          li.menu__list-item
-            a(href="http://") Outlet
+	.tip-bar
+		.wrapper
+			span.tip-bar__ct-phone
+				i.simple-phone
+				p 0800-702-2433
+			a(href="/login").tip-bar__login
+					| LOGIN / CADASTRE-SE
+	.main-header
+		.wrapper
+			.header__menu-icon
+				.header__menu-icon__middle
+			h1.main-header__logos
+				a.main-header__logos-link(href="/")
+					span.logo1
+						include ../../svg/name-logo.svg
+					span.logo2
+						include ../../svg/name-logo-revista.svg
+			.search-bar
+				.control
+					.select
+						select
+							option(value="todos") Todos
+							option(value="outros") Outros
+				input(type="search", name="search").search-bar__input/
+				a(href="#").search-button
+					i.simple-magnifier
+			.main-header__carrinho
+				i.simple-bag
+	.menu
+		.wrapper
+			.main-header__menu-content
+				nav.menu__nav
+					ul.menu__list
+						li.menu__list-item
+							a(href="http://") Área de Interesse
+						li.menu__list-item
+							a(href="http://") Lançamentos
+						li.menu__list-item
+							a(href="http://") Mais Vendidos
+						li.menu__list-item
+							a(href="http://") Kits e Coleções
+						li.menu__list-item
+							a(href="http://") Monte seu Kit
+						li.menu__list-item
+							a(href="http://") OAB e concursos
+						li.menu__list-item
+							a(href="http://") Autores
+						li.menu__list-item
+							a(href="http://") Outlet
+	.menu__mobile
+		.menu__mobile-welcome Olá Usuário
 
 
 

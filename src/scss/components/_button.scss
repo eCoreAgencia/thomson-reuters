@@ -62,10 +62,15 @@
   align-items: center;
   width: 31px;
   height: 30px;
-  background-color: #666666;
+  background-color: transparent;
   border-radius: 50%;
   font-size: 0.9em;
   color: $c-white;
+  order: 0;
+  @include atMedium {
+    background-color: $c-gray-dark;
+    order: 2;
+  }
   &__footer {
     display: inline-block;
     position: relative;

@@ -1,33 +1,44 @@
 .menu {
-	height: 45px;
-	background-image: linear-gradient(to top, #4d4d4d 0%, #727272 100%);
-	width: 100%;
-	display: flex;
-	align-items: center;
-	&__nav {
-		flex: 1;
-	}
-	&__list {
-		flex: 1;
+	display: none;
+	@include atMedium {
+		height: 45px;
+		background-image: linear-gradient(to top, #4d4d4d 0%, #727272 100%);
+		width: 100%;
 		display: flex;
-		justify-content: space-between;
 		align-items: center;
-	}
-	&__list-item {
-		font-family: "Knowledge-Black";
-		font-size: 13px;
-		font-weight: 900;
-		text-transform: uppercase;
-		&:hover{
+		&__nav {
+			flex: 1;
+		}
+		&__list {
+			flex: 1;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		&__list-item {
+			font-family: "Knowledge-Black";
+			font-size: 13px;
+			font-weight: 900;
+			text-transform: uppercase;
+			&:hover {
+				a {
+					color: $c-orange;
+				}
+			}
 			a {
-				color: $c-orange;
+				color: $c-white;
+				text-transform: uppercase;
+				text-decoration: none;
+				transition: color 0.3s ease;
 			}
 		}
-		a {
-			color: $c-white;
-			text-transform: uppercase;
-			text-decoration: none;
-			transition: color .3s ease;
+	}
+
+	&__mobile {
+		display: grid;
+		position: absolute;
+		@include atMedium {
+			display: none;
 		}
 	}
 }

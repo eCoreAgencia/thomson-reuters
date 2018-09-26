@@ -8,6 +8,7 @@ import './components/makeMenu';
 import './components/searchForm';
 import './components/shelf';
 import './components/filter';
+import './components/mobile-menu';
 //import './components/buyBuyCategory';
 import './components/product';
 
