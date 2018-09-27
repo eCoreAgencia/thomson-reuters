@@ -9,7 +9,7 @@
   @include atMedium {
     background-image: none;
     position: initial;
-    flex-basis: 25.10%;
+    flex-basis: 48.1%;
     height: 40px;
     border-radius: 20px;
     background-color: #f4f4f4;
@@ -20,7 +20,8 @@
     width: 100%;
     background-color: transparent;
     border: 0;
-    order: 1;
+	order: 1;
+	height: 80%;
     &:focus {
       outline: none;
     }

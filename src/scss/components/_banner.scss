@@ -1,7 +1,21 @@
 .banner {
-  &--full {
-    img {
-      min-width: 100%;
-    }
-  }
+	&--full {
+		display: none !important;
+		img {
+			max-width: 100%;
+			width: 100%;
+		}
+		@include atMedium{
+			display: block!important;
+		}
+	}
+	&--mobile {
+		img {
+			max-width: 100%;
+			width: 100%
+		}
+		@include atMedium {
+			display: none !important;
+		}
+	}
 }

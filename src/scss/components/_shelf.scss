@@ -1,66 +1,66 @@
 .shelf {
-  width: 100%;
-  ul {
-    // display: flex;
-    // width: 100%;
-    // justify-content: space-between;
-  }
+	width: 100%;
+	ul {
+		// display: flex;
+		// width: 100%;
+		// justify-content: space-between;
+	}
 
-  &__carousel--full {
-    li {
-      @include atSmall {
-        position: relative;
-        width: 100px;
-        margin: 10px;
-        padding: 1px;
-      }
+	&__carousel--full {
+		li {
+			position: relative;
+			margin: 10px;
+			padding: 1px;
 
-      @include atMedium {
-        width: 260px;
-      }
-    }
-  }
-  .prateleira {
-    & > h2 {
-      display: none;
-    }
-  }
-  .slick-slide {
-    &:focus {
-      outline: none;
-    }
-  }
-  .slick-arrow {
-    &.slick-prev {
-      top: 175px;
-      left: -55px;
-      margin: 0;
-      &::after {
-        transform: rotate(-135deg);
-        left: 38%;
-      }
-    }
-    &.slick-next {
-      top: 175px;
-      right: -55px;
-      margin: 0;
-    }
-  }
+			@include atMedium {
+			}
+			&.slick-current {
+			}
+		}
+	}
+	.prateleira {
+		& > h2 {
+			display: none;
+		}
+	}
+	.slick-slide {
+		&:focus {
+			outline: none;
+		}
+	}
+	.slick-arrow {
+		&.slick-prev {
+			top: 175px;
+			left: -55px;
+			margin: 0;
+			&::after {
+				transform: rotate(-135deg);
+				left: 38%;
+			}
+		}
+		&.slick-next {
+			top: 175px;
+			right: -55px;
+			margin: 0;
+		}
+	}
 
-  &__banners {
-    display: flex;
-    justify-content: space-between;
-  }
-  &__banners-static {
-    width: 545px;
-    height: 350px;
-  }
-  &__visited {
-    ul {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      grid-gap: 10px;
-    }
-  }
+	&__banners {
+		display: flex;
+		@include atMedium {
+			justify-content: space-between;
+		}
+	}
+	&__banners-static {
+		width: 100%;
+		height: auto;
+	}
+	&__visited {
+		ul {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+			grid-gap: 10px;
+		}
+	}
 }

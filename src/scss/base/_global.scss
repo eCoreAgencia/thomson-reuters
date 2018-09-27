@@ -1,40 +1,38 @@
 body {
-  font-family: $f-base;
-  background-color: $c-mainbg;
-  width: 100vw;
+	font-family: $f-base;
+	background-color: $c-mainbg;
+	width: 100vw;
 }
 
 a {
-  color: $c-primary;
-  text-decoration: none;
-  background-color: transparent;
-  -webkit-text-decoration-skip: objects;
+	color: $c-primary;
+	text-decoration: none;
+	background-color: transparent;
+	-webkit-text-decoration-skip: objects;
 }
 
 a:hover {
-  color: #0056b3;
-  text-decoration: none;
+	color: #0056b3;
+	text-decoration: none;
 }
 
 a.button {
-  &:hover {
-    text-decoration: none;
-  }
+	&:hover {
+		text-decoration: none;
+	}
 }
 
-
 img {
-  max-width: 100%;
-  height: auto;
+	max-width: 100%;
+	height: auto;
 }
 
 button,
 html [type="button"],
 [type="reset"],
 [type="submit"] {
-  -webkit-appearance: button;
+	-webkit-appearance: button;
 }
-
 
 @import "../../node_modules/bulma/sass/utilities/_all.sass";
 @import "../../node_modules/bulma/sass/base/_all.sass";
@@ -50,27 +48,25 @@ html [type="button"],
 @import "../../node_modules/bulma/sass/elements/table.sass";
 @import "../../node_modules/bulma/sass/elements/tag.sass";
 
-
 @import "../../node_modules/bulma/sass/elements/other.sass";
 @import "../../node_modules/bulma/sass/components/_all.sass";
 @import "../../node_modules/bulma/sass/grid/_all.sass";
 @import "../../node_modules/bulma/sass/layout/_all.sass";
 
-
 $family-sans-serif: $f-base;
 
-.container,.wrapper, .wrapper--block {
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  max-width: #{$g-max-width + ($g-spacing * 2)};
-
-
-  @media screen and (min-width: $g-max-width) {
-  }
-
+.container,
+.wrapper,
+.wrapper--block {
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+	max-width: $g-max-width;
+	@include atMedium {
+		padding: 0 20px;
+	}
 }
 
 * {
-  outline: none;
+	outline: none;
 }

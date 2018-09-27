@@ -96,3 +96,34 @@
 .slick-arrow.slick-hidden {
   display: none;
 }
+.slick-dots {
+	display: flex;
+	display: flex;
+    align-items: center;
+	justify-content: center;
+	padding: 10px 0;
+	li {
+		font-size: 0;
+		margin-right: 13px;
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+	button {
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		background: #d8d8d8;
+		border-color: transparent;
+		&:focus{
+			border-color: transparent;
+		}
+	}
+	li.slick-active{
+		button {
+			background: $c-gray-dark;
+		}
+	}
+}
+
+

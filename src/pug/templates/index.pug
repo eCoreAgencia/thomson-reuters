@@ -17,6 +17,17 @@ block content
         .box-banner
           a(href="")
             img(src="http://via.placeholder.com/1920x350")/
+    .banner.banner--mobile
+      +vtex-controller('<vtex:contentPlaceHolder id="Banner Mobile" />')
+        .box-banner
+          a(href="")
+            img(src="http://via.placeholder.com/320x240")/
+        .box-banner
+          a(href="")
+            img(src="http://via.placeholder.com/320x240")/
+        .box-banner
+          a(href="")
+            img(src="http://via.placeholder.com/320x240")/
   section.section__page.section__shelf
     .wrapper--block
       .filter
@@ -39,10 +50,9 @@ block content
     .wrapper
         .shelf
           .shelf__banners
-            +vtex-controller('<vtex:contentPlaceHolder id="Promo Box 1" />')
+            +vtex-controller('<vtex:contentPlaceHolder id="Promo Box " />')
               .shelf__banners-static
                 img(src='https://placehold.it/545x350')/
-            +vtex-controller('<vtex:contentPlaceHolder id="Promo Box 2" />')
               .shelf__banners-static
                 img(src='https://placehold.it/545x350')/
   section.section__page.section__areas
