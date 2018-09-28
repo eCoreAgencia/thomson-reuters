@@ -1,291 +1,306 @@
 .product {
-  &__shelf {
-    display: grid;
-    background-color: $c-white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
-  }
-  a {
-    text-decoration: none;
-  }
-  &__category {
-    display: block;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: "Rubik";
-    font-size: 11px;
-    font-weight: 500;
-    color: $c-black;
-    padding: 6px;
-    border-bottom: 2px solid $c-gray-light;
-    height: 27px;
-  }
-  &__media {
-    display: block;
-    // width: 111px;
-    // height: 160px;
-    margin: 16px auto;
-  }
-  &__link {
-    font-family: "Knowledge-Medium";
-    font-size: 13px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: $c-gray-dark;
-    margin: auto;
-    width: 100%;
-    height: 100%;
-  }
-  &__info {
-    text-align: center;
-    height: 60px;
-  }
-  &__author {
-    display: block;
-    width: 238px;
-    height: 15px;
-    color: $c-gray-lighter;
-    font-family: "Knowledge-Regular";
-    font-size: 13px;
-    font-weight: 400;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin: 5px auto;
-  }
-  &__price {
-    margin-bottom: 7px;
-    height: 60px;
-  }
-  .price {
-    &__list-line {
-      color: $c-gray-dark;
-      font-family: "Knowledge-Regular";
-      font-size: 13px;
-      font-weight: 400;
-      line-height: 18px;
-      text-decoration: line-through;
-      display: block;
-      margin: 0 auto;
-      text-transform: capitalize;
-      text-align: center;
-    }
-    &__list {
-      padding-top: 18px;
-      @extend .price__best;
-    }
-    &__best {
-      display: block;
-      color: $c-orange;
-      font-family: "Knowledge-Black";
-      font-size: 16px;
-      font-weight: 900;
-      line-height: 18px;
-      text-align: center;
-    }
-    &__installment {
-      color: $c-gray-dark;
-      font-family: "Knowledge-Regular";
-      font-size: 13px;
-      font-weight: 400;
-      line-height: 18px;
-      text-align: center;
-      display: block;
-      margin-top: 6px;
-    }
-  }
-  &__unavailable {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+	padding: 0;
+	&__shelf {
+		display: grid;
+		background-color: $c-white;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+		padding: 0 10px;
+		// &:hover {
+		// 	.button__shelf {
+		// 		animation-play-state: running;
+		// 	}
+		// }
+	}
+	a {
+		text-decoration: none;
+	}
+	&__category {
+		display: block;
+		text-align: center;
+		text-transform: uppercase;
+		font-family: "Rubik";
+		font-size: 11px;
+		font-weight: 500;
+		color: $c-black;
+		padding: 6px;
+		border-bottom: 2px solid $c-gray-light;
+		height: 27px;
+	}
+	&__media {
+		display: block;
+		// width: 111px;
+		// height: 160px;
+		margin: 16px auto;
+	}
+	&__link {
+		font-family: "Knowledge-Medium";
+		font-size: 13px;
+		font-weight: 500;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: $c-gray-dark;
+		margin: auto;
+		width: 100%;
+		height: 100%;
+	}
+	&__info {
+		text-align: center;
+		height: 60px;
+	}
+	&__author {
+		display: block;
+		width: 238px;
+		height: 15px;
+		color: $c-gray-lighter;
+		font-family: "Knowledge-Regular";
+		font-size: 13px;
+		font-weight: 400;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		margin: 5px auto;
+	}
+	&__price {
+		margin-bottom: 7px;
+		height: 60px;
+	}
+	.price {
+		&__list-line {
+			color: $c-gray-dark;
+			font-family: "Knowledge-Regular";
+			font-size: 13px;
+			font-weight: 400;
+			line-height: 18px;
+			text-decoration: line-through;
+			display: block;
+			margin: 0 auto;
+			text-transform: capitalize;
+			text-align: center;
+		}
+		&__list {
+			padding-top: 18px;
+			@extend .price__best;
+		}
+		&__best {
+			display: block;
+			color: $c-orange;
+			font-family: "Knowledge-Black";
+			font-size: 16px;
+			font-weight: 900;
+			line-height: 18px;
+			text-align: center;
+		}
+		&__installment {
+			color: $c-gray-dark;
+			font-family: "Knowledge-Regular";
+			font-size: 13px;
+			font-weight: 400;
+			line-height: 18px;
+			text-align: center;
+			display: block;
+			margin-top: 6px;
+		}
+	}
+	&__unavailable {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 
-  // STYLES FOR CUSTOM SHELF BANNERS
-  &__promo {
-    width: 535px;
-    height: 350px;
-  }
-  &__promo-shelf {
-    max-width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 2fr 1fr 2fr 1fr 1fr 2fr;
-    background-size: contain;
-    background-repeat: no-repeat;
-    grid-template-areas:
-      ". ."
-      ". category"
-      ". name"
-      ". price"
-      ". button";
-    .button {
-      grid-area: button;
-      margin: 0;
-      padding: 0;
-    }
-  }
-  &__promo-shelf-id {
-    display: none;
-  }
-  &__promo-category {
-    grid-area: category;
-    font-family: Rubik;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 27px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: $c-orange;
-  }
-  &__promo-info {
-    grid-area: name;
-    font-family: "Rubik";
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 27px;
-    letter-spacing: 0.87px;
-    margin: 12px 0;
-    a {
-      color: $c-white;
-    }
-  }
-  &__promo-price {
-    grid-area: price;
-    font-family: "Rubik", sans-serif;
-    color: $c-orange;
-    margin-bottom: 16px;
-    p {
-      display: inline-block;
-      font-size: 20px;
-      color: #ffffff;
-      font-weight: 500;
-      letter-spacing: 1.3px;
-    }
-    .price__best {
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      font-size: 30px;
-      line-height: 30px;
-      display: inline-block;
-    }
-  }
+	// STYLES FOR CUSTOM SHELF BANNERS
+	&__promo {
+		width: 535px;
+		height: 350px;
+	}
+	&__promo-shelf {
+		max-width: 100%;
+		height: 100%;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: 2fr 1fr 2fr 1fr 1fr 2fr;
+		background-size: contain;
+		background-repeat: no-repeat;
+		grid-template-areas:
+			". ."
+			". category"
+			". name"
+			". price"
+			". button";
+		.button {
+			grid-area: button;
+			margin: 0;
+			padding: 0;
+		}
+	}
+	&__promo-shelf-id {
+		display: none;
+	}
+	&__promo-category {
+		grid-area: category;
+		font-family: Rubik;
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 27px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		color: $c-orange;
+	}
+	&__promo-info {
+		grid-area: name;
+		font-family: "Rubik";
+		font-size: 20px;
+		font-weight: 500;
+		line-height: 27px;
+		letter-spacing: 0.87px;
+		margin: 12px 0;
+		a {
+			color: $c-white;
+		}
+	}
+	&__promo-price {
+		grid-area: price;
+		font-family: "Rubik", sans-serif;
+		color: $c-orange;
+		margin-bottom: 16px;
+		p {
+			display: inline-block;
+			font-size: 20px;
+			color: #ffffff;
+			font-weight: 500;
+			letter-spacing: 1.3px;
+		}
+		.price__best {
+			font-weight: 700;
+			letter-spacing: 0.5px;
+			font-size: 30px;
+			line-height: 30px;
+			display: inline-block;
+		}
+	}
 
-  // PRODUCT WATCH STYLES LAST SHELF ON HOME
-  &__watch {
-    display: grid;
-    grid-template-columns: auto 1.5fr;
-  }
-  &__watch-media {
-    display: block;
-    // width: 111px;
-    // height: 160px;
-  }
-  &__watch-link {
-    display: block;
-    width: 100%;
-    height: 100%;
-    color: $c-gray-dark;
-    font-family: "Rubik";
-    font-size: 14px;
-    font-weight: 500;
-  }
-  &__watch-id {
-    display: none;
-  }
-  &__watch-info {
-    padding: 20px;
-  }
-  &__watch-author {
-    margin-bottom: 10px;
-  }
-  &__watch-author-link {
-    color: $c-gray-lighter;
-    font-family: Rubik;
-    font-size: 13px;
-    font-weight: 400;
-  }
+	// PRODUCT WATCH STYLES LAST SHELF ON HOME
+	&__watch {
+		display: grid;
+		grid-template-columns: auto 1.5fr;
+		padding: 0 20px;
+		@include atMedium {
+			padding: 0;
+		}
+	}
+	&__watch-media {
+		display: block;
+		// width: 111px;
+		// height: 160px;
+	}
+	&__watch-link {
+		display: block;
+		width: 100%;
+		height: 100%;
+		color: $c-gray-dark;
+		font-family: "Rubik";
+		font-size: 14px;
+		font-weight: 500;
+	}
+	&__watch-id {
+		display: none;
+	}
+	&__watch-info {
+		padding-left: 10px;
+		@include atMedium {
+			padding: 20px;
+		}
+	}
+	&__watch-author {
+		margin-bottom: 10px;
+	}
+	&__watch-author-link {
+		color: $c-gray-lighter;
+		font-family: Rubik;
+		font-size: 13px;
+		font-weight: 400;
+	}
 
-  // PRODUCT PAGEEEEEEEEEE
-  &__name {
-    &--pgprod {
-      color: #414141;
-      font-family: "Knowledge-Medium";
-      font-size: 24px;
-      font-weight: 500;
-      letter-spacing: -0.4px;
-      text-align: left;
-      border-bottom: 1px solid $c-grey-simple;
-    }
-  }
+	// PRODUCT PAGEEEEEEEEEE
+	&__name {
+		&--pgprod {
+			color: #414141;
+			font-family: "Knowledge-Medium";
+			font-size: 24px;
+			font-weight: 500;
+			letter-spacing: -0.4px;
+			text-align: left;
+			border-bottom: 1px solid $c-grey-simple;
+		}
+	}
 
-  // GRID DENTRO DE INFO
-  &__info {
-    &--pgprod {
-      display: grid;
-      grid-auto-rows: min-content;
-    }
-  }
-  // PRICE DO CONTROLE VTEX
-  .descricao-preco {
-    display: grid;
-    justify-content: flex-start;
-    text-align: left;
-    font-family: "Knowledge-Regular";
-    margin: 18px 0;
-    em {
-      font-style: normal;
-    }
-    .valor-de, .valor-de strong {
-      color: $c-gray-dark;
-      font-family: "Knowledge-Regular";
-      font-size: 13px;
-      font-weight: 400;
-      text-decoration: line-through;
-    }
-    .valor-por,
-    .valor-por strong {
-      color: $c-orange;
-      font-family: "Knowledge - Regular";
-      font-size: 25px;
-      font-weight: 400;
-    }
-    .valor-dividido, .valor-dividido strong {
-      color: $c-gray-dark;
-      font-family: "Knowledge-Regular";
-      font-size: 13px;
-      font-weight: 400;
-    }
+	// GRID DENTRO DE INFO
+	&__info {
+		&--pgprod {
+			display: grid;
+			grid-auto-rows: min-content;
+		}
+	}
+	// PRICE DO CONTROLE VTEX
+	.descricao-preco {
+		display: grid;
+		justify-content: flex-start;
+		text-align: left;
+		font-family: "Knowledge-Regular";
+		margin: 18px 0;
+		em {
+			font-style: normal;
+		}
+		.valor-de,
+		.valor-de strong {
+			color: $c-gray-dark;
+			font-family: "Knowledge-Regular";
+			font-size: 13px;
+			font-weight: 400;
+			text-decoration: line-through;
+		}
+		.valor-por,
+		.valor-por strong {
+			color: $c-orange;
+			font-family: "Knowledge - Regular";
+			font-size: 25px;
+			font-weight: 400;
+		}
+		.valor-dividido,
+		.valor-dividido strong {
+			color: $c-gray-dark;
+			font-family: "Knowledge-Regular";
+			font-size: 13px;
+			font-weight: 400;
+		}
+	}
+	.preco-a-vista {
+		display: none !important;
+	}
+	// THE MAIN GRID
+	&__main {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 50px;
+	}
 
-  }
-  .preco-a-vista {
-    display: none !important;
-  }
-  // THE MAIN GRID
-  &__main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 50px;
-  }
+	// ORGANIZANDO OS THUMBS
+	&__media-top {
+		#show {
+			display: grid;
+			grid-template-columns: 0.2fr 1fr;
+		}
+		.thumbs {
+			order: -1;
+		}
+	}
 
-  // ORGANIZANDO OS THUMBS
-  &__media-top {
-    #show {
-      display: grid;
-      grid-template-columns: .2fr 1fr;
-    }
-    .thumbs {
-      order: -1;
-    }
-  }
-
-  // BUY-BUTTON INJECT STYLES
-  &__action-bottom--pgprod{
-    .buy-button {
-      @extend .button__buy;
-      display: flex !important;
-      align-items: center;
-      justify-content: center;
-    }
-  }
+	// BUY-BUTTON INJECT STYLES
+	&__action-bottom--pgprod {
+		.buy-button {
+			@extend .button__buy;
+			display: flex !important;
+			align-items: center;
+			justify-content: center;
+		}
+	}
 }

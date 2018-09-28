@@ -1,111 +1,127 @@
 .button {
-  background: transparent;
-  border: 0;
-  justify-content: flex-start;
-  &__shelf {
-    margin: 10px auto 24px;
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-  }
+	background: transparent;
+	border: 0;
+	justify-content: flex-start;
+	&__shelf {
+		margin: 10px auto 24px;
+		height: 80px;
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		// animation: shelfanimation .2s 1 0s linear;
+		// animation-play-state: paused;
+	}
 
-  &__buy {
-    width: 150px;
-    height: 35px;
-    background-color: $c-green;
-    border-radius: 20px;
-    color: $c-white;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Knowledge-Black";
-    font-size: 12px;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.75px;
-  }
-  &__preview {
-    display: flex;
-    width: 150px;
-    height: 35px;
-    border: 1px solid $c-gray-dark;
-    border-radius: 20px;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    color: $c-gray-dark;
-    font-family: "Knowledge-Black";
-    font-size: 12px;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  &__preview--narrow {
-    @extend .button__preview;
-    width: 135px;
-    margin: 10px 0;
-  }
-  &__gray {
-    @extend .button__buy;
-    background: $c-gray-dark;
-    width: 200px;
-    height: 45px;
-    margin: 0 auto;
-  }
+	&__buy {
+		width: 150px;
+		height: 35px;
+		background-color: $c-green;
+		border-radius: 20px;
+		color: $c-white;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: "Knowledge-Black";
+		font-size: 12px;
+		font-weight: 900;
+		text-transform: uppercase;
+		letter-spacing: 0.75px;
+	}
+	&__preview {
+		display: flex;
+		width: 150px;
+		height: 35px;
+		border: 1px solid $c-gray-dark;
+		border-radius: 20px;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto;
+		color: $c-gray-dark;
+		font-family: "Knowledge-Black";
+		font-size: 12px;
+		font-weight: 900;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+	&__preview--narrow {
+		@extend .button__preview;
+		width: 135px;
+		margin: 10px 0;
+	}
+	&__gray {
+		@extend .button__buy;
+		background: $c-gray-dark;
+		width: 200px;
+		height: 45px;
+		margin: 0 auto;
+	}
 }
 .search-button {
-  margin: auto 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 31px;
-  height: 30px;
-  background-color: transparent;
-  border-radius: 50%;
-  font-size: 0.9em;
-  color: $c-white;
-  order: 0;
-  @include atMedium {
-    background-color: $c-gray-dark;
-    order: 2;
-  }
-  &__footer {
-    display: inline-block;
-    position: relative;
-    &::after {
-      content: " ";
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      color: $c-white;
-      border: 1px solid $c-white;
-      border-left: 0px;
-      border-bottom: 0px;
-      top: 38%;
-      transform: rotate(45deg);
-      border-radius: 2px;
-      display: block;
-      left: 34%;
-    }
-    &--down {
-      position: relative;
-      &::after {
-        content: " ";
-        position: absolute;
-        width: 8px;
-        height: 8px;
-        color: $c-white;
-        border: 1px solid $c-white;
-        border-left: 0px;
-        border-bottom: 0px;
-        top: 34%;
-        border-radius: 2px;
-        display: block;
-        left: 37%;
-        transform: rotate(135deg);
-      }
-    }
-  }
+	margin: auto 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 31px;
+	height: 30px;
+	background-color: transparent;
+	border-radius: 50%;
+	font-size: 0.9em;
+	color: $c-white;
+	order: 0;
+	@include atMedium {
+		background-color: $c-gray-dark;
+		order: 2;
+	}
+	&__footer {
+		display: inline-block;
+		position: relative;
+		background-color: $c-gray-dark;
+		order: 3;
+		&::after {
+			content: " ";
+			position: absolute;
+			width: 8px;
+			height: 8px;
+			color: $c-white;
+			border: 1px solid $c-white;
+			border-left: 0px;
+			border-bottom: 0px;
+			top: 38%;
+			transform: rotate(45deg);
+			border-radius: 2px;
+			display: block;
+			left: 34%;
+		}
+		&--down {
+			position: relative;
+			&::after {
+				content: " ";
+				position: absolute;
+				width: 8px;
+				height: 8px;
+				color: $c-white;
+				border: 1px solid $c-white;
+				border-left: 0px;
+				border-bottom: 0px;
+				top: 34%;
+				border-radius: 2px;
+				display: block;
+				left: 37%;
+				transform: rotate(135deg);
+			}
+		}
+	}
+}
+
+@keyframes shelfanimation {
+	0% {
+		opacity: 0;
+		height: 0px;
+	}
+	100% {
+		transform: rotate(0);
+		opacity: 1;
+		height: 80px;
+	}
 }

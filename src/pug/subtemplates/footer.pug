@@ -1,88 +1,124 @@
 footer.main-footer
-  .main-footer__area.main-footer__top
-    .wrapper
-      .main-footer__news Receba nossos Lançamentos
-        .search-bar.search-bar--narrow
-          input(type="search", name="search").search-bar__input/
-          a(href="#").search-button.search-button__footer
-      .main-footer__ct Conecte-se Conosco
-        i.simple-social-facebook
-        i.simple-social-twitter
+	.main-footer__area.main-footer__top
+		.wrapper
+			.main-footer__news Receba nossos Lançamentos
+				.search-bar.search-bar--narrow
+					input(type="search", name="search").search-bar__input/
+					a(href="#").search-button.search-button__footer
+			.main-footer__ct Conecte-se Conosco
+				i.simple-social-facebook
+				i.simple-social-twitter
 
-  .main-footer__area.main-footer__main
-    .wrapper--block
-      .main-footer__inner
-        .main-footer__box
-          .main-footer__logo
-            span
-             include ../../svg/small-logo-thomson.svg
-            span
-              include ../../svg/thomson-name-medium.svg
-          .main-footer__social
-            i.simple-social-linkedin
-            i.simple-social-instagram
-            i.simple-social-twitter
-          .main-footer__title Nossas Áreas
-            .dropdown-select Selecione
-              a(href="#" , onclick="dropThis()").search-button.search-button__footer--down
-            .dropdown-area-content#dropDownArea
-            //- MAKE LI HERE
-        .main-footer__box
-          .main-footer__institucional
-            h3.main-footer__title Intitucional
-            ul.main-footer__list
-              li.main-footer__item
-                a(href="/institucional", target="_blank", rel="noopener noreferrer") Quem Somos
-              li.main-footer__item
-                a(href="/institucional", target="_blank", rel="noopener noreferrer") Política de Privacidade
-              li.main-footer__item
-                a(href="/institucional", target="_blank", rel="noopener noreferrer") Contrato de Compra - Livros
-              li.main-footer__item
-                a(href="/institucional", target="_blank", rel="noopener noreferrer") Contrato de Compra - Ebook
-              li.main-footer__item
-                a(href="/institucional", target="_blank", rel="noopener noreferrer") Parceiros
-              li.main-footer__item
-                a(href="/institucional", target="_blank", rel="noopener noreferrer") Eventos
-              li.main-footer__item
-                a(href="/institucional", target="_blank", rel="noopener noreferrer") Livreiros
+	.main-footer__area.main-footer__main
+		.wrapper--block
+			.main-footer__inner
+				.main-footer__box
+					.main-footer__logo
+						span
+							include ../../svg/small-logo-thomson.svg
+						span
+							include ../../svg/thomson-name-medium.svg
+					.main-footer__social
+						i.simple-social-linkedin
+						i.simple-social-instagram
+						i.simple-social-twitter
+					.main-footer__title Nossas Áreas
+						.dropdown-select Selecione
+							a(href="#" , onclick="dropThis()").search-button.search-button__footer--down
+						.dropdown-area-content#dropDownArea
+						//- MAKE LI HERE
+				.main-footer__box
+					.main-footer__institucional
+						h3.main-footer__title Intitucional
+						ul.main-footer__list
+							li.main-footer__item
+								a(href="/institutional", target="_blank", rel="noopener noreferrer") Quem Somos
+							li.main-footer__item
+								a(href="/institutional", target="_blank", rel="noopener noreferrer") Política de Privacidade
+							li.main-footer__item
+								a(href="/institutional", target="_blank", rel="noopener noreferrer") Contrato de Compra - Ebook
+							li.main-footer__item
+								a(href="/institutional", target="_blank", rel="noopener noreferrer") Parceiros
+							li.main-footer__item
+								a(href="/institutional", target="_blank", rel="noopener noreferrer") Eventos
+							li.main-footer__item
+								a(href="/institutional", target="_blank", rel="noopener noreferrer") Livreiros
 
 
-        .main-footer__box
-          .main-footer__duvidas
-              h3.main-footer__title Dúvidas
-              ul.main-footer__list
-                li.main-footer__item
-                  a(href="http://", target="_blank", rel="noopener noreferrer") Perguntas Frequentes
-                li.main-footer__item
-                  a(href="http://", target="_blank", rel="noopener noreferrer") Fale Conosco
-                li.main-footer__item
-                  a(href="http://", target="_blank", rel="noopener noreferrer") Central de Atendimento
-                li.main-footer__item--bold
-                  a(href="http://", target="_blank", rel="noopener noreferrer") 0800-702-2433
-                li.main-footer__item
-                  a(href="http://", target="_blank", rel="noopener noreferrer") (0800 somente para telefone fixo)
-        .main-footer__box--split
-           .main-footer__title Pagamento
-              ul.main-footer__list--flex
-                li.main-footer__item
-                  include ../../svg/visa-icon.svg
-                li.main-footer__item
-                  include ../../svg/master-icon.svg
-                li.main-footer__item
-                  include ../../svg/dinners-icon.svg
-                li.main-footer__item
-                  include ../../svg/amex-icon.svg
-                li.main-footer__item
-                  include ../../svg/boleto-icon.svg
-           .main-footer__title Segurança
-              ul.main-footer__list--flex
-                li.main-footer__item
-                  img(src="/arquivos/cloudflare-icon.png", alt="")/
-                li.main-footer__item--split
-                  include ../../svg/ecore-icon.svg
-                  include ../../svg/vtex-icon.svg
-  .main-footer__area.main-footer__copyright
-    .wrapper
-      p.main-footer__copyright-text
-        | Todos os direitos reservados. Infracommerce Negócios e Soluções em Internet Ltda. CNPJ 15.427.207/0001-14 - Av. Doutor Cardoso De Melo, 1855, 15 andar Conjunto 151, Jardim Paulistano - 04548-005 - São Paulo/SP. É vedada a sua reprodução, total ou parcial. O preço válido será o da finalização da compra.
-      include ../../svg/infra-icon.svg
+				.main-footer__box
+					.main-footer__duvidas
+						h3.main-footer__title Dúvidas
+						ul.main-footer__list
+							li.main-footer__item
+								a(href="http://", target="_blank", rel="noopener noreferrer") Perguntas Frequentes
+							li.main-footer__item
+								a(href="http://", target="_blank", rel="noopener noreferrer") Fale Conosco
+							li.main-footer__item
+								a(href="http://", target="_blank", rel="noopener noreferrer") Central de Atendimento
+							li.main-footer__item--bold
+								a(href="http://", target="_blank", rel="noopener noreferrer") 0800-702-2433
+							li.main-footer__item
+								a(href="http://", target="_blank", rel="noopener noreferrer") (0800 somente para telefone fixo)
+				.main-footer__box--split
+					.main-footer__title Pagamento
+						ul.main-footer__list--flex
+							li.main-footer__item
+								include ../../svg/visa-icon.svg
+							li.main-footer__item
+								include ../../svg/master-icon.svg
+							li.main-footer__item
+								include ../../svg/dinners-icon.svg
+							li.main-footer__item
+								include ../../svg/amex-icon.svg
+							li.main-footer__item
+								include ../../svg/boleto-icon.svg
+					.main-footer__title Segurança
+						ul.main-footer__list--flex
+							li.main-footer__item
+								img(src="/arquivos/cloudflare-icon.png", alt="")/
+							li.main-footer__item--split
+								include ../../svg/ecore-icon.svg
+								include ../../svg/vtex-icon.svg
+	.main-footer__area.main-footer__copyright
+		.wrapper
+			p.main-footer__copyright-text
+				| Todos os direitos reservados. Infracommerce Negócios e Soluções em Internet Ltda. CNPJ 15.427.207/0001-14 - Av. Doutor Cardoso De Melo, 1855, 15 andar Conjunto 151, Jardim Paulistano - 04548-005 - São Paulo/SP. É vedada a sua reprodução, total ou parcial. O preço válido será o da finalização da compra.
+			include ../../svg/infra-icon.svg
+
+footer.mobile-footer
+	.mobile-footer__news Receba nossos Lançamentos
+					.search-bar.search-bar--narrow
+						input(type="search", name="search").search-bar__input/
+						a(href="#").search-button.search-button__footer
+	ul.mobile-footer__list
+		li.mobile-footer__item
+			| Dúvidas? Ligue 0800-702-2433
+		li.mobile-footer__item
+			a(href="http://") Rede Social
+				i.simple-arrow-right
+		li.mobile-footer__item
+			a(href="/institutional") Institucional
+				i.simple-arrow-right
+		li.mobile-footer__item
+			a(href="/institucional") Dúvidas
+				i.simple-arrow-right
+	.mobile-footer__bandeiras
+		span
+			include ../../svg/visa-icon.svg
+		span
+			include ../../svg/master-icon.svg
+		span
+			include ../../svg/dinners-icon.svg
+		span
+			include ../../svg/amex-icon.svg
+		span
+			include ../../svg/boleto-icon.svg
+		span
+			img(src="/arquivos/cloudflare-footer.png", alt="")/
+		span
+			include ../../svg/vtex-icon.svg
+		span
+			include ../../svg/ecore-icon.svg
+	.mobile-footer__copyright
+		p.mobile__footer-owner Copyright © 2018 Thomson Reuters, Inc.<br />Todos os direitos reservados.
+		p.mobile__footer-powered Powered by Infracommerce

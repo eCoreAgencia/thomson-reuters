@@ -1,21 +1,10 @@
 .shelf {
 	width: 100%;
-	ul {
-		// display: flex;
-		// width: 100%;
-		// justify-content: space-between;
-	}
 
 	&__carousel--full {
 		li {
 			position: relative;
 			margin: 10px;
-			padding: 1px;
-
-			@include atMedium {
-			}
-			&.slick-current {
-			}
 		}
 	}
 	.prateleira {
@@ -49,18 +38,21 @@
 		display: flex;
 		@include atMedium {
 			justify-content: space-between;
+			:first-child {
+				margin-right: 10px;
+			}
+		}
+		@include atLarger {
+			:first-child {
+				margin-right: 0;
+			}
 		}
 	}
 	&__banners-static {
 		width: 100%;
 		height: auto;
-	}
-	&__visited {
-		ul {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			grid-template-rows: 1fr 1fr;
-			grid-gap: 10px;
+		img {
+			margin: 0 auto;
 		}
 	}
 }

@@ -57,7 +57,8 @@ $family-sans-serif: $f-base;
 
 .container,
 .wrapper,
-.wrapper--block {
+.wrapper--block,
+.wrapper--diff {
 	display: block;
 	margin: 0 auto;
 	width: 100%;
@@ -66,7 +67,9 @@ $family-sans-serif: $f-base;
 		padding: 0 20px;
 	}
 }
+// .wrapper--diff{
 
+// }
 * {
 	outline: none;
 }

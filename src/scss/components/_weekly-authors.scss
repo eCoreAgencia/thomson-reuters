@@ -1,36 +1,37 @@
 .weekly-authors {
-  display: grid;
-  padding-left: 56px;
-  opacity: 0;
-  &__title {
-    color: $c-black;
-    font-family: "Knowledge-Black";
-    font-size: 25px;
-    font-weight: 900;
-  }
-  &__list {
-    display: grid;
-    height: 100%;
-  }
+	display: grid;
+	display: none;
+	@include atMedium {
+		padding-left: 56px;
+	}
+	&__title {
+		color: $c-black;
+		font-family: "Knowledge-Black";
+		font-size: 25px;
+		font-weight: 900;
+	}
+	&__list {
+		display: grid;
+		height: 100%;
+	}
 
-  &__link {
-    color: $c-gray-dark;
-    font-family: "Rubik";
-    font-size: 14px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    &::before{
-      content: "";
-      display: inline-block;
-      background-image: url('http://via.placeholder.com/50x50');
-      border-radius: 50%;
-      height: 50px;
-      width: 50px;
-      margin-right: 30px;
-    }
-  }
-  &__items{
-
-  }
+	&__link {
+		color: $c-gray-dark;
+		font-family: "Rubik";
+		font-size: 14px;
+		font-weight: 500;
+		display: flex;
+		align-items: center;
+		&::before {
+			content: "";
+			display: inline-block;
+			background-image: url("http://via.placeholder.com/50x50");
+			border-radius: 50%;
+			height: 50px;
+			width: 50px;
+			margin-right: 30px;
+		}
+	}
+	&__items {
+	}
 }

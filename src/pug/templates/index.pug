@@ -1,269 +1,149 @@
 extends ../layouts/default.pug
 
 block vars
-  - var pageTitle = 'Home'
-  - var bodyClass = 'home '
+	- var pageTitle = 'Home'
+	- var bodyClass = 'home '
 
 block content
-  section.section__page.section__hero
-    .banner.banner--full
-      +vtex-controller('<vtex:contentPlaceHolder id="Banner Full" />')
-        .box-banner
-          a(href="")
-            img(src="/arquivos/Banner_Home.png")/
-        .box-banner
-          a(href="")
-            img(src="http://via.placeholder.com/1920x350")/
-        .box-banner
-          a(href="")
-            img(src="http://via.placeholder.com/1920x350")/
-    .banner.banner--mobile
-      +vtex-controller('<vtex:contentPlaceHolder id="Banner Mobile" />')
-        .box-banner
-          a(href="")
-            img(src="http://via.placeholder.com/320x240")/
-        .box-banner
-          a(href="")
-            img(src="http://via.placeholder.com/320x240")/
-        .box-banner
-          a(href="")
-            img(src="http://via.placeholder.com/320x240")/
-  section.section__page.section__shelf
-    .wrapper--block
-      .filter
-        h2.filter__title Pré-venda
-        ul.filter__opt
-          li.filter__opt-item
-            a(href="") Pré-venda
-          li.filter__opt-item
-            a(href="") Lançamentos
-          li.filter__opt-item
-            a(href="") Outlet
-      .shelf.shelf__carousel--full
-        +vtex-controller('<vtex:contentPlaceHolder id="product shelf" />')
-          .prateleira
-            ul
-              each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-                li
-                  include ../shelves/product-shelf
-  section.section__page.section__shelf-banners
-    .wrapper
-        .shelf
-          .shelf__banners
-            +vtex-controller('<vtex:contentPlaceHolder id="Promo Box " />')
-              .shelf__banners-static
-                img(src='https://placehold.it/545x350')/
-              .shelf__banners-static
-                img(src='https://placehold.it/545x350')/
-  section.section__page.section__areas
-    .wrapper--block
-      .category-nav
-        h2.category-nav__main-title Áreas de interesse
-        +vtex-controller('<vtex.cmc:areasDeInteresse />')
-          ul.category-nav__list
-            li.category-nav__items
-              a.category-nav__link
-                span.category-nav__icon
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="88" height="71" viewBox="0 0 88 71"><defs><path id="iq0mb" d="M500.6 1597c0-1 .8-1.8 1.8-1.8h25.2c1 0 1.8.8 1.8 1.8v5.4h5.4v-9a3.6 3.6 0 0 0-3.6-3.6h-32.4a3.6 3.6 0 0 0-3.6 3.6v9h5.4z"/><path id="iq0mc" d="M514.71 1622.72a2.7 2.7 0 0 1 2.7 2.7v7.35a2.7 2.7 0 0 1-5.4 0v-7.35a2.7 2.7 0 0 1 2.7-2.7"/><path id="iq0ma" d="M471.82 1623.7h86.4v36h-86.4z"/><path id="iq0me" d="M521.53 1630.9v2.1a6.82 6.82 0 0 1-13.64 0v-2.1h-22.12a10.4 10.4 0 0 1-5.78-1.8l-8.17-5.4v32.4a3.6 3.6 0 0 0 3.6 3.6h79.2a3.6 3.6 0 0 0 3.6-3.6v-32.4l-8.17 5.4a10.4 10.4 0 0 1-5.78 1.8z"/><path id="iq0mf" d="M554.6 1602.1h-79.2a3.6 3.6 0 0 0-3.6 3.6v13.04l8.46 6.43a10.4 10.4 0 0 0 6.3 2.12h21.31v-1.98a6.82 6.82 0 1 1 13.65 0v1.98h21.85c2.27 0 4.49-.74 6.3-2.12l8.46-6.43v-13.05a3.6 3.6 0 0 0-3.53-3.6"/><clipPath id="iq0md"><use xlink:href="#iq0ma"/></clipPath></defs><g><g transform="translate(-471 -1589)"><g><use fill="#4d4d4d" xlink:href="#iq0mb"/></g><g><use fill="#ff8000" xlink:href="#iq0mc"/></g><g><g/><g clip-path="url(#iq0md)"><use fill="#4d4d4d" xlink:href="#iq0me"/></g></g><g><use fill="#4d4d4d" xlink:href="#iq0mf"/></g></g></g></svg>
-                span.category-nav__title Administrativo
+	section.section__hero
+		.banner.banner--full
+			+vtex-controller('<vtex:contentPlaceHolder id="Banner Full" />')
+				.box-banner
+					a(href="")
+						img(src="/arquivos/Banner_Home.png")/
+				.box-banner
+					a(href="")
+						img(src="http://via.placeholder.com/1920x350")/
+				.box-banner
+					a(href="")
+						img(src="http://via.placeholder.com/1920x350")/
+		.banner.banner--mobile
+			+vtex-controller('<vtex:contentPlaceHolder id="Banner Mobile" />')
+				.box-banner
+					a(href="")
+						img(src="http://via.placeholder.com/320x240")/
+				.box-banner
+					a(href="")
+						img(src="http://via.placeholder.com/320x240")/
+				.box-banner
+					a(href="")
+						img(src="http://via.placeholder.com/320x240")/
+	section.section__page.section__shelf
+		.filter.wrapper
+			h2.filter__title Lançamentos
+			ul.filter__opt
+				li.filter__opt-item
+					a(href="") Pré-venda
+				li.filter__opt-item
+					a(href="") Lançamentos
+				li.filter__opt-item
+					a(href="") Outlet
+		.shelf.shelf__carousel--full.wrapper--diff
+			+vtex-controller('<vtex:contentPlaceHolder id="product shelf" />')
+				.prateleira
+					ul
+						each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+							li
+								include ../shelves/product-shelf
+	section.section__page.section__shelf-banners
+		.wrapper
+			.shelf
+				.shelf__banners
+					+vtex-controller('<vtex:contentPlaceHolder id="Promo Box " />')
+						.shelf__banners-static
+							img(src='https://placehold.it/545x350')/
+						.shelf__banners-static
+							img(src='https://placehold.it/545x350')/
+	section.section__page.section__areas
+		.wrapper--block
+			.category-nav
+				h2.category-nav__main-title Áreas de interesse
+				+vtex-controller('<vtex.cmc:areasDeInteresse />')
+					ul.category-nav__list
+						li.category-nav__items
+							a.category-nav__link
+								span.category-nav__icon
+									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="88" height="71" viewBox="0 0 88 71"><defs><path id="iq0mb" d="M500.6 1597c0-1 .8-1.8 1.8-1.8h25.2c1 0 1.8.8 1.8 1.8v5.4h5.4v-9a3.6 3.6 0 0 0-3.6-3.6h-32.4a3.6 3.6 0 0 0-3.6 3.6v9h5.4z"/><path id="iq0mc" d="M514.71 1622.72a2.7 2.7 0 0 1 2.7 2.7v7.35a2.7 2.7 0 0 1-5.4 0v-7.35a2.7 2.7 0 0 1 2.7-2.7"/><path id="iq0ma" d="M471.82 1623.7h86.4v36h-86.4z"/><path id="iq0me" d="M521.53 1630.9v2.1a6.82 6.82 0 0 1-13.64 0v-2.1h-22.12a10.4 10.4 0 0 1-5.78-1.8l-8.17-5.4v32.4a3.6 3.6 0 0 0 3.6 3.6h79.2a3.6 3.6 0 0 0 3.6-3.6v-32.4l-8.17 5.4a10.4 10.4 0 0 1-5.78 1.8z"/><path id="iq0mf" d="M554.6 1602.1h-79.2a3.6 3.6 0 0 0-3.6 3.6v13.04l8.46 6.43a10.4 10.4 0 0 0 6.3 2.12h21.31v-1.98a6.82 6.82 0 1 1 13.65 0v1.98h21.85c2.27 0 4.49-.74 6.3-2.12l8.46-6.43v-13.05a3.6 3.6 0 0 0-3.53-3.6"/><clipPath id="iq0md"><use xlink:href="#iq0ma"/></clipPath></defs><g><g transform="translate(-471 -1589)"><g><use fill="#4d4d4d" xlink:href="#iq0mb"/></g><g><use fill="#ff8000" xlink:href="#iq0mc"/></g><g><g/><g clip-path="url(#iq0md)"><use fill="#4d4d4d" xlink:href="#iq0me"/></g></g><g><use fill="#4d4d4d" xlink:href="#iq0mf"/></g></g></g></svg>
+								span.category-nav__title Administrativo
 
-            li.category-nav__items
-              a.category-nav__link
-                span.category-nav__icon
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="90" height="90" viewBox="0 0 90 90"><defs><path id="bxlkb" d="M697.83 1611.28h78.94a2.06 2.06 0 0 0 1.2-3.76l-39.41-26.35c-.74-.5-1.7-.5-2.43 0l-39.6 26.35a2.05 2.05 0 0 0 1.3 3.76"/><path id="bxlka" d="M695.64 1659.23h83.71v7.99h-83.71z"/><path id="bxlkd" d="M698.32 1659.23h78.35c1.48 0 2.68 1.2 2.68 2.68v2.63c0 1.48-1.2 2.68-2.68 2.68h-78.35a2.68 2.68 0 0 1-2.68-2.68v-2.63c0-1.48 1.2-2.68 2.68-2.68"/><path id="bxlke" d="M713.02 1617.2h-2.62a2.68 2.68 0 0 0-2.69 2.68v25.8h-3.22a2.68 2.68 0 0 0-2.68 2.68v2.62c0 1.48 1.2 2.68 2.68 2.68h66.17c1.48 0 2.68-1.2 2.68-2.68v-2.62c0-1.49-1.2-2.69-2.68-2.69h-3.38v-25.8c0-1.47-1.2-2.67-2.69-2.67h-2.63a2.68 2.68 0 0 0-2.68 2.68v25.8h-9.2v-25.8c0-1.48-1.2-2.68-2.68-2.68h-2.62a2.68 2.68 0 0 0-2.69 2.68v25.8h-9.2v-25.8c0-1.48-1.2-2.68-2.68-2.68h-2.62a2.68 2.68 0 0 0-2.69 2.68v25.8h-9.2v-25.8c0-1.48-1.2-2.68-2.68-2.68"/><path id="bxlkf" d="M738.89 1591.83a6.77 6.77 0 1 1 0 13.54 6.77 6.77 0 0 1 0-13.54"/><clipPath id="bxlkc"><use xlink:href="#bxlka"/></clipPath></defs><g><g transform="translate(-695 -1580)"><g><g><use fill="#4d4d4d" xlink:href="#bxlkb"/></g><g><g/><g clip-path="url(#bxlkc)"><use fill="#4d4d4d" xlink:href="#bxlkd"/></g></g><g><use fill="#4d4d4d" xlink:href="#bxlke"/></g><g><use fill="#ff8000" xlink:href="#bxlkf"/></g></g></g></g></svg>
-                span.category-nav__title Civil
+						li.category-nav__items
+							a.category-nav__link
+								span.category-nav__icon
+									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="90" height="90" viewBox="0 0 90 90"><defs><path id="bxlkb" d="M697.83 1611.28h78.94a2.06 2.06 0 0 0 1.2-3.76l-39.41-26.35c-.74-.5-1.7-.5-2.43 0l-39.6 26.35a2.05 2.05 0 0 0 1.3 3.76"/><path id="bxlka" d="M695.64 1659.23h83.71v7.99h-83.71z"/><path id="bxlkd" d="M698.32 1659.23h78.35c1.48 0 2.68 1.2 2.68 2.68v2.63c0 1.48-1.2 2.68-2.68 2.68h-78.35a2.68 2.68 0 0 1-2.68-2.68v-2.63c0-1.48 1.2-2.68 2.68-2.68"/><path id="bxlke" d="M713.02 1617.2h-2.62a2.68 2.68 0 0 0-2.69 2.68v25.8h-3.22a2.68 2.68 0 0 0-2.68 2.68v2.62c0 1.48 1.2 2.68 2.68 2.68h66.17c1.48 0 2.68-1.2 2.68-2.68v-2.62c0-1.49-1.2-2.69-2.68-2.69h-3.38v-25.8c0-1.47-1.2-2.67-2.69-2.67h-2.63a2.68 2.68 0 0 0-2.68 2.68v25.8h-9.2v-25.8c0-1.48-1.2-2.68-2.68-2.68h-2.62a2.68 2.68 0 0 0-2.69 2.68v25.8h-9.2v-25.8c0-1.48-1.2-2.68-2.68-2.68h-2.62a2.68 2.68 0 0 0-2.69 2.68v25.8h-9.2v-25.8c0-1.48-1.2-2.68-2.68-2.68"/><path id="bxlkf" d="M738.89 1591.83a6.77 6.77 0 1 1 0 13.54 6.77 6.77 0 0 1 0-13.54"/><clipPath id="bxlkc"><use xlink:href="#bxlka"/></clipPath></defs><g><g transform="translate(-695 -1580)"><g><g><use fill="#4d4d4d" xlink:href="#bxlkb"/></g><g><g/><g clip-path="url(#bxlkc)"><use fill="#4d4d4d" xlink:href="#bxlkd"/></g></g><g><use fill="#4d4d4d" xlink:href="#bxlke"/></g><g><use fill="#ff8000" xlink:href="#bxlkf"/></g></g></g></g></svg>
+								span.category-nav__title Civil
 
-            li.category-nav__items
-              a.category-nav__link
-                span.category-nav__icon
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="87" height="68" viewBox="0 0 87 68"><defs><path id="6pvgb" d="M917.4 1613.81a3.6 3.6 0 0 0-3.6 3.6v15.3a3.6 3.6 0 0 0 7.2 0v-15.3a3.6 3.6 0 0 0-3.6-3.6"/><path id="6pvga" d="M992.12 1591.6h7.2v67.5h-7.2z"/><path id="6pvgd" d="M995.72 1591.6a3.6 3.6 0 0 0-3.6 3.6v60.3a3.6 3.6 0 0 0 7.2 0v-60.3a3.6 3.6 0 0 0-3.6-3.6"/><path id="6pvge" d="M920.4 1617.97v14.4l12.44 3.73-1.31 4.37a7.89 7.89 0 0 0 5.3 9.8l17.24 5.14c.64.2 1.3.3 1.98.33h.28a7.87 7.87 0 0 0 7.55-5.62l1.3-4.36 27.23 8.21v-57.6zm38.72 30.76a2.9 2.9 0 0 1-3.63 1.96l-17.25-5.14a2.91 2.91 0 0 1-1.96-3.6l1.32-4.38 22.84 6.86z"/><path id="6pvgf" d="M989.63 1606.11a2.63 2.63 0 0 1-1.8 2.52l-40.01 11.86a2.63 2.63 0 0 1-3.38-2.52 2.63 2.63 0 0 1 1.8-2.52l40.01-11.88a2.63 2.63 0 0 1 3.38 2.52z"/><path id="6pvgg" d="M939.14 1617.52a2.7 2.7 0 1 1 0 5.4 2.7 2.7 0 0 1 0-5.4"/><clipPath id="6pvgc"><use xlink:href="#6pvga"/></clipPath></defs><g><g transform="translate(-913 -1591)"><use fill="#4d4d4d" xlink:href="#6pvgb"/></g><g transform="translate(-913 -1591)"/><g clip-path="url(#6pvgc)" transform="translate(-913 -1591)"><use fill="#4d4d4d" xlink:href="#6pvgd"/></g><g transform="translate(-913 -1591)"><use fill="#4d4d4d" xlink:href="#6pvge"/></g><g transform="translate(-913 -1591)"><use fill="#ff8000" xlink:href="#6pvgf"/></g><g transform="translate(-913 -1591)"><use fill="#ff8000" xlink:href="#6pvgg"/></g></g></svg>
-                span.category-nav__title Comercial
+						li.category-nav__items
+							a.category-nav__link
+								span.category-nav__icon
+									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="87" height="68" viewBox="0 0 87 68"><defs><path id="6pvgb" d="M917.4 1613.81a3.6 3.6 0 0 0-3.6 3.6v15.3a3.6 3.6 0 0 0 7.2 0v-15.3a3.6 3.6 0 0 0-3.6-3.6"/><path id="6pvga" d="M992.12 1591.6h7.2v67.5h-7.2z"/><path id="6pvgd" d="M995.72 1591.6a3.6 3.6 0 0 0-3.6 3.6v60.3a3.6 3.6 0 0 0 7.2 0v-60.3a3.6 3.6 0 0 0-3.6-3.6"/><path id="6pvge" d="M920.4 1617.97v14.4l12.44 3.73-1.31 4.37a7.89 7.89 0 0 0 5.3 9.8l17.24 5.14c.64.2 1.3.3 1.98.33h.28a7.87 7.87 0 0 0 7.55-5.62l1.3-4.36 27.23 8.21v-57.6zm38.72 30.76a2.9 2.9 0 0 1-3.63 1.96l-17.25-5.14a2.91 2.91 0 0 1-1.96-3.6l1.32-4.38 22.84 6.86z"/><path id="6pvgf" d="M989.63 1606.11a2.63 2.63 0 0 1-1.8 2.52l-40.01 11.86a2.63 2.63 0 0 1-3.38-2.52 2.63 2.63 0 0 1 1.8-2.52l40.01-11.88a2.63 2.63 0 0 1 3.38 2.52z"/><path id="6pvgg" d="M939.14 1617.52a2.7 2.7 0 1 1 0 5.4 2.7 2.7 0 0 1 0-5.4"/><clipPath id="6pvgc"><use xlink:href="#6pvga"/></clipPath></defs><g><g transform="translate(-913 -1591)"><use fill="#4d4d4d" xlink:href="#6pvgb"/></g><g transform="translate(-913 -1591)"/><g clip-path="url(#6pvgc)" transform="translate(-913 -1591)"><use fill="#4d4d4d" xlink:href="#6pvgd"/></g><g transform="translate(-913 -1591)"><use fill="#4d4d4d" xlink:href="#6pvge"/></g><g transform="translate(-913 -1591)"><use fill="#ff8000" xlink:href="#6pvgf"/></g><g transform="translate(-913 -1591)"><use fill="#ff8000" xlink:href="#6pvgg"/></g></g></svg>
+								span.category-nav__title Comercial
 
-            li.category-nav__items
-              a.category-nav__link
-                span.category-nav__icon
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="90" height="90" viewBox="0 0 90 90"><defs><path id="ldeeb" d="M1172.37 1586.11v34.21l10.24-7.66 10.25 7.58v-34.13z"/><path id="ldeea" d="M1147.4 1586.02h60.13v77.86h-60.13z"/><path id="ldeed" d="M1207.18 1657.69h-52.58a2.46 2.46 0 0 1-2.5-2.43 2.46 2.46 0 0 1 2.5-2.43h54.13v-66.71h-9.75c0 .3.1-.33.1 0v34.13a4.93 4.93 0 0 1-5 4.86 5.08 5.08 0 0 1-2.99-.97l-7.54-5.48-7.53 5.48a5.08 5.08 0 0 1-6.99-.98c-.65-.84-1-1.86-1-2.91v-34.13c0-.33 0 .3.1 0h-14.32c-3.54 0-6.41 2.79-6.41 6.23v9.6l4.13-4.87v13.14l-4.13 4.86v42.12a6.83 6.83 0 0 0 6.87 6.68h51.83a3.27 3.27 0 0 0 3.04-3.5 3.25 3.25 0 0 0-1.96-2.7"/><clipPath id="ldeec"><use xlink:href="#ldeea"/></clipPath></defs><g><g transform="translate(-1147 -1586)"><g><g><use fill="#ff8000" xlink:href="#ldeeb"/></g><g><g/><g clip-path="url(#ldeec)"><use fill="#4d4d4d" xlink:href="#ldeed"/></g></g></g></g></g></svg>
-                span.category-nav__title Constitucional
+						li.category-nav__items
+							a.category-nav__link
+								span.category-nav__icon
+									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="90" height="90" viewBox="0 0 90 90"><defs><path id="ldeeb" d="M1172.37 1586.11v34.21l10.24-7.66 10.25 7.58v-34.13z"/><path id="ldeea" d="M1147.4 1586.02h60.13v77.86h-60.13z"/><path id="ldeed" d="M1207.18 1657.69h-52.58a2.46 2.46 0 0 1-2.5-2.43 2.46 2.46 0 0 1 2.5-2.43h54.13v-66.71h-9.75c0 .3.1-.33.1 0v34.13a4.93 4.93 0 0 1-5 4.86 5.08 5.08 0 0 1-2.99-.97l-7.54-5.48-7.53 5.48a5.08 5.08 0 0 1-6.99-.98c-.65-.84-1-1.86-1-2.91v-34.13c0-.33 0 .3.1 0h-14.32c-3.54 0-6.41 2.79-6.41 6.23v9.6l4.13-4.87v13.14l-4.13 4.86v42.12a6.83 6.83 0 0 0 6.87 6.68h51.83a3.27 3.27 0 0 0 3.04-3.5 3.25 3.25 0 0 0-1.96-2.7"/><clipPath id="ldeec"><use xlink:href="#ldeea"/></clipPath></defs><g><g transform="translate(-1147 -1586)"><g><g><use fill="#ff8000" xlink:href="#ldeeb"/></g><g><g/><g clip-path="url(#ldeec)"><use fill="#4d4d4d" xlink:href="#ldeed"/></g></g></g></g></g></svg>
+								span.category-nav__title Constitucional
 
-            li.category-nav__items
-              a.category-nav__link
-                span.category-nav__icon
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="88" height="57" viewBox="0 0 88 57"><defs><path id="2mgjb" d="M1436.24 1622.93c1.47-.02 2.91.4 4.14 1.2.2.13.43.2.67.2a1.2 1.2 0 0 0 1.19-1.2v-9.54a3.6 3.6 0 0 0-3.6-3.6l-11.11.09a1.2 1.2 0 0 1-.99-1.8 7.2 7.2 0 1 0-11.8.09 1.2 1.2 0 0 1-.98 1.89l-11.1.09a3.6 3.6 0 0 0-3.6 3.6v9.54a1.2 1.2 0 0 0 1.8.99 7.5 7.5 0 1 1 .1 12.5c-.2-.12-.43-.2-.66-.2a1.2 1.2 0 0 0-1.2 1.21l.12 11.96a3.6 3.6 0 0 0 3.6 3.6h10.8a1.2 1.2 0 0 0 .99-1.8 7.5 7.5 0 1 1 12.5-.11 1.2 1.2 0 0 0 1.01 1.8h10.8a3.6 3.6 0 0 0 3.6-3.6l-.1-11.95a1.2 1.2 0 0 0-1.8-1 7.5 7.5 0 1 1-4.25-13.71z"/><path id="2mgja" d="M1355.8 1597.36h56.44v56.55h-56.44z"/><path id="2mgjd" d="M1399.16 1637.63a1.2 1.2 0 0 1 1.8-.99 7.2 7.2 0 1 0-.09-11.8 1.2 1.2 0 0 1-1.89-.98v-9.91a3.6 3.6 0 0 0-3.6-3.6l-11.1.09a1.2 1.2 0 0 1-1-1.8 7.2 7.2 0 1 0-11.8.09 1.2 1.2 0 0 1-.97 1.89l-11.11.09a3.6 3.6 0 0 0-3.6 3.6v9.54a1.2 1.2 0 0 0 1.8.99 7.5 7.5 0 1 1 .1 12.5 1.2 1.2 0 0 0-.66-.2 1.2 1.2 0 0 0-1.19 1.21l.11 11.96a3.6 3.6 0 0 0 3.6 3.6h10.8a1.2 1.2 0 0 0 1-1.8 7.5 7.5 0 1 1 12.5-.11 1.2 1.2 0 0 0 1.01 1.8h10.8a3.6 3.6 0 0 0 3.6-3.6z"/><clipPath id="2mgjc"><use xlink:href="#2mgja"/></clipPath></defs><g><g transform="translate(-1355 -1597)"><g><use fill="#ff8000" xlink:href="#2mgjb"/></g><g><g/><g clip-path="url(#2mgjc)"><use fill="#4d4d4d" xlink:href="#2mgjd"/></g></g></g></g></svg>
-                span.category-nav__title Difusos e Coletivos
-  section.section__page.section-kits
-    section.section__page.section__shelf
-    .wrapper--block
-      .filter
-        h2.filter__title Kits e Coleções
-        ul.filter__opt
-          //- li.filter__opt-item
-          //-   a(href="") E-books
-          li.filter__opt-item
-            a(href="") Kits e coleções
-          li.filter__opt-item
-            a(href="") Comercial
-      .shelf.shelf__carousel--full
-        +vtex-controller('<vtex:contentPlaceHolder id="Colecao Kits" />')
-          .prateleira
-           ul
-              each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-                li
-                  include ../shelves/kit-shelf
-  section.section__page.section__split
-    .wrapper--block.section__split-the-grid
-      .most-visited
-        .most-visited__header
-          h2.most-visited__title Livros mais visitados
-          ul.most-visited__select
-            li.most-visited__opt
-              a.most-visited__choose(href="") Escolher Área
-            li.most-visited__opt
-              a.most-visited__result(href="") OAB e Concurso
-        ul.most-visited__grid
-          .shelf
-            .shelf__visited
-              +vtex-controller('<vtex:contentPlaceHolder id="most visited" />')
-                .prateleira
-                  ul.most-visited__list
-                    each val in [1, 2, 3, 4]
-                      li.most-visited__item
-                        include ../shelves/watch-shelf
-      .weekly-authors
-        h2.weekly-authors__title Autores da Semana
-        ul.weekly-authors__list
-          li.weekly-authors__items
-            a.weekly-authors__link(href="") Nome do Autor
-          li.weekly-authors__items
-            a.weekly-authors__link(href="") Nome do Autor
-          li.weekly-authors__items
-            a.weekly-authors__link(href="") Nome do Autor
-          li.weekly-authors__items
-            a.weekly-authors__link(href="") Nome do Autor
-          li.weekly-authors__items
-            a.weekly-authors__link(href="") Nome do Autor
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  //- section.section__page.section__shelf
-  //- 	.container
-  //- 		h2.section__title Mais Vendidos
-  //- 		.shelf.shelf__carousel--full
-  //- 			+vtex-controller('<vtex:contentPlaceHolder id="Colecao Mais Vendidos" />')
-  //- 				.prateleira
-  //- 					ul
-  //- 						each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-  //- 							li
-  //- 								include ../shelves/prateleira
-  //- section.section__page.section__shelf
-  //- 	.container
-  //- 		h2.section__title Comprar por categoria
-  //- 		.buy-by-category
-  //- 			.category.category__card
-  //- 				.category__card-header
-  //- 					.category__card-media
-  //- 						img(src="http://via.placeholder.com/275x275")/
-  //- 					.category__card-info
-  //- 						span.category__name Ferramentas Manuais
-  //- 						a.category__link(href="/category.html") Ver todos
-  //- 				.category__menu
-  //- 					ul.menu-list
-  //- 						li
-  //- 							a(href="/category.html") Alicates
-  //- 						li
-  //- 							a(href="/category.html") Lixadeira Manual
-  //- 						li
-  //- 							a(href="/category.html") Jogos de Soquetes
-  //- 						li
-  //- 							a(href="/category.html") Grampos
-  //- 						li
-  //- 							a(href="/category.html") Martelo
-
-  //- 			+vtex-controller('<vtex:contentPlaceHolder id="Comprar por categoria I" />')
-  //- 				.shelf.prateleira.shelf__carousel--category
-  //- 					ul
-  //- 						each val in [1, 2, 3, 4]
-  //- 							li
-  //- 								include ../shelves/prateleira
-  //- 		.buy-by-category
-  //- 			.category.category__card
-  //- 				.category__card-header
-  //- 					.category__card-media
-  //- 						img(src="http://via.placeholder.com/275x275")/
-  //- 					.category__card-info
-  //- 						span.category__name Ferramentas Manuais
-  //- 						a.category__link(href="/category.html") Ver todos
-  //- 				.category__menu
-  //- 					ul.menu-list
-  //- 						li
-  //- 							a(href="/category.html") Alicates
-  //- 						li
-  //- 							a(href="/category.html") Lixadeira Manual
-  //- 						li
-  //- 							a(href="/category.html") Jogos de Soquetes
-  //- 						li
-  //- 							a(href="/category.html") Grampos
-  //- 						li
-  //- 							a(href="/category.html") Martelo
-
-  //- 			+vtex-controller('<vtex:contentPlaceHolder id="Comprar por categoria II" />')
-  //- 				.shelf.prateleira.shelf__carousel--category
-  //- 					ul
-  //- 						each val in [1, 2, 3, 4]
-  //- 							li
-  //- 								include ../shelves/prateleira
-  //- 		.buy-by-category
-  //- 			.category.category__card
-  //- 				.category__card-header
-  //- 					.category__card-media
-  //- 						img(src="http://via.placeholder.com/275x275")/
-  //- 					.category__card-info
-  //- 						span.category__name Ferramentas Manuais
-  //- 						a.category__link(href="/category.html") Ver todos
-  //- 				.category__menu
-  //- 					ul.menu-list
-  //- 						li
-  //- 							a(href="/category.html") Alicates
-  //- 						li
-  //- 							a(href="/category.html") Lixadeira Manual
-  //- 						li
-  //- 							a(href="/category.html") Jogos de Soquetes
-  //- 						li
-  //- 							a(href="/category.html") Grampos
-  //- 						li
-  //- 							a(href="/category.html") Martelo
-
-  //- 			+vtex-controller('<vtex:contentPlaceHolder id="Comprar por categoria III" />')
-  //- 				.shelf.prateleira.shelf__carousel--category
-  //- 					ul
-  //- 						each val in [1, 2, 3,4]
-  //- 							li
-  //- 								include ../shelves/prateleira
-  //- section.section__page.section__brand
-  //- 	.container
-  //- 		.shelf.shelf__brand
-  //- 			ul
-  //- 				each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
-  //- 					li
-  //- 						a(href='')
-  //- 							img(src='http://via.placeholder.com/175x75')/
-  //- section.section__page.section__shelf
-  //- 	.container
-  //- 		h2.section__title Ofertas da semana
-  //- 		.shelf
-  //- 			+vtex-controller('<vtex:contentPlaceHolder id="Ofertas da semana" />')
-  //- 				.prateleira
-  //- 					ul
-  //- 						each val in [1, 2, 3, 4, 5]
-  //- 							li
-  //- 								include ../shelves/prateleira
+						li.category-nav__items
+							a.category-nav__link
+								span.category-nav__icon
+									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="88" height="57" viewBox="0 0 88 57"><defs><path id="2mgjb" d="M1436.24 1622.93c1.47-.02 2.91.4 4.14 1.2.2.13.43.2.67.2a1.2 1.2 0 0 0 1.19-1.2v-9.54a3.6 3.6 0 0 0-3.6-3.6l-11.11.09a1.2 1.2 0 0 1-.99-1.8 7.2 7.2 0 1 0-11.8.09 1.2 1.2 0 0 1-.98 1.89l-11.1.09a3.6 3.6 0 0 0-3.6 3.6v9.54a1.2 1.2 0 0 0 1.8.99 7.5 7.5 0 1 1 .1 12.5c-.2-.12-.43-.2-.66-.2a1.2 1.2 0 0 0-1.2 1.21l.12 11.96a3.6 3.6 0 0 0 3.6 3.6h10.8a1.2 1.2 0 0 0 .99-1.8 7.5 7.5 0 1 1 12.5-.11 1.2 1.2 0 0 0 1.01 1.8h10.8a3.6 3.6 0 0 0 3.6-3.6l-.1-11.95a1.2 1.2 0 0 0-1.8-1 7.5 7.5 0 1 1-4.25-13.71z"/><path id="2mgja" d="M1355.8 1597.36h56.44v56.55h-56.44z"/><path id="2mgjd" d="M1399.16 1637.63a1.2 1.2 0 0 1 1.8-.99 7.2 7.2 0 1 0-.09-11.8 1.2 1.2 0 0 1-1.89-.98v-9.91a3.6 3.6 0 0 0-3.6-3.6l-11.1.09a1.2 1.2 0 0 1-1-1.8 7.2 7.2 0 1 0-11.8.09 1.2 1.2 0 0 1-.97 1.89l-11.11.09a3.6 3.6 0 0 0-3.6 3.6v9.54a1.2 1.2 0 0 0 1.8.99 7.5 7.5 0 1 1 .1 12.5 1.2 1.2 0 0 0-.66-.2 1.2 1.2 0 0 0-1.19 1.21l.11 11.96a3.6 3.6 0 0 0 3.6 3.6h10.8a1.2 1.2 0 0 0 1-1.8 7.5 7.5 0 1 1 12.5-.11 1.2 1.2 0 0 0 1.01 1.8h10.8a3.6 3.6 0 0 0 3.6-3.6z"/><clipPath id="2mgjc"><use xlink:href="#2mgja"/></clipPath></defs><g><g transform="translate(-1355 -1597)"><g><use fill="#ff8000" xlink:href="#2mgjb"/></g><g><g/><g clip-path="url(#2mgjc)"><use fill="#4d4d4d" xlink:href="#2mgjd"/></g></g></g></g></svg>
+								span.category-nav__title Difusos e Coletivos
+	section.section__page.section-kits.section__shelf
+			.filter.wrapper
+				h2.filter__title Kits e Coleções
+				ul.filter__opt
+					//- li.filter__opt-item
+					//-   a(href="") E-books
+					li.filter__opt-item
+						a(href="") Kits e coleções
+					li.filter__opt-item
+						a(href="") Comercial
+			.shelf.shelf__carousel--full.wrapper--diff
+				+vtex-controller('<vtex:contentPlaceHolder id="Colecao Kits" />')
+					.prateleira
+						ul
+							each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+								li
+									include ../shelves/kit-shelf
+	section.section__page.section__split
+		.wrapper--block.section__split-the-grid
+			.most-visited
+				.most-visited__header
+					h2.most-visited__title Livros mais visitados
+					ul.most-visited__select
+						li.most-visited__opt
+							a.most-visited__choose(href="") Escolher Área
+						li.most-visited__opt
+							a.most-visited__result(href="") OAB e Concurso
+				ul.most-visited__grid
+					.shelf
+						.shelf__visited
+							+vtex-controller('<vtex:contentPlaceHolder id="most visited" />')
+								.prateleira
+									ul.most-visited__list
+										each val in [1, 2, 3, 4]
+											li.most-visited__item
+												include ../shelves/watch-shelf
+			//- .weekly-authors
+			//- 	h2.weekly-authors__title Autores da Semana
+			//- 	ul.weekly-authors__list
+			//- 		li.weekly-authors__items
+			//- 			a.weekly-authors__link(href="") Nome do Autor
+			//- 		li.weekly-authors__items
+			//- 			a.weekly-authors__link(href="") Nome do Autor
+			//- 		li.weekly-authors__items
+			//- 			a.weekly-authors__link(href="") Nome do Autor
+			//- 		li.weekly-authors__items
+			//- 			a.weekly-authors__link(href="") Nome do Autor
+			//- 		li.weekly-authors__items
+			//- 			a.weekly-authors__link(href="") Nome do Autor
+			section.section__page.section__shelf-banners
+				.wrapper
+					.shelf
+						.shelf__banners
+							+vtex-controller('<vtex:contentPlaceHolder id="Promo Box 2" />')
+								.shelf__banners-static
+									img(src='https://placehold.it/545x350')/
+								.shelf__banners-static
+									img(src='https://placehold.it/545x350')/

@@ -16,6 +16,12 @@
   }
 }
 
+@mixin atLarger {
+	@media (min-width: $g-max-width){
+		@content;
+	}
+  }
+
 @mixin truncate($truncation-boundary) {
   max-width: $truncation-boundary;
   white-space: nowrap;

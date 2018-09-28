@@ -1,61 +1,83 @@
 .most-visited {
-  display: grid;
-  grid-template-rows: auto auto;
-  border-right: 2px solid $c-gray-lighter;
-  &__title {
-    color: #4d4d4d;
-    font-family: "Knowledge-Black";
-    font-size: 25px;
-    font-weight: 900;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  &__header {
-    display: flex;
-    margin-bottom: 45px;
-  }
-  &__select {
-    display: flex;
-    flex: 1;
-    justify-content: flex-end;
-    margin-right: 50px;
-  }
-  &__opt {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  &__choose {
-    color: $c-gray-lighter;
-    font-family: "Knowledge-Bold";
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.75px;
-    margin-right: 20px;
-  }
-  &__result {
-    width: 196px;
-    height: 35px;
-    border-radius: 18px;
-    border: 1px solid $c-gray-lighter;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #4d4d4d;
-    font-family: "Knowledge-Bold";
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.75px;
-  }
+	display: grid;
+	grid-template-rows: auto auto;
+	@include atMedium {
+		border-right: 2px solid $c-gray-lighter;
+	}
+	&__header {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 45px;
+		@include atMedium {
+			flex-direction: row;
+		}
+	}
+	&__title {
+		color: #4d4d4d;
+		font-family: "Knowledge-Black";
+		font-size: 25px;
+		font-weight: 900;
+		display: flex;
+		align-items: center;
+		flex: 1;
+		justify-content: center;
+		@include atMedium {
+			justify-content: flex-start;
+		}
+	}
+	&__select {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
-  &__list{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 10px;
-  }
+		li:first-of-type {
+			display: none;
+		}
+		@include atMedium {
+			margin-right: 50px;
+			justify-content: flex-end;
+			li:first-of-type {
+				display: flex;
+			}
+		}
+	}
+	&__opt {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&__choose {
+		color: $c-gray-lighter;
+		font-family: "Knowledge-Bold";
+		font-size: 12px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.75px;
+		margin-right: 20px;
+	}
+	&__result {
+		width: 196px;
+		height: 35px;
+		border-radius: 18px;
+		border: 1px solid $c-gray-lighter;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #4d4d4d;
+		font-family: "Knowledge-Bold";
+		font-size: 12px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.75px;
+	}
 
+	&__list {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr;
+		grid-gap: 10px;
+		@include atMedium {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
 }

@@ -1,70 +1,68 @@
 .section {
-  &__page {
-    position: relative;
-  }
-
-  &__areas {
-    background: $c-white;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  &__title {
-    text-align: left;
-    font-family: $f-secondary;
-    font-size: 25px;
-    font-weight: 900;
-    color: $c-black;
-    margin-bottom: 20px;
-  }
-
-  &__shelf {
-    margin: 40px 0;
+	&__page {
+		position: relative;
+		margin-top: 40px;
 	}
 
-	&__shelf-banners {
-		margin: 40px 0;
-  }
+	&__areas {
+		background: $c-white;
+		height: 300px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	&__title {
+		text-align: left;
+		font-family: $f-secondary;
+		font-size: 25px;
+		font-weight: 900;
+		color: $c-black;
+		margin-bottom: 20px;
+	}
 
-  &__split {
-    background: $c-white;
-  }
+	&__shelf {
+		padding: 0 20px;
+	}
 
-  &__split-the-grid{
-    @include atMedium{
-      height:485px;
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      padding: 38px 0 54px 0;
-    }
-  }
-  &__not-found {
-    font-weight: bold;
-    display: grid;
-    align-items: center;
-    grid-auto-rows: min-content;
-    grid-gap: 20px;
-    justify-content: center;
-    background-color: $c-white;
-    padding: 0 0 3% 0;
-  }
-  &__empty-search {
-    display: grid;
-    align-items: center;
-    grid-auto-rows: min-content;
-    grid-gap: 20px;
-    justify-content: center;
-    padding: 60px 0;
-    background-color: $c-white;
-    text-align: center;
-  }
-  &__institutional {
-    display: grid;
-    grid-template-columns: minmax(auto, .8fr ) 2fr;
-    align-items: flex-start;
-    grid-gap: 3rem;
-    margin: 40px auto;
-  }
+	&__split {
+		background: $c-white;
+	}
+
+	&__split-the-grid {
+		grid-template-columns: 1fr;
+		@include atMedium {
+			height: 485px;
+			display: grid;
+			padding: 38px 0 54px 0;
+			grid-template-columns: 2fr 1fr;
+		}
+	}
+	&__not-found {
+		font-weight: bold;
+		display: grid;
+		align-items: center;
+		grid-auto-rows: min-content;
+		grid-gap: 20px;
+		justify-content: center;
+		background-color: $c-white;
+		padding: 0 0 3% 0;
+	}
+	&__empty-search {
+		display: grid;
+		align-items: center;
+		grid-auto-rows: min-content;
+		grid-gap: 20px;
+		justify-content: center;
+		padding: 60px 0;
+		background-color: $c-white;
+		text-align: center;
+	}
+	&__institutional {
+		display: grid;
+		grid-template-columns: minmax(auto, 0.8fr) 2fr;
+		align-items: flex-start;
+		grid-gap: 3rem;
+		margin: 40px auto;
+	}
 }

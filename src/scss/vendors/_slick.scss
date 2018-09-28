@@ -103,18 +103,20 @@
 	justify-content: center;
 	padding: 10px 0;
 	li {
+		width: 12px;
+		height: 12px;
 		font-size: 0;
-		margin-right: 13px;
+		margin-right: 10px;
 		&:last-of-type {
 			margin-right: 0;
 		}
 	}
 	button {
-		width: 15px;
-		height: 15px;
+		width: 100%;
+		height: 100%;
 		border-radius: 50%;
 		background: #d8d8d8;
-		border-color: transparent;
+		border: 0;
 		&:focus{
 			border-color: transparent;
 		}

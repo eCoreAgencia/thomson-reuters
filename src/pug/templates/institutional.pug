@@ -36,11 +36,11 @@ block content
             li.institucional__item(data-link = "bookers")
               a(href="/fale-conosco") Livreiros
         ul.institucional__list
-          a(href="http://").institucional__title(data-link = "myservices") Meus Serviços
+          a(href="http://" data-link = "myservices").institucional__title Meus Serviços
             li.institucional__item
-              a(href="/institucional")(data-link = "returnpolicy") Trocas e Devoluções
+              a(href="/institucional" data-link = "returnpolicy") Trocas e Devoluções
             li.institucional__item
-              a(href="/privacidade")(data-link = "delivery") Entrega
+              a(href="/privacidade" data-link = "delivery") Entrega
     .institutional__content
       .banner.institutional__banner
         +vtex-controller('<vtex:contentPlaceHolder id="Banner Institucional" />')

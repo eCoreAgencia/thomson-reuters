@@ -1,70 +1,81 @@
 .search-bar {
-  width: 100vw;
-  height: 40px;
-  background-image: linear-gradient(to top, #4d4d4d 0%, #727272 100%);
-  display: flex;
-  align-items: center;
-  z-index: 2;
-  order: 3;
-  @include atMedium {
-    background-image: none;
-    position: initial;
-    flex-basis: 48.1%;
-    height: 40px;
-    border-radius: 20px;
-    background-color: #f4f4f4;
-    justify-content: space-between;
-    align-items: center;
-  }
-  &__input {
-    width: 100%;
-    background-color: transparent;
-    border: 0;
-	order: 1;
-	height: 80%;
-    &:focus {
-      outline: none;
-    }
-    @include atMedium {
-      flex: 2;
-      padding: 0 10px;
-      order: 2;
-    }
-  }
-  .control {
-    display: none;
-    @include atMedium {
-      display: block;
-    }
-  }
+	flex-basis: 100%;
+	height: 40px;
+	background-image: linear-gradient(to top, #4d4d4d 0%, #727272 100%);
+	display: flex;
+	align-items: center;
+	z-index: 2;
+	order: 3;
+	@include atMedium {
+		background-image: none;
+		position: initial;
+		flex-basis: 48.1%;
+		height: 40px;
+		border-radius: 20px;
+		background-color: #f4f4f4;
+		justify-content: space-between;
+		align-items: center;
+	}
 
-  &--narrow {
-    width: 361px;
-  }
+	&__input {
+		background-color: transparent;
+		border: 0;
+		order: 1;
+		height: 80%;
+		flex-basis: 86%;
+		&:focus {
+			outline: none;
+		}
+		@include atMedium {
+			flex: 2;
+			padding: 0 10px;
+			order: 2;
+		}
+	}
+	.control {
+		display: none;
+		@include atMedium {
+			display: block;
+		}
+	}
 
-  // BULMA SELECT MOD
+	&--narrow {
+		background-image: none;
+		background-color: $c-white;
+		border-radius: 20px;
+		align-items: center;
+		flex-basis: 100%;
+		width: 100%;
+		margin-top: 5px;
+		@include atMedium {
+			flex-basis: 60%;
+			margin-top: 0;
+		}
+	}
 
-  .select {
-    width: 101px;
-    height: 30px;
-    margin: 6px 0 6px 5px;
-    font-family: "Knowledge - Regular";
-    &::after {
-      border-color: #fff !important;
-      right: 1em;
-      border-width: 2px !important;
-    }
-  }
-  select {
-    border-radius: 20px;
-    background-color: #666666;
-    color: #fff;
-    font-size: 13px;
-    width: 100%;
-    height: 100%;
-    padding-left: 20px;
-    &:focus {
-      border-color: #666;
-    }
-  }
+	// BULMA SELECT MOD
+
+	.select {
+		width: 101px;
+		height: 30px;
+		margin: 6px 0 6px 5px;
+		font-family: "Knowledge - Regular";
+		&::after {
+			border-color: #fff !important;
+			right: 1em;
+			border-width: 2px !important;
+		}
+	}
+	select {
+		border-radius: 20px;
+		background-color: #666666;
+		color: #fff;
+		font-size: 13px;
+		width: 100%;
+		height: 100%;
+		padding-left: 20px;
+		&:focus {
+			border-color: #666;
+		}
+	}
 }
