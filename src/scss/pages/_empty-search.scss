@@ -1,27 +1,32 @@
 .empty-search {
-  &__text {
-    font-family: "Knowledge Bold";
-    font-weight: 700;
-    color: $c-gray-dark;
-    font-size: 23px;
-  }
-  &__text--small {
-    font-family: "Knowledge Regular";
-    font-weight: 400;
-    color: $c-gray-shades;
-    font-size: 18px;
-    line-height: 20px;
-  }
-  &__search {
-    width: 23rem;
-    height: 2.3rem;
-    border-radius: 20px;
-    background-color: #f4f4f4;
-    border: 0;
-    padding: 2px 20px;
-  }
-  &__icon {
-    font-size: 6.5em;
-    color: $c-orange;
-  }
+	&__text {
+		font-family: "Knowledge-Bold";
+		font-weight: 700;
+		color: $c-gray-dark;
+		font-size: 23px;
+	}
+	&__text--small {
+		font-family: "Knowledge-Regular";
+		font-weight: 400;
+		color: $c-gray-shades;
+		font-size: 18px;
+		line-height: 20px;
+	}
+	&__search {
+		margin: 0 10px;
+		background-image: none;
+		height: 2.3rem;
+		border-radius: 20px;
+		background-color: #f4f4f4;
+		border: 0;
+		padding: 2px 20px;
+		@include atMedium {
+			width: 23rem;
+			margin: 0;
+		}
+	}
+	&__icon {
+		font-size: 6.5em;
+		color: $c-orange;
+	}
 }

@@ -63,9 +63,13 @@
 	}
 	&__institutional {
 		display: grid;
-		grid-template-columns: minmax(auto, 0.8fr) 2fr;
+		grid-template-columns: 1fr;
 		align-items: flex-start;
 		grid-gap: 3rem;
-		margin: 40px auto;
+		margin: 0;
+		@include atMedium {
+			margin: 40px auto;
+			grid-template-columns: minmax(auto, 0.8fr) 2fr;
+		}
 	}
 }
