@@ -46,7 +46,10 @@
 		grid-gap: 20px;
 		justify-content: center;
 		background-color: $c-white;
-		padding: 0 0 3% 0;
+		padding: 15% 4% 15% 4%;
+		@include atMedium {
+			padding: 0 0 3% 0;
+		}
 	}
 	&__empty-search {
 		display: grid;

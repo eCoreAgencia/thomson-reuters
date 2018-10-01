@@ -1,40 +1,47 @@
 .bread-crumb {
-  padding: 10px 0;
-  ul {
-    display: flex;
+	display: none;
+	@include atMedium {
+		display: block;
+		padding: 10px 0;
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+			li {
+				margin: 0 5px;
+				color: #666666;
+				font-family: "Knowledge Bold";
+				font-size: 10px;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 0.38px;
+				display: flex;
+				a, strong {
+					color: #757575;
+					font-size: 10px;
+					flex-wrap: nowrap;
+					flex-shrink: 0;
+					&:hover {
+						color: $c-orange;
+					}
+				}
+				&::after {
+					content: ">";
+					display: inline-block;
+					margin-left: 5px;
+				}
 
-    li {
-      margin: 0 5px;
-      color: #666666;
-      font-family: "Knowledge Bold";
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.38px;
-      a {
-        color: #757575;
-        font-size: 10px;
-        &:hover {
-          color: $c-orange;
-        }
-      }
-      &::after {
-        content: ">";
-        display: inline-block;
-        margin-left: 5px;
-      }
-
-      &:last-child {
-        &::after {
-          display: none;
-        }
-      }
-      &.last {
-        a {
-          color: $c-secondary;
-          font-weight: 700;
-        }
-      }
-    }
-  }
+				&:last-child {
+					&::after {
+						display: none;
+					}
+				}
+				&.last {
+					a {
+						color: $c-secondary;
+						font-weight: 700;
+					}
+				}
+			}
+		}
+	}
 }

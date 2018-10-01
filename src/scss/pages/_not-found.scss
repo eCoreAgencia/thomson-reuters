@@ -4,14 +4,27 @@
     font-family: "Knowledge-Bold";
     font-size: 150px;
     font-weight: 700;
-    text-align: center;
+	text-align: center;
+	line-height: .7;
+	@include atMedium {
+		line-height: initial;
+	}
   }
   &__text {
-    color: $c-black;
-    font-family: "Knowledge Bold";
+    color: $c-gray-dark;
+    font-family: "Knowledge-Bold";
     font-size: 23px;
     font-weight: 700;
-    text-align: center;
-    padding: 0 30%;
+	text-align: center;
+	padding: 0;
+	@include atMedium {
+		padding: 0 30%;
+	}
+  }
+  .section__shelf {
+	  display: none;
+	  @include atMedium {
+		  display: block;
+	  }
   }
 }

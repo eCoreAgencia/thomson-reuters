@@ -1,15 +1,58 @@
-
-$(document).ready(function(){
-  if($('body').hasClass('not-found')){
-    if($('li.helperComplement')[0]){
+$(document).ready(() => {
+  if ($('body').hasClass('not-found')) {
+    if ($('li.helperComplement')[0]) {
       $('li.helperComplement').remove();
     }
     $('.shelf__carousel--full ul').slick({
       arrows: true,
-      slideToShow: 4,
+      slideToShow: 1,
       slidesToScroll: 1,
-      infinite: true,
-      variableWidth: true,
+      mobileFirst: true,
+      dots: true,
+      infinite: false,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 2,
+            dots: false,
+            infinite: false,
+          },
+        },
+        {
+          breakpoint: 800,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            dots: false,
+            infinite: true,
+            arrows: false,
+          },
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: false,
+            arrows: false,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true,
+            infinite: false,
+            arrows: false,
+          },
+        },
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ],
     });
   }
-})
+});

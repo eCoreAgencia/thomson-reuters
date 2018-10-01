@@ -147,27 +147,13 @@
 			@include font-size(25px);
 			color: $c-gray-dark;
 			position: relative;
-			right: 16px;
+			padding-top: 10px;
 			@include atMedium {
 				@include font-size(30px);
 				order: 3;
-			}
-			&:after {
-				display: inline-block;
-				content: "";
-				width: 20px;
-				height: 20px;
-				background-color: $c-orange;
-				border-radius: 50%;
-				position: relative;
-				top: -8px;
-				right: 7px;
-				@include atMedium {
-					top: -10px;
-				}
+				padding: 0;
 			}
 		}
-
 		&__menu-content {
 			width: 100%;
 		}

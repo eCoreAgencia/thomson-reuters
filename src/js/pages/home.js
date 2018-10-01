@@ -21,7 +21,8 @@ $(document).ready(() => {
           breakpoint: 480,
           settings: {
             slidesToShow: 1,
-            slidesToScroll: 1,
+			slidesToScroll: 1,
+			arrows: false,
           },
         },
       ],
@@ -60,7 +61,8 @@ $(document).ready(() => {
             slidesToShow: 3,
             slidesToScroll: 3,
             dots: false,
-            infinite: true,
+			infinite: true,
+			arrows: false,
           },
         },
         {
@@ -68,7 +70,8 @@ $(document).ready(() => {
           settings: {
             slidesToShow: 2,
             slidesToScroll: 2,
-            infinite: false,
+			infinite: false,
+			arrows: false,
           },
         },
         {
@@ -77,7 +80,8 @@ $(document).ready(() => {
             slidesToShow: 1,
             slidesToScroll: 1,
             dots: true,
-            infinite: false,
+			infinite: false,
+			arrows: false,
           },
         },
         // You can unslick at a given breakpoint now by adding:
@@ -101,7 +105,7 @@ $(document).ready(() => {
             slidesToScroll: 1,
             dots: false,
 			infinite: false,
-			arrows: true
+			arrows: false,
           },
         },
         {
@@ -110,7 +114,7 @@ $(document).ready(() => {
             slidesToShow: 3,
             slidesToScroll: 2,
 			infinite: false,
-			arrows: true
+			arrows: false,
           },
         },
         // You can unslick at a given breakpoint now by adding:

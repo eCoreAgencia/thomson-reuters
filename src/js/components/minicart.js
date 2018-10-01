@@ -6,7 +6,7 @@ class Minicart {
        vtexjs.checkout.getOrderForm()
      }
      renderItem(item, i) {
-       let { quantity } = item
+		let { quantity } = item
        return `
          <li class="minicart-product" data-item-id="${item.id}">
            <div class="minicart-product__image"><img src="${item.imageUrl}"></div>
