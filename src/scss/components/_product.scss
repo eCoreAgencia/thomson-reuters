@@ -1,15 +1,18 @@
 .product {
+	.show-on-hover {
+		position: absolute;
+		width: 100%;
+		top: 70%;
+		background: white;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+		opacity: 0;
+	}
 	padding: 0;
 	&__shelf {
 		display: grid;
 		background-color: $c-white;
 		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
 		padding: 0 10px;
-		// &:hover {
-		// 	.button__shelf {
-		// 		animation-play-state: running;
-		// 	}
-		// }
 	}
 	a {
 		text-decoration: none;
@@ -178,7 +181,7 @@
 		}
 	}
 
-	// PRODUCT WATCH STYLES LAST SHELF ON HOME
+	// PRODUCT "WATCH" STYLES *** this is the LAST SHELF ON HOME
 	&__watch {
 		display: grid;
 		grid-template-columns: auto 1.5fr;

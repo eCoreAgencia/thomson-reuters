@@ -1,4 +1,12 @@
 .shelf {
+	li {
+		&:hover {
+			.show-on-hover {
+				top: 100%;
+				opacity: 1;
+			}
+		}
+	}
 	width: 100%;
 	&__carousel--full {
 		li {
