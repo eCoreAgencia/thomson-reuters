@@ -32,6 +32,20 @@
         padding-top: 10px;
         padding-bottom: 10px;
     }
+    .breadCrumbBottom {
+        ul {
+            li {
+                display: none;
+                &.last {
+                    display: block;
+                    a {
+                        font-size: 25px;
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
+    }
     .bread-crumb ul {
         display: flex;
 
@@ -39,15 +53,29 @@
             margin: 0 5px;
             font-family: $f-base;
             a {
-                color: #757575;
+                color: $c-primary;
+                font-size: 10px;
                 &:hover {
                     color: $c-primary;
                 }
             }
             &::after {
-                content: '|';
-                display: inline-block;
-                margin-left: 5px;
+                border: 1px solid #5d5d5d;
+                border-radius: 2px;
+                border-right: 0;
+                border-top: 0;
+                content: " ";
+                display: block;
+                height: 0.625em;
+                margin-top: 3px;
+                pointer-events: none;
+                -webkit-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+                transform: rotate(227deg);
+                -webkit-transform-origin: center;
+                -ms-transform-origin: center;
+                transform-origin: center;
+                width: 0.625em;
             }
 
             &:last-child {
@@ -60,7 +88,7 @@
                     font-weight: 400;
                 }
                 a {
-                    color: $c-primary;
+                    color: $c-orange;
                 }
             }
         }

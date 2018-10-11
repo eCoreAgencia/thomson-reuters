@@ -1,6 +1,7 @@
 .category, .catalog {
     .section__diff {
-        padding: 0;
+		padding: 0;
+		margin-top: 0;
     }
 
     .diff__container {
@@ -9,8 +10,27 @@
         padding-bottom: 20px;
     }
     .section__banner {
-        height: 207px;
-    }
+		margin-top: 0;
+        a {
+			display: block;
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+
+	.navCatalog {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-top: 2px solid #d0d0d0;
+		border-bottom: 2px solid #d0d0d0;
+		margin-top: 0;
+		&__numberResult {
+			width: 70%;
+		}
+	}
 
     &.empty-search {
 		main {

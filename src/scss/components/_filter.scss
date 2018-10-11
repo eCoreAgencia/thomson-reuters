@@ -1,44 +1,66 @@
 .filter {
-	display: flex;
-	justify-content: space-between;
-	&__title {
+	display: none;
+	padding: 10px 0;
+	&__content {
 		display: none;
-		@include atMedium {
-			color: $c-black;
-			font-family: "Knowledge-Black";
-			font-size: 25px;
-			font-weight: 900;
-			display: block;
-			flex: 3;
-		}
 	}
-	&__opt {
-		display: flex;
-		justify-content: space-around;
-		flex: 1;
-		@include atMedium {
-			justify-content: space-between;
-		}
-	}
-	&__opt-item {
-		font-family: "Knowledge-Bold";
-		font-size: 13px;
-		font-weight: 700;
-		text-transform: uppercase;
-		flex-wrap: nowrap;
 
-		a {
-			text-decoration: none;
-			color: $c-gray-dark;
-			border-bottom: 2px solid transparent;
-			transition: border-color 0.3s ease;
-			padding-bottom: 2px;
+	.navigation-tabs {
+		.menu-navegue, a, h4, h3, h5 {
+			display: none;
 		}
-		&:hover,
-		&:active {
-			a {
-				border-bottom: 2px solid $c-orange;
+		fieldset {
+			display: none;
+			border: none;
+			&.refino-marca {
+				display: block;
+			}
+			h5 {
+				display: block;
 			}
 		}
 	}
+
+	// display: flex;
+	// justify-content: space-between;
+	// &__title {
+	// 	display: none;
+	// 	@include atMedium {
+	// 		color: $c-black;
+	// 		font-family: "Knowledge-Black";
+	// 		font-size: 25px;
+	// 		font-weight: 900;
+	// 		display: block;
+	// 		flex: 3;
+	// 	}
+	// }
+	// &__opt {
+	// 	display: flex;
+	// 	justify-content: space-around;
+	// 	flex: 1;
+	// 	@include atMedium {
+	// 		justify-content: space-between;
+	// 	}
+	// }
+	// &__opt-item {
+	// 	font-family: "Knowledge-Bold";
+	// 	font-size: 13px;
+	// 	font-weight: 700;
+	// 	text-transform: uppercase;
+	// 	flex-wrap: nowrap;
+
+	// 	a {
+	// 		text-decoration: none;
+	// 		color: $c-gray-dark;
+	// 		border-bottom: 2px solid transparent;
+	// 		transition: border-color 0.3s ease;
+	// 		padding-bottom: 2px;
+	// 	}
+	// 	&:hover,
+	// 	&:active {
+	// 		a {
+	// 			border-bottom: 2px solid $c-orange;
+	// 		}
+	// 	}
+	// }
 }
