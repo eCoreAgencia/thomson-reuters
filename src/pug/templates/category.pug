@@ -245,36 +245,35 @@ block content
                     .urlLastSearch(style='display:none')
                         | http://casaegaragem.vtexcommercestable.com.br/casa-e-jardim/?lid=c0383f44-9f25-44e5-9bae-a9ffb3ea49bf
         .navCatalog__oderbyContent
-            .section__breadcrumb
-                .is-fluid
-                    .section__inner
-                        .orderBy
-                            .select
-                                select
-                                    option(value='') Ordenar por
-                                    option(value='OrderByPriceASC') Menor Preço
-                                    option(value='OrderByPriceDESC') Maior Preço
-                                    option(value='OrderByTopSaleDESC') Mais vendidos
-                                    option(value='OrderByReviewRateDESC') Melhores avaliações
-                                    option(value='OrderByNameASC') A - Z
-                                    option(value='OrderByNameDESC') Z - A
-                                    option(value='OrderByReleaseDateDESC') Data de lançamento
-                                    option(value='OrderByBestDiscountDESC') Melhor Desconto
+            .orderBy__ecore
+                .orderBy__ecore__select
+                    .orderBy__ecore__select--title
+                        p Ordenar por
+                    .orderBy__ecore__select--option
+                        ul
+                            li(data-value='OrderByPriceASC') Menor Preço
+                            li(data-value='OrderByPriceDESC') Maior Preço
+                            li(data-value='OrderByTopSaleDESC') Mais vendidos
+                            li(data-value='OrderByReviewRateDESC') Melhores avaliações
+                            li(data-value='OrderByNameASC') A - Z
+                            li(data-value='OrderByNameDESC') Z - A
+                            li(data-value='OrderByReleaseDateDESC') Data de lançamento
+                            li(data-value='OrderByBestDiscountDESC') Melhor Desconto
         .navCatalog__gridSelect
             ul
                 li
                     a(href="#") 
                         i.icon-list list
+                li
                     a(href="#") 
-                        i.icon-grid grid
+                        i.icon-grid.active grid
     section.section__page.section__shelf.shelf
         .container.is-fluid
             +vtex-controller('<vtex.cmc:searchResult layout="65c15678-2bbe-72e0-3aa6-0aa635db2f86" itemCount="12"  columnCount="4" />')
                 p.searchResultsTime
                     span.resultado-busca-numero
-                    span.label Produtos encontrados:
-                    span.value 2
-                    span.resultado-busca-termo
+                        span.label Produtos encontrados:
+                        span.value 61
                     span.label Resultado da Pesquisa por:
                     strong.value
                     span.resultado-busca-tempo

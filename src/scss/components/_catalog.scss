@@ -3,14 +3,272 @@
         display: none;
     }
 
+    .navCatalog {
+        &__gridSelect {
+            ul {
+                li {
+                    display: inline-block;
+                    vertical-align: top;
+                    &:last-child {
+                        margin-left: 20px;
+                    }
+                    a {
+                        font-size: 0;
+                        display: block;
+                        i {
+                            display: block;
+                            width: 23px;
+                            height: 23px;
+                            background: url(/arquivos/icon-grid.jpg) no-repeat center;
+                            background-size: contain;
+                            &.icon-list {
+                                background: url(/arquivos/icon-list.jpg) no-repeat center;
+                                background-size: contain;
+                            }
+                            &.active {
+                                &.icon-list {
+                                    background: url(/arquivos/icon-list-active.jpg) no-repeat center;
+                                    background-size: contain;
+                                }
+                                &.icon-grid {
+                                    background: url(/arquivos/icon-grid-active.jpg) no-repeat center;
+                                    background-size: contain;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &__oderbyContent {
+            .orderBy__ecore {
+                width: 200px;
+                background: #fff;
+                border-radius: 30px;
+                border: 1px solid #ccc;
+                padding: 5px 0 5px 10px;
+                margin: 15px 0;
+                z-index: 99;
+                position: relative;
+                cursor: pointer;
+                position: relative;
+
+                &.active {
+                    .orderBy__ecore__select {
+                        &--title {
+                            &:before {
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+                }
+                &__select {
+                    &--title {
+                        &:before {
+                            content: "";
+                            width: 25px;
+                            height: 25px;
+                            background: url(/arquivos/arrow-select.png) no-repeat center;
+                            background-size: contain;
+                            display: block;
+                            position: absolute;
+                            right: 4px;
+                            z-index: 9;
+                            transition: 1s ease;
+                        }
+                    }
+                    &--option {
+                        display: none;
+                        position: absolute;
+                        width: 101%;
+                        background: #fff;
+                        top: 22px;
+                        left: -1px;
+                        padding: 12px;
+                        border: 1px solid #ccc;
+                        border-top: 0;
+                        border-bottom-left-radius: 30px;
+                        border-bottom-right-radius: 30px;
+                    }
+                }
+            }
+        }
+    }
+
     .shelf {
         
         ul {
             flex-wrap: wrap;
             justify-content: flex-start;
         }
+
+        &.list {
+            li {
+                display: block;
+                width: 100%;
+                margin-bottom: 20px;
+                .product {
+                    &__shelf {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center; 
+                    }
+                    &__header {
+                        width: 18%;
+                        .product__category {
+                            display: none;
+                        }
+                    }
+                    .price__list-line, .price__installment {
+                        text-align: left;
+                    }
+                    &__info {
+                        width: 50%;
+                        .product__name {
+                            text-align: left;
+                            a {
+                                justify-content: left;
+                                width: 100%;
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         li {
-            min-width: 276px;
+            position: relative;
+            margin: 0.2rem;
+            display: inline-block;
+            background-color: #fff;
+            -webkit-box-shadow: 0 0 11px rgba(0, 0, 0, 0.07);
+            box-shadow: 0 0 11px rgba(0, 0, 0, 0.07);
+            width: 262px;
+            overflow: hidden;
+            transition: .5s ease;
+            @include atMedium {
+                //margin: 1.2rem;
+            }
+            .flag {
+                top: 0;
+                left: -5px;
+                padding: 7px 15px;
+                color: #fff;
+                font-size: 11px;
+                font-weight: bold;
+                position: absolute;
+                font-family: $f-base;
+                letter-spacing: 0.17px;
+                text-transform: uppercase;
+                background-color: #ff3717;
+                transform: skew(-15deg);
+            }
+            .all-shelf {
+                &__header {
+                    text-align: center;
+                }
+                &__product {
+                    &__name {
+                        padding: 10px 10px 0;
+                    }
+                    &__link {
+                        color: #222;
+                        font-size: 20px;
+                        font-weight: 700;
+                        font-style: italic;
+                        font-family: $f-base;
+                        letter-spacing: 0.24px;
+                        text-transform: uppercase;
+                        @include atMedium {
+                            line-height: 24px;
+                            line-height: 22px;
+                        }
+                    }
+                    &__skuname {
+                        color: #222;
+                        font-size: 14px;
+                        font-weight: 700;
+                        font-style: italic;
+                        text-transform: uppercase;
+                        padding: 0 10px;
+                    }
+                    &__brand {
+                        padding: 10px;
+                    }
+                    &__pic {
+                        margin: auto;
+                        @include atMedium {
+                            margin: auto;
+                        }
+                    }
+                    &__price {
+                        padding: 15px 10px;
+                        &__oldprice {
+                            display: block;
+                            font-size: 14px;
+                            font-weight: 400;
+                            color: #808080;
+                            font-style: italic;
+                            letter-spacing: 0.17px;
+                            font-family: "Open Sans";
+                            text-transform: uppercase;
+                            text-decoration: line-through;
+                            line-height: 1.2;
+                        }
+                        &__newprice {
+                            color: #222;
+                            display: block;
+                            font-size: 22px;
+                            font-weight: 700;
+                            font-style: italic;
+                            letter-spacing: 0.36px;
+                            font-family: $f-base;
+                            text-transform: uppercase;
+                            line-height: 1.2;
+                            @include atMedium {
+                                font-size: 30px;
+                            }
+                        }
+                        &__installment {
+                            display: block;
+                            font-size: 12px;
+                            color: #808080;
+                            font-weight: 400;
+                            font-style: italic;
+                            font-family: "Open Sans";
+                            @include atMedium {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                    &__info__actions {
+                        margin-top: 10px;
+                        @include atMedium {
+                            margin-top: 20px;
+                        }
+                        &__btn {
+                            height: 48px;
+                            color: #fff;
+                            display: flex;
+                            font-size: 14px;
+                            font-weight: bold;
+                            line-height: 64px;
+                            text-align: center;
+                            font-style: italic;
+                            font-family: $f-base;
+                            letter-spacing: 0.35px;
+                            text-transform: uppercase;
+                            background-color: #f22100;
+                            align-items: center;
+                            justify-content: center;
+                            @include atMedium {
+                                height: 58px;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
