@@ -85,11 +85,15 @@ if ($('body').hasClass('product')) {
       //window.OMSimulateShipping = new SimulateShipping()
     }
 
-    
+
   }
 
   $(() => {
     window.OMProduct = new Product()
   })
+
+
+  const buttonSumary = `<a href="" class= "button__preview">Ler Sumário</a>`
+  $( buttonSumary ).insertBefore( ".buy-button" );
 }
 })()

@@ -1,4 +1,31 @@
+$top-flag-val: 50px;
 .product {
+	.flag {
+		width: 45px;
+		height: 45px;
+		background-color: $c-gray-dark;
+		border-radius: 50%;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		right: 5px;
+		top: $top-flag-val;
+		&--novidade,
+		&--e-book {
+			@include font-size(8px);
+			color: $c-white;
+			font-family: "Knowledge-Medium";
+			font-weight: 500;
+			text-transform: uppercase;
+		}
+		&:nth-of-type(2) {
+			top: calc(#{$top-flag-val} + 50px);
+		}
+		&:nth-of-type(3) {
+			top: calc(#{$top-flag-val} + 100px);
+		}
+	}
 	.show-on-hover {
 		position: absolute;
 		width: 100%;
@@ -264,7 +291,7 @@
 		.valor-por,
 		.valor-por strong {
 			color: $c-orange;
-			font-family: "Knowledge - Regular";
+			font-family: "Knowledge-Regular";
 			font-size: 25px;
 			font-weight: 400;
 		}
@@ -299,11 +326,23 @@
 
 	// BUY-BUTTON INJECT STYLES
 	&__action-bottom--pgprod {
+		display: flex;
 		.buy-button {
 			@extend .button__buy;
 			display: flex !important;
 			align-items: center;
 			justify-content: center;
+			width: 200px;
+			height: 45px;
+			@include font-size(16px);
+			border-radius: 23px;
+		}
+		.button__preview {
+			width: 200px;
+			height: 45px;
+			border-radius: 23px;
+			@include font-size(16px);
+			margin: 0 10px 0 0;
 		}
 	}
 }
