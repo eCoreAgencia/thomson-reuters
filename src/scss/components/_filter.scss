@@ -1,5 +1,4 @@
 .filter {
-	display: none;
 	padding: 10px 0;
 	&__content {
 		display: none;
@@ -9,14 +8,67 @@
 		.menu-navegue, a, h4, h3, h5 {
 			display: none;
 		}
-		fieldset {
-			display: none;
-			border: none;
-			&.refino-marca {
+		.search-multiple-navigator {
+			display: flex;
+			fieldset {
 				display: block;
-			}
-			h5 {
-				display: block;
+				width: 150px;
+				margin-right: 10px;
+				background: #fff;
+				border: 1px solid #ccc;
+				padding: 8px;
+				border-radius: 30px;
+				position: relative;
+				&.refino-marca {
+					display: block;
+				}
+				&:before {
+					content: "";
+					width: 25px;
+					height: 25px;
+					background: url(/arquivos/arrow-select.png) no-repeat center;
+					background-size: contain;
+					display: block;
+					position: absolute;
+					right: 4px;
+					top: 4px;
+					z-index: 4;
+					transition: 1s ease;
+				}
+				&:hover {
+					div {
+						display: block;
+					}
+				}
+				h5 {
+					display: block;
+					font-family: $f-base;
+					font-size: 11px;
+					font-weight: 700;
+					color: #666666;
+					letter-spacing: 0.69px;
+				}
+				div {
+					display: none;
+					position: absolute;
+					top: 20px;
+					width: 101.2%;
+					background: #fff;
+					left: -1px;
+					padding: 12px;
+					border: 1px solid #ccc;
+					z-index: 1;
+					border-top: 0;
+					border-bottom-left-radius: 30px;
+					border-bottom-right-radius: 30px;
+					transition: 1s ease;
+					label {
+						display: block;
+						cursor: pointer;
+						font-size: 11px;
+						font-family: $f-base;
+					}
+				}
 			}
 		}
 	}
