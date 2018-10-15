@@ -57,10 +57,10 @@ $top-flag-val: 50px;
 		height: 27px;
 	}
 	&__media {
-		display: block;
-		// width: 111px;
-		// height: 160px;
-		margin: 16px auto;
+		@include atMedium {
+			display: block;
+			margin: 16px auto;
+		}
 	}
 	&__link {
 		font-family: "Knowledge-Medium";
@@ -220,6 +220,7 @@ $top-flag-val: 50px;
 	}
 	&__watch-media {
 		display: block;
+		// width: 100%;
 		// width: 111px;
 		// height: 160px;
 	}
@@ -276,8 +277,10 @@ $top-flag-val: 50px;
 				@include font-size(24px);
 				font-weight: 500;
 				letter-spacing: -0.4px;
+				width: 100vw;
 				@include atMedium {
 					display: none;
+					width: auto;
 				}
 			}
 		}
@@ -343,23 +346,30 @@ $top-flag-val: 50px;
 		font-weight: 400;
 		line-height: 12px;
 	}
-	// PRICE DO CONTROLE VTEX
+	// PRICE DO CONTROLE VTEX product page
 	.descricao-preco {
 		display: grid;
-		justify-content: flex-start;
-		text-align: left;
+		justify-content: center;
+		text-align: center;
 		font-family: "Knowledge-Regular";
 		margin: 18px 0;
 		em {
 			font-style: normal;
 		}
+		@include atMedium {
+			justify-content: flex-start;
+			text-align: left;
+		}
 		.valor-de,
 		.valor-de strong {
 			color: $c-gray-dark;
 			font-family: "Knowledge-Regular";
-			font-size: 13px;
+			@include font-size(16px);
 			font-weight: 400;
 			text-decoration: line-through;
+			@include atMedium {
+				@include font-size(13px);
+			}
 		}
 		.valor-por,
 		.valor-por strong {
@@ -422,27 +432,93 @@ $top-flag-val: 50px;
 
 	// ORGANIZANDO OS THUMBS
 	&__media-top {
-		#show {
-			@include atMedium {
+		@include atMedium {
+			width: auto;
+			img {
+				width: auto;
+			}
+			#show {
 				display: grid;
 				grid-template-columns: 0.2fr 1fr;
 			}
+			.thumbs {
+				order: -1;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				width: 88px;
+				align-items: center;
+			}
+			li.slick-slide {
+				border: 1px solid #d0d0d0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 10px 0;
+			}
 		}
-		.thumbs {
-			order: -1;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-around;
+
+		&--mobile {
+			width: 100vw;
+			img {
+				width: 100%;
+				margin: 18px 10px;
+			}
+			.thumbs {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				.slick-arrow {
+					position: relative;
+					right: 0;
+					left: 0;
+					background-color: transparent;
+					border: 0;
+					&:after {
+						content: " ";
+						position: absolute;
+						width: 13px;
+						height: 13px;
+						color: $c-gray-dark;
+						border: 2px solid $c-gray-dark;
+						border-left: 0px;
+						border-bottom: 0px;
+						top: 33%;
+						transform-origin: center;
+						transform: rotate(45deg);
+						border-radius: 2px;
+						display: block;
+						left: 25%;
+					}
+				}
+				.slick-prev {
+					&::after {
+						transform: rotate(-45deg);
+					}
+				}
+				.slick-next {
+					&::after {
+						transform: rotate(135deg);
+					}
+				}
+			}
 		}
 	}
 
 	// BUY-BUTTON INJECT STYLES
 	&__action--pgprod {
-		border-bottom: 1px solid $c-grey-simple;
-		padding: 10px 0 21px 0;
+		@include atMedium {
+			border-bottom: 1px solid $c-grey-simple;
+			padding: 10px 0 21px 0;
+		}
 	}
 	&__action-bottom--pgprod {
 		display: flex;
+		flex-direction: column;
+		align-items: center;
+		@include atMedium {
+			flex-direction: row;
+		}
 		.buy-button {
 			@extend .button__buy;
 			display: flex !important;
@@ -458,7 +534,9 @@ $top-flag-val: 50px;
 			height: 45px;
 			border-radius: 23px;
 			@include font-size(16px);
-			margin: 0 10px 0 0;
+			@include atMedium {
+				margin: 0 10px 0 0;
+			}
 		}
 	}
 }
