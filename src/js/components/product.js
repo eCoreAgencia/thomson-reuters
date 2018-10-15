@@ -167,12 +167,11 @@ export default (function () {
 		for (var i = 0; i < imgs.length; i++) {
 			imgSrcs.push(imgs[i].src);
 		}
-		return console.log(imgSrcs);
+		return imgSrcs;
 	}
-	img_find();
-    // $(imgSrcs).forEach(element => {
-	// 	let uls = element.attr(src);
-	// 	alert(uls);
-	// });
+    $(imgSrcs).forEach(element => {
+		let uls = element.attr(src);
+		alert(uls);
+	});
   }
 }());
