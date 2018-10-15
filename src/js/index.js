@@ -12,6 +12,7 @@ import './components/mobile-menu';
 //import './components/buyBuyCategory';
 import './components/product';
 import './components/sticky-header';
+import './components/sumario';
 
 
 import './components/buy-by-category/main'

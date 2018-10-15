@@ -1,72 +1,76 @@
 include ../helpers.pug
 
 if (global.process.env.NODE_ENV === 'production')
-  - var title = '$product.HtmlEscapedName'
-  - var href = '$product.Uri'
-  - var dataProductId = '$product.Id'
-  - var listPrice = '$product.ListPrice'
-  - var bestPrice = '$product.BestPrice'
-  - var flags = '$product.HightLight'
-  - var getImageTag = '$product.GetImageTag(2)'
-  - var getImageTag2 = '$product.GetImageTag(2)'
-  - var categoryName = '+ $product.CategoryName'
-  - var categoryHref = '$product.CategoryLink'
+	- var title = '$product.HtmlEscapedName'
+	- var href = '$product.Uri'
+	- var dataProductId = '$product.Id'
+	- var listPrice = '$product.ListPrice'
+	- var bestPrice = '$product.BestPrice'
+	- var flags = '$product.HightLight'
+	- var getImageTag = '$product.GetImageTag(2)'
+	- var getImageTag2 = '$product.GetImageTag(2)'
+	- var categoryName = '+ $product.CategoryName'
+	- var categoryHref = '$product.CategoryLink'
 
 else
-  - var title = 'Tratado de Direito empresarial vol VII - Direito Concorrencial…'
-  - var author = 'Nelson Nery Jr, Rosa Maria De Andra…'
-  - var href = '/produto.html'
-  - var dataProductId = Math.floor(Math.random() * 9999999)
-  - var listPrice = 'R$ 265,99'
-  - var bestPrice = 'R$ 238,50'
-  - var flags = '<p class="flag destaque">destaque</p>'
-  - var getImageTag =  '<img src="http://via.placeholder.com/180x173"" width="180" height="173" />'
-  - var getImageTag2 = '<img src="http://via.placeholder.com/279x365" width="111" height="160" />'
-  - var categoryName = 'penal'
-  - var categoryHref = '/category.html'
+	- var title = 'Tratado de Direito empresarial vol VII - Direito Concorrencial…'
+	- var author = 'Nelson Nery Jr, Rosa Maria De Andra…'
+	- var href = '/produto.html'
+	- var dataProductId = Math.floor(Math.random() * 9999999)
+	- var listPrice = 'R$ 265,99'
+	- var bestPrice = 'R$ 238,50'
+	- var flags = '<p class="flag destaque">destaque</p>'
+	- var getImageTag =  '<img src="http://via.placeholder.com/180x173"" width="180" height="173" />'
+	- var getImageTag2 = '<img src="http://via.placeholder.com/279x365" width="111" height="160" />'
+	- var categoryName = 'penal'
+	- var categoryHref = '/category.html'
 
 .product
-  .product__shelf
-    .flags
-    span.product-shelf__id(data-product-id= dataProductId)
-    .product__header
-      a.product__category(title=categoryName, href=categoryHref)
-        != categoryName
-      .product__media
-        a.product__link(href=href)
-          != getImageTag
-    .product__reviews
-    .product__info
-      h3.product__name
-        a.product__link(title= title, href= href)= title
-        a.product__author(title= title, href= href)= author
-    .product__price
-      if ( global.process.env.NODE_ENV === 'production' )
-        != '\n#if ($product.IsInStock)'
-        != '\n  <div class="price">'
-        != '\n  	#if ($product.HasBestPrice)'
-        != '\n    	<span class="price__list-line">De ' + listPrice + '</span>'
-        != '\n    	<span class="price__best">Por R$' + bestPrice + '</span>'
-        != '\n    #else'
-        != '\n    	<span class="price__list">' + listPrice + '</span>'
-        != '\n    #end'
-        != '\n    #if ($product.NumbersOfInstallment > 1)'
-        != '\n      <span class="price__installment">'
-        != '\n        ou ${product.NumbersOfInstallment}X de ${product.InstallmentValue}'
-        != '\n      </span>'
-        != '\n    #end'
-        != '\n  </div>'
-        != '\n#else'
-        != '\n  <span class="product__unavailable">Indisponível</span>"'
-        != '\n#end\n'
-      else
-        .price
-          span.price__list-line de R$ 265,00
-          span.price__best Por R$ 238,50
-          span.price__installment ou 4x de 56,25
-    .button__shelf
-      a.button__buy(href= href) Comprar
-      a.button__preview(href=preview) Sumário
+	.product__shelf
+		.always-show
+			.flags
+				span.product-shelf__id(data-product-id= dataProductId)
+				.product__header
+					a.product__category(title=categoryName, href=categoryHref)
+						!= categoryName
+					.product__media
+						a.product__link(href=href)
+							!= getImageTag
+				.product__reviews
+				.product__info
+					h3.product__name
+						a.product__link(title= title, href= href)= title
+						a.product__author(title= title, href= href)= author
+				.product__price
+					if ( global.process.env.NODE_ENV === 'production' )
+						!= '\n#if ($product.IsInStock)'
+						!= '\n  <div class="price">'
+						!= '\n  	#if ($product.HasBestPrice)'
+						!= '\n    	<span class="price__list-line">De ' + listPrice + '</span>'
+						!= '\n    	<span class="price__best">Por R$' + bestPrice + '</span>'
+						!= '\n    #else'
+						!= '\n    	<span class="price__list">' + listPrice + '</span>'
+						!= '\n    #end'
+						!= '\n    #if ($product.NumbersOfInstallment > 1)'
+						!= '\n      <span class="price__installment">'
+						!= '\n        ou ${product.NumbersOfInstallment}X de ${product.InstallmentValue}'
+						!= '\n      </span>'
+						!= '\n    #end'
+						!= '\n  </div>'
+						!= '\n#else'
+						!= '\n  <span class="product__unavailable">Indisponível</span>"'
+						!= '\n#end\n'
+					else
+						.price
+							span.price__list-line de R$ 265,00
+							span.price__best Por R$ 238,50
+							span.price__installment ou 4x de 56,25
+
+		.show-on-hover
+			.button__shelf
+				a.button__buy(href= href) Comprar
+				a.button__preview(href=preview) Sumário
+
 
 
 

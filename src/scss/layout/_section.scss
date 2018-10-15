@@ -72,4 +72,8 @@
 			grid-template-columns: minmax(auto, 0.8fr) 2fr;
 		}
 	}
+	&__product-bottom {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+	}
 }
