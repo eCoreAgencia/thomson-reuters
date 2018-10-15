@@ -37,16 +37,8 @@ block content
     section.section__page.navCatalog.container
         .navCatalog__numberResult
             p 23 RESULTADOS
-        .navCatalog__filter.filter
-            .filter__inner
-                .filter__content
-                    ul.filter__menu
-                        li.filter__item
-                            span Todos
-                            .filter__options
-                                label
-                    .filter__actions
-                        button.button.button--primary Aplicar
+        .navCatalog__filter.filterCatalog
+            .filterCatalog__inner
                 +vtex-controller('<vtex.cmc:searchNavigator />')
                     script(type='text/javascript', language='javascript').
                         $(document).ready(function() {
