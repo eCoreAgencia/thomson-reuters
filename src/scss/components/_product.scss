@@ -255,19 +255,30 @@ $top-flag-val: 50px;
 
 	&__name {
 		&--pgprod {
-			color: #414141;
-			font-family: "Knowledge-Medium";
-			font-size: 24px;
-			font-weight: 500;
-			letter-spacing: -0.4px;
-			text-align: left;
-			border-bottom: 1px solid $c-grey-simple;
-			padding: 10px 0;
-		}
-
-		&--pgprod-mobile {
+			display: none;
 			@include atMedium {
-				display: none;
+				display: block;
+				color: #414141;
+				font-family: "Knowledge-Medium";
+				@include font-size(24px);
+				font-weight: 500;
+				letter-spacing: -0.4px;
+				text-align: left;
+				border-bottom: 1px solid $c-grey-simple;
+				padding: 10px 0;
+			}
+			&-mobile {
+				display: block;
+				text-align: center;
+				padding: 10px 0;
+				color: #414141;
+				font-family: "Knowledge-Medium";
+				@include font-size(24px);
+				font-weight: 500;
+				letter-spacing: -0.4px;
+				@include atMedium {
+					display: none;
+				}
 			}
 		}
 	}
@@ -412,8 +423,10 @@ $top-flag-val: 50px;
 	// ORGANIZANDO OS THUMBS
 	&__media-top {
 		#show {
-			display: grid;
-			grid-template-columns: 0.2fr 1fr;
+			@include atMedium {
+				display: grid;
+				grid-template-columns: 0.2fr 1fr;
+			}
 		}
 		.thumbs {
 			order: -1;
@@ -449,4 +462,3 @@ $top-flag-val: 50px;
 		}
 	}
 }
-
