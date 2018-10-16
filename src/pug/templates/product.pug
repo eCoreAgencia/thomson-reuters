@@ -3,9 +3,9 @@ extends ../layouts/default.pug
 block vars
 	- var pageTitle = ' Produto'
 	- var bodyClass = 'product'
-
 block content
 	.container
+		script(src='/arquivos/tablehack.js')
 		section.section__breadcrumb
 			+vtex-controller('<vtex.cmc:breadCrumb />')
 				.bread-crumb
@@ -98,64 +98,67 @@ block content
 												span.sku-notifyme-error.notifyme-error
 					.product__shipping
 						a.product__shipping-link Calcular frete e prazo de entrega
+	.container--full.bg-white
+		.container
+			section.section__product-bottom
+				.product__description
+					h2.product__description-title Descrição:
+						i.simple-arrow-right
+					.product__description-text
+						+vtex-controller('<vtex.cmc:ProductDescription />')
+							p A obra Manual de Direito Penal Brasileiro – Parte Geral, de autoria de Eugenio Raúl Zaffaroni e José Henrique Pierangeli, é um clássico jurídico.
+							<br/><br/>
+							p Trata-se de uma das principais obras do direito penal brasileiro, constantemente citada em trabalhos científicos e respeitada por todos aqueles que militam na área criminal.
+							<br/><br/>
+							p Destaque: representações gráficas das explicações de temas complexos e quadros com sínteses sobre temas pontuais considerados de relevância pelos autores.
+							<br/><br/>
+							p Traz ao final de cada capítulo a bibliografia e a indicação de leitura complementar.
+							<br/><br/>
+							p Indicado para universitários, pós-graduações e aos profissionais atuantes na área penal.
+				.product__specification
+					h2.product__description-title Ficha Técnica:
+						i.simple-arrow-right
+					.product__specification-text
+						+vtex-controller('<vtex.cmc:productSpecification/>')
+							.product-description-box
+								#specification
+									// Component: Specification
+									#caracteristicas
+										h4.group.Especificacoes Especificações
+										table.group.Especificacoes(cellspacing='0')
+											tbody
+											tr.even
+												th.name-field.Codigo-ISBN Data de disponibilidade:
+												td.value-field.Codigo-ISBN 01 de Setembro de 2018
+											tr
+												th.name-field.Numero-de-paginas Dimensões:
+												td.value-field.Numero-de-paginas 24.00cm x 17.00cm
+											tr.even
+												th.name-field.Ano-de-publicacao Marca:
+												td.value-field.Ano-de-publicacao Revista dos Tribunais
+											tr
+												th.name-field.Autores Autores
+												td.value-field.Autores 	Leone Pereira, Marcos Scalercio, Renata Orsi
+											tr.even
+												th.name-field.Ano-de-publicacao Peso:
+												td.value-field.Ano-de-publicacao 1027 gramas
+											tr
+												th.name-field.Autores Ano de publicação:
+												td.value-field.Autores 2018
+											tr.even
+												th.name-field.Ano-de-publicacao Número de páginas
+												td.value-field.Ano-de-publicacao 200
+											tr
+												th.name-field.Autores Volume:
+												td.value-field.Autores 1
+											tr.even
+												th.name-field.Ano-de-publicacao Edição:
+												td.value-field.Ano-de-publicacao 12ª Edição
+									// .description
 
-		section.section__page.section__product-bottom
-			.product__description
-				h2.product__description-title Descrição:
-				.product__description-text
-					+vtex-controller('<vtex.cmc:ProductDescription />')
-						p A obra Manual de Direito Penal Brasileiro – Parte Geral, de autoria de Eugenio Raúl Zaffaroni e José Henrique Pierangeli, é um clássico jurídico.
-						<br/><br/>
-						p Trata-se de uma das principais obras do direito penal brasileiro, constantemente citada em trabalhos científicos e respeitada por todos aqueles que militam na área criminal.
-						<br/><br/>
-						p Destaque: representações gráficas das explicações de temas complexos e quadros com sínteses sobre temas pontuais considerados de relevância pelos autores.
-						<br/><br/>
-						p Traz ao final de cada capítulo a bibliografia e a indicação de leitura complementar.
-						<br/><br/>
-						p Indicado para universitários, pós-graduações e aos profissionais atuantes na área penal.
-			.product__specification
-				h2.product__description-title Ficha Técnica:
-				.product__specification-text
-					+vtex-controller('<vtex.cmc:productSpecification/>')
-						.product-description-box
-							#specification
-								// Component: Specification
-								#caracteristicas
-									h4.group.Especificacoes Especificações
-									table.group.Especificacoes(cellspacing='0')
-										tbody
-										tr.even
-											th.name-field.Codigo-ISBN Data de disponibilidade:
-											td.value-field.Codigo-ISBN 01 de Setembro de 2018
-										tr
-											th.name-field.Numero-de-paginas Dimensões:
-											td.value-field.Numero-de-paginas 24.00cm x 17.00cm
-										tr.even
-											th.name-field.Ano-de-publicacao Marca:
-											td.value-field.Ano-de-publicacao Revista dos Tribunais
-										tr
-											th.name-field.Autores ISBN13:
-											td.value-field.Autores 9788520372449
-										tr.even
-											th.name-field.Ano-de-publicacao Peso:
-											td.value-field.Ano-de-publicacao 1027 gramas
-										tr
-											th.name-field.Autores Ano de publicação:
-											td.value-field.Autores 2018
-										tr.even
-											th.name-field.Ano-de-publicacao Número de páginas
-											td.value-field.Ano-de-publicacao 200
-										tr
-											th.name-field.Autores Volume:
-											td.value-field.Autores 1
-										tr.even
-											th.name-field.Ano-de-publicacao Edição:
-											td.value-field.Ano-de-publicacao 12ª Edição
-								// .description
-
-
+	.container
 		section.section__page.section__shelf
-			h2.section__title Vistos Recentemente
+			h2.section__title.section__title--darker Vistos Recentemente
 			.shelf.shelf__carousel--full
 				+vtex-controller('<vtex:contentPlaceHolder id="Quem-viu-viu-tambem" />')
 					.prateleira
@@ -164,7 +167,7 @@ block content
 								li
 									include ../shelves/product-shelf
 		section.section__page.section__shelf
-			h2.section__title Clientes também compraram
+			h2.section__title.section__title--darker Clientes também compraram
 			.shelf.shelf__carousel--full
 				+vtex-controller('<vtex:contentPlaceHolder id="Quem-viu-viu-tambem" />')
 					.prateleira
@@ -175,3 +178,4 @@ block content
 
 block scripts
 	script(src='/arquivos/ec-easyzoom.js')
+
