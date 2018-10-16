@@ -1,4 +1,15 @@
 .header {
+	p.welcome {
+		font-size: 11px;
+		text-transform: uppercase;
+		a {
+			color: #4e4d4d;
+			font-weight: 500;
+			text-decoration: none;
+			font-style: normal;
+			padding-left: 3px;
+		}
+	}
 	.tip-bar {
 		display: none;
 		@include atMedium {
