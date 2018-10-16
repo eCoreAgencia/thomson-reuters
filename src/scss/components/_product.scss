@@ -252,7 +252,32 @@ $top-flag-val: 50px;
 		font-weight: 400;
 	}
 
-	// PRODUCT PAGEEEEEEEEEE
+	// PRODUCT PAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+	// THE MAIN GRID
+	&__main {
+		display: grid;
+		#include {
+			display: none;
+			@include atMedium {
+				display: block;
+			}
+		}
+		@include atMedium {
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 50px;
+		}
+	}
+	.autores--pgprod {
+		color: $c-gray-dark;
+		font-family: "Knowledge-Regular";
+		font-size: 13px;
+		font-weight: 400;
+		line-height: 15px;
+		span {
+			font-family: "Knowledge-Medium";
+			font-weight: 500;
+		}
+	}
 
 	&__name {
 		&--pgprod {
@@ -285,6 +310,12 @@ $top-flag-val: 50px;
 			}
 		}
 	}
+	&__price--pgprod {
+		margin-top: 20px;
+		@include atMedium {
+			margin-top: 0;
+		}
+	}
 
 	// SPECIFICATION AND DESCRIPTION HIDING TITLES TO ADD THE CUSTOM ONES
 	&-description-box {
@@ -295,35 +326,98 @@ $top-flag-val: 50px;
 			display: none;
 		}
 	}
+	// DESCRIPTION LEFT SIDE OF GRID
 	&__description {
-		width: 85%;
+		@include atMedium {
+			width: 85%;
+		}
 	}
 	&__description-title {
-		color: $c-black;
-		font-family: "Knowledge-Black";
-		@include font-size(25px);
-		font-weight: 900;
-		margin-bottom: 20px;
+		background-color: $c-white;
+		color: $c-gray-shades;
+		font-family: "Knowledge-Medium";
+		@include font-size(14px);
+		font-weight: 500;
+		text-transform: uppercase;
+		border-top: 1px solid $c-gray-soft;
+		border-bottom: 1px solid $c-gray-soft;
+		padding: 10px 20px;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		i {
+			@include font-size(18px);
+			color: $c-gray-dark;
+		}
+		@include atMedium {
+			padding: 0;
+			width: auto;
+			color: $c-black;
+			font-family: "Knowledge-Black";
+			@include font-size(25px);
+			font-weight: 900;
+			margin-bottom: 20px;
+			border: 0;
+			i {
+				display: none;
+			}
+		}
 	}
 	&__description-text {
-		height: 245px;
-		overflow-y: scroll;
+		display: none;
 		color: $c-gray-dark;
 		font-family: "Knowledge-Regular";
-		@include font-size(14px);
+		@include font-size(15px);
 		font-weight: 400;
 		line-height: 18px;
+		padding: 10px;
+		background: #f0f0f0;
+		&.is-visible {
+			display: block;
+		}
+		@include atMedium {
+			display: block;
+			@include font-size(14px);
+			padding: 0;
+			height: 245px;
+			overflow-y: scroll;
+			background: initial;
+		}
 	}
+
+	// SPECIFICATION RIGHT SIDE OF THE GRID
+
 	&__specification-text {
+		display: none;
+		background: #f0f0f0;
 		color: $c-gray-dark;
 		font-family: "Knowledge-Regular";
-		@include font-size(14px);
+		@include font-size(15px);
 		font-weight: 400;
 		line-height: 24px;
-		th {
+		padding: 10px 10px 20px 20px;
+		.name-field {
 			font-family: "Knowledge-Medium";
 			font-weight: 500;
 			padding-right: 10px;
+		}
+		.new-structure {
+			div {
+				display: flex;
+				div {
+					flex-wrap: wrap;
+				}
+			}
+		}
+		&.is-visible {
+			display: block;
+		}
+		@include atMedium {
+			display: block;
+			padding: 0;
+			@include font-size(14px);
+			background: initial;
 		}
 	}
 	.plugin-preco {
@@ -337,7 +431,11 @@ $top-flag-val: 50px;
 		}
 	}
 	&__shipping {
-		padding: 10px 0;
+		display: none;
+		@include atMedium {
+			padding: 10px 0;
+			display: block;
+		}
 	}
 	&__shipping-link {
 		@include font-size(13px);
@@ -375,15 +473,21 @@ $top-flag-val: 50px;
 		.valor-por strong {
 			color: $c-orange;
 			font-family: "Knowledge-Regular";
-			font-size: 25px;
+			@include font-size(30px);
 			font-weight: 400;
+			@include atMedium {
+				@include font-size(25px);
+			}
 		}
 		.valor-dividido,
 		.valor-dividido strong {
 			color: $c-gray-dark;
 			font-family: "Knowledge-Regular";
-			font-size: 13px;
+			@include font-size(16px);
 			font-weight: 400;
+			@include atMedium {
+				@include font-size(13px);
+			}
 		}
 	}
 	.preco-a-vista {
@@ -395,7 +499,7 @@ $top-flag-val: 50px;
 		justify-content: center;
 		position: absolute;
 		right: 0;
-		top: 0;
+		top: -30px;
 		width: 145px;
 		height: 25px;
 		border-radius: 20px;
@@ -406,6 +510,8 @@ $top-flag-val: 50px;
 		font-weight: 700;
 		text-transform: uppercase;
 		letter-spacing: 0.5px;
+		margin: 0 auto;
+		left: 0;
 		strong {
 			color: $c-white;
 			font-family: "Knowledge-Bold";
@@ -414,19 +520,10 @@ $top-flag-val: 50px;
 			text-transform: uppercase;
 			letter-spacing: 0.5px;
 		}
-	}
-	// THE MAIN GRID
-	&__main {
-		display: grid;
-		#include {
-			display: none;
-			@include atMedium {
-				display: block;
-			}
-		}
 		@include atMedium {
-			grid-template-columns: 1fr 1fr;
-			grid-gap: 50px;
+			top: 0;
+			margin: 0;
+			left: auto;
 		}
 	}
 
@@ -524,19 +621,27 @@ $top-flag-val: 50px;
 			display: flex !important;
 			align-items: center;
 			justify-content: center;
-			width: 200px;
+			width: 300px;
 			height: 45px;
 			@include font-size(16px);
 			border-radius: 23px;
-		}
-		.button__preview {
-			width: 200px;
-			height: 45px;
-			border-radius: 23px;
-			@include font-size(16px);
 			@include atMedium {
-				margin: 0 10px 0 0;
+				width: 200px;
 			}
 		}
+		.button__preview {
+			width: 300px;
+			height: 45px;
+			border-radius: 23px;
+			@include font-size(16px);
+			margin-bottom: 10px;
+			@include atMedium {
+				margin: 0 10px 0 0;
+				width: 200px;
+			}
+		}
+	}
+	.bg-white {
+		background-color: $c-white;
 	}
 }

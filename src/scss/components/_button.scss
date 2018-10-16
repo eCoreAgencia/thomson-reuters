@@ -67,10 +67,11 @@
 	height: 30px;
 	background-color: transparent;
 	border-radius: 50%;
-	font-size: 0.9em;
+	@include font-size(20px);
 	color: $c-white;
 	order: 0;
 	@include atMedium {
+		@include font-size(13px);
 		background-color: $c-gray-dark;
 		order: 2;
 	}

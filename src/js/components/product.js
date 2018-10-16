@@ -24,6 +24,31 @@ export default (function () {
     const shelf__prev =			'<button type=\'button\' class=\'slick-prev shelf__button\'><svg data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.96 62.45"><path fill="#9e9e9e" d="M0 32.47l30.24 29.98 2.62-2.49L4.19 31.23 32.95 2.49 30.22 0 0 29.98v2.49z"/></svg></button>';
     const shelf__next =			'<button type=\'button\' class=\'slick-next shelf__button\'><svg data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.96 62.45"><path fill="#9e9e9e" d="M32.95 29.98L2.72 0 .1 2.49l28.66 28.74L0 59.96l2.73 2.49 30.22-29.98v-2.49z"/></svg></button>';
 
+    $(document).ready(() => {
+      $('.group.Especificacoes').tableanarchy({
+        containerClass: 'new-structure',
+      });
+      const autores = $('.value-field.Autores').text();
+      const htres = `<h3 class = "autores--pgprod"><span>Autor:</span> ${autores}</h3>`;
+      const target = $('.product__name--pgprod');
+      target.append(htres);
+
+	  const trigger = $('.product__description-title');
+	  const destination = trigger.next();
+      trigger.click((e) => {
+        $(e.target)
+          .next()
+          .toggleClass('is-visible');
+        destination.hasClass('is-visible')
+          ? $(e.target)
+            .find('i')
+            .css('transform', 'rotate(90deg)')
+          : $(e.target)
+            .find('i')
+            .css('transform', 'rotate(0deg)');
+      });
+    });
+
     $('.product__media-top--mobile .thumbs').slick({
       arrows: false,
       slidesToShow: 1,
@@ -158,20 +183,19 @@ export default (function () {
 
     const buttonSumary = '<a href="" class= "button__preview">Ler Sumário</a>';
     $(buttonSumary).insertBefore('.buy-button');
-  }
 
-  if ($(window).width() <= 799) {
-	function img_find() {
-		let imgs = $(".thumbs img");
-		let imgSrcs = [];
-		for (var i = 0; i < imgs.length; i++) {
-			imgSrcs.push(imgs[i].src);
-		}
-		return imgSrcs;
-	}
-    $(imgSrcs).forEach(element => {
-		let uls = element.attr(src);
-		alert(uls);
-	});
+    if ($(window).width() <= 799) {
+      $('.thumbs li').each(function (index) {
+        const url = $(this)
+          .find('a')
+          .find('img')
+          .attr('src');
+        const urlRaplace = url.replace('-55-55', '-600-600');
+        $(this)
+          .find('a')
+          .find('img')
+          .attr('src', urlRaplace);
+      });
+    }
   }
 }());

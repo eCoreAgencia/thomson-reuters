@@ -16,20 +16,34 @@
 		justify-content: space-between;
 		align-items: center;
 	}
-
 	&__input {
 		background-color: transparent;
 		border: 0;
 		order: 1;
 		height: 80%;
 		flex-basis: 86%;
+		color: #afafaf;
+		font-family: "Knowledge-Regular";
+		@include font-size(16px);
+		font-weight: 400;
+		padding: 0 20px;
+		&::placeholder {
+			color: #afafaf;
+			font-family: "Knowledge-Regular";
+			font-size: 16px;
+			font-weight: 400;
+		}
 		&:focus {
 			outline: none;
 		}
+
 		@include atMedium {
 			flex: 2;
 			padding: 0 10px;
 			order: 2;
+			&::placeholder {
+				color: transparent;
+			}
 		}
 	}
 	.control {
