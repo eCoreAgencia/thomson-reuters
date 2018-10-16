@@ -8,7 +8,7 @@ class Catalog {
     }
 
     resultNumber() {
-        let number = $('.resultado-busca-numero .value').text();
+        let number = $('.searchResultsTime:last .resultado-busca-numero .value').text();
         if(number == 1) {
             $('.navCatalog__numberResult p').text(number+' RESULTADO');
         } else if(number == 0) {
@@ -54,7 +54,7 @@ class Catalog {
             let text    = $(this).text();
 
             $('.orderBy__ecore__select--title p').text(text);
-            window.location = window.location.hostname + window.location.pathname +'?O='+ orderBy;
+            window.location = window.location.pathname +'?O='+ orderBy;
         })
     }
 }
