@@ -13,6 +13,7 @@ import './components/mobile-menu';
 import './components/product';
 import './components/sticky-header';
 import './components/sumario';
+import './components/newsletter';
 
 
 import './components/buy-by-category/main'

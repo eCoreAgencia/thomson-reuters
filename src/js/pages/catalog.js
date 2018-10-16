@@ -54,7 +54,7 @@ class Catalog {
             let text    = $(this).text();
 
             $('.orderBy__ecore__select--title p').text(text);
-            window.location = window.location.hostname + window.location.pathname +'?O='+ orderBy;
+            window.location = window.location.pathname +'?O='+ orderBy;
         })
     }
 }
