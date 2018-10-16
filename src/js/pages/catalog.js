@@ -8,7 +8,7 @@ class Catalog {
     }
 
     resultNumber() {
-        let number = $('.resultado-busca-numero .value').text();
+        let number = $('.searchResultsTime:last .resultado-busca-numero .value').text();
         if(number == 1) {
             $('.navCatalog__numberResult p').text(number+' RESULTADO');
         } else if(number == 0) {
