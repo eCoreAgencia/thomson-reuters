@@ -3,9 +3,10 @@ extends ../layouts/default.pug
 block vars
 	- var pageTitle = ' Produto'
 	- var bodyClass = 'product'
+block head
+	script(src='/arquivos/tableanarchy.min.js')
 block content
 	.container
-		script(src='/arquivos/tablehack.js')
 		section.section__breadcrumb
 			+vtex-controller('<vtex.cmc:breadCrumb />')
 				.bread-crumb
