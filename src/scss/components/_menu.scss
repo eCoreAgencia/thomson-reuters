@@ -76,7 +76,7 @@
 		padding: 30px 0;
 		transition: 1s ease;
 		.menuItem {
-			width: 35%;	
+			width: 35%;
 			&__item  {
 				display: inline-block;
 				width: 49%;
@@ -89,6 +89,7 @@
 			}
 		}
 		.banner {
+			display: none;
 			width: 64%;
 			img {
 				width: 100%;

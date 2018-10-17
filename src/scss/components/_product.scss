@@ -19,12 +19,16 @@ $top-flag-val: 50px;
 			font-weight: 500;
 			text-transform: uppercase;
 		}
+
 		&:nth-of-type(2) {
 			top: calc(#{$top-flag-val} + 50px);
 		}
 		&:nth-of-type(3) {
 			top: calc(#{$top-flag-val} + 100px);
 		}
+	}
+	.flag--e-book {
+		display: none;
 	}
 	.show-on-hover {
 		position: absolute;
@@ -234,7 +238,7 @@ $top-flag-val: 50px;
 		font-size: 14px;
 		font-weight: 500;
 		img {
-			width: 100;
+			width: 100px;
 			height: 145px;
 		}
 	}
