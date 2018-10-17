@@ -660,4 +660,26 @@ $top-flag-val: 50px;
 	.bg-white {
 		background-color: $c-white;
 	}
+	.quantity input {
+		display: none;
+	}
+	#ctl00_lnkHome {
+		display: none;
+	}Í
+	.shipping-value {
+		display: none;
+	}
+	.header {
+		display: none;
+	}
+	.shipping-box {
+		display: none;
+	}
+	.btn-thickbox {
+		display: none;
+	}
+	.content fieldset {
+		display: flex;
+		border: none;
+	}
 }

@@ -33,8 +33,8 @@ export default (function () {
       const target = $('.product__name--pgprod');
       target.append(htres);
 
-	  const trigger = $('.product__description-title');
-	  const destination = trigger.next();
+      const trigger = $('.product__description-title');
+      const destination = trigger.next();
       trigger.click((e) => {
         $(e.target)
           .next()
@@ -197,5 +197,8 @@ export default (function () {
           .attr('src', urlRaplace);
       });
     }
+    $('.product__shipping-link').click((e) => {
+      $('.shipping-box').css('display', 'block');
+    });
   }
 }());
