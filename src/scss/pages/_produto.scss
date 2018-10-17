@@ -1,5 +1,564 @@
-.product {
-  .section__page {
-    padding: 10px 0;
-  }
+body.product {
+  	.product {
+    	.section__page {
+      		padding: 10px 0;
+    	}
+	}
+
+	.section {
+		&__shelf {
+		  	margin-bottom: 50px;
+		  	.slick-track {
+				height: 499px;
+		  	}
+		}
+	}
+
+	.evaluationRate__ecore {
+		margin: 30px 0;
+		ul {
+			.slick-track {
+				width: 100% !important;
+			}
+		}
+		#publishUserReview .formUserComment .close {
+			position: absolute;
+			top: 0;
+			right: 0;
+			display: none;
+		}
+		#publishUserReview .formUserComment .close a:before {
+			content: "x";
+			font-size: 25px;
+			color: #646464;
+			font-family: Arial;
+		}
+		form#formUserReview .footer {
+			background: transparent;
+			padding: 17px;
+		}
+		#resenha {
+		  h4 {
+			font-size: 0;
+			margin-bottom: 33px;
+			display: none;
+			&:after {
+			  content: "Opinião dos clientes";
+			  display: block;
+			  border-bottom: 1px solid #e6e6e6;
+			  font-family: "futura_bold",sans-serif;
+			  font-size: 2rem;
+			  line-height: 1.8;
+			}
+		  }
+		  .avaliacao {
+			position: relative;
+			.media {
+			  padding-bottom: 20px;
+			  margin-bottom: 20px;
+			  overflow: hidden;
+			  text-align: center;
+			  width: 40%;
+			  display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  > span {
+				font-family: "futura_medium",sans-serif;
+				font-size: 0;
+				display: block;
+				border-bottom: 1px dotted #000;
+				padding: 0 0 3px;
+				margin-bottom: 23px;
+				width: 100%;
+				&:after {
+				  content: "Avaliação geral dos clientes";
+				  color: #000;
+				  font-family: "futura_bold",sans-serif;
+				  font-size: 1.125rem;
+				  font-weight: 700;
+				}
+			  }
+			  em {
+				display: block;
+				vertical-align: middle;
+				span {
+				  display: block;
+				  vertical-align: middle;
+				  font-size: 0.9375em;
+				  font-weight: 700;
+				  color: #000;
+				}
+			  }
+			  .rating-produto {
+				background: url("https://www.cienciamoderna.com.br/arquivos/sprite-bigrating.png");
+				width: 167px;
+				height: 34px;
+				display: inline-block;
+				vertical-align: middle;
+				font-size: 0;
+				margin-bottom: 10px;
+				&.avaliacao00, &.a00 {
+				  background-position: 0 0px;
+				}
+				&.avaliacao10, &.a10 {
+				  background-position: 0 -34px;
+				}
+				&.avaliacao20, &.a20 {
+				  background-position: 0 -68px;
+				}
+				&.avaliacao30, &.a30 {
+				  background-position: 0 -102px;
+				}
+				&.avaliacao40, &.a40 {
+				  background-position: 0 -136px;
+				}
+				&.avaliacao50, &.a50 {
+				  background-position: 0 -170px;
+				}
+			  }
+			}
+		  }
+		  .rating {
+			display: none;
+			li {
+			  margin-bottom: 8px;
+			  span {
+				color: #404040;
+				font-size: 1em;
+			  }
+			  &:nth-child(5) em:before {
+				content: "1";
+				display: inline-block;
+				margin-right: 5px;
+			  }
+			  &:nth-child(4) em:before {
+				content: "2";
+				display: inline-block;
+				margin-right: 5px;
+			  }
+			  &:nth-child(3) em:before {
+				content: "3";
+				display: inline-block;
+				margin-right: 5px;
+			  }
+			  &:nth-child(2) em:before {
+				content: "4";
+				display: inline-block;
+				margin-right: 5px;
+			  }
+			  &:nth-child(1) em:before {
+				content: "5";
+				display: inline-block;
+				margin-right: 5px;
+			  }
+			}
+			.voteRatingStar, .voteRatingBar {
+			  display: inline-block;
+			  vertical-align: middle;
+			}
+			.voteRatingStar {
+			  width: 33px;
+			  color: #6c635b;
+			  strong {
+				background: url("https://www.cienciamoderna.com.br/arquivos/sprite-rating.png?asf");
+				width: 18px;
+				height: 11px;
+				display: inline-table;
+				font-size: 0;
+				&.avaliacao00, &.a00 {
+				  background-position: 0 0px;
+				}
+				&.avaliacao10, &.a10 {
+				  background-position: 0 -16px;
+				}
+				&.avaliacao20, &.a20 {
+				  background-position: 0 -32px;
+				}
+				&.avaliacao30, &.a30 {
+				  background-position: 0 -48px;
+				}
+				&.avaliacao40, &.a40 {
+				  background-position: 0 -64px;
+				}
+				&.avaliacao50, &.a50 {
+				  background-position: 0 -80px;
+				}
+				&.avaliacao50 {
+				  background: url("https://www.cienciamoderna.com.br/arquivos/sprite-rating.png?asf") 0 0;
+				}
+			  }
+			}
+			.voteRatingBar {
+			  height: 8px;
+			  width: 414px;
+			  position: relative;
+			  margin: 0 0 0 10px;
+			  background: #f8f8f8;
+			  border-radius: 1px;
+			  span {
+				background: #ff7004;
+				height: 8px;
+				display: block;
+			  }
+			}
+		  }
+		  .avalie-produto {
+			width: 40%;
+			text-align: center;
+			border: 1px solid #e0e0e0;
+			border-bottom: none;
+			padding-top: 29px;
+			h5 {
+			  color: #333;
+			  font-family: "futura_medium",sans-serif;
+			  font-size: 14px;
+			  font-weight: 500;
+			  line-height: 20px;
+			  display: inline-block;
+			  vertical-align: middle;
+			  width: 100%;
+			}
+			.rating-avalie-wrapper {
+			  display: inline-block;
+			  vertical-align: middle;
+			}
+			.rating-avalie a {
+			  display: table;
+			  margin: 10px auto 15px;
+			  font-size: 0;
+			  span {
+				background: url("https://www.cienciamoderna.com.br/arquivos/sprite-rating.png?asf");
+				width: 16px;
+				height: 15px;
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 5px;
+				&.filledRatingStar {
+				  background-position: 0 0;
+				}
+				&.emptyRatingStar {
+				  background-position: -74px 0;
+				}
+			  }
+			}
+			fieldset {
+			  display: none;
+			}
+		  }
+		  #ulPubliqueResenha {
+			width: 40%;
+			height: 97px;
+			text-align: center;
+			border: 1px solid #e0e0e0;
+			border-top: none;
+			li {
+			  display: table;
+			  margin: auto;
+			  #lnkPubliqueResenha {
+				background: #77a22d;
+				box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.1);
+				color: #fff;
+				font-family: "futura_bold",sans-serif;
+				text-transform: uppercase;
+				border: none;
+				padding: 10px 15px;
+				border-radius: 2px;
+				display: block;
+				border: 0 none;
+				width: 300px;
+				height: 41px;
+				font-size: 0;
+				margin-left: 70px;
+				&:after {
+				  content: "Clique aqui para fazer o seu comentário";
+				  font-size: 10px;
+				  line-height: 21px;
+				}
+			  }
+			}
+		  }
+		  .resenhas {
+			margin: 5px 0 0;
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 618px;
+			&:before {
+			  content: "Comentário dos clientes";
+			  display: inline-block;
+			  color: #000;
+			  font-family: "futura_medium",sans-serif;
+			  font-size: 1rem;
+			  border-bottom: 1px dotted #000;
+			  padding: 0 0 3px;
+			  width: 100%;
+			}
+			.quem > li {
+			  padding-bottom: 20px;
+			  margin: 20px 0;
+			  .opt-texto p {
+				color: #666;
+				font-size: 0.8125rem;
+				line-height: 30px;
+				font-family: "futura_light", sans-serif;
+			  }
+			  .util {
+				display: none;
+			  }
+			  .quem {
+				margin-bottom: 20px;
+				p.dados {
+				  display: inline-block;
+				  vertical-align: middle;
+				  font-size: 1.125rem;
+				  strong {
+					color: black;
+					font-size: 0.875rem;
+					font-weight: 500;
+					display: block;
+				  }
+				  .email-resenha {
+					color: black;
+					font-size: 0.875rem;
+					font-weight: 500;
+				  }
+				  .cidade-resenha {
+					color: #fec839;
+				  }
+				}
+				.rating-wrapper {
+				  display: inline-block;
+				  vertical-align: middle;
+				  margin-left: 20px;
+				  font-size: 0;
+				  .rating {
+					background: url("https://www.cienciamoderna.com.br/arquivos/sprite-rating.png?asf");
+					width: 89px;
+					height: 16px;
+					display: table;
+					&.avaliacao00, &.a00 {
+					  background-position: 0 0px;
+					}
+					&.avaliacao10, &.a10 {
+					  background-position: 0 -20px;
+					}
+					&.avaliacao20, &.a20 {
+					  background-position: 0 -40px;
+					}
+					&.avaliacao30, &.a30 {
+					  background-position: 0 -60px;
+					}
+					&.avaliacao40, &.a40 {
+					  background-position: 0 -80px;
+					}
+					&.avaliacao50, &.a50 {
+					  background-position: 0 -100px;
+					}
+					&.a10 {
+					  background-position: 0px 0px;
+					}
+				  }
+				}
+			  }
+			  blockquote {
+				font-size: 1.125em;
+				margin-bottom: 20px;
+			  }
+			  .util {
+				.considera-util {
+				  float: left;
+				  display: block;
+				  margin-right: 2.35765%;
+				  width: 65.88078%;
+				  margin-right: 0;
+				  text-align: right;
+				  float: right;
+				  font-size: 1em;
+				  &:last-child {
+					margin-right: 0;
+				  }
+				}
+				.opiniao-ajudou {
+				  float: left;
+				  display: block;
+				  margin-right: 2.35765%;
+				  width: 31.76157%;
+				  float: right;
+				  &:last-child {
+					margin-right: 0;
+				  }
+				  ul {
+					display: inline-block;
+					vertical-align: bottom;
+					margin-left: 10px;
+					li {
+					  display: inline-block;
+					  vertical-align: middle;
+					  a {
+						-webkit-appearance: button;
+						-moz-appearance: button;
+						-ms-appearance: button;
+						-o-appearance: button;
+						appearance: button;
+						padding: 5px 10px;
+						font-size: 1em;
+						color: #c94943;
+						font-family: Arial, Helvetica, Verdana, sans-serif;
+					  }
+					}
+				  }
+				}
+			  }
+			}
+		  }
+		  hr, .ver-todos-comentarios {
+			display: none;
+		  }
+		}
+		#publishUserReview {
+		  .formUserComment {
+			z-index: 9999;
+			position: relative;
+			margin: 10px 0;
+			h2 {
+			  display: block;
+			  border-bottom: 1px solid #e6e6e6;
+			  font-family: "futura_bold",sans-serif;
+			  font-size: 1.25rem;
+			  line-height: 1.8;
+			  color: #000;
+			  margin-top: 0;
+			  padding: 0;
+			}
+			> {
+			  h2 {
+				display: none;
+			  }
+			  p {
+				padding: 6px 15px;
+				background: #f0f0f0;
+				font-size: 15px;
+				font-weight: 700;
+			  }
+			}
+			.ranking .opiniaoRating {
+			  strong {
+				display: inline-block;
+				vertical-align: middle;
+			  }
+			  > div {
+				display: inline-block;
+				vertical-align: middle;
+				a span {
+				  background: url("https://www.cienciamoderna.com.br/arquivos/sprite-rating.png?asf");
+				  width: 16px;
+				  height: 15px;
+				  font-size: 0;
+				  display: inline-block;
+				  vertical-align: middle;
+				  margin-right: 0;
+				  &.filledRatingStar {
+					background-position: 0 0;
+				  }
+				  &.emptyRatingStar {
+					background-position: -74px 0px;
+				  }
+				}
+			  }
+			}
+			.close a {
+			  background: #c94944;
+			  display: block;
+			  padding: 10px;
+			}
+		  }
+		  .footer {
+			display: block;
+			.close {
+			  font-size: 0;
+			}
+		  }
+		  .header h1 a, .aviso-resenha {
+			display: none !important;
+		  }
+		  .ranking {
+			label, .opiniaoInfo {
+			  display: none !important;
+			}
+		  }
+		  .aviso-resenha {
+			display: none !important;
+		  }
+		  .header {
+			width: 600px;
+			height: 410px;
+			background: #fff;
+			padding: 20px;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			position: fixed;
+			z-index: 102;
+			text-align: left;
+			label {
+			  display: block;
+			  font-size: 0.875rem;
+			  font-family: "futura_light",sans-serif;
+			  color: gray;
+			  margin-bottom: 7px;
+			}
+			input {
+			  &[type="color"], &[type="date"], &[type="datetime"], &[type="datetime-local"], &[type="email"], &[type="month"], &[type="number"], &[type="password"], &[type="search"], &[type="tel"], &[type="text"], &[type="time"], &[type="url"], &[type="week"] {
+				border: 1px solid #e3e3e3;
+				border-radius: 3px;
+				box-shadow: inset 0px 3px 1px 0px rgba(0, 0, 0, 0.05);
+				padding: 10px;
+				color: gray;
+			  }
+			}
+			textarea, select {
+			  border: 1px solid #e3e3e3;
+			  border-radius: 3px;
+			  box-shadow: inset 0px 3px 1px 0px rgba(0, 0, 0, 0.05);
+			  padding: 10px;
+			  color: gray;
+			}
+			input[type="text"] {
+			  width: 95%;
+			  margin: 0 0 15px 0;
+			}
+			textarea {
+			  width: 95%;
+			  margin: 0 0 15px 0;
+			  height: 100px;
+			  overflow: auto;
+			}
+			.opiniao {
+			  margin-top: 20px;
+			}
+			.avaliar a {
+			  background: #383435;
+			  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.1);
+			  color: #fff;
+			  font-family: "futura_bold",sans-serif;
+			  text-transform: uppercase;
+			  border: none;
+			  padding: 10px 15px;
+			  border-radius: 2px;
+			  float: right;
+			  display: block;
+			  margin-top: 20px;
+			}
+			.fDivulgaEmail {
+			  position: absolute;
+			  bottom: 20px;
+			  label {
+				display: inline-block !important;
+			  }
+			}
+		  }
+		}
+	}
 }
