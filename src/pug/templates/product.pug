@@ -100,51 +100,6 @@ block content
 					.product__shipping
 						a.product__shipping-link Calcular frete e prazo de entrega
 						+vtex-controller('<vtex.cmc:shippingValue/>')
-							.shipping-box
-								p#popupCalculoFreteWrapper.frete
-									a.shipping-value(onclick='ShippingValue();', href='javascript:void(0);', title='Calcule o valor do frete e prazo de entrega para a sua região') Calcule o valor do frete e prazo de entrega para a sua região
-								#calculoFrete(seller='1', produtocorrente='70', skucorrente='69')
-									.contentWrapper
-										.header
-											h1
-											a#ctl00_lnkHome(target='_parent', href='/') thomsonreuters
-											h2 Calcular o Frete
-											.close
-											a#lnkFechar1.bt.btn-thickbox(href='javascript:void(0);', title='Fechar') Fechar
-										#ctl00_Conteudo_upnlContent
-											input#CEPObrigatorio(type='hidden', name='CEPObrigatorio', value='O CEP deve ser informado.')
-											input#CEPInvalido(type='hidden', name='CEPInvalido', value='CEP inválido.')
-											input#ProdutoQuantidadeObrigatorio(type='hidden', name='ProdutoQuantidadeObrigatorio', value='É necessário informar a quantidade do mesmo Produto.')
-											input#StrCountry(type='hidden', value='BRA')
-											.content
-											#ctl00_Conteudo_lblErro.aviso-erro(style='display: none;')
-											#ctl00_Conteudo_vldSummary(style='color: Red; display: none;')
-											fieldset
-												label.prefixo
-												| Calcular o Frete
-												input#txtCep.fitext.freight-zip-box(type='text', name='txtCep', value='')
-												.quantity
-													input(type='text', name='quantity', value='1')
-												span.frete-calcular.btBordas.btBordasInput
-													input#stockKeepingUnitId(type='hidden', name='stockKeepingUnitId', value='69')
-													input#btnFreteSimulacao.bt.freight-btn(type='button', title='OK', value='OK', name='btnFreteSimulacao')
-													span.rdbd.bdl
-													span.rdbd.bdr
-													span#RegularExpressionValidator1(style='color: Red; display: none;')
-													span#RegularExpressionValidator2(style='color: Red; display: none;')
-													span.cep-busca
-													a.bt.lnkExterno(title='Não sei meu CEP', target='_blank', href='http://www.buscacep.correios.com.br/sistemas/buscacep/') Não sei meu CEP
-												.freight-values(style='display: none')
-												span#reqCep1(style='color: Red; display: none;')
-												span#reqCep2(style='color: Red; display: none;')
-										.footer
-											.close
-											a#lnkFechar2.bt.btn-thickbox(href='javascript:void(0);', title='Fechar') Fechar
-										script(type='text/javascript').
-											$(document).ready( function(){
-											ShippingValue();
-											});
-
 	.container--full.bg-white
 		.container
 			section.section__product-bottom

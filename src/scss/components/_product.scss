@@ -685,12 +685,13 @@ $top-flag-val: 50px;
 	.freight-btn {
 		width: 250px;
 		border-radius: 23px;
-		background-color: green;
+		background-color: $c-green;
 		color: white;
 	}
 	.freight-zip-box {
 		border-radius: 23px;
-		border: 1px solid #cac7c7;
+		border: 0;
 		margin: 10px 0;
+		background-color: #f4f4f4;
 	}
 }
