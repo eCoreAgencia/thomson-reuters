@@ -7,7 +7,7 @@ block vars
 block content
 	section.section__hero
 		.banner.banner--full
-			+vtex-controller('<vtex:contentPlaceHolder id="Banner Full" />')
+			+vtex-controller('<vtex:contentPlaceHolder id="Banner Full"/>')
 				.box-banner
 					a(href="")
 						img(src="/arquivos/Banner_Home.png")/
@@ -18,7 +18,7 @@ block content
 					a(href="")
 						img(src="http://via.placeholder.com/1920x350")/
 		.banner.banner--mobile
-			+vtex-controller('<vtex:contentPlaceHolder id="Banner Mobile" />')
+			+vtex-controller('<vtex:contentPlaceHolder id="Banner Mobile"/>')
 				.box-banner
 					a(href="")
 						img(src="http://via.placeholder.com/320x240")/
@@ -33,7 +33,7 @@ block content
 		.wrapper
 			.shelf
 				.shelf__banners
-					+vtex-controller('<vtex:contentPlaceHolder id="Promo Box " />')
+					+vtex-controller('<vtex:contentPlaceHolder id="Promo Box"/>')
 						.shelf__banners-static
 							a(href="")
 								img(src='/arquivos/banner-esquerda-top.jpg')/
@@ -51,7 +51,7 @@ block content
 				//- li.filter__opt-item
 				//- 	a(href="") Outlet
 		.shelf.shelf__carousel--full.wrapper--diff
-			+vtex-controller('<vtex:contentPlaceHolder id="product shelf" />')
+			+vtex-controller('<vtex:contentPlaceHolder id="product shelf"/>')
 				.prateleira
 					ul
 						each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -61,7 +61,7 @@ block content
 		.wrapper
 			.shelf
 				.shelf__banners
-					+vtex-controller('<vtex:contentPlaceHolder id="Promo Box bottom" />')
+					+vtex-controller('<vtex:contentPlaceHolder id="Promo Box bottom"/>')
 						.shelf__banners-static
 							a(href="")
 								img(src='/arquivos/banner-esquerda.png')/
@@ -72,7 +72,7 @@ block content
 		.wrapper--block
 			.category-nav
 				h2.category-nav__main-title Áreas de interesse
-				+vtex-controller('<vtex.cmc:areasDeInteresse />')
+				+vtex-controller('<vtex.cmc:areasDeInteresse/>')
 					ul.category-nav__list
 						li.category-nav__items
 							a.category-nav__link(href="/area-de-Interesse/Administrativo")
@@ -105,16 +105,16 @@ block content
 								span.category-nav__title Difusos e Coletivos
 	section.section__page.section-kits.section__shelf
 		.filter.wrapper
-			h2.filter__title Kits e Coleções
+			h2.filter__title Comercial
 			ul.filter__opt
 				//- li.filter__opt-item
 				//-   a(href="") E-books
-				li.filter__opt-item
-					a(href="") Kits e coleções
-				li.filter__opt-item
-					a(href="") Comercial
+				//- li.filter__opt-item
+				//- 	a(href="") Kits e coleções
+				//- li.filter__opt-item
+				//- 	a(href="") Comercial
 		.shelf.shelf__carousel--full.wrapper--diff
-			+vtex-controller('<vtex:contentPlaceHolder id="Colecao Kits" />')
+			+vtex-controller('<vtex:contentPlaceHolder id="Colecao Kits"/>')
 				.prateleira
 					ul
 						each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -125,15 +125,15 @@ block content
 			.most-visited
 				.most-visited__header
 					h2.most-visited__title Livros mais visitados
-					ul.most-visited__select
-						li.most-visited__opt
-							a.most-visited__choose(href="") Escolher Área
-						li.most-visited__opt
-							a.most-visited__result(href="") OAB e Concurso
+					//- ul.most-visited__select
+					//- 	li.most-visited__opt
+					//- 		a.most-visited__choose(href="") Escolher Área
+					//- 	li.most-visited__opt
+					//- 		a.most-visited__result(href="") OAB e Concurso
 				ul.most-visited__grid
 					.shelf
 						.shelf__visited
-							+vtex-controller('<vtex:contentPlaceHolder id="most visited" />')
+							+vtex-controller('<vtex:contentPlaceHolder id="most visited"/>')
 								.prateleira
 									ul.most-visited__list
 										each val in [1, 2, 3, 4]
@@ -156,7 +156,7 @@ block content
 				.wrapper
 					.shelf
 						.shelf__banners.shelf__banners--only-one
-							+vtex-controller('<vtex:contentPlaceHolder id="Promo Box 2" />')
+							+vtex-controller('<vtex:contentPlaceHolder id="Promo Box 2"/>')
 								.shelf__banners-static
 									a(href="https://www.thomsonreuters.com.br/pt/juridico/webrevistas.html")
 										img(src='/arquivos/TR_Banner_2709.jpg')/

@@ -216,7 +216,7 @@
     }
 
     .shelf {
-        
+
         ul {
             flex-wrap: wrap;
             justify-content: flex-start;
@@ -234,18 +234,23 @@
                     &__shelf {
                         display: flex;
                         justify-content: space-between;
-                        align-items: center; 
+                        align-items: center;
                         .always-show {
                             display: flex;
                             justify-content: space-between;
-                            align-items: center; 
-                        }
+                            align-items: center;
+						}
+
                     }
                     &__header {
                         width: 18%;
                         .product__category {
                             display: none;
-                        }
+						}
+						img {
+							width: auto;
+							height: auto;
+						}
                     }
                     .price__list-line, .price__installment {
                         text-align: left;
@@ -304,7 +309,10 @@
                         font-family: "Knowledge-Medium";
                         font-weight: 500;
                         text-transform: uppercase;
-                    }
+					}
+					.flag--e-book {
+						display: none;
+					}
                     &:nth-of-type(2) {
                         top: calc(#{$top-flag-val} + 50px);
                     }

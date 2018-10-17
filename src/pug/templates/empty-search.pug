@@ -23,16 +23,16 @@ block content
 		input.empty-search__search.search-bar(type="search", name="searchInsideEmpty")/
 	section.section__page.section-kits.section__shelf
 		.filter.wrapper
-			h2.filter__title Kits e Coleções
+			h2.filter__title Comercial
 			ul.filter__opt
 				//- li.filter__opt-item
 				//-   a(href="") E-books
-				li.filter__opt-item
-					a(href="") Kits e coleções
-				li.filter__opt-item
-					a(href="") Comercial
+				//- li.filter__opt-item
+				//- 	a(href="") Kits e coleções
+				//- li.filter__opt-item
+				//- 	a(href="") Comercial
 		.shelf.shelf__carousel--full.wrapper--diff
-			+vtex-controller('<vtex:contentPlaceHolder id="Colecao Kits" />')
+			+vtex-controller('<vtex:contentPlaceHolder id="Colecao Kits"/>')
 				.prateleira
 					ul
 						each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
