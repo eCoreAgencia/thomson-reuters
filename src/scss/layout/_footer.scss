@@ -122,6 +122,19 @@
 				}
 			}
 		}
+		&__text {
+			font-family: "Knowledge-Regular";
+			@include font-size(13px);
+			font-weight: 400;
+			line-height: 26px;
+			letter-spacing: 0.5px;
+			text-transform: capitalize;
+			color: $c-gray-dark;
+		}
+		a.main-footer__text {
+			text-transform: lowercase;
+			font-weight: bold;
+		}
 		&__box {
 			&--split {
 				display: grid;
