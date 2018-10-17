@@ -38,8 +38,8 @@ class Minicart {
             <div class="minicart__container">
                 <div class="minicart__header">
                     <button class="minicart__handle" title="sacola">
-                        <i class="minicart__icon"><svg data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.96 62.45"><path fill="#9e9e9e" d="M0 32.47l30.24 29.98 2.62-2.49L4.19 31.23 32.95 2.49 30.22 0 0 29.98v2.49z"/></svg></i>
-                        <span class="minicart__title">Minha Compra</span>
+                        <i class="minicart__icon simple-bag"></i>
+                        <span class="minicart__title">Suas Compras</span>
                     </button>
                 </div>
                 <div class="minicart__content">
@@ -55,7 +55,7 @@ class Minicart {
                         <strong class="minicart__totals-value">${this.getTotal()}</strong>
                     </div>
                     <a class="minicart__checkout" href="/Site/Carrinho.aspx">
-                    Finalizar Pedido</a>
+                    ir para o carrinho</a>
                 </div>
             </div>
 
