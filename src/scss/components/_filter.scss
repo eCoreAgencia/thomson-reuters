@@ -31,7 +31,9 @@
 		font-weight: 700;
 		text-transform: uppercase;
 		flex-wrap: nowrap;
-
+		&:only-child{
+			display: none;
+		}
 		a {
 			text-decoration: none;
 			color: $c-gray-dark;
