@@ -682,4 +682,14 @@ $top-flag-val: 50px;
 		display: flex;
 		border: none;
 	}
+	.freight-btn {
+		width: 250px;
+		border-radius: 23px;
+		background-color: green;
+		color: white;
+	}
+	.freight-zip-box {
+		border-radius: 23px;
+		border: 1px solid #cac7c7;
+	}
 }
