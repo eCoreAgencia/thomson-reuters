@@ -36,6 +36,7 @@ class Minicart {
             </button>
             <div class="minicart__overlay"></div>
             <div class="minicart__container">
+            <div class="minicart__close">X</div>
                 <div class="minicart__header">
                     <button class="minicart__handle" title="sacola">
                         <i class="minicart__icon simple-bag"></i>
@@ -103,7 +104,7 @@ class Minicart {
 $(document).ready(function(){
     window.Minicart = new Minicart();
 
-    $('body').on('click', '.minicart__handle', function(){
+    $('body').on('click', '.minicart__handle, .minicart__close', function(){
         $('.minicart').toggleClass('active');
     })
 })

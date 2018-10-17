@@ -27,6 +27,13 @@
 		.active & {
 			display: flex;
 		}
+		.minicart__close {
+			position: absolute;
+			left: -30px;
+			top: 10px;
+			color: white;
+			cursor: pointer;
+		}
 	}
 
 	&__header {
