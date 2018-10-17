@@ -503,6 +503,7 @@ $top-flag-val: 50px;
 		display: none !important;
 	}
 	.economia-de {
+		font-style: normal;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -522,6 +523,7 @@ $top-flag-val: 50px;
 		margin: 0 auto;
 		left: 0;
 		strong {
+			font-style: normal;
 			color: $c-white;
 			font-family: "Knowledge-Bold";
 			@include font-size(10px);
