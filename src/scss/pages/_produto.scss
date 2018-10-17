@@ -5,6 +5,14 @@ body.product {
     	}
 	}
 
+	.shelf {
+		li {
+			a img {
+				width: 111px;
+			}
+		}
+	}
+
 	.section {
 		&__shelf {
 		  	margin-bottom: 50px;
@@ -23,6 +31,15 @@ body.product {
 			.slick-track {
 				width: 100% !important;
 			}
+		}
+		#publishUserReview .formUserComment .close {
+			position: absolute;
+			top: 0;
+			right: 0;
+			display: none;
+		}	
+		fieldset .opiniao {
+			border: none;
 		}
 		#publishUserReview .formUserComment .close {
 			position: absolute;
@@ -271,7 +288,7 @@ body.product {
 				width: 300px;
 				height: 41px;
 				font-size: 0;
-				margin-left: 70px;
+				margin-left: 10px;
 				&:after {
 				  content: "Clique aqui para fazer o seu comentário";
 				  font-size: 10px;
@@ -420,7 +437,7 @@ body.product {
 		}
 		#publishUserReview {
 		  .formUserComment {
-			z-index: 9999;
+			z-index: 1;
 			position: relative;
 			margin: 10px 0;
 			h2 {
@@ -493,8 +510,7 @@ body.product {
 			display: none !important;
 		  }
 		  .header {
-			width: 600px;
-			height: 410px;
+			width: 100%;
 			background: #fff;
 			padding: 20px;
 			top: 0;
@@ -502,7 +518,7 @@ body.product {
 			bottom: 0;
 			left: 0;
 			margin: auto;
-			position: fixed;
+			position: initial;
 			z-index: 102;
 			text-align: left;
 			label {
