@@ -99,6 +99,7 @@ block content
 												span.sku-notifyme-error.notifyme-error
 					.product__shipping
 						a.product__shipping-link Calcular frete e prazo de entrega
+						+vtex-controller('<vtex.cmc:shippingValue/>')
 	.container--full.bg-white
 		.container
 			section.section__product-bottom
@@ -106,7 +107,7 @@ block content
 					h2.product__description-title Descrição:
 						i.simple-arrow-right
 					.product__description-text
-						+vtex-controller('<vtex.cmc:ProductDescription />')
+						+vtex-controller('<vtex.cmc:ProductDescription/>')
 							p A obra Manual de Direito Penal Brasileiro – Parte Geral, de autoria de Eugenio Raúl Zaffaroni e José Henrique Pierangeli, é um clássico jurídico.
 							<br/><br/>
 							p Trata-se de uma das principais obras do direito penal brasileiro, constantemente citada em trabalhos científicos e respeitada por todos aqueles que militam na área criminal.
@@ -246,7 +247,7 @@ block content
 												li.ver-todos-comentarios
 													span
 														a#userReviewShowAllComments.thickbox.bt.tbstarted.qvBinded(href='/ViewPagedUserComments?productId=59&productLinkId=mini-vade-mecum-penal-7-edicao-9788553210992&PageNumber=1&SortOrder=0', title='Ver todos os comentários de consumidores sobre esse produto') Ver todos os comentários de consumidores sobre esse produto
-											#userReviewReturnMessages  
+											#userReviewReturnMessages
 											ul.resenhas
 												.quem
 										#userReviewAllComments
