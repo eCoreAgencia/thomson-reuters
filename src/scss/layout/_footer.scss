@@ -40,6 +40,10 @@
 			}
 		}
 		&__ct {
+			a {
+				text-decoration: none;
+				color: $c-white;
+			}
 			display: none;
 			@include atMedium {
 				display: flex;
