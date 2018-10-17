@@ -503,6 +503,7 @@ $top-flag-val: 50px;
 		display: none !important;
 	}
 	.economia-de {
+		font-style: normal;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -522,6 +523,7 @@ $top-flag-val: 50px;
 		margin: 0 auto;
 		left: 0;
 		strong {
+			font-style: normal;
 			color: $c-white;
 			font-family: "Knowledge-Bold";
 			@include font-size(10px);
@@ -657,5 +659,39 @@ $top-flag-val: 50px;
 	}
 	.bg-white {
 		background-color: $c-white;
+	}
+	.quantity input {
+		display: none;
+	}
+	#ctl00_lnkHome {
+		display: none;
+	}Í
+	.shipping-value {
+		display: none;
+	}
+	.header {
+		display: none;
+	}
+	.shipping-box {
+		display: none;
+	}
+	.btn-thickbox {
+		display: none;
+	}
+	.content fieldset {
+		display: flex;
+		border: none;
+	}
+	.freight-btn {
+		width: 250px;
+		border-radius: 23px;
+		background-color: $c-green;
+		color: white;
+	}
+	.freight-zip-box {
+		border-radius: 23px;
+		border: 0;
+		margin: 10px 0;
+		background-color: #f4f4f4;
 	}
 }
