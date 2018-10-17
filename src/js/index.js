@@ -14,6 +14,7 @@ import './components/product';
 import './components/sticky-header';
 import './components/sumario';
 import './components/newsletter';
+import './components/sumarioShelf';
 
 
 import './components/buy-by-category/main'
@@ -24,6 +25,7 @@ import './pages/not-found';
 import './pages/catalog';
 import './pages/empty-search';
 import './pages/institucional';
+import './pages/product';
 
 
 $(document).ready(function(){
