@@ -162,6 +162,10 @@
 			color: $c-white;
 			display: flex;
 			margin-bottom: 30px;
+			a {
+				text-decoration: none;
+				color: $c-white;
+			}
 			i {
 				display: flex;
 				align-items: center;
