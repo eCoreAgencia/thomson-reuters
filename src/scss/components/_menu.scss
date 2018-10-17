@@ -1,7 +1,8 @@
 .menu {
 	display: none;
+	position: relative;
 	@include atMedium {
-		height: 45px;
+		// height: 45px;
 		background-image: linear-gradient(to top, #4d4d4d 0%, #727272 100%);
 		width: 100%;
 		display: flex;
@@ -20,9 +21,35 @@
 			font-size: 13px;
 			font-weight: 900;
 			text-transform: uppercase;
-			&:hover {
-				a {
-					color: $c-orange;
+			padding: 13px 0;
+			&.area-de-interesse {
+				&:hover {
+					.submenu {
+						display: block;
+						box-shadow: 1px 0px 10px #ccc;
+					}
+					> a {
+						&:after {
+							border-left: 9px solid transparent;
+							border-right: 9px solid transparent;
+							border-bottom: 11px solid #000;
+							top: -11px;
+						}
+						&:before {
+							content: '';
+							display: inline-block;
+							width: 0;
+							height: 0;
+							border-left: 9px solid transparent;
+							border-right: 9px solid transparent;
+							border-bottom: 11px solid #515151;
+							position: absolute;
+							left: 48px;
+							top: 30px;
+							z-index: 99;
+							transform: rotate(180deg);
+						}
+					}
 				}
 			}
 			a {
@@ -30,6 +57,43 @@
 				text-transform: uppercase;
 				text-decoration: none;
 				transition: color 0.3s ease;
+				position: relative;
+				&:hover {
+					color: $c-orange;
+				}
+			}
+		}
+	}
+
+	ul.submenu {
+		display: none;
+		position: absolute;
+		z-index: 9;
+		width: 100%;
+		background: #f9f9f9;
+		left: 0;
+		top: 45px;
+		padding: 30px 0;
+		transition: 1s ease;
+		.menuItem {
+			width: 35%;	
+			&__item  {
+				display: inline-block;
+				width: 49%;
+				a {
+					color: $c-gray-dark;
+					font-family: $f-base;
+					font-weight: normal;
+					text-transform: capitalize;
+				}
+			}
+		}
+		.banner {
+			width: 64%;
+			img {
+				width: 100%;
+				height: auto;
+				display: block;
 			}
 		}
 	}

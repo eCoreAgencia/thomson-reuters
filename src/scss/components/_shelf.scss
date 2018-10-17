@@ -2,8 +2,9 @@
 	li {
 		&:hover {
 			.show-on-hover {
-				top: 100%;
+				top: initial;
 				opacity: 1;
+				bottom: 27px;
 			}
 		}
 	}

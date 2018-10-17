@@ -1,3 +1,18 @@
-.home {
+body.home {
+    .section__shelf {
+        z-index: 5;
+        .slick-track {
+            height: 500px;
+        }
+    }
 
+    .imageDestaque {
+        margin-top: -100px;
+    }
+
+    .section__split {
+        section.section__shelf-banners {
+            margin-top: 0;
+         }
+    }
 }
