@@ -157,105 +157,107 @@ block content
 												td.value-field.Ano-de-publicacao 12ª Edição
 									// .description
 
-	.container
-		section.section__page.section__avaliacao
-			h2.section__title.section__title--darker Avaliações
-			.shelf.shelf__carousel--full
-				+vtex-controller('<vtex.cmc:UserReview/>')
-					.evaluationRate__ecore
-						input.product-user-review-product-id(type='hidden', value='59')
-						input.product-user-review-category-id(type='hidden', value='19')
-						input.product-user-review-product-linkid(type='hidden', value='mini-vade-mecum-penal-7-edicao-9788553210992')
-						input.product-user-review-qtdReviewsToBeShown(type='hidden', value='3')
-						#resenha
-							#opiniao_de_usuario
-								.user-review
-									h4 Opinião dos consumidores:
-									.avaliacao
-										p.media
-											span Média de avaliações:
-											em
-												strong#spnRatingProdutoBottom.rating-produto.avaliacao0
-												span
-													| nenhum voto
-										ul.rating
-											li
-												em.voteRatingStar
-													strong.rating-demonstrativo.avaliacao50
-												span.voteRatingBar
-													span(style='width: 0%')
-												span nenhum voto
-											li
-												em.voteRatingStar
-													strong.rating-demonstrativo.avaliacao40
-												span.voteRatingBar
-													span(style='width: 0%')
-												span nenhum voto
-											li
-												em.voteRatingStar
-													strong.rating-demonstrativo.avaliacao30
-												span.voteRatingBar
-													span(style='width: 0%')
-												span nenhum voto
-											li
-												em.voteRatingStar
-													strong.rating-demonstrativo.avaliacao20
-												span.voteRatingBar
-													span(style='width: 0%')
-												span nenhum voto
-											li
-												em.voteRatingStar
-													strong.rating-demonstrativo.avaliacao10
-												span.voteRatingBar
-													span(style='width: 0%')
-												span nenhum voto
-										p
-										.avalie-produto
-											h5 Avalie este Produto
-											.rating-avalie-wrapper
-												p.rating-avalie
-													input#rtAvaliacao_SavedRate(runat='server', type='hidden', value='0')
-													a#rtAvaliacao_A(href='javascript:void(0);', onmouseout='lnkRatingStarOnMouseOut();', title='4')
-														span#rtAvaliacao_Star_1.ratingStar.emptyRatingStar(onclick='doPostEvaluation(1, null)', onmouseover='ratingStarOnMouseOver(this, 1)') 1
-														span#rtAvaliacao_Star_2.ratingStar.emptyRatingStar(onclick='doPostEvaluation(2, null)', onmouseover='ratingStarOnMouseOver(this, 1)') 2
-														span#rtAvaliacao_Star_3.ratingStar.emptyRatingStar(onclick='doPostEvaluation(3, null)', onmouseover='ratingStarOnMouseOver(this, 1)') 3
-														span#rtAvaliacao_Star_4.ratingStar.emptyRatingStar(onclick='doPostEvaluation(4, null)', onmouseover='ratingStarOnMouseOver(this, 1)') 4
-														span#rtAvaliacao_Star_5.ratingStar.emptyRatingStar(onclick='doPostEvaluation(5, null)', onmouseover='ratingStarOnMouseOver(this, 1)') 5
-											fieldset#opcoes-avalie
-												p
-													strong Avalie este produto:
-												input#rdoInteresse.firadio(type='radio', value='1', name='lstInteresse$', onclick='doPostEvaluation(null, 0)', unchecked='1')
-												label(for='lstInteresse')
-													| Tenho interesse
-													br
-												input#rdoInteresse.firadio(type='radio', value='2', name='lstInteresse$', onclick='doPostEvaluation(null, 1)', unchecked='1')
-												label(for='lstInteresse')
-													| Não tenho interesse
-													br
-												input#rdoInteresse.firadio(type='radio', value='3', name='lstInteresse$', onclick='doPostEvaluation(null, 2)', unchecked='1')
-												label(for='lstInteresse')
-													| Já tenho esse produto
-													br
-										ul#ulPubliqueResenha.opt
-											li.publique
-												a#lnkPubliqueResenha.bt(title='Publique sua opinião', href="javascript:showPublishUserReview('eyJhbGciOiJFUzI1NiIsImtpZCI6IkRDMjNENzQ5NTY1RDA4REY5MUU4RTI5NDgzREU5Qjk5RkI1MjgyNEIiLCJ0eXAiOiJqd3QifQ.eyJzdWIiOiJyb25hbGRAZWNvcmVjb211bmljYWNhby5jb20iLCJhY2NvdW50IjoidGhvbXNvbnJldXRlcnMiLCJzY29wZSI6InRob21zb25yZXV0ZXJzOnN0b3JlIiwiYXV0aG9yaXphYmxlcyI6WyJ2cm46aWFtOnRob21zb25yZXV0ZXJzOnVzZXJzL3JvbmFsZEBlY29yZWNvbXVuaWNhY2FvLmNvbSJdLCJleHAiOjE1Mzk4NjMxNjcsInVzZXJJZCI6IjRjZmMyM2ViLWQzZTAtNGFiYi04ZDAxLWVjMTEwOWU0NTU3YSIsImlhdCI6MTUzOTc3Njc2NiwiaXNzIjoidG9rZW4tZW1pdHRlciIsImp0aSI6IjNiYjRjMzQ2LTZlMWUtNDlhMS1hNjk0LWQ0Yjg3NmM3NzY3ZCJ9.3qWx9BFSK-NS0a5NG5pzIft3amWVTL4sf1NVT8UyKpPKmrepeQCBXsvrq2oCmds5_wgMGrd2VKbVrlzebmhR5g',59,19);") Publique sua opinião
-										ul.bts.links-resenha-usuario
-											li.publique
-												span
-											li.ver-todos-comentarios
-												span
-													a#userReviewShowAllComments.thickbox.bt.tbstarted.qvBinded(href='/ViewPagedUserComments?productId=59&productLinkId=mini-vade-mecum-penal-7-edicao-9788553210992&PageNumber=1&SortOrder=0', title='Ver todos os comentários de consumidores sobre esse produto') Ver todos os comentários de consumidores sobre esse produto
-										#userReviewReturnMessages  
-										ul.resenhas
-											.quem
-									#userReviewAllComments
-									#publishUserReview
-									#publishedReviewMessage(style='display: none;')
-										.formUserComment
-											h2 Publique sua opinião
-											p Resenha enviada com sucesso
-									hr
+	.container--full.bg-white
+		.container
+			section.section__page.section__avaliacao
+				h2.section__title.section__title--darker Avaliações
+				.shelf.shelf__carousel--full
+					+vtex-controller('<vtex.cmc:UserReview/>')
+						.evaluationRate__ecore
+							input.product-user-review-product-id(type='hidden', value='59')
+							input.product-user-review-category-id(type='hidden', value='19')
+							input.product-user-review-product-linkid(type='hidden', value='mini-vade-mecum-penal-7-edicao-9788553210992')
+							input.product-user-review-qtdReviewsToBeShown(type='hidden', value='3')
+							#resenha
+								#opiniao_de_usuario
+									.user-review
+										h4 Opinião dos consumidores:
+										.avaliacao
+											p.media
+												span Média de avaliações:
+												em
+													strong#spnRatingProdutoBottom.rating-produto.avaliacao0
+													span
+														| nenhum voto
+											ul.rating
+												li
+													em.voteRatingStar
+														strong.rating-demonstrativo.avaliacao50
+													span.voteRatingBar
+														span(style='width: 0%')
+													span nenhum voto
+												li
+													em.voteRatingStar
+														strong.rating-demonstrativo.avaliacao40
+													span.voteRatingBar
+														span(style='width: 0%')
+													span nenhum voto
+												li
+													em.voteRatingStar
+														strong.rating-demonstrativo.avaliacao30
+													span.voteRatingBar
+														span(style='width: 0%')
+													span nenhum voto
+												li
+													em.voteRatingStar
+														strong.rating-demonstrativo.avaliacao20
+													span.voteRatingBar
+														span(style='width: 0%')
+													span nenhum voto
+												li
+													em.voteRatingStar
+														strong.rating-demonstrativo.avaliacao10
+													span.voteRatingBar
+														span(style='width: 0%')
+													span nenhum voto
+											p
+											.avalie-produto
+												h5 Avalie este Produto
+												.rating-avalie-wrapper
+													p.rating-avalie
+														input#rtAvaliacao_SavedRate(runat='server', type='hidden', value='0')
+														a#rtAvaliacao_A(href='javascript:void(0);', onmouseout='lnkRatingStarOnMouseOut();', title='4')
+															span#rtAvaliacao_Star_1.ratingStar.emptyRatingStar(onclick='doPostEvaluation(1, null)', onmouseover='ratingStarOnMouseOver(this, 1)') 1
+															span#rtAvaliacao_Star_2.ratingStar.emptyRatingStar(onclick='doPostEvaluation(2, null)', onmouseover='ratingStarOnMouseOver(this, 1)') 2
+															span#rtAvaliacao_Star_3.ratingStar.emptyRatingStar(onclick='doPostEvaluation(3, null)', onmouseover='ratingStarOnMouseOver(this, 1)') 3
+															span#rtAvaliacao_Star_4.ratingStar.emptyRatingStar(onclick='doPostEvaluation(4, null)', onmouseover='ratingStarOnMouseOver(this, 1)') 4
+															span#rtAvaliacao_Star_5.ratingStar.emptyRatingStar(onclick='doPostEvaluation(5, null)', onmouseover='ratingStarOnMouseOver(this, 1)') 5
+												fieldset#opcoes-avalie
+													p
+														strong Avalie este produto:
+													input#rdoInteresse.firadio(type='radio', value='1', name='lstInteresse$', onclick='doPostEvaluation(null, 0)', unchecked='1')
+													label(for='lstInteresse')
+														| Tenho interesse
+														br
+													input#rdoInteresse.firadio(type='radio', value='2', name='lstInteresse$', onclick='doPostEvaluation(null, 1)', unchecked='1')
+													label(for='lstInteresse')
+														| Não tenho interesse
+														br
+													input#rdoInteresse.firadio(type='radio', value='3', name='lstInteresse$', onclick='doPostEvaluation(null, 2)', unchecked='1')
+													label(for='lstInteresse')
+														| Já tenho esse produto
+														br
+											ul#ulPubliqueResenha.opt
+												li.publique
+													a#lnkPubliqueResenha.bt(title='Publique sua opinião', href="javascript:showPublishUserReview('eyJhbGciOiJFUzI1NiIsImtpZCI6IkRDMjNENzQ5NTY1RDA4REY5MUU4RTI5NDgzREU5Qjk5RkI1MjgyNEIiLCJ0eXAiOiJqd3QifQ.eyJzdWIiOiJyb25hbGRAZWNvcmVjb211bmljYWNhby5jb20iLCJhY2NvdW50IjoidGhvbXNvbnJldXRlcnMiLCJzY29wZSI6InRob21zb25yZXV0ZXJzOnN0b3JlIiwiYXV0aG9yaXphYmxlcyI6WyJ2cm46aWFtOnRob21zb25yZXV0ZXJzOnVzZXJzL3JvbmFsZEBlY29yZWNvbXVuaWNhY2FvLmNvbSJdLCJleHAiOjE1Mzk4NjMxNjcsInVzZXJJZCI6IjRjZmMyM2ViLWQzZTAtNGFiYi04ZDAxLWVjMTEwOWU0NTU3YSIsImlhdCI6MTUzOTc3Njc2NiwiaXNzIjoidG9rZW4tZW1pdHRlciIsImp0aSI6IjNiYjRjMzQ2LTZlMWUtNDlhMS1hNjk0LWQ0Yjg3NmM3NzY3ZCJ9.3qWx9BFSK-NS0a5NG5pzIft3amWVTL4sf1NVT8UyKpPKmrepeQCBXsvrq2oCmds5_wgMGrd2VKbVrlzebmhR5g',59,19);") Publique sua opinião
+											ul.bts.links-resenha-usuario
+												li.publique
+													span
+												li.ver-todos-comentarios
+													span
+														a#userReviewShowAllComments.thickbox.bt.tbstarted.qvBinded(href='/ViewPagedUserComments?productId=59&productLinkId=mini-vade-mecum-penal-7-edicao-9788553210992&PageNumber=1&SortOrder=0', title='Ver todos os comentários de consumidores sobre esse produto') Ver todos os comentários de consumidores sobre esse produto
+											#userReviewReturnMessages  
+											ul.resenhas
+												.quem
+										#userReviewAllComments
+										#publishUserReview
+										#publishedReviewMessage(style='display: none;')
+											.formUserComment
+												h2 Publique sua opinião
+												p Resenha enviada com sucesso
+										hr
 
+	.container
 		section.section__page.section__shelf
 			h2.section__title.section__title--darker Clientes também compraram
 			.shelf.shelf__carousel--full
