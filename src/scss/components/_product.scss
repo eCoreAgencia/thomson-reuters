@@ -44,6 +44,7 @@ $top-flag-val: 50px;
 	padding: 0;
 	&__shelf {
 		display: grid;
+		justify-content: center;
 		background-color: $c-white;
 		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
 		padding: 0 10px;
@@ -55,13 +56,14 @@ $top-flag-val: 50px;
 		display: block;
 		text-align: center;
 		text-transform: uppercase;
-		font-family: "Rubik";
 		font-size: 11px;
 		font-weight: 500;
 		color: $c-black;
 		padding: 6px;
 		border-bottom: 2px solid $c-gray-light;
 		height: 27px;
+		color: #4d4d4d;
+		font-family: "Knowledge-Medium";
 	}
 	&__media {
 		margin: 16px auto;
@@ -395,8 +397,9 @@ $top-flag-val: 50px;
 			display: block;
 			@include font-size(14px);
 			padding: 0;
+			padding-right: 25px;
 			height: 245px;
-			overflow-y: scroll;
+			overflow-y: auto;
 			background: initial;
 		}
 	}
@@ -433,6 +436,7 @@ $top-flag-val: 50px;
 			padding: 0;
 			@include font-size(14px);
 			background: initial;
+			overflow-y: auto;
 		}
 	}
 	.plugin-preco {
@@ -450,40 +454,12 @@ $top-flag-val: 50px;
 		@include atMedium {
 			padding: 10px 0;
 			display: block;
-			.header--is-sticky {
-				display: none;
-			}
-			#popupCalculoFreteWrapper {
-				a {
-					font-size: 13px;
-					color: $c-gray-dark;
-					font-family: $f-base;
-					font-weight: 400;
-					line-height: 12px;
-					padding-bottom: 10px;
-				}
-			}
-			table {
-				tbody {
-					tr {
-						th {
-							color: $c-gray-dark;
-							font-family: $f-base;
-							font-size: 12px;
-							padding-left: 0;
-						}
-						td {
-							color: $c-gray-dark;
-							font-family: $f-base;
-							font-size: 12px;
-						}
-					}
-				}
-			}
+
 			.content {
 				fieldset {
 					label.prefixo {
 						font-size: 13px;
+						font-size: 0.8125rem;
 						color: $c-gray-dark;
 						font-family: $f-base;
 						font-weight: 400;
@@ -491,12 +467,18 @@ $top-flag-val: 50px;
 						input {
 							display: block;
 							border: 1px solid #ccc;
-							width: 232PX;
+							width: 232px;
 							margin: 14px 0;
 						}
 					}
+					.shipping-value {
+						font-size: 0 !important;
+					}
+					.freight-zip-box {
+						padding: 10px;
+					}
 					.freight-btn {
-						width: 231px;
+						width: 50px;
 						border-radius: 23px;
 						background-color: #616161;
 						color: white;
@@ -507,6 +489,23 @@ $top-flag-val: 50px;
 							font-family: $f-base;
 							font-size: 12px;
 							padding-left: 2px;
+						}
+					}
+					table {
+						tbody {
+							tr {
+								th {
+									color: $c-gray-dark;
+									font-family: $f-base;
+									font-size: 12px;
+									padding-left: 0;
+								}
+								td {
+									color: $c-gray-dark;
+									font-family: $f-base;
+									font-size: 12px;
+								}
+							}
 						}
 					}
 				}
