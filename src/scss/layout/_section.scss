@@ -35,6 +35,9 @@
 
 	&__split {
 		background: $c-white;
+		@include atMedium {
+			margin-top: -80px;
+		}
 	}
 
 	&__split-the-grid {
