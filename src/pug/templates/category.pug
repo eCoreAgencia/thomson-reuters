@@ -24,6 +24,11 @@ block content
                     .box-banner
                         a(href="")
                             img(src="/arquivos/bannerCatogory.jpg")/
+            .banner.banner__category--mobile
+                +vtex-controller('<vtex:contentPlaceHolder id="Banner Mobile"/>')
+                    .box-banner
+                        a(href="")
+                            img(src="/arquivos/bannerCategoryMobile.png")/
     section.breadCrumbBottom
         .container
             +vtex-controller('<vtex.cmc:breadCrumb />')

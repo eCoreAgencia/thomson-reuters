@@ -19,6 +19,18 @@
 			}
 		}
 	}
+	.banner__category {
+		display: none;
+		@include atMedium {
+			display: block;
+		}
+		&--mobile {
+			display: block;
+			@include atMedium {
+				display: none;
+			}
+		}
+	}
 
 	.navCatalog {
 		display: flex;
