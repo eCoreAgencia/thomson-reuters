@@ -77,7 +77,7 @@ export default (function () {
       slidesToScroll: 1,
       mobileFirst: true,
       dots: true,
-      infinite: false,
+      infinite: true,
       responsive: [
         {
           breakpoint: 1024,
@@ -85,7 +85,7 @@ export default (function () {
             slidesToShow: 4,
             slidesToScroll: 2,
             dots: false,
-            infinite: false,
+            infinite: true,
           },
         },
         {
@@ -103,7 +103,7 @@ export default (function () {
           settings: {
             slidesToShow: 2,
             slidesToScroll: 2,
-            infinite: false,
+            infinite: true,
             arrows: false,
           },
         },
@@ -113,7 +113,7 @@ export default (function () {
             slidesToShow: 1,
             slidesToScroll: 1,
             dots: true,
-            infinite: false,
+            infinite: true,
             arrows: false,
           },
         },

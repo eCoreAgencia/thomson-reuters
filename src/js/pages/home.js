@@ -94,7 +94,7 @@ $(document).ready(() => {
       arrows: true,
       slidesToShow: 2,
       slidesToScroll: 1,
-	  infinite: false,
+	  infinite: true,
 	  mobileFirst: true,
 	  dots: true,
       responsive: [

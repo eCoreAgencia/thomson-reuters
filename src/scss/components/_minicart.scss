@@ -20,7 +20,7 @@
 		right: 0;
 		height: 100vh;
 		background-color: $c-white;
-		width: 358px;
+
 		z-index: 60;
 		display: none;
 		flex-direction: column;
@@ -34,6 +34,13 @@
 			color: white;
 			cursor: pointer;
 		}
+		@include atMedium {
+			width: 358px;
+		}
+	}
+	&__content {
+		height: 100vh;
+		overflow-y: scroll;
 	}
 
 	&__header {

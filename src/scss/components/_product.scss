@@ -31,13 +31,15 @@ $top-flag-val: 50px;
 		display: none;
 	}
 	.show-on-hover {
-		position: absolute;
-		width: 100%;
-		top: 70%;
-		background: white;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
-		opacity: 0;
-		z-index: 4;
+		@include atMedium {
+			position: absolute;
+			width: 100%;
+			top: 70%;
+			background: white;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+			opacity: 0;
+			z-index: 4;
+		}
 	}
 	padding: 0;
 	&__shelf {
@@ -62,9 +64,9 @@ $top-flag-val: 50px;
 		height: 27px;
 	}
 	&__media {
+		margin: 16px auto;
 		@include atMedium {
 			display: block;
-			margin: 16px auto;
 		}
 	}
 	&__link {
@@ -718,8 +720,8 @@ $top-flag-val: 50px;
 	}
 	#ctl00_lnkHome {
 		display: none;
-	}Í
-	.shipping-value {
+	}
+	Í .shipping-value {
 		display: none;
 	}
 	.shipping-box .header {
