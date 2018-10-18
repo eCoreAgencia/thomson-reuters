@@ -5,9 +5,9 @@ header.header
 				i.simple-phone
 				p (11)4935-2387
 			.loginContent
-				//+vtex-controller('<vtex.cmc:welcomeMessage/>')
-				a(href="/login").tip-bar__login
-					| LOGIN / CADASTRE-SE
+				+vtex-controller('<vtex.cmc:welcomeMessage/>')
+					a(href="/login").tip-bar__login
+							| LOGIN / CADASTRE-SE
 				a(href="/account", class="accountLink") Minha conta
 	.main-header
 		.wrapper
@@ -20,20 +20,14 @@ header.header
 					span.logo2
 						include ../../svg/name-logo-revista.svg
 			.search-bar
-				.orderBy__ecore
-					.orderBy__ecore__select
-						.orderBy__ecore__select--title
-							p(data-id='todos') Todos
-							i.icon-arrow
-						.orderBy__ecore__select--option
-							ul
-								li(data-id='todos') Todos
-								li(data-id='0') Titulo
-								li(data-id='36') Autor
-								li(data-id='24') Editora
-								li(data-id='23') ISBN
-								li(data-id='24') E-book
-								li(data-id='33') Coleção	
+				.control
+				//- 	.select
+				//- 		select
+				//- 			option(value="todos") Todos
+				//- 			option(value="outros") Outros
+				//- input(type="search", name="search", placeholder="O que você procura?").search-bar__input/
+				//- a(href="#").search-button
+				//- 	i.simple-magnifier
 				.header__search-form
 					.search-form#header-form
 						.field.has-addons
@@ -75,13 +69,13 @@ header.header
 										li.menuItem__item
 											a(href="/area-de-interesse/Financeiro") Financeiro
 										li.menuItem__item
-											a(href="/area-de-interesse/Historia---IED---etica") História - IED - Ética
+											a(href="/area-de-interesse/Historia---IED---etica") História / IED / Ética
 										li.menuItem__item
 											a(href="/area-de-interesse/Internacional") Internacional
 										li.menuItem__item
 											a(href="/area-de-interesse/Legislacao") Legislação
 										li.menuItem__item
-											a(href="/area-de-interesse/OAB---Concursos") OAB - Concursos
+											a(href="/area-de-interesse/OAB---Concursos") OAB / Concursos
 										li.menuItem__item
 											a(href="/area-de-interesse/Outras-areas") Outras áreas
 										li.menuItem__item
@@ -115,11 +109,11 @@ header.header
 			li.menu__mobile-items
 				a(href="/account") Meu Cadastro
 			li.menu__mobile-items
-				a(href="/orders") Meus Pedidos
+				a(href="/account/orders") Meus Pedidos
 			li.menu__mobile-items
 				a(href="/account") Meus Endereços
-			li.menu__mobile-items
-				a(href="/institucional/faleconosco") Fale Conosco
+			//- li.menu__mobile-items
+			//- 	a(href="/institucional/faleconosco") Fale Conosco
 			li.menu__mobile-items
 				a(href="/login") Esqueci Minha Senha
 
