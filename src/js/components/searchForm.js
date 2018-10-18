@@ -114,5 +114,5 @@ $(document).ready(function() {
 	// });
 	
 
-	window.searchFilter = new searchFilter(selectChange, termo);
+	//window.searchFilter = new searchFilter(selectChange, termo);
 })
