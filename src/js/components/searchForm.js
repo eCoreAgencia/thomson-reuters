@@ -53,7 +53,6 @@ export default class SearchForm {
   }
 
   appendResultList(resultList) {
-    console.log(resultList);
     if (!resultList) resultList = `<span>Não foi encontrado nenhum resultado</span>`;
     const list = $('.search-form__result-list');
 
@@ -67,6 +66,53 @@ export default class SearchForm {
 
 }
 
+class searchFilter {
+  	constructor(selectChange, termo) {
+		this.search(selectChange, termo);
+	}
+
+	saearch(selectChange, termo) {
+		console.log(selectChange)
+		console.log(termo)
+	}
+}
 
 
-window.searchForm = new SearchForm('#header-form');
+$(document).ready(function() {
+	$('.orderBy__ecore__select--title').on('click', function() {
+		let _this = $(this);
+		_this.parents('.orderBy__ecore').find('.orderBy__ecore__select--option').toggleClass('active');
+
+		let selectChange = $('#header-form .orderBy__ecore__select--title').attr('data-id');
+		
+		if(!selectChange == "todos") {
+			$('.search-form__result-list').css('display', 'none !important');
+		}
+	});
+
+	$('.orderBy__ecore__select--option ul li').on('click', function() {
+		let _this  = $(this);
+		let dataId = _this.attr('data-id');
+		let text   = _this.text(); 
+
+		_this.parents('.orderBy__ecore').find('.orderBy__ecore__select--title p').text(text);
+		_this.parents('.orderBy__ecore').find('.orderBy__ecore__select--title p').attr('data-id',dataId);
+		_this.parents('.orderBy__ecore__select--option').removeClass('active');
+	});
+
+	// $('#header-form input').keyup(function() {
+	// 	let selectChange = $('header .orderBy__ecore__select--title p').attr('data-id');
+	// 	let termo		 = $('header input').val();
+
+	// 	if(!selectChange == "todos") {
+	// 		console.log('deferente')
+	// 		window.searchFilter = new searchFilter(selectChange, termo);
+	// 		$('.search-form__result-list').remove();
+	// 	} else {
+	// 		window.searchForm = new SearchForm('#header-form');
+	// 	}
+	// });
+	
+
+	window.searchFilter = new searchFilter(selectChange, termo);
+})

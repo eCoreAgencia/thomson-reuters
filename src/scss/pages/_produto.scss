@@ -4,6 +4,9 @@ body.product {
 			padding: 10px 0;
 		}
 	}
+	.name-field.Sumario.col1, .value-field.Sumario.col2 {
+		display: none;
+	}
 
 	.shelf {
 		li {
@@ -25,7 +28,7 @@ body.product {
 		}
 	}
 
-	.evaluationRate__ecore {
+	.section__avaliacao {
 		margin: 30px 0;
 		ul {
 			.slick-track {
@@ -272,7 +275,7 @@ body.product {
 						vertical-align: middle;
 						margin-right: 5px;
 						&.filledRatingStar {
-							background-position: 0 0;
+							background-position: 1px 15px;
 						}
 						&.emptyRatingStar {
 							background-position: -74px 0;

@@ -1,6 +1,7 @@
 import '../scss/main.scss'
 import './modules/vtexRequest'
 
+import './components/selectFooter';
 import './components/minicart';
 // import './components/loader';
 // import './components/menu';
@@ -15,7 +16,6 @@ import './components/sticky-header';
 import './components/sumario';
 import './components/newsletter';
 import './components/sumarioShelf';
-import './components/selectFooter';
 
 
 import './components/buy-by-category/main'
