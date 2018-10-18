@@ -16,6 +16,7 @@
 		background-color: #f4f4f4;
 		justify-content: space-between;
 		align-items: center;
+		position: relative;
 	}
 	&__input {
 		background-color: transparent;
@@ -120,18 +121,19 @@
 
 .search-form__result-list {
     display: none;
-    position: absolute;
+		position: absolute;
     z-index: 40;
     min-height: 200px;
     width: 100%;
-    top: 100%;
+    top: 67%;
     background-color: #f4f4f4;
     left: 0;
     border: 1px solid #e8e8e8;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-	border-top: 0;
-	padding: 10px;
+    border-top: 0;
+    padding: 10px;
+    border: 0;
     &-item, &-link {
       display: flex;
       width: 100%;

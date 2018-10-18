@@ -21,13 +21,13 @@ class Catalog {
     grad() {
         $('.icon-list').on('click', function(e) {
             e.preventDefault();
-            $('.shelf').addClass('list');
+            $('.shelf.prateleira').addClass('list');
             $(this).addClass('active');
             $('.icon-grid').removeClass('active');
         });
         $('.icon-grid').on('click', function(e) {
             e.preventDefault();
-            $('.shelf').removeClass('list');
+            $('.shelf.prateleira').removeClass('list');
             $(this).addClass('active');
             $('.icon-list').removeClass('active');
         });

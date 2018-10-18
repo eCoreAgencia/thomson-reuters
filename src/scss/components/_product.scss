@@ -448,6 +448,55 @@ $top-flag-val: 50px;
 		@include atMedium {
 			padding: 10px 0;
 			display: block;
+			.content {
+				fieldset {
+					label.prefixo {
+						font-size: 13px;
+						font-size: 0.8125rem;
+						color: $c-gray-dark;
+						font-family: $f-base;
+						font-weight: 400;
+						line-height: 12px;
+						input {
+							display: block;
+							border: 1px solid #ccc;
+							width: 232PX;
+							margin: 14px 0;
+						}
+					}
+					.freight-btn {
+						width: 231px;
+						border-radius: 23px;
+						background-color: #616161;
+						color: white;
+					}
+					.cep-busca {
+						a {
+							color: $c-gray-dark;
+							font-family: $f-base;
+							font-size: 12px;
+							padding-left: 2px;
+						}
+					}
+					table {
+						tbody {
+							tr {
+								th {
+									color: $c-gray-dark;
+									font-family: $f-base;
+									font-size: 12px;
+									padding-left: 0;
+								}
+								td {
+									color: $c-gray-dark;
+									font-family: $f-base;
+									font-size: 12px;
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 	&__shipping-link {

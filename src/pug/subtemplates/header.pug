@@ -4,9 +4,11 @@ header.header
 			span.tip-bar__ct-phone
 				i.simple-phone
 				p (11)4935-2387
-			+vtex-controller('<vtex.cmc:welcomeMessage/>')
-				a(href="/login").tip-bar__login
-						| LOGIN / CADASTRE-SE
+			.loginContent
+				+vtex-controller('<vtex.cmc:welcomeMessage/>')
+					a(href="/login").tip-bar__login
+							| LOGIN / CADASTRE-SE
+				a(href="/account", class="accountLink") Minha conta
 	.main-header
 		.wrapper
 			.header__menu-icon

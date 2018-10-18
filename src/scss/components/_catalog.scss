@@ -3,6 +3,14 @@
         display: none;
     }
 
+    &.resultado-busca {
+        .filterCatalog__inner {
+            .navigation {
+                display: none;
+            }
+        }
+    }
+
     .pager {
         &.bottom {
             display: block;
@@ -232,6 +240,9 @@
                 width: 100%;
                 margin-bottom: 20px;
                 .product {
+                    .show-on-hover {
+                        width: 20%;
+                    }
                     .flag {
                         display: none;
                     }
@@ -300,7 +311,6 @@
                     height: 45px;
                     background-color: $c-gray-dark;
                     border-radius: 50%;
-                    display: inline-flex;
                     justify-content: center;
                     align-items: center;
                     position: absolute;
@@ -314,7 +324,7 @@
                         font-weight: 500;
                         text-transform: uppercase;
 					}
-					.flag--e-book {
+					&--e-book {
 						display: none;
 					}
                     &:nth-of-type(2) {

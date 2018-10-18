@@ -10,6 +10,15 @@
 			padding-left: 3px;
 		}
 	}
+	a.accountLink {
+		margin-left: 10px;
+		color: #5d5d5d;
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		border-left: 1px solid;
+		padding-left: 10px;
+	}
 	.tip-bar {
 		display: none;
 		@include atMedium {
