@@ -6,7 +6,7 @@ class SumarioShelf {
     sumario() {
         $('.shelf ul li').each(function() {
             let idProduct = $(this).find('.product-shelf__id').attr('data-product-id');
-            
+            var _this = $(this);
             $.ajax({
                 url: "/api/catalog_system/pub/products/search?fq=productId:"+idProduct,
                 type: "GET",
@@ -17,11 +17,11 @@ class SumarioShelf {
             }).done(function (data) {
                 let sumario = data[0].Sumário;
                 if(typeof sumario === "undefined") {
-                    $(this).find('a.button__preview').remove();
+                    _this.find('a.button__preview').remove();
                 } else {
                     var link = sumario[0];
                     console.log(sumario[0])
-                    $(this).find('a.button__preview').attr('href', link);
+                    _this.find('a.button__preview').attr('href', link);
                 }
             });
         });

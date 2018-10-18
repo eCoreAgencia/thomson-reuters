@@ -15,3 +15,26 @@
     padding-left: 21px;
     margin-top: 12px;
 }
+
+.dropdown-box {
+    width: 162px;
+    position: relative;
+    div#dropDownArea {
+        position: absolute;
+        height: 200px;
+        overflow: auto;
+        bottom: 38px;
+        background: #f4f4f4;
+        padding: 10px;
+        z-index: 9;
+        display: none;
+        ul {
+            li {
+                a {
+                    color: #000;
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+}

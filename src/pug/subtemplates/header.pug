@@ -18,13 +18,21 @@ header.header
 						include ../../svg/name-logo-revista.svg
 			.search-bar
 				.control
-					.select
-						select
-							option(value="todos") Todos
-							option(value="outros") Outros
-				input(type="search", name="search", placeholder="O que você procura?").search-bar__input/
-				a(href="#").search-button
-					i.simple-magnifier
+				//- 	.select
+				//- 		select
+				//- 			option(value="todos") Todos
+				//- 			option(value="outros") Outros
+				//- input(type="search", name="search", placeholder="O que você procura?").search-bar__input/
+				//- a(href="#").search-button
+				//- 	i.simple-magnifier
+				.header__search-form
+					.search-form#header-form
+						.field.has-addons
+							.control.is-expanded
+								input.input(type='text', placeholder='Digite o nome do produto...')/
+							.control
+								a.button
+									span.icon-search.simple-magnifier
 			.main-header__carrinho
 
 	.menu
