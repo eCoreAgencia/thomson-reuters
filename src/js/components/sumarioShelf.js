@@ -22,6 +22,7 @@ class SumarioShelf {
                     var link = sumario[0];
                     console.log(sumario[0])
                     _this.find('a.button__preview').attr('href', link);
+                    _this.find('a.button__preview').attr('target', '_blank');
                 }
             });
         });

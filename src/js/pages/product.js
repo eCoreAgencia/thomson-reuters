@@ -24,6 +24,7 @@ class Product {
                 var link = sumario[0];
 
                 $('a.button__preview').attr('href', link);
+                $('a.button__preview').attr('target', '_blank');
             }
         });
     }

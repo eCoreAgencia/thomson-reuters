@@ -3,7 +3,14 @@ $(document).ready(() => {
     if ($('li.helperComplement')[0]) {
       $('li.helperComplement').remove();
     }
-    $('.banner--full').slick({});
+    $('.banner--full').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots: true,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 3000,
+    });
 
     $('.shelf__banners').slick({
       mobileFirst: true,
