@@ -71,9 +71,17 @@ class searchFilter {
 		this.search(selectChange, termo);
 	}
 
-	saearch(selectChange, termo) {
+	search(selectChange, termo) {
 		console.log(selectChange)
 		console.log(termo)
+
+		if(selectChange == 0 || selectChange == "todos") {
+			let urlSeach = "/busca?ft="+termo;
+			window.location = urlSeach;
+		} else {
+			let urlSeach = "/busca?fq=specificationFilter_"+selectChange+":"+termo;
+			window.location = urlSeach;
+		}
 	}
 }
 
@@ -99,20 +107,14 @@ $(document).ready(function() {
 		_this.parents('.orderBy__ecore').find('.orderBy__ecore__select--title p').attr('data-id',dataId);
 		_this.parents('.orderBy__ecore__select--option').removeClass('active');
 	});
-
-	// $('#header-form input').keyup(function() {
-	// 	let selectChange = $('header .orderBy__ecore__select--title p').attr('data-id');
-	// 	let termo		 = $('header input').val();
-
-	// 	if(!selectChange == "todos") {
-	// 		console.log('deferente')
-	// 		window.searchFilter = new searchFilter(selectChange, termo);
-	// 		$('.search-form__result-list').remove();
-	// 	} else {
-	// 		window.searchForm = new SearchForm('#header-form');
-	// 	}
-	// });
 	
+	$('.search-bar .control a').on('click', function(e) {
+		e.preventDefault();
 
-	//window.searchFilter = new searchFilter(selectChange, termo);
+		let selectChange = $('header .orderBy__ecore__select--title p').attr('data-id');
+		let termo		 = $('header input').val();
+		console.log(selectChange);
+		
+		window.searchFilter = new searchFilter(selectChange, termo);
+	});
 })
