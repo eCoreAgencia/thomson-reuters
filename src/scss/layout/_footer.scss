@@ -189,14 +189,39 @@
 	color: $c-gray-dark;
 	font-family: "Knowledge-Medium";
 	font-weight: 500;
-	a {
+	a,
+	span {
 		color: $c-gray-dark;
 		display: flex;
 		justify-content: space-between;
+		padding: 15px;
 	}
 	&__item {
 		border-bottom: 1px solid $c-grey-simple;
-		padding: 15px;
+		i {
+			&.arrow-down {
+				transform: rotate(90deg);
+			}
+		}
+		ul {
+			display: none;
+			background-color: #f0f0f0;
+			align-items: center;
+			flex-direction: column;
+			li {
+				width: 100%;
+				a,
+				span {
+					font-size: 16px;
+					font-weight: 500;
+					text-align: left;
+					text-transform: uppercase;
+					color: #979797;
+					font-family: "Knowledge-Medium";
+				}
+
+			}
+		}
 	}
 	&__bandeiras {
 		display: flex;

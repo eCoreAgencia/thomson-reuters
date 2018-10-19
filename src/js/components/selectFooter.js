@@ -1,6 +1,7 @@
 class Selectfooter {
     constructor() {
-        this.selectFooter();
+		this.selectFooter();
+		this.institucionalFotter();
     }
 
     selectFooter() {
@@ -16,7 +17,14 @@ class Selectfooter {
                 $('a.search-button.search-button__footer--down').css('transform', 'rotate(180deg)');
             }
         });
-    }
+	}
+	institucionalFotter() {
+		let item = $('.mobile-footer__item');
+		item.click((e)=> {
+			$(e.target).parent().find('ul').fadeToggle();
+			$(e.target).parent().find('span i').toggleClass('arrow-down');
+		});
+	}
 }
 
 window.filter = new Selectfooter();
