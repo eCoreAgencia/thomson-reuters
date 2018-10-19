@@ -82,7 +82,7 @@ footer.main-footer
 							li.main-footer__item
 								a(href="/Institucional?#ebook", rel="noopener noreferrer") Contrato de Compra - Ebook
 							li.main-footer__item
-								a(href="/Institucional?#politicaloja", rel="noopener noreferrer") POLÍTICAS DA LOJA
+								a(href="/Institucional?#politicaloja", rel="noopener noreferrer") Políticas
 							//- li.main-footer__item
 							//- 	a(href="/Institucional?#parceiros", rel="noopener noreferrer") Parceiros
 							//- li.main-footer__item
@@ -134,17 +134,22 @@ footer.main-footer
 
 footer.mobile-footer
 	.mobile-footer__news Receba nossos Lançamentos
-					.search-bar.search-bar--narrow
-						input(type="search", name="search").search-bar__input/
-						a(href="#").search-button.search-button__footer
+		.search-bar.search-bar--narrow
+			input(type="search", name="search").search-bar__input/
+			a(href="#").search-button.search-button__footer
 	ul.mobile-footer__list
 		li.mobile-footer__item
-			| Dúvidas? Ligue 0800-702-2433
+			a(href="tel:0800-702-2433") Dúvidas? Ligue 0800-702-2433
 		li.mobile-footer__item
-			a(href="http://") Rede Social
+			span Rede Social
 				i.simple-arrow-right
+			ul
+				li
+					a(href="https://www.facebook.com/revistadostribunais") Facebook
+				li
+					a(href="https://twitter.com/revtribunais") twitter
 		li.mobile-footer__item
-			a(href="/institutional") Institucional
+			a(href="/institucional") Institucional
 				i.simple-arrow-right
 		li.mobile-footer__item
 			a(href="/institucional") Dúvidas
