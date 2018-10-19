@@ -29,6 +29,8 @@ block content
 			.product__main
 				.product__media
 					.product__media-top.product__media-top--mobile
+						+vtex-controller('<vtex.cmc:HightLight/>')
+							<p class="flag novidade">novidade</p>
 						+vtex-controller('<vtex.cmc:ProductImage zoom="on"/>')
 							include ../vtexParts/vtexProductImages.pug
 				.product__info--pgprod

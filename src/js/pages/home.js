@@ -4,6 +4,7 @@ $(document).ready(() => {
       $('li.helperComplement').remove();
     }
     $('.banner--full').slick({
+<<<<<<< HEAD
       slidesToShow: 1,
       slidesToScroll: 1,
       dots: true,
@@ -11,6 +12,11 @@ $(document).ready(() => {
       autoplay: true,
       autoplaySpeed: 3000,
     });
+=======
+		autoplay: true,
+  		autoplaySpeed: 3000,
+	});
+>>>>>>> a828001a9f773a805887720beddb9d2360079da7
 
     $('.shelf__banners').slick({
       mobileFirst: true,
