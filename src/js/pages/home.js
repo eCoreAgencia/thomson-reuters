@@ -1,5 +1,6 @@
 $(document).ready(() => {
   if ($('body').hasClass('home')) {
+    $('.shelf__banners.shelf__banners--only-one a').attr('target', '_blank');
     if ($('li.helperComplement')[0]) {
       $('li.helperComplement').remove();
     }
