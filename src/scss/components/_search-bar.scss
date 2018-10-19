@@ -55,7 +55,41 @@
 		}
 	}
 
+	.header__search-form {
+		.control.is-expanded {
+			display: block;
+			input {
+				background: transparent;
+				padding-left: 60px;
+				&::placeholder { 
+						color: #fff;
+						@include atMedium {
+							color: #666666;
+						}
+				}
+				@include atMedium {
+					padding-left: 30px;
+				}
+			}
+			+.control {
+				display: block;
+				position: absolute;
+				left: 10px;
+				a {
+					color: #fff;
+					@include atMedium {
+						color: #666666;
+					}
+				}
+				@include atMedium {
+					position: initial;
+				}
+			}
+		}
+	}
+
 	.orderBy__ecore {
+		display: none;
     border: 0;
     width: 25%;
     padding: 4px 0 4px 10px;
@@ -64,6 +98,9 @@
 		margin-left: 7px;
 		position: relative;
 		cursor: pointer;
+		@include atMedium {
+			display: block;
+		}
 		&__select {
 			&--title {
 				position: relative;
