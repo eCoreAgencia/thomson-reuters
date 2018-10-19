@@ -6,10 +6,11 @@ header.header
 				p (11)4935-2387
 			.loginContent
 				//+vtex-controller('<vtex.cmc:welcomeMessage/>')
-				a(href="/login").tip-bar__login
-					| LOGIN / CADASTRE-SE
-				a(href="/account", class="accountLink") Minha conta
-				a(href="/account/orders", class="accountLink") Meus Pedidos
+				//- a(href="/login").tip-bar__login
+				//- 	| LOGIN / CADASTRE-SE
+				.loginContent(style="display: flex")
+					a(href="/account", class="accountLink") Minha conta
+					a(href="/account/orders", class="accountLink") Meus Pedidos
 	.main-header
 		.wrapper
 			.header__menu-icon
