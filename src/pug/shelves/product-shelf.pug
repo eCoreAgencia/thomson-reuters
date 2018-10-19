@@ -19,7 +19,7 @@ else
 	- var dataProductId = '13'
 	- var listPrice = 'R$ 265,99'
 	- var bestPrice = 'R$ 238,50'
-	- var flags = '<p class="flag destaque">destaque</p>'
+	- var flags = '<p class="flag novidade">novidade</p>'
 	- var getImageTag = '<img src="http://via.placeholder.com/111x160" width="111" height="160" />'
 	- var getImageTag2 = '<img src="http://via.placeholder.com/180x173"" width="180" height="173" />'
 	- var categoryName = 'penal'
@@ -28,8 +28,8 @@ else
 .product
 	.product__shelf
 		.always-show
-			.flag.flag--novidade novidade
-			.flag.flag--e-book e-book
+			!= flags
+			//- .flag.flag--e-book e-book
 			span.product-shelf__id(data-product-id= dataProductId)
 			.product__header
 				a.product__category(title=categoryName, href=categoryHref)

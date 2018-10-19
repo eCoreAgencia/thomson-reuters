@@ -11,14 +11,19 @@ $top-flag-val: 50px;
 		position: absolute;
 		right: 5px;
 		top: $top-flag-val;
-		&--novidade,
-		&--e-book {
-			@include font-size(8px);
-			color: $c-white;
-			font-family: "Knowledge-Medium";
-			font-weight: 500;
-			text-transform: uppercase;
-		}
+		@include font-size(8px);
+		color: $c-white;
+		font-family: "Knowledge-Medium";
+		font-weight: 500;
+		text-transform: uppercase;
+		// &--novidade,
+		// &--e-book {
+		// 	@include font-size(8px);
+		// 	color: $c-white;
+		// 	font-family: "Knowledge-Medium";
+		// 	font-weight: 500;
+		// 	text-transform: uppercase;
+		// }
 
 		&:nth-of-type(2) {
 			top: calc(#{$top-flag-val} + 50px);
@@ -66,6 +71,7 @@ $top-flag-val: 50px;
 		font-family: "Knowledge-Medium";
 	}
 	&__media {
+		position: relative;
 		margin: 16px auto;
 		@include atMedium {
 			display: block;
@@ -596,6 +602,7 @@ $top-flag-val: 50px;
 			font-weight: 700;
 			text-transform: uppercase;
 			letter-spacing: 0.5px;
+			padding-left: 3px;
 		}
 		@include atMedium {
 			top: 0;
@@ -606,7 +613,11 @@ $top-flag-val: 50px;
 
 	// ORGANIZANDO OS THUMBS
 	&__media-top {
+		position: relative;
 		@include atMedium {
+			.flag {
+				right: -47px;
+			}
 			width: auto;
 			img {
 				width: auto;
