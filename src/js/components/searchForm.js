@@ -87,31 +87,31 @@ class searchFilter {
 
 
 $(document).ready(function() {
-	$('.orderBy__ecore__select--title').on('click', function() {
+	$('.orderBy__ecoreHeader__select--title').on('click', function() {
 		let _this = $(this);
-		_this.parents('.orderBy__ecore').find('.orderBy__ecore__select--option').toggleClass('active');
+		_this.parents('.orderBy__ecoreHeader').find('.orderBy__ecoreHeader__select--option').toggleClass('active');
 
-		let selectChange = $('#header-form .orderBy__ecore__select--title').attr('data-id');
+		let selectChange = $('#header-form .orderBy__ecoreHeader__select--title').attr('data-id');
 		
 		if(!selectChange == "todos") {
 			$('.search-form__result-list').css('display', 'none !important');
 		}
 	});
 
-	$('.orderBy__ecore__select--option ul li').on('click', function() {
+	$('.orderBy__ecoreHeader__select--option ul li').on('click', function() {
 		let _this  = $(this);
 		let dataId = _this.attr('data-id');
 		let text   = _this.text(); 
 
-		_this.parents('.orderBy__ecore').find('.orderBy__ecore__select--title p').text(text);
-		_this.parents('.orderBy__ecore').find('.orderBy__ecore__select--title p').attr('data-id',dataId);
-		_this.parents('.orderBy__ecore__select--option').removeClass('active');
+		_this.parents('.orderBy__ecoreHeader').find('.orderBy__ecoreHeader__select--title p').text(text);
+		_this.parents('.orderBy__ecoreHeader').find('.orderBy__ecoreHeader__select--title p').attr('data-id',dataId);
+		_this.parents('.orderBy__ecoreHeader__select--option').removeClass('active');
 	});
 	
 	$('.search-bar .control button').on('click', function(e) {
 		e.preventDefault();
 
-		let selectChange = $('header .orderBy__ecore__select--title p').attr('data-id');
+		let selectChange = $('header .orderBy__ecoreHeader__select--title p').attr('data-id');
 		let termo		 = $('header input').val();
 		console.log(selectChange);
 		
@@ -121,7 +121,7 @@ $(document).ready(function() {
   $( "form.search-form" ).on("submit", function(event) {
     event.preventDefault();
 
-    let selectChange = $('header .orderBy__ecore__select--title p').attr('data-id');
+    let selectChange = $('header .orderBy__ecoreHeader__select--title p').attr('data-id');
 		let termo		 = $('header input').val();
 		console.log(selectChange);
 		
