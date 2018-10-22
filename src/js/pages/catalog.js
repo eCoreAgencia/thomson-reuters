@@ -22,13 +22,13 @@ class Catalog {
   grad() {
     $('.icon-list').on('click', function (e) {
       e.preventDefault();
-      $('.shelf.prateleira').addClass('list');
+      $('.vitrine.resultItemsWrapper .prateleira .prateleira').addClass('list');
       $(this).addClass('active');
       $('.icon-grid').removeClass('active');
     });
     $('.icon-grid').on('click', function (e) {
       e.preventDefault();
-      $('.shelf.prateleira').removeClass('list');
+      $('.vitrine.resultItemsWrapper .prateleira .prateleira').removeClass('list');
       $(this).addClass('active');
       $('.icon-list').removeClass('active');
     });

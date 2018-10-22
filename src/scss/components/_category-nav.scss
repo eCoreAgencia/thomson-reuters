@@ -36,6 +36,16 @@
   }
   li {
     display: inline-flex;
+    &.newItens {
+      .category-nav__icon {
+        padding: 71px;
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+    }
   }
 
   .slick-prev {

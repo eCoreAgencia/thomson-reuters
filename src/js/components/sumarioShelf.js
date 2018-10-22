@@ -1,12 +1,19 @@
 class SumarioShelf {
     constructor() {
-        this.sumario();
+        if($('body').hasClass('catalog')) {
+            setTimeout(() => {
+                this.sumario();   
+            }, 50000);
+        } else {
+            this.sumario();
+        }
     }
 
     sumario() {
         $('.shelf ul li').each(function() {
             let idProduct = $(this).find('.product-shelf__id').attr('data-product-id');
             var _this = $(this);
+
             $.ajax({
                 url: "/api/catalog_system/pub/products/search?fq=productId:"+idProduct,
                 type: "GET",
@@ -16,6 +23,7 @@ class SumarioShelf {
                 }
             }).done(function (data) {
                 let sumario = data[0].Sumário;
+                console.log(data)
                 if(typeof sumario === "undefined") {
                     _this.find('a.button__preview').remove();
                 } else {
@@ -23,6 +31,14 @@ class SumarioShelf {
                     console.log(sumario[0])
                     _this.find('a.button__preview').attr('href', link);
                     _this.find('a.button__preview').attr('target', '_blank');
+                }
+            });
+
+            vtexjs.catalog.getProductWithVariations(idProduct).done(function(product){
+                var availablequantity = product.skus[0].availablequantity;
+
+                if(availablequantity == 0) {
+                    _this.remove();
                 }
             });
         });

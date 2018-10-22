@@ -44,8 +44,6 @@ class Menu {
 		}
 		return newChildren;
 	}
-
-
 }
 
 window.menu = new Menu();

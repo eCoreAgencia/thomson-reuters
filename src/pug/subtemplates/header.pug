@@ -6,10 +6,11 @@ header.header
 				p (11)4935-2387
 			.loginContent
 				//+vtex-controller('<vtex.cmc:welcomeMessage/>')
-				a(href="/login").tip-bar__login
-					| LOGIN / CADASTRE-SE
-				a(href="/account", class="accountLink") Minha conta
-				a(href="/account/orders", class="accountLink") Meus Pedidos
+				//- a(href="/login").tip-bar__login
+				//- 	| LOGIN / CADASTRE-SE
+				.loginContent(style="display: flex")
+					a(href="/account", class="accountLink") Minha conta
+					a(href="/account/orders", class="accountLink") Meus Pedidos
 	.main-header
 		.wrapper
 			.header__menu-icon
@@ -98,7 +99,7 @@ header.header
 						li.menu__list-item
 							a(href="/lancamentos") Lançamentos
 						li.menu__list-item
-							a(href="/mais-vendidos") Mais Vendidos
+							a(href="/busca?fq=H:137&amp;PS=24&amp;O=OrderByTopSaleDESC") Mais Vendidos
 						//- li.menu__list-item
 						//- 	a(href="kits-e-colecoes") Kits e Coleções
 						li.menu__list-item
@@ -111,16 +112,62 @@ header.header
 		a(href="/account").menu__mobile-dynamic-login1 Cadastre-se
 		ul.menu__mobile-main-menu
 			li.menu__mobile-items
-				span Área de Interesse
-				i.simple-arrow-right
+				.titleMenu
+					span Área de Interesse
+					i.simple-arrow-right
+				ul.submenu
+					.wrapper
+						.menuItem
+							li.menuItem__item
+								a(href="/area-de-interesse/Administrativo") Administrativo
+							li.menuItem__item
+								a(href="/area-de-interesse/Civil") Civil
+							//- li.menuItem__item
+							//- 	a(href="/area-de-interesse/Comercial") Comercial
+							li.menuItem__item
+								a(href="/area-de-interesse/Constitucional") Constitucional
+							li.menuItem__item
+								a(href="/area-de-interesse/Difusos-e-Coletivos") Difusos e Coletivos
+							li.menuItem__item
+								a(href="/area-de-interesse/Direito-Digital") Direito Digital
+							li.menuItem__item
+								a(href="/area-de-interesse/Direito-Previdenciario") Direito Previdenciário
+							li.menuItem__item
+								a(href="/area-de-interesse/Empresarial") Empresarial
+							li.menuItem__item
+								a(href="/area-de-interesse/Estudantes") Estudantes
+							li.menuItem__item
+								a(href="/area-de-interesse/Financeiro") Financeiro
+							//- li.menuItem__item
+							//- 	a(href="/area-de-interesse/Historia---IED---etica") História - IED - Ética
+							li.menuItem__item
+								a(href="/area-de-interesse/Internacional") Internacional
+							li.menuItem__item
+								a(href="/area-de-interesse/Legislacao") Legislação
+							li.menuItem__item
+								a(href="/area-de-interesse/OAB---Concursos") OAB - Concursos
+							li.menuItem__item
+								a(href="/area-de-interesse/Outras-areas") Outras áreas
+							li.menuItem__item
+								a(href="/area-de-interesse/Penal") Penal
+							li.menuItem__item
+								a(href="/area-de-interesse/Processo-Civil") Processo Civil
+							li.menuItem__item
+								a(href="/area-de-interesse/Processo-Penal") Processo Penal
+							li.menuItem__item
+								a(href="/area-de-interesse/Tributario") Tributário
 			li.menu__mobile-items
-				a(href="/account") Meu Cadastro
+				.titleMenu
+					a(href="/account") Meu Cadastro
 			li.menu__mobile-items
-				a(href="/account/orders") Meus Pedidos
+				.titleMenu
+					a(href="/account/orders") Meus Pedidos
 			li.menu__mobile-items
-				a(href="/account") Meus Endereços
+				.titleMenu
+					a(href="/account") Meus Endereços
 			li.menu__mobile-items
-				a(href="/login") Esqueci Minha Senha
+				.titleMenu
+					a(href="/login") Esqueci Minha Senha
 
 
 
