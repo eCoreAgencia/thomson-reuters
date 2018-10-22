@@ -108,7 +108,7 @@ $(document).ready(function() {
 		_this.parents('.orderBy__ecore__select--option').removeClass('active');
 	});
 	
-	$('.search-bar .control a').on('click', function(e) {
+	$('.search-bar .control button').on('click', function(e) {
 		e.preventDefault();
 
 		let selectChange = $('header .orderBy__ecore__select--title p').attr('data-id');
@@ -116,5 +116,15 @@ $(document).ready(function() {
 		console.log(selectChange);
 		
 		window.searchFilter = new searchFilter(selectChange, termo);
-	});
+  });
+
+  $( "form.search-form" ).on("submit", function(event) {
+    event.preventDefault();
+
+    let selectChange = $('header .orderBy__ecore__select--title p').attr('data-id');
+		let termo		 = $('header input').val();
+		console.log(selectChange);
+		
+		window.searchFilter = new searchFilter(selectChange, termo);
+  });
 })
