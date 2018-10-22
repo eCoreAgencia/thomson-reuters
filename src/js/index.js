@@ -17,6 +17,7 @@ import './components/sumario';
 import './components/newsletter';
 import './components/sumarioShelf';
 import './components/menuMobile';
+import './components/login';
 
 
 import './components/buy-by-category/main'
