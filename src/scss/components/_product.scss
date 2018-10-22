@@ -784,6 +784,7 @@ $top-flag-val: 50px;
 			top: 0;
 			background: #fafafa;
 			width: 100%;
+			height: 105px;
 		}
 		.preco {
 			display: none;
@@ -793,6 +794,26 @@ $top-flag-val: 50px;
 		}
 		.seller-data {
 			display: none;
+		}
+		.sku-notifyme-form.notifyme-form {
+			border: 0;
+		}
+		.notifymetitle.notifyme-title {
+			font-family: "Knowledge-Bold";
+			color: $c-gray-dark;
+		}
+		.sku-notifyme-client-name.notifyme-client-name,
+		.sku-notifyme-client-email.notifyme-client-email {
+			border-radius: 23px;
+			background: white;
+			padding: 8px;
+			border: 0;
+		}
+		.btn-ok sku-notifyme-button-ok.notifyme-button-ok {
+			width: 50px;
+			border-radius: 23px;
+			background-color: #616161;
+			color: white;
 		}
 	}
 }
