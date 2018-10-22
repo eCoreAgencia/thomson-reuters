@@ -33,14 +33,6 @@ class SumarioShelf {
                     _this.find('a.button__preview').attr('target', '_blank');
                 }
             });
-
-            vtexjs.catalog.getProductWithVariations(idProduct).done(function(product){
-                var availablequantity = product.skus[0].availablequantity;
-
-                if(availablequantity == 0) {
-                    _this.remove();
-                }
-            });
         });
     }
 }
