@@ -706,6 +706,7 @@ $top-flag-val: 50px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		position: relative;
 		@include atMedium {
 			flex-direction: row;
 		}
@@ -770,5 +771,28 @@ $top-flag-val: 50px;
 		border: 0;
 		margin: 10px 0;
 		background-color: #f4f4f4;
+	}
+	.skuList {
+		.imageSku {
+			display: none;
+		}
+		.nomeSku {
+			display: none;
+		}
+		.portal-notify-me-ref {
+			position: absolute;
+			top: 0;
+			background: #fafafa;
+			width: 100%;
+		}
+		.preco {
+			display: none;
+		}
+		a {
+			display: none !important;
+		}
+		.seller-data {
+			display: none;
+		}
 	}
 }
