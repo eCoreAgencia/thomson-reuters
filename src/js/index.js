@@ -16,6 +16,7 @@ import './components/sticky-header';
 import './components/sumario';
 import './components/newsletter';
 import './components/sumarioShelf';
+import './components/menuMobile';
 
 
 import './components/buy-by-category/main'
