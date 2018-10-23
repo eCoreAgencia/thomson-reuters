@@ -17,7 +17,8 @@ class Selectfooter {
                 $('a.search-button.search-button__footer--down').css('transform', 'rotate(180deg)');
             }
         });
-	}
+    }
+    
 	institucionalFotter() {
 		let item = $('.mobile-footer__item');
 		item.click((e)=> {

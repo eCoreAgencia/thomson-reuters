@@ -28,6 +28,13 @@ export default (function () {
       $('.group.Especificacoes').tableanarchy({
         containerClass: 'new-structure',
       });
+
+      if($('div#caracteristicas').html() == "") {
+        console.log('vazio');
+        $('.product__specification').remove();
+        $('.product__description').css('width','100%');
+      }
+
       const autores = $('.value-field.Autores').text();
       const htres = `<h3 class = "autores--pgprod"><span>Autor:</span> ${autores}</h3>`;
       const target = $('.product__name--pgprod');
