@@ -79,8 +79,14 @@ class searchFilter {
 			let urlSeach = "/busca?ft="+termo;
 			window.location = urlSeach;
 		} else {
-			let urlSeach = "/busca?fq=specificationFilter_"+selectChange+":"+termo;
-			window.location = urlSeach;
+      if(selectChange == 23) {
+        let urlSeach = "/busca?fq=specificationFilter_"+selectChange+":isbn"+termo;
+        window.location = urlSeach;
+      } else {
+        let urlSeach = "/busca?fq=specificationFilter_"+selectChange+":"+termo;
+        window.location = urlSeach;
+      }
+
 		}
 	}
 }
