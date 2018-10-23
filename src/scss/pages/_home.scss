@@ -25,4 +25,15 @@ body.home {
 			margin-top: 0;
 		}
 	}
+	.section__hero {
+		.box-banner {
+			&:not(.slick-slide) {
+				display: none;
+				:first-of-type {
+					display: block;
+				}
+			}
+
+		}
+	}
 }

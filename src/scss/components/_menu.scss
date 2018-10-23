@@ -13,7 +13,7 @@
 		&__list {
 			flex: 1;
 			display: flex;
-			justify-content: space-between;
+			// justify-content: space-between;
 			align-items: center;
 		}
 		&__list-item {
@@ -22,9 +22,11 @@
 			font-weight: 900;
 			text-transform: uppercase;
 			padding: 13px 0;
+			margin-right: 50px;
 			&.area-de-interesse {
 				&:hover {
 					.submenu {
+						transition: 1s ease;
 						display: block;
 						box-shadow: 1px 0px 10px #ccc;
 					}
@@ -44,7 +46,7 @@
 							border-right: 9px solid transparent;
 							border-bottom: 11px solid #515151;
 							position: absolute;
-							left: 48px;
+							left: 0;
 							top: 30px;
 							z-index: 99;
 							transform: rotate(180deg);
@@ -58,9 +60,9 @@
 				text-decoration: none;
 				transition: color 0.3s ease;
 				position: relative;
-				&:hover {
-					color: $c-orange;
-				}
+				// &:hover {
+				// 	color: $c-orange;
+				// }
 			}
 		}
 	}
