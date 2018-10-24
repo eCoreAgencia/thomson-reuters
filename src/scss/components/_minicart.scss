@@ -18,10 +18,12 @@
 		position: fixed;
 		top: 0;
 		right: 0;
-		height: 100vh;
+		bottom: 0;
+		left: 65px;
+		height: 100%;
 		background-color: $c-white;
 
-		z-index: 60;
+		z-index: 999999;
 		display: none;
 		flex-direction: column;
 		.active & {
@@ -36,11 +38,11 @@
 		}
 		@include atMedium {
 			width: 358px;
+			left: initial;
 		}
 	}
 	&__content {
-		height: 100vh;
-		overflow-y: scroll;
+		overflow-y: auto;
 	}
 
 	&__header {
@@ -190,4 +192,8 @@
 			right: 8px;
 		}
 	}
+}
+body.minicart-oppened {
+	height: 100vh;
+	overflow: hidden;
 }

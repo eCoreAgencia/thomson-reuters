@@ -24,13 +24,11 @@
 		order: 1;
 		height: 80%;
 		flex-basis: 86%;
-		color: #afafaf;
 		font-family: "Knowledge-Regular";
 		@include font-size(16px);
 		font-weight: 400;
 		padding: 0 20px;
 		&::placeholder {
-			color: #afafaf;
 			font-family: "Knowledge-Regular";
 			font-size: 16px;
 			font-weight: 400;
@@ -43,9 +41,6 @@
 			flex: 2;
 			padding: 0 10px;
 			order: 2;
-			&::placeholder {
-				color: transparent;
-			}
 		}
 	}
 	.control {
@@ -61,10 +56,10 @@
 			input {
 				background: transparent;
 				padding-left: 60px;
-				&::placeholder { 
-						color: #fff;
+				&::placeholder {
+						color: $c-gray-lighter;
 						@include atMedium {
-							color: #666666;
+							color: $c-gray-dark;
 						}
 				}
 				@include atMedium {
@@ -78,7 +73,7 @@
 				a {
 					color: #fff;
 					@include atMedium {
-						color: #666666;
+						color: $c-black;
 					}
 				}
 				@include atMedium {
@@ -198,14 +193,17 @@
 			background: #f4f4f4;
 			border: 0;
 			box-shadow: none;
+			color: $c-white;
+			@include atMedium {
+				color: $c-gray-dark;
+			}
 		}
 		.has-addons {
 			.control {
-				a {
-					&.button {
-						.icon-search {
-							
-						}
+				.button {
+					width: 48px;
+					@include atMedium {
+						width: auto;
 					}
 				}
 			}

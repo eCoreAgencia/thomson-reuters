@@ -1,13 +1,14 @@
 class Minicart {
-     constructor() {
-       $(window).on('orderFormUpdated.vtex', (evt, orderForm) => {
-         this.update(orderForm)
-       })
-       vtexjs.checkout.getOrderForm()
-     }
-     renderItem(item, i) {
-		let { quantity } = item
-       return `
+  constructor() {
+    $(window).on('orderFormUpdated.vtex', (evt, orderForm) => {
+      this.update(orderForm);
+    });
+    vtexjs.checkout.getOrderForm();
+  }
+
+  renderItem(item, i) {
+    const { quantity } = item;
+    return `
          <li class="minicart-product" data-item-id="${item.id}">
            <div class="minicart-product__image"><img src="${item.imageUrl}"></div>
            <div class="minicart-product__info">
@@ -15,18 +16,20 @@ class Minicart {
              <strong class="minicart-product__price">R$ ${(item.price / 100).formatMoney()}</strong>
            </div>
 
-             <button class="minicart-product__remove" type="button" onclick="Minicart.removeItem.apply(null, [${i}])" title="Remover ${item.name} do carrinho">X</button>
+             <button class="minicart-product__remove" type="button" onclick="Minicart.removeItem.apply(null, [${i}])" title="Remover ${
+  item.name
+} do carrinho">X</button>
          </li>
-       `
-     }
+       `;
+  }
 
-     renderItems() {
-       return this.orderForm.items.map(this.renderItem, this).join('')
-     }
+  renderItems() {
+    return this.orderForm.items.map(this.renderItem, this).join('');
+  }
 
-     render() {
-       let qty = this.getQuantity()
-       return `
+  render() {
+    const qty = this.getQuantity();
+    return `
          <div class="minicart ${qty > 0 ? 'is-not-empty' : ''}">
             <button class="minicart__handle" title="sacola">
                 <span class="minicart__count">
@@ -61,50 +64,54 @@ class Minicart {
             </div>
 
          </div>
-       `
-     }
+       `;
+  }
 
-     removeItem(index) {
-       vtexjs.checkout.removeItems([{index}])
-     }
+  removeItem(index) {
+    vtexjs.checkout.removeItems([{ index }]);
+  }
 
-     updateItem(obj) {
-       let { index, qty, calc } = obj
-       let quantity = qty + +calc
-       if (quantity) {
-         vtexjs.checkout.updateItems([{index, quantity}], null, false)
-       }
-     }
+  updateItem(obj) {
+    const { index, qty, calc } = obj;
+    const quantity = qty + +calc;
+    if (quantity) {
+      vtexjs.checkout.updateItems([{ index, quantity }], null, false);
+    }
+  }
 
-     getTotal() {
-       const itemsTotal = this.orderForm.totalizers.find(item => item.id === 'Items')
-       const total = itemsTotal ? itemsTotal.value / 100 : 0
-       return `R$ ${total.formatMoney()}`
-     }
+  getTotal() {
+    const itemsTotal = this.orderForm.totalizers.find(item => item.id === 'Items');
+    const total = itemsTotal ? itemsTotal.value / 100 : 0;
+    return `R$ ${total.formatMoney()}`;
+  }
 
-     getQuantity() {
-       const qty = this.orderForm.items.reduce((prev, next) => prev + next.quantity, 0)
-       return qty
-     }
+  getQuantity() {
+    const qty = this.orderForm.items.reduce((prev, next) => prev + next.quantity, 0);
+    return qty;
+  }
 
-     printQuantity(qty) {
-       return `${qty}`
-     }
+  printQuantity(qty) {
+    return `${qty}`;
+  }
 
-     update(orderForm) {
-       this.orderForm = orderForm
-       this.mount()
-     }
+  update(orderForm) {
+    this.orderForm = orderForm;
+    this.mount();
+  }
 
-     mount() {
-       $('.main-header__carrinho').html(this.render())
-     }
+  mount() {
+    $('.main-header__carrinho').html(this.render());
+  }
 }
 
-$(document).ready(function(){
-    window.Minicart = new Minicart();
+$(document).ready(() => {
+  window.Minicart = new Minicart();
 
-    $('body').on('click', '.minicart__handle, .minicart__close', function(){
-        $('.minicart').toggleClass('active');
-    })
-})
+  $('body').on('click', '.minicart__handle, .minicart__close', () => {
+    $('.minicart').toggleClass('active');
+
+    if ($('.minicart').hasClass('active')) {
+      $('body').toggleClass('minicart-oppened');
+    }
+  });
+});

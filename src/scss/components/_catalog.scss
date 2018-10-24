@@ -139,7 +139,7 @@
 			}
 		}
 	}
-	.minicart__overlay {
+	.minicart__overlay--filter {
 		background-color: rgba(0, 0, 0, 0.52);
 		z-index: 99;
 		@include atMedium {
@@ -467,6 +467,15 @@
 		ul {
 			flex-wrap: wrap;
 			justify-content: flex-start;
+		}
+		.prateleira {
+			ul {
+				display: flex;
+				justify-content: center;
+				@include atMedium {
+					display: block;
+				}
+			}
 		}
 
 		.prateleira .list {

@@ -9,7 +9,7 @@ class Filter {
       const value = $(this).val();
       window.location.href = window.location.pathname + '?PS=12&' + value;
     })
-    
+
     if(this.isExist(this.menu)){
       console.log(this.menu);
     } else {
