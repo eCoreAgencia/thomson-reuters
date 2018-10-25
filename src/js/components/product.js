@@ -229,6 +229,9 @@ export default (function () {
     }
     $('.product__shipping-link').click((e) => {
       $('.shipping-box').css('display', 'block');
-    });
+	});
+	$(".product__description-text").mCustomScrollbar({
+		theme:"inset-dark"
+	});
   }
 }());

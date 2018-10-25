@@ -60,10 +60,6 @@ body {
 	.logo1,
 	.logo2 {
 		display: flex;
-		@media (max-width: 800px) {
-			margin: 0;
-			width: 50%;
-		}
 	}
 	&__logos-link {
 		display: flex;
@@ -266,18 +262,19 @@ th.quantity-price {
 .btn-place-order {
 	width: 345px;
 	height: 54px;
-	border-radius: 4px;
+	border-radius: 10px;
 	background-color: #77a22d;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	color: #ffffff;
-	a {
-		font-family: "KNOWLEDGE-BOLD";
-		font-size: 18px;
-		font-weight: 700;
-		text-transform: UPPERCASE;
-	}
+	font-family: "KNOWLEDGE-BLACK";
+	font-size: 18px;
+	font-weight: 700;
+	text-transform: UPPERCASE;
+	background-image: none;
+	padding: 0;
+	margin-top: 40px;
 }
 .cart-template-holder .cart {
 	border: 0;
@@ -322,6 +319,106 @@ tr.product-item {
 	margin-bottom: 1px;
 	padding: 6px;
 	padding-bottom: 0;
+}
+.cart-links-bottom {
+	margin-top: 40px;
+}
+
+.active .coupon-data {
+	margin-top: 40px;
+}
+.body {
+    width: 100vw;
+}
+.btn-place-order {
+    width: 345px;
+    height: 54px;
+    border-radius: 10px;
+    background-color: #77a22d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-family: "KNOWLEDGE-Black";
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: UPPERCASE;
+    background-image: none;
+    padding: 0;
+    margin-top: 40px;
+}
+
+.cart-links-bottom {
+    margin-top: 40px;
+}
+
+.active .coupon-data {
+    margin-top: 40px;
+}
+
+@media (max-width: 800px) {
+    body {
+        padding: 0 10px;
+    }
+    .active .coupon-data {
+        width: 250px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .coupon.summary-coupon.pull-right {
+        width: 100%;
+    }
+    .coupon-fieldset {
+        display: flex;
+        label,
+        .coupon-fields {
+            text-align: center;
+        }
+
+    }
+    .active .coupon-data {
+        margin: 40px auto;
+    }
+    a.btn-place-order {
+        display: flex !important;
+        margin-top: 30px !important;
+    }
+    .checkout-header {
+        background: #fff;
+
+        .logo1,
+        .logo2 {
+            display: flex;
+
+            margin: 0;
+            width: 75%;
+
+        }
+        &__breadcrumb {
+            justify-content: space-between;
+        }
+        &__nav {
+            flex: 1;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            &:last-of-type {
+                justify-content: flex-start;
+                text-align: left;
+                flex: 0.4;
+            }
+            &::after {
+                margin: auto;
+            }
+        }
+    }
+}
+.item-quantity-change {
+    padding: 0;
+}
+.quantity {
+    width: auto !important;
 }
 
 @font-face {

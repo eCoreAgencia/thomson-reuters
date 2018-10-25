@@ -108,10 +108,12 @@ $(document).ready(() => {
   window.Minicart = new Minicart();
 
   $('body').on('click', '.minicart__handle, .minicart__close', () => {
-    $('.minicart').toggleClass('active');
-
     if ($('.minicart').hasClass('active')) {
-      $('body').toggleClass('minicart-oppened');
+		$('.minicart').removeClass('active');
+      	$('body').removeClass('minicart-oppened');
+    } else {
+		$('.minicart').addClass('active');
+      	$('body').addClass('minicart-oppened');
     }
   });
 });

@@ -49,7 +49,6 @@
 
 		.account__box {
 			padding: 0;
-
 			h4 {
 				color: #fff;
 				font-size: 20px;
@@ -60,17 +59,6 @@
 				text-transform: uppercase;
 				background-color: $c-black;
 				text-align: center;
-
-				// &:before {
-				//   content: "";
-				//   width: 25px;
-				//   height: 25px;
-				//   margin: 0 20px 0 30px;
-				//   display: inline-block;
-				//   vertical-align: text-bottom;
-				//   background: url(/arquivos/ico-account.png) no-repeat scroll 0 0
-				//     transparent;
-				// }
 			}
 
 			p,
@@ -352,105 +340,105 @@ body.account {
 	}
 }
 body.account {
-	  //reset boostrap
-	  header.header .tip-bar span.tip-bar__ct-phone {
+	//reset boostrap
+	header.header .tip-bar span.tip-bar__ct-phone {
 		font-size: 13px !important;
 		padding-top: 9px !important;
 		margin: 0;
-	  }
-	
-	  header.header i.simple-phone {
-		  font-size: 12px !important;
-		  padding-top: 4px !important;
-	  }
-	
-	
-	  .header p.welcome {
-		  margin-bottom: 0 !important;
-	  }
-	
-	  .loginContent a.accountLink {
-		  font-size: 10px !important;
-	  }
-	
-	  .orderBy__ecore {
-		  padding: 0 !important;
-		  height: 28px !important;
-	  }
-	
-	  .search-bar .header__search-form .control.is-expanded input {
-		  font-size: 14px !important;
-	  }
-	
-	  .search-bar .header__search-form .control.is-expanded+.control a {
-		  font-size: 15px !important;
-	  }
-	
-	  nav.menu__nav .menu__list {
-		  margin-bottom: 0 !important;
-	  }
-	
-	  nav.menu__nav .menu__list a:hover {
-		  text-decoration: none !important;
-	  }
-	
-	  .main-footer__copyright {background: #fafafa !important;}
-	
-	  footer.main-footer .main-footer__area .main-footer__news {
-		  font-size: 12px !important;
-	  }
-	
-	  .main-footer__ct {
-		  font-size: 12px !important;
-	  }
-	
-	  h3.main-footer__title {
-		  font-size: 13px !important;
-	  }
-	
-	  .main-footer__item a {
-		  font-size: 13px !important;
-	  }
-	
-	  p.main-footer__text {
-		  font-size: 13px !important;
-		  margin-bottom: 0 !important;
-	  }
-	
-	  .main-footer a.main-footer__text {
-		  font-size: 13px !important;
-	  }
-	
-	  .main-footer__copyright-text {
-		  font-size: 10px !important;
-		  padding-bottom: 0 !important;
-		  margin-bottom: 0 !important;
-	  }
-	
-	  .column.ordersContent a {
-		  width: 150px;
-		  height: 35px;
-		  background-color: #77a22d;
-		  border-radius: 20px;
-		  color: #fff;
-		  text-align: center;
-		  display: -ms-flexbox;
-		  display: flex;
-		  -ms-flex-align: center;
-		  align-items: center;
-		  -ms-flex-pack: center;
-		  justify-content: center;
-		  font-family: "Knowledge-Black";
-		  font-size: 12px;
-		  font-weight: 900;
-		  text-transform: uppercase;
-		  letter-spacing: 0.75px;
-		  -ms-flex-item-align: center;
-		  align-self: center;
-	  }
-	
-	  .account__box {
-		  height: 440px;
-	  }
-	
+	}
+
+	header.header i.simple-phone {
+		font-size: 12px !important;
+		padding-top: 4px !important;
+	}
+
+	.header p.welcome {
+		margin-bottom: 0 !important;
+	}
+
+	.loginContent a.accountLink {
+		font-size: 10px !important;
+	}
+
+	.orderBy__ecore {
+		padding: 0 !important;
+		height: 28px !important;
+	}
+
+	.search-bar .header__search-form .control.is-expanded input {
+		font-size: 14px !important;
+	}
+
+	.search-bar .header__search-form .control.is-expanded + .control a {
+		font-size: 15px !important;
+	}
+
+	nav.menu__nav .menu__list {
+		margin-bottom: 0 !important;
+	}
+
+	nav.menu__nav .menu__list a:hover {
+		text-decoration: none !important;
+	}
+
+	.main-footer__copyright {
+		background: #fafafa !important;
+	}
+
+	footer.main-footer .main-footer__area .main-footer__news {
+		font-size: 12px !important;
+	}
+
+	.main-footer__ct {
+		font-size: 12px !important;
+	}
+
+	h3.main-footer__title {
+		font-size: 13px !important;
+	}
+
+	.main-footer__item a {
+		font-size: 13px !important;
+	}
+
+	p.main-footer__text {
+		font-size: 13px !important;
+		margin-bottom: 0 !important;
+	}
+
+	.main-footer a.main-footer__text {
+		font-size: 13px !important;
+	}
+
+	.main-footer__copyright-text {
+		font-size: 10px !important;
+		padding-bottom: 0 !important;
+		margin-bottom: 0 !important;
+	}
+
+	.column.ordersContent a {
+		width: 150px;
+		height: 35px;
+		background-color: #77a22d;
+		border-radius: 20px;
+		color: #fff;
+		text-align: center;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-align: center;
+		align-items: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		font-family: "Knowledge-Black";
+		font-size: 12px;
+		font-weight: 900;
+		text-transform: uppercase;
+		letter-spacing: 0.75px;
+		-ms-flex-item-align: center;
+		align-self: center;
+	}
+
+	.account__box {
+		height: 440px;
+	}
 }
