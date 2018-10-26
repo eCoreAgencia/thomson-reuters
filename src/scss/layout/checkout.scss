@@ -2,6 +2,7 @@ body {
 	margin: 0;
 	padding: 0;
 	text-transform: uppercase;
+	font-family: "Knowledge-Medium"
 }
 .body-cart {
 	background: #fafafa;
@@ -420,6 +421,24 @@ tr.product-item {
 .quantity {
     width: auto !important;
 }
+
+.total-selling-price {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.full-cart tfoot .monetary {
+    font-family: "Knowledge-MEDIUM";
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.item-remove-ico {
+    COLOR: #4A4A4A;
+}
+
+
 
 @font-face {
 	font-family: "Knowledge-Medium";

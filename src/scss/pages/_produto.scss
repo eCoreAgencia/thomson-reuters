@@ -4,7 +4,8 @@ body.product {
 			padding: 10px 0;
 		}
 	}
-	.name-field.Sumario.col1, .value-field.Sumario.col2 {
+	.name-field.Sumario.col1,
+	.value-field.Sumario.col2 {
 		display: none;
 	}
 
@@ -634,3 +635,61 @@ body.product {
 		}
 	}
 }
+.modal-sumary {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.61);
+	display: none;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 999999;
+	&__content {
+		width: 100%;
+		height: 100%;
+		position: relative;
+	}
+	&__container {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		iframe {
+			display: block;
+			width: 90%;
+			height: 80%;
+			@include atMedium {
+				width: 50%;
+				height: 80%;
+			}
+		}
+	}
+	.close {
+		z-index: 999999999;
+		color: white;
+		font-size: 60px;
+		position: absolute;
+		top: 90%;
+		left: 0;
+		right: 0;
+		width: auto;
+		height: 80px;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@include atMedium {
+			display: block;
+			left: 18%;
+			top: 8%;
+			font-size: 50px;
+			right: initial;
+			width: initial;
+			height: initial;
+		}
+	}
+}
+
