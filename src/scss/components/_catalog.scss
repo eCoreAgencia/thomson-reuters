@@ -570,6 +570,13 @@
 						font-weight: 500;
 						text-transform: uppercase;
 					}
+
+					&.black-friday {
+						font-size: 10px;
+						text-align: center;
+						background-color: #000;
+					}
+
 					&--e-book {
 						display: none;
 					}

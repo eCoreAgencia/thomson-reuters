@@ -37,7 +37,11 @@ class Product {
     });
     $('body').on('click', '.modal-sumary__content .close', () => {
       $('.modal-sumary').fadeOut();
-    });
+	});
+
+	// Removing C letter on IBSN Code area
+	const myCode = $('.value-field.Codigo-ISBN').html();
+	$('.value-field.Codigo-ISBN').html(myCode.substring(1));
   }
 
   renderSumario(link) {
