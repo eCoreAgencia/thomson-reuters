@@ -93,6 +93,15 @@ class searchFilter {
 
 
 $(document).ready(function() {
+
+  $('.empty-search__search.search-bar').on("submit", function(event) {
+    event.preventDefault();
+
+		let termo		 = $('.empty-search__search.search-bar').val();
+		window.location = "/"+termo;
+
+  });
+
 	$('.orderBy__ecoreHeader__select--title').on('click', function() {
 		let _this = $(this);
 		_this.parents('.orderBy__ecoreHeader').find('.orderBy__ecoreHeader__select--option').toggleClass('active');

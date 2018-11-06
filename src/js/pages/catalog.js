@@ -5,6 +5,12 @@ class Catalog {
       this.grad();
       this.orderBy();
       this.showMobFilter();
+
+      $(".navCatalog input[type='checkbox']").vtexSmartResearch({
+        ajaxCallback: function () {
+            $(".helperComplement").remove();
+        }
+      })
     }
   }
 

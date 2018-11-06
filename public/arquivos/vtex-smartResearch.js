@@ -24,7 +24,7 @@ jQuery.fn.vtexSmartResearch=function(opts)
 		shelfClass:".prateleira", // Pratelira de produtos (filha do elemento definido de um "loadContent")
 		filtersMenu:".search-multiple-navigator", // Menu com os filtros
 		linksMenu:".search-single-navigator", // Menu de links
-		menuDepartament:".navigation .menu-departamento", // seletor do menu da página de departamentos
+		menuDepartament:".navigation-tabs .menu-departamento", // seletor do menu da página de departamentos
 		mergeMenu:true, // Define se o menu de links será mesclado com o de filtros será mesclado na página de departamento
 		insertMenuAfter:".search-multiple-navigator h3:first", // O menu de links será inserido após este elemento
 		emptySearchElem:jQuery('<div class="vtexsr-emptySearch"></div>'), // Elemento Html (em Objeto jQuery) no qual será adicionado a mensagem de busca vazia
