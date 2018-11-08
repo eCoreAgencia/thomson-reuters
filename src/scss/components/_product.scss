@@ -25,6 +25,12 @@ $top-flag-val: 50px;
 		// 	text-transform: uppercase;
 		// }
 
+		&.black-friday {
+			font-size: 0.6rem !important;
+			text-align: center !important;
+			background-color: #f58920 !important;
+		}
+
 		&:nth-of-type(2) {
 			top: calc(#{$top-flag-val} + 50px);
 		}
