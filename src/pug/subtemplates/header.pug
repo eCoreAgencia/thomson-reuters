@@ -50,181 +50,124 @@ header.header
 	.menu
 		.wrapper
 			.main-header__menu-content
-				nav.menu__nav
-					ul.menu__list
-						li.menu__list-item.area-de-interesse
-							a(href="/area-de-interesse") Área de Interesse
-							ul.submenu
-								.wrapper
-									.menuItem
-										li.menuItem__item
-											a(href="/area-de-interesse/Administrativo") Administrativo
-										li.menuItem__item
-											a(href="/area-de-interesse/Civil") Civil
-										//- li.menuItem__item
-										//- 	a(href="/area-de-interesse/Comercial") Comercial
-										li.menuItem__item
-											a(href="/area-de-interesse/Constitucional") Constitucional
-										li.menuItem__item
-											a(href="/area-de-interesse/Difusos-e-Coletivos") Difusos e Coletivos
-										li.menuItem__item
-											a(href="/area-de-interesse/Direito-Digital") Direito Digital
-										li.menuItem__item
-											a(href="/area-de-interesse/Direito-Previdenciario") Direito Previdenciário
-										li.menuItem__item
-											a(href="/area-de-interesse/Empresarial") Empresarial
-										li.menuItem__item
-											a(href="/area-de-interesse/Estudantes") Estudantes
-										li.menuItem__item
-											a(href="/area-de-interesse/Financeiro") Financeiro
-										//- li.menuItem__item
-										//- 	a(href="/area-de-interesse/Historia---IED---etica") História - IED - Ética
-										li.menuItem__item
-											a(href="/area-de-interesse/Internacional") Internacional
-										li.menuItem__item
-											a(href="/area-de-interesse/Legislacao") Legislação
-										li.menuItem__item
-											a(href="/area-de-interesse/OAB---Concursos") OAB - Concursos
-										li.menuItem__item
-											a(href="/area-de-interesse/Outras-areas") Outras áreas
-										li.menuItem__item
-											a(href="/area-de-interesse/Penal") Penal
-										li.menuItem__item
-											a(href="/area-de-interesse/Processo-Civil") Processo Civil
-										li.menuItem__item
-											a(href="/area-de-interesse/Processo-Penal") Processo Penal
-										li.menuItem__item
-											a(href="/area-de-interesse/Tributario") Tributário
-									.banner
-										img(src="/arquivos/bannerMenu.jpg", alt="")
-						li.menu__list-item
-							a(href="/lancamentos") Lançamentos
-						li.menu__list-item
-							a(href="/busca?fq=H:137&amp;PS=24&amp;O=OrderByTopSaleDESC") Mais Vendidos
-						//- li.menu__list-item
-						//- 	a(href="kits-e-colecoes") Kits e Coleções
-						li.menu__list-item
-							a(href="/oab-e-concursos") OAB e concursos
-						//- li.menu__list-item
-						//- 	a(href="/outlet") Outlet
+				+vtex-controller('<vtex.cmc:menuThomsonDesktop />')
+					nav.menu__nav
+						ul.menu__list
+							li.menu__list-item.area-de-interesse
+								a(href="/area-de-interesse") Área de Interesse
+								ul.submenu
+									.wrapper
+										.menuItem
+											li.menuItem__item
+												a(href="/area-de-interesse/Administrativo") Administrativo
+											li.menuItem__item
+												a(href="/area-de-interesse/Civil") Civil
+											//- li.menuItem__item
+											//- 	a(href="/area-de-interesse/Comercial") Comercial
+											li.menuItem__item
+												a(href="/area-de-interesse/Constitucional") Constitucional
+											li.menuItem__item
+												a(href="/area-de-interesse/Difusos-e-Coletivos") Difusos e Coletivos
+											li.menuItem__item
+												a(href="/area-de-interesse/Direito-Digital") Direito Digital
+											li.menuItem__item
+												a(href="/area-de-interesse/Direito-Previdenciario") Direito Previdenciário
+											li.menuItem__item
+												a(href="/area-de-interesse/Empresarial") Empresarial
+											li.menuItem__item
+												a(href="/area-de-interesse/Estudantes") Estudantes
+											li.menuItem__item
+												a(href="/area-de-interesse/Financeiro") Financeiro
+											//- li.menuItem__item
+											//- 	a(href="/area-de-interesse/Historia---IED---etica") História - IED - Ética
+											li.menuItem__item
+												a(href="/area-de-interesse/Internacional") Internacional
+											li.menuItem__item
+												a(href="/area-de-interesse/Legislacao") Legislação
+											li.menuItem__item
+												a(href="/area-de-interesse/OAB---Concursos") OAB - Concursos
+											li.menuItem__item
+												a(href="/area-de-interesse/Outras-areas") Outras áreas
+											li.menuItem__item
+												a(href="/area-de-interesse/Penal") Penal
+											li.menuItem__item
+												a(href="/area-de-interesse/Processo-Civil") Processo Civil
+											li.menuItem__item
+												a(href="/area-de-interesse/Processo-Penal") Processo Penal
+											li.menuItem__item
+												a(href="/area-de-interesse/Tributario") Tributário
+										.banner
+											img(src="/arquivos/bannerMenu.jpg", alt="")/
+							li.menu__list-item
+								a(href="/lancamentos") Lançamentos
+							li.menu__list-item
+								a(href="/busca?fq=H:137&amp;PS=24&amp;O=OrderByTopSaleDESC") Mais Vendidos
+							//- li.menu__list-item
+							//- 	a(href="kits-e-colecoes") Kits e Coleções
+							li.menu__list-item
+								a(href="/oab-e-concursos") OAB e concursos
+							//- li.menu__list-item
+							//- 	a(href="/outlet") Outlet
 	.menu__mobile
 		.menu__mobile-welcome Bem-Vindo,
 		a(href="/account").menu__mobile-dynamic-login Entrar
 		a(href="/account").menu__mobile-dynamic-login1 Cadastre-se
-		ul.menu__mobile-main-menu
-			li.menu__mobile-items
-				.titleMenu
-					span Área de Interesse
-					i.simple-arrow-right
-				ul.submenu
-					.wrapper
-						.menuItem
-							li.menuItem__item
-								a(href="/area-de-interesse/Administrativo") Administrativo
-							li.menuItem__item
-								a(href="/area-de-interesse/Civil") Civil
-							//- li.menuItem__item
-							//- 	a(href="/area-de-interesse/Comercial") Comercial
-							li.menuItem__item
-								a(href="/area-de-interesse/Constitucional") Constitucional
-							li.menuItem__item
-								a(href="/area-de-interesse/Difusos-e-Coletivos") Difusos e Coletivos
-							li.menuItem__item
-								a(href="/area-de-interesse/Direito-Digital") Direito Digital
-							li.menuItem__item
-								a(href="/area-de-interesse/Direito-Previdenciario") Direito Previdenciário
-							li.menuItem__item
-								a(href="/area-de-interesse/Empresarial") Empresarial
-							li.menuItem__item
-								a(href="/area-de-interesse/Estudantes") Estudantes
-							li.menuItem__item
-								a(href="/area-de-interesse/Financeiro") Financeiro
-							//- li.menuItem__item
-							//- 	a(href="/area-de-interesse/Historia---IED---etica") História - IED - Ética
-							li.menuItem__item
-								a(href="/area-de-interesse/Internacional") Internacional
-							li.menuItem__item
-								a(href="/area-de-interesse/Legislacao") Legislação
-							li.menuItem__item
-								a(href="/area-de-interesse/OAB---Concursos") OAB - Concursos
-							li.menuItem__item
-								a(href="/area-de-interesse/Outras-areas") Outras áreas
-							li.menuItem__item
-								a(href="/area-de-interesse/Penal") Penal
-							li.menuItem__item
-								a(href="/area-de-interesse/Processo-Civil") Processo Civil
-							li.menuItem__item
-								a(href="/area-de-interesse/Processo-Penal") Processo Penal
-							li.menuItem__item
-								a(href="/area-de-interesse/Tributario") Tributário
-			li.menu__mobile-items
-				.titleMenu
-					a(href="/account") Meu Cadastro
-			li.menu__mobile-items
-				.titleMenu
-					a(href="/account/orders") Meus Pedidos
-			li.menu__mobile-items
-				.titleMenu
-					a(href="/account") Meus Endereços
-			li.menu__mobile-items
-				.titleMenu
-					a(href="/login") Esqueci Minha Senha
-
-
-
-
-
-
-
-
-
-
-
-//- header.header
-//-   .header__area.header__info.container
-//-     .header__inner.row
-//-       .header__contact-bar
-//-         span.contact__phone.contact__box
-//-           i.icon-phone
-//-             include ../../svg/phone.svg
-//-           | 0800-702-2433
-//-         span.contact__help.contact__box
-//-           i.icon-help
-//-             include ../../svg/help.svg
-//-           strong Dúvida? Queremos ouvir você:
-//-           | (24) 2255 0796
-//-         span.contact__whatsapp.contact__box
-//-           i.icon-whatsapp
-//-             include ../../svg/whatsapp.svg
-//-           strong Atendimento via Whatsapp:
-//-           | (24) 99259 1944
-//-   .header__area.header__main.container
-//-     .header__inner
-//-       .columns
-//-         .header__logo.column.is-2
-//-           .logo
-//-             h1.logo__brand
-//-               a.logo__link(href="/")
-//-                 img.logo__image(src="/arquivos/logo.png", alt="")/
-//-         .header__search-form.column.is-6
-//-           .search-form#header-form
-//-             .field.has-addons
-//-               .control.is-expanded
-//-                 input.input(type='text', placeholder='Digite o nome do produto...')/
-//-               .control
-//-                 a.button
-//-                   span.icon
-//-                     include ../../svg/search.svg
-//-         .header__action-user.column
-
-//-           a.button.button--buy-list
-//-             span.icon
-//-               include ../../svg/mark.svg
-//-             span Lista de Compras
-//-           a.button.button--account
-//-             span.icon
-//-               include ../../svg/user.svg
-//-             span Minha Conta
-//-           .minicart
-//-   .header__area.header__menu.container
-//-     nav.navbar(role='navigation', aria-label='dropdown navigation')
+		+vtex-controller('<vtex.cmc:menuThomsonMobile />')
+			ul.menu__mobile-main-menu
+				li.menu__mobile-items
+					.titleMenu
+						span Área de Interesse
+						i.simple-arrow-right
+					ul.submenu
+						.wrapper
+							.menuItem
+								li.menuItem__item
+									a(href="/area-de-interesse/Administrativo") Administrativo
+								li.menuItem__item
+									a(href="/area-de-interesse/Civil") Civil
+								//- li.menuItem__item
+								//- 	a(href="/area-de-interesse/Comercial") Comercial
+								li.menuItem__item
+									a(href="/area-de-interesse/Constitucional") Constitucional
+								li.menuItem__item
+									a(href="/area-de-interesse/Difusos-e-Coletivos") Difusos e Coletivos
+								li.menuItem__item
+									a(href="/area-de-interesse/Direito-Digital") Direito Digital
+								li.menuItem__item
+									a(href="/area-de-interesse/Direito-Previdenciario") Direito Previdenciário
+								li.menuItem__item
+									a(href="/area-de-interesse/Empresarial") Empresarial
+								li.menuItem__item
+									a(href="/area-de-interesse/Estudantes") Estudantes
+								li.menuItem__item
+									a(href="/area-de-interesse/Financeiro") Financeiro
+								//- li.menuItem__item
+								//- 	a(href="/area-de-interesse/Historia---IED---etica") História - IED - Ética
+								li.menuItem__item
+									a(href="/area-de-interesse/Internacional") Internacional
+								li.menuItem__item
+									a(href="/area-de-interesse/Legislacao") Legislação
+								li.menuItem__item
+									a(href="/area-de-interesse/OAB---Concursos") OAB - Concursos
+								li.menuItem__item
+									a(href="/area-de-interesse/Outras-areas") Outras áreas
+								li.menuItem__item
+									a(href="/area-de-interesse/Penal") Penal
+								li.menuItem__item
+									a(href="/area-de-interesse/Processo-Civil") Processo Civil
+								li.menuItem__item
+									a(href="/area-de-interesse/Processo-Penal") Processo Penal
+								li.menuItem__item
+									a(href="/area-de-interesse/Tributario") Tributário
+				li.menu__mobile-items
+					.titleMenu
+						a(href="/account") Meu Cadastro
+				li.menu__mobile-items
+					.titleMenu
+						a(href="/account/orders") Meus Pedidos
+				li.menu__mobile-items
+					.titleMenu
+						a(href="/account") Meus Endereços
+				li.menu__mobile-items
+					.titleMenu
+						a(href="/login") Esqueci Minha Senha

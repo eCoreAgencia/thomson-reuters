@@ -2,6 +2,10 @@ body {
 	font-family: $f-base;
 	background-color: $c-mainbg;
 	width: 100vw;
+
+	&.menu-active {
+		position: fixed;
+	}
 }
 
 a {

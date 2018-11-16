@@ -2,7 +2,8 @@
 class MobileMenu {
   constructor() {
     this.menuIcon = $(".header__menu-icon");
-    this.menuMobileContent = $(".menu__mobile");
+	this.menuMobileContent = $(".menu__mobile");
+	this.bodyChange = $('body');
     this.events();
   }
 
@@ -13,7 +14,8 @@ class MobileMenu {
 
   toggleTheMenu() {
     this.menuMobileContent.toggleClass("menu__mobile--is-visible");
-    this.menuIcon.toggleClass("header__menu-icon--close-x");
+	this.menuIcon.toggleClass("header__menu-icon--close-x");
+	this.bodyChange.toogleClass('menu-active');
   }
 }
 
