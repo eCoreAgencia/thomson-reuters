@@ -1,0 +1,24 @@
+extends ../layouts/default.pug
+
+block vars
+	- var pageTitle = 'Resgate de E-book'
+	- var bodyClass = 'proview-form'
+
+block content
+	.container
+		.proview
+			.proview__block
+				h3.proview__title Resgate de E-book
+				form.proview__form(action="")
+					legend.proview__legend Preencha as informações abaixo para receber por e-mail as intruçoes para visualização do e-book. Todos os campos com asterisco (*) são de preenchimento obrigatório.
+					.proview__control
+						label.proview__label Seu nome*
+						input.proview__input(type="text", name="name")/
+					.proview__control
+						label.proview__label Seu e-mail*
+						input.proview__input(type="email", name="email")/
+					.proview__control
+						label.proview__label Código do cupom*
+						input.proview__input(type="text", name="cupom")/
+					button.button.button__gray Limpar
+					button.button.button__buy Confirmar
