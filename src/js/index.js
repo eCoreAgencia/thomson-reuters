@@ -16,6 +16,7 @@ import './components/menuMobile';
 import './components/login';
 
 import './components/proview';
+import './components/events';
 
 
 import './pages/home';
