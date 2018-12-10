@@ -5,7 +5,11 @@
 		@include font-size(25px);
 		display: block;
 		background-color: #f4f4f4;
-		padding: 12px 40px;
+        padding: 12px 40px;
+        
+        @include atSmall {
+            @include font-size(20px);
+        }
 	}
 
 	&__block {
@@ -27,7 +31,11 @@
 		font-family: "Knowledge-Regular";
 		margin-bottom: 10px;
 		width: 100%;
-		@include font-size(15px);
+        @include font-size(15px);
+        
+        @include atSmall {
+            @include font-size(14px);
+        }
 	}
 
 	&__control {
@@ -42,7 +50,10 @@
 		font-family: "Knowledge-Black";
 		margin-bottom: 10px;
 		display: block;
-		@include font-size(16px);
+        @include font-size(16px);
+        @include atSmall {
+            @include font-size(14px);
+        }
 	}
 
 	&__input {

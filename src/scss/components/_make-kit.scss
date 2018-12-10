@@ -1,0 +1,28 @@
+.kit {
+    &__page {
+        &-title {
+            font-size: 52px;
+            font-family: "Knowledge-Black";
+            color: #ff8000;
+            text-align: center;
+        }
+        &-description {
+            font-size: 22px;
+            color: #666666;
+            font-family: 'Knowledge-Regular';
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            margin: auto;
+        }
+    }
+
+    &__search {
+        max-width: 600px;
+        width: 100%;
+        margin: auto;
+        background-color: #ffffff;
+    }
+
+
+}
