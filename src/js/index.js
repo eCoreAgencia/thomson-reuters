@@ -25,10 +25,19 @@ import './pages/catalog';
 import './pages/empty-search';
 import './pages/institucional';
 import './pages/product';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Home from './components/MakeYourKit';
+
+
 
 
 $(document).ready(function () {
 	if ($('li.helperComplement')[0]) {
 		$('li.helperComplement').remove();
+	}
+
+	if($('body').hasClass('make-kit')){
+		ReactDOM.render(<Home />, document.getElementById('app'));
 	}
 })
