@@ -1,0 +1,136 @@
+body.autor .box-autores h2 {
+    font-size: 25px;
+    color: #ff8000;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+body.autor .paginator-top {
+    display: grid;
+    padding: 20px 0;
+    text-align: right;
+    border-top: 1px solid #666;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid #666;
+}
+
+body.autor .autor-obras .prateleira .slick-next {
+	right: -20px;
+}
+
+body.autor .autor-obras .prateleira .slick-prev {
+	left: -7px;
+}
+
+body.autor .autor-obras ul {
+	width: 90000%;
+}
+
+body.autor .autor-obras .prateleira {
+    position: relative;
+}
+
+body.autor .letter-list .letter-list__item {
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+body.autor .letter-list .letter-list__item:last-child {
+    margin-right: 0;
+}
+
+body.autor .autor-box a {
+	color: inherit;
+}
+
+body.autor .letter-list .letter-list__item span {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+body.autor .num-resultados {
+	text-align: left;
+}
+
+body.autor .letter-list .letter-list__item span.active,
+body.autor .letter-list .letter-list__item span:hover {
+    color: #ff8000;
+}
+
+body.autor {
+    padding: 10px;
+}
+
+body.autor .autor-box .autor-obras {
+    overflow: hidden;
+    padding: 0 25px;
+    position: relative;
+}
+
+body.autor .autor-box .autor-obras:before {
+    top: 20px;
+    left: 15px;
+    content: '';
+    height: 200px;
+    position: absolute;
+    border-left: 2px solid #666;
+}
+
+body.autor .autor-obras .prateleira li {
+	margin-right: 10px;
+    display: inline-block;
+}
+
+body.autor .autor-obras .prateleira li:last-child {
+	margin-right: 0;
+}
+
+body.autor .section__shelf {
+	margin-bottom: 80px;
+}
+
+body.autor .autor-box {
+    display: grid;
+	overflow: hidden;
+	max-height: 250px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    grid-template-columns: 1fr 5fr;
+}
+
+body.autor .autor-box h3 {
+    color: #666;
+    height: 38px;
+    overflow: hidden;
+    font-size: 20px;
+    margin-top: -5px;
+    padding-top: 10px;
+	font-weight: bold;
+    margin-bottom: 10px;
+}
+
+body.autor .autor-box .product__link img {
+    width: 50%;
+    height: auto;
+}
+
+body.autor .autor-box article {
+    overflow: hidden;
+    max-height: 140px;
+    display: inline-block;
+}
+
+body.autor .autor-box .prateleira .product__price,
+body.autor .autor-box .prateleira .product__actions,
+body.autor .autor-box .prateleira .product__reviews,
+body.autor .autor-box .prateleira .product__category {
+    display: none;
+}
+
+body.autor .autor-box .autor-obras:before {
+    content: '';
+    display: block;
+    padding: 10px 0;
+    border-left: 2px solid #666;
+}

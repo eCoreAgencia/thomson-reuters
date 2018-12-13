@@ -4,10 +4,6 @@ $(document).ready(function(){
     });
 
     $('.header__menu-icon').click(function(){
-        $('body').addClass('menu-active');
-    });
-
-    $('.header__menu-icon--close-x').click(function(){
-        $('body').removeClass('menu-active');
+        $('body').toggleClass('menu-active');
     });
 });

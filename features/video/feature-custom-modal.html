@@ -1,0 +1,90 @@
+<div class="modal-video">
+    <div class="modal-contents">
+        <div class="opacity"></div>
+        <span class="close">x</span>
+        <div class="modal-container">
+
+        </div>
+    </div>
+</div>
+<style type="text/css">
+    .modal-video {
+        top: 0;
+        left: 0;
+        display: none;
+        position: relative;
+    }
+
+    .modal-video.active {
+        display: block;
+    }
+
+    .modal-video .opacity {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+        z-index: 100;
+        display: block;
+        position: fixed;
+        background-color: #000;
+    }
+
+    .modal-video .close {
+        top: 45px;
+        left: 50%;
+        z-index: 100;
+        position: fixed;
+        cursor: pointer;
+        font-size: 30px;
+        color: #f1f1f1;
+        margin-left: 310px;
+    }
+
+    .modal-video .modal-container iframe {
+        width: 100%;
+    }
+
+    .modal-video .modal-container {
+        top: 60px;
+        left: 50%;
+        z-index: 100;
+        width: 600px;
+        padding: 20px;
+        position: fixed;
+        text-align: center;
+        margin-left: -300px;
+        background-color: #fff;
+    }
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#___rc-p-id").each(function(index) {
+			var id = $(this).attr("value");
+			var data = "/api/catalog_system/pub/products/search/?fq=productId:"+id+"";
+
+			$.getJSON(data, function(data) {
+				$.each(data, function(key, val) {
+					if(val.MeuVideo) {
+						var myVideo = val.MeuVideo;
+						var myPosition = val.Posicao;
+						var myIdVideo = val.IdDocumento;
+
+						$('<li class="my-video"><span></span><video width="80"><source src="https://thomsonreuters.vtexcommercestable.com.br/api/dataentities/VD/documents/'+myIdVideo+'/MeuVideo/attachments/'+myVideo+'"></source></video></li>').appendTo('.thumbs .slick-track');
+						$('<video width="300"><source src="https://thomsonreuters.vtexcommercestable.com.br/api/dataentities/VD/documents/'+myIdVideo+'/MeuVideo/attachments/'+myVideo+'"></source></video>').appendTo('.modal-video .modal-container');
+						$('.my-video').on('click', function(e){
+							$('.modal-video').addClass('active');
+							var myvideo = $('.modal-video .modal-container video');
+							$(myvideo).trigger('play');
+						});
+
+						$('.modal-video .close').on('click', function(e){
+							$('.modal-video').removeClass('active');
+						});
+					}
+				});
+			});
+		});
+	})
+</script>

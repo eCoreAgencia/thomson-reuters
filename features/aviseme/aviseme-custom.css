@@ -1,0 +1,31 @@
+#avisemecustom {
+    padding: 20px 0;
+}
+
+#avisemecustom fieldset {
+    border: none;
+}
+#avisemecustom fieldset.hidden {
+    display: none;
+}
+
+#avisemecustom input {
+    width: 95%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+#avisemecustom button {
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-transform: uppercase;
+    background-color: #4d4d4d;
+}
+
+.form-avise {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
