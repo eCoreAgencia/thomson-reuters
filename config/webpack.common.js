@@ -5,7 +5,6 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const InterpolateHtmlPlugin = require('interpolate-html-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const paths = require('./paths');
 const PROJECT_VARS = require('./variables');
@@ -14,8 +13,7 @@ module.exports = {
   plugins: [
     new InterpolateHtmlPlugin(PROJECT_VARS),
     new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
-    new CopyWebpackPlugin([ { from: paths.public, to: paths.dist } ]),
-    new VueLoaderPlugin()
+    new CopyWebpackPlugin([ { from: paths.public, to: paths.dist } ])
   ],
   output: {
     filename: 'arquivos/[name].min.js',
@@ -27,7 +25,10 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
-        loader: "babel-loader"
+        loader: "babel-loader",
+        query: {
+            presets: ['react']
+        }
       },
       {
         test: /\.pug$/,
@@ -49,10 +50,6 @@ module.exports = {
       {
         test: /\.svg/,
         loader: 'svg-inline-loader'
-      },
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader'
       }
     ]
   },
@@ -60,10 +57,5 @@ module.exports = {
     fs: 'empty',
     net: 'empty',
     tls: 'empty'
-  },
-  resolve: {
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js'
-    }
   }
 };

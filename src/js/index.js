@@ -1,5 +1,6 @@
 import '../scss/main.scss';
 import './modules/vtexRequest';
+import './components/MakeYourKit/app'
 
 import './components/selectFooter';
 import './components/minicart';
@@ -27,8 +28,13 @@ import './pages/institucional';
 import './pages/product';
 
 
+
+
+
 $(document).ready(function () {
 	if ($('li.helperComplement')[0]) {
 		$('li.helperComplement').remove();
 	}
+
+
 })

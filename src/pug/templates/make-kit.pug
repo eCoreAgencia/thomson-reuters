@@ -14,22 +14,7 @@ block content
                     li.last
                         strong
                             | Monte seu Kit
-            .kit
-                h2.kit__page-title Monte seu Kit
-                p.kit__page-description Aqui você pode criar seus próprios kits, com quantos livros quiser. É fácil e rápido de fazer, basta selecionar os livros desejados.
 
-                .kit__search
-                    form.kit__search-form(action="")
-                        .kit__form-control
-                            input.kit__input(type="text" placeholder='Pesquise pelo nome do livro, autor, área, coleção...', onfocus="this.placeholder = ''", onblur="this.placeholder = 'Pesquise pelo nome do livro, autor, área, coleção...'")/
-                            button.button
-                                span.icon-search.simple-magnifier
-                    .kit__search-result
-                        .prateleira
-                            ul
-                                each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-                                    li
-                                        include ../shelves/make-kit-shelf   
-
+            #kit
 block scripts
 
