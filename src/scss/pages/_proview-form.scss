@@ -1,0 +1,51 @@
+.proview-form {
+
+	.tip-bar,
+	.search-bar,
+	.main-header__carrinho,
+	.menu,
+	.main-footer {
+		display: none !important;
+	}
+
+	main {
+		padding: 40px 0;
+		min-height: calc(100vh - 80px);
+	}
+
+	.button__gray {
+		margin: 0;
+
+	}
+
+	.button__buy {
+		&:hover {
+			background-color: darken(#77a22d, 10%);
+		}
+	}
+
+	.button {
+		width: 160px;
+		height: 45px;
+		@include font-size(14px);
+		margin: 20px 5px;
+
+		&:hover {
+			color: #fff;
+		}
+    }
+    
+
+    .main-header {
+        .wrapper {
+            justify-content: flex-start;
+        }
+
+        @include atSmall {
+            .main-header__logos {
+                margin-left: 30px;
+            }
+        }
+    }
+
+}

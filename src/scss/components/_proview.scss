@@ -1,0 +1,68 @@
+.proview {
+	&__title {
+		color: #4d4d4d;
+		font-family: "Knowledge-Black";
+		@include font-size(25px);
+		display: block;
+		background-color: #f4f4f4;
+        padding: 12px 40px;
+        
+        @include atSmall {
+            @include font-size(20px);
+        }
+	}
+
+	&__block {
+		max-width: 700px;
+		width: 100%;
+		margin: 0 auto;
+		box-shadow: 0px 1px 1px 1px #ccc;
+	}
+
+	&__form {
+		padding: 12px 40px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+
+	}
+
+	&__legend {
+		font-family: "Knowledge-Regular";
+		margin-bottom: 10px;
+		width: 100%;
+        @include font-size(15px);
+        
+        @include atSmall {
+            @include font-size(14px);
+        }
+	}
+
+	&__control {
+		width: 100%;
+		margin: 10px 0;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__label {
+		color: #4d4d4d;
+		font-family: "Knowledge-Black";
+		margin-bottom: 10px;
+		display: block;
+        @include font-size(16px);
+        @include atSmall {
+            @include font-size(14px);
+        }
+	}
+
+	&__input {
+		border-radius: 20px;
+		border: 1px solid #cfcfcf;
+		padding: 12px;
+		width: 100%;
+
+	}
+
+
+}

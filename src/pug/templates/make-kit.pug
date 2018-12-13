@@ -1,0 +1,20 @@
+extends ../layouts/default.pug
+
+block vars
+    - var pageTitle = 'Monte seu kit'
+    - var bodyClass = 'make-your-kit'
+
+block content
+    section.breadCrumb
+        .container
+            .bread-crumb
+                ul
+                    li
+                        a(title='thompsonreuters', href='/') home
+                    li.last
+                        strong
+                            | Monte seu Kit
+
+            #kit
+block scripts
+

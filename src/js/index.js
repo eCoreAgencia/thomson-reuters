@@ -1,16 +1,13 @@
-import '../scss/main.scss'
-import './modules/vtexRequest'
+import '../scss/main.scss';
+import './modules/vtexRequest';
+import './components/MakeYourKit/app'
 
 import './components/selectFooter';
 import './components/minicart';
-// import './components/loader';
-// import './components/menu';
-// import './components/makeMenu';
 import './components/searchForm';
 import './components/shelf';
 import './components/filter';
 import './components/mobile-menu';
-//import './components/buyBuyCategory';
 import './components/product';
 import './components/sticky-header';
 import './components/sumario';
@@ -19,8 +16,8 @@ import './components/sumarioShelf';
 import './components/menuMobile';
 import './components/login';
 
-
-import './components/buy-by-category/main'
+import './components/proview';
+import './components/events';
 
 
 import './pages/home';
@@ -31,9 +28,13 @@ import './pages/institucional';
 import './pages/product';
 
 
-$(document).ready(function(){
-    if($('li.helperComplement')[0]){
-        $('li.helperComplement').remove();
-      }
-})
 
+
+
+$(document).ready(function () {
+	if ($('li.helperComplement')[0]) {
+		$('li.helperComplement').remove();
+	}
+
+
+})
