@@ -1,5 +1,6 @@
 import '../scss/main.scss';
 import './modules/vtexRequest';
+import './components/MakeYourKit/app'
 
 import './components/selectFooter';
 import './components/minicart';
@@ -25,9 +26,7 @@ import './pages/catalog';
 import './pages/empty-search';
 import './pages/institucional';
 import './pages/product';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Home from './components/MakeYourKit';
+
 
 
 
@@ -37,7 +36,5 @@ $(document).ready(function () {
 		$('li.helperComplement').remove();
 	}
 
-	if($('body').hasClass('make-kit')){
-		ReactDOM.render(<Home />, document.getElementById('app'));
-	}
+
 })
