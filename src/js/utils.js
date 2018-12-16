@@ -7,6 +7,7 @@ export const addToCart = function(id, quantity = 1, seller = '1', redirect = fal
 	let item = { id, quantity, seller }
 	vtexjs.checkout.addToCart([item], null, 1)
 	  .done(orderForm => {
+		  console.log(orderForm);
 	  })
 }
 

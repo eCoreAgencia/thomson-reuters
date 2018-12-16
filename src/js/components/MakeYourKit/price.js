@@ -7,14 +7,13 @@ export default props => {
 		const total = list.reduce((prev, next) => prev + next.items[0].sellers[0].commertialOffer.Price, 0)
 		const desc = total * (list.length * 0.2);
 		const ecom = total - desc;
-		console.log(total)
+
 		return (
 			<div className="price">
 				<span className="kit__price-economy">economize R$ {ecom.formatMoney()} </span>
 				<span className="kit__price-old">de R$ {total.formatMoney()} </span>
 				<span className="kit__price-best">de R$ {desc.formatMoney()}</span>
 			</div>
-
 		)
 	}
 
