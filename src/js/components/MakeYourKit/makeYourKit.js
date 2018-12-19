@@ -16,9 +16,10 @@ export default class MakeYourKit extends Component {
 		this.buyKit = this.buyKit.bind(this);
 	}
 
-	buyKit (){
+	buyKit() {
 		this.state.kit.map(kit => {
 			const id = kit.items[0].itemId;
+			console.log(id);
 			addToCart(id,1,"2");
 		})
 	}
