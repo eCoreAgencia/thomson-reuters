@@ -6,7 +6,7 @@ class account {
 	}
 
 	hideCancel() {
-		setTimeout(function() {
+		setInterval(function(){
 			$('.myo-progress-bar__ma-inner-circle').each(function() {
 				var _this = $(this);
 				var activeItem = _this.parent().find('.myo-progress-bar__text').text();
@@ -15,6 +15,6 @@ class account {
 					$('.myo-view-order ul.list li:last').remove();
 				}
 			})
-		}, 1500);
+		}, 500);
 	}
 }
