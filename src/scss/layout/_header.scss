@@ -18,6 +18,7 @@
 		letter-spacing: 1px;
 		border-left: 1px solid;
 		padding-left: 10px;
+		font-family: "Knowledge-Regular";
 	}
 	.tip-bar {
 		display: none;
@@ -188,7 +189,7 @@
 	position: fixed;
 	top: 0;
 	width: 100%;
-    z-index: 99;
+	z-index: 99;
 	.search-bar {
 		display: none;
 		@include atMedium {
