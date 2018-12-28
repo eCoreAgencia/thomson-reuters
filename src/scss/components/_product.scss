@@ -46,6 +46,7 @@ $top-flag-val: 50px;
 			position: absolute;
 			width: 100%;
 			top: 70%;
+			left: 0;
 			background: white;
 			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
 			opacity: 0;
@@ -74,7 +75,7 @@ $top-flag-val: 50px;
 		border-bottom: 2px solid $c-gray-light;
 		height: 27px;
 		color: #4d4d4d;
-		font-family: "Knowledge-Medium";
+		font-family: "Knowledge-Bold";
 	}
 	&__media {
 		position: relative;
