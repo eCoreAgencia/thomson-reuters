@@ -22,14 +22,14 @@ $(document).ready(() => {
       responsive: [
         {
           breakpoint: 800,
-          settings: "unslick"
+          settings: 'unslick',
         },
         {
           breakpoint: 480,
           settings: {
             slidesToShow: 1,
-			slidesToScroll: 1,
-			arrows: false,
+            slidesToScroll: 1,
+            arrows: false,
           },
         },
       ],
@@ -68,8 +68,8 @@ $(document).ready(() => {
             slidesToShow: 3,
             slidesToScroll: 3,
             dots: false,
-			infinite: true,
-			arrows: false,
+            infinite: true,
+            arrows: false,
           },
         },
         {
@@ -77,8 +77,8 @@ $(document).ready(() => {
           settings: {
             slidesToShow: 2,
             slidesToScroll: 2,
-			infinite: false,
-			arrows: false,
+            infinite: false,
+            arrows: false,
           },
         },
         {
@@ -87,8 +87,8 @@ $(document).ready(() => {
             slidesToShow: 1,
             slidesToScroll: 1,
             dots: true,
-			infinite: false,
-			arrows: false,
+            infinite: false,
+            arrows: false,
           },
         },
         // You can unslick at a given breakpoint now by adding:
@@ -127,4 +127,5 @@ $(document).ready(() => {
       ],
     });
   }
+  $('.product-field ul').slick('unslick');
 });
