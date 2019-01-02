@@ -292,6 +292,7 @@ $top-flag-val: 50px;
 	// THE MAIN GRID
 	&__main {
 		display: grid;
+		align-items: center;
 		#include {
 			display: none;
 			@include atMedium {
@@ -540,6 +541,13 @@ $top-flag-val: 50px;
 		font-family: "Knowledge-Regular";
 		font-weight: 400;
 		line-height: 12px;
+	}
+
+	.shipping-value {
+		@include font-size(13px);
+		color: $c-gray-dark;
+		font-family: "Knowledge-Regular";
+		font-weight: 400;
 	}
 	// PRICE DO CONTROLE VTEX product page
 	.descricao-preco {

@@ -204,6 +204,10 @@
 	@include atMedium {
 		animation: none;
 	}
+
+	+ main {
+		padding-top: 125px;
+	}
 }
 
 @keyframes stickyHeader {
