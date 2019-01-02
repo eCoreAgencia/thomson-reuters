@@ -11,9 +11,22 @@ export default class Search extends Component {
 			list: []
 		}
 		this.submitSearch = this.submitSearch.bind(this);
+		this.clearList = this.clearList.bind(this);
 		this.getProductResult = this.getProductResult.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		console.log(this.props);
+
+
+	}
+
+	componentDidMount(){
+		const self = this;
+		document.addEventListener("click", function(e){
+			const buyMore = document.querySelector('.kit__search')
+			if (e.target != buyMore && e.target.parentNode != buyMore) {
+				self.setState({...self.state, list: '', value: ''});
+			}
+		});
 	}
 
 	getProductResult(){
@@ -34,6 +47,13 @@ export default class Search extends Component {
 	submitSearch(e){
 		e.preventDefault();
 		this.getProductResult();
+	}
+
+	clearList(e){
+		const buyMore = document.querySelector('.kit__search')
+		if (e.target != buyMore && e.target.parentNode != buyMore) {
+			this.setState({...this.state, list: ''});
+		}
 	}
 
 	render() {

@@ -13,6 +13,7 @@ export default class MakeYourKit extends Component {
 			kit: []
 		}
 		this.addToList = this.addToList.bind(this);
+		this.removeItem = this.removeItem.bind(this);
 		this.buyKit = this.buyKit.bind(this);
 	}
 
@@ -33,6 +34,15 @@ export default class MakeYourKit extends Component {
 		console.log('adicionado', this.state.kit);
 	}
 
+	removeItem(e){
+		const kit = this.state.kit;
+
+		const key = JSON.parse(e.target.getAttribute('data-key'))
+		kit.splice(key, 1);
+		this.setState({...this.state, kit: kit})
+		console.log(this.state.kit[key]);
+	}
+
 	render() {
 		return (
 			<div className="kit">
@@ -43,7 +53,7 @@ export default class MakeYourKit extends Component {
 					<Search action={this.addToList}/>
 
 				</div>
-				<Kit kit={this.state.kit} action={this.buyKit}/>
+				<Kit kit={this.state.kit} action={this.buyKit} remove={this.removeItem}/>
 
 			</div>
 		)
