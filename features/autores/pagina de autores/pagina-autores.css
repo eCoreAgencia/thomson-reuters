@@ -1,0 +1,139 @@
+body.autores .box-autores h2 {
+    font-size: 25px;
+    color: #ff8000;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+body.autores .paginator-top {
+    display: grid;
+    padding: 20px 0;
+    text-align: right;
+    border-top: 1px solid #666;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid #666;
+}
+
+body.autores .autor-obras .prateleira .slick-next {
+	right: -20px;
+}
+
+body.autores .autor-obras .prateleira .slick-prev {
+	left: -7px;
+}
+
+body.autores .autor-obras ul {
+	width: 90000%;
+}
+
+body.autores .autor-obras .prateleira {
+    position: relative;
+}
+
+body.autores .letter-list .letter-list__item {
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+body.autores .letter-list .letter-list__item:last-child {
+    margin-right: 0;
+}
+
+body.autores .autor-box a {
+	color: inherit;
+}
+
+body.autores .letter-list .letter-list__item span {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+body.autores .num-resultados {
+	text-align: left;
+}
+
+body.autores .letter-list .letter-list__item span.active,
+body.autores .letter-list .letter-list__item span:hover {
+    color: #ff8000;
+}
+
+body.autores .autores-box {
+    padding: 10px;
+}
+
+body.autores .autores-box .autor-box .autor-obras {
+    overflow: hidden;
+    padding: 0 25px;
+    position: relative;
+}
+
+body.autores .autores-box .autor-box .autor-obras:before {
+    top: 20px;
+    left: 15px;
+    content: '';
+    height: 200px;
+    position: absolute;
+    border-left: 2px solid #666;
+}
+
+body.autores .autor-obras .prateleira:before {
+    display: block;
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    content: 'Obras do Autor';
+}
+
+body.autores .autor-obras .prateleira li {
+    max-width: 155px;
+	margin-right: 10px;
+    display: inline-block;
+}
+
+body.autores .autores-box .autor-box {
+    display: grid;
+	overflow: hidden;
+	max-height: 250px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    grid-template-columns: 1fr 3fr 2fr;
+}
+
+body.autores .autores-box .autor-box h3 {
+    color: #666;
+    height: 38px;
+    overflow: hidden;
+    font-size: 20px;
+    margin-top: -5px;
+    padding-top: 10px;
+	font-weight: bold;
+    margin-bottom: 10px;
+}
+
+body.autores .autores-box .autor-box .product__link img {
+    width: 50%;
+    height: auto;
+}
+
+body.autores .autores-box .autor-box article {
+    overflow: hidden;
+    max-height: 140px;
+    display: inline-block;
+}
+
+body.autores .autores-box .autor-box .prateleira .product__price,
+body.autores .autores-box .autor-box .prateleira .product__actions,
+body.autores .autores-box .autor-box .prateleira .product__reviews,
+body.autores .autores-box .autor-box .prateleira .product__category {
+    display: none;
+}
+
+body.autores .autores-box .autor-box .autor-obras:before {
+    content: '';
+    display: block;
+    padding: 10px 0;
+    border-left: 2px solid #666;
+}

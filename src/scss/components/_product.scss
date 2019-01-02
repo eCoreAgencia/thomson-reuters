@@ -46,6 +46,7 @@ $top-flag-val: 50px;
 			position: absolute;
 			width: 100%;
 			top: 70%;
+			left: 0;
 			background: white;
 			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
 			opacity: 0;
@@ -74,7 +75,7 @@ $top-flag-val: 50px;
 		border-bottom: 2px solid $c-gray-light;
 		height: 27px;
 		color: #4d4d4d;
-		font-family: "Knowledge-Medium";
+		font-family: "Knowledge-Bold";
 	}
 	&__media {
 		position: relative;
@@ -105,16 +106,22 @@ $top-flag-val: 50px;
 		margin-bottom: 13px;
 	}
 	&__author {
-		display: block;
-		width: 238px;
-		height: 15px;
-		color: $c-gray-lighter;
-		font-family: "Knowledge-Regular";
-		font-size: 13px;
-		font-weight: 400;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		margin: 5px auto;
+		display: block !important;
+		.product-field {
+			font-size: 0px;
+		}
+		li {
+			width: 238px;
+			height: 20px;
+			font-family: "Knowledge-Regular";
+			font-size: 13px;
+			font-weight: 400;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			margin: 0;
+			padding: 0;
+			line-height: 1.2;
+		}
 	}
 	&__price {
 		margin-bottom: 7px;

@@ -42,7 +42,7 @@ header.header
 						form.search-form(action="/busca")
 							.field.has-addons
 								.control.is-expanded
-									input.input(type='text', placeholder='Digite o nome do produto...')/
+									input.input(type='text', placeholder='O que você procura?')/
 								.control
 									button.button
 										span.icon-search.simple-magnifier
@@ -97,15 +97,16 @@ header.header
 										li.menuItem__item
 											a(href="/area-de-interesse/Tributario") Tributário
 									.banner
-										img(src="/arquivos/bannerMenu.jpg", alt="")/
+										a(href="/clt-comentada-9788553212019/p")
+											img(src="/arquivos/bannerMenu.jpg", alt="")/
 						li.menu__list-item
-							a(href="/lancamentos") Lançamentos
+							a(href="/busca?fq=H:139&amp;PS=24&amp;O=OrderByTopSaleDESC") Lançamentos
 						li.menu__list-item
 							a(href="/busca?fq=H:137&amp;PS=24&amp;O=OrderByTopSaleDESC") Mais Vendidos
 						//- li.menu__list-item
 						//- 	a(href="kits-e-colecoes") Kits e Coleções
 						li.menu__list-item
-							a(href="/oab-e-concursos") OAB e concursos
+							a(href="/area-de-interesse/OAB---Concursos") OAB e concursos
 						//- li.menu__list-item
 						//- 	a(href="/outlet") Outlet
 	.menu__mobile

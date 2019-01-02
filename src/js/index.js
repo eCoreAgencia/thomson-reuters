@@ -26,6 +26,7 @@ import './pages/catalog';
 import './pages/empty-search';
 import './pages/institucional';
 import './pages/product';
+import './pages/account';
 
 
 
