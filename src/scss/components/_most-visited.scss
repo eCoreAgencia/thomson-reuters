@@ -4,6 +4,26 @@
 	@include atMedium {
 		border-right: 2px solid $c-gray-lighter;
 	}
+	&__select {
+		h3 {
+			color: #afafaf;
+			font-family: "Knowledge-Bold";
+			font-size: 12px;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.75px;
+			margin-right: 20px;
+		}
+		
+		.optionSelect {
+			border: 1px solid #afafaf;
+			border-radius: 15px;
+			padding: 10px;
+			&__select {
+				display: none;
+			} 
+		}
+	}
 	&__header {
 		display: flex;
 		flex-direction: column;

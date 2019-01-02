@@ -1,9 +1,24 @@
 body.home {
 	.section__shelf {
+		height: 560px;
 		@include atMedium {
 			z-index: 5;
 			.slick-track {
 				height: 500px;
+			}
+		}
+
+		.shelf__carousel--full {
+			position: relative;
+			visibility: hidden;
+			&.active {
+				visibility: visible;
+			}
+			.prateleira {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
 			}
 		}
 	}

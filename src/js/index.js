@@ -21,6 +21,7 @@ import './components/events';
 
 
 import './pages/home';
+import './pages/global';
 import './pages/not-found';
 import './pages/catalog';
 import './pages/empty-search';
@@ -36,6 +37,4 @@ $(document).ready(function () {
 	if ($('li.helperComplement')[0]) {
 		$('li.helperComplement').remove();
 	}
-
-
 })
