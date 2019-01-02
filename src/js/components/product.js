@@ -159,7 +159,13 @@ export default (function () {
         window.ImageControl = () => null;
         this.skuJson = skuJson || skuJson_1;
         this.thumbsClickEvent();
-        this.simulateShipping();
+		this.simulateShipping();
+
+		if($('.value-field.Autores')[0]){
+			let autores = $('.value-field.Autores').html();
+			autores = autores.replace(/,/gi, '<br/>');
+			$('.value-field.Autores').html(autores);
+		}
 
         $('.js-product-buy-button').on('click', (e) => {
           e.preventDefault();

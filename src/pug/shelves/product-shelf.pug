@@ -11,6 +11,7 @@ if (global.process.env.NODE_ENV === 'production')
 	- var getImageTag2 = '$product.GetImageTag(2)'
 	- var categoryName = '$product.CategoryName'
 	- var categoryHref = '$product.CategoryLink'
+	- var campoProduto = '$product.ProductField(36)'
 
 else
 	- var title = 'Tratado de Direito empresarial vol VII - Direito Concorrencial…'
@@ -41,7 +42,8 @@ else
 			.product__info
 				h3.product__name
 					a.product__link(title= title, href= href)= title
-					a.product__author(title= title, href= href)= author
+					a.product__author(href= href)= author
+						!= campoProduto
 			.product__price
 				if ( global.process.env.NODE_ENV === 'production' )
 					!= '\n#if ($product.IsInStock)'

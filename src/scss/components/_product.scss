@@ -106,16 +106,22 @@ $top-flag-val: 50px;
 		margin-bottom: 13px;
 	}
 	&__author {
-		display: block;
-		width: 238px;
-		height: 15px;
-		color: $c-gray-lighter;
-		font-family: "Knowledge-Regular";
-		font-size: 13px;
-		font-weight: 400;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		margin: 5px auto;
+		display: block !important;
+		.product-field {
+			font-size: 0px;
+		}
+		li {
+			width: 238px;
+			height: 20px;
+			font-family: "Knowledge-Regular";
+			font-size: 13px;
+			font-weight: 400;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			margin: 0;
+			padding: 0;
+			line-height: 1.2;
+		}
 	}
 	&__price {
 		margin-bottom: 7px;
@@ -286,6 +292,7 @@ $top-flag-val: 50px;
 	// THE MAIN GRID
 	&__main {
 		display: grid;
+		align-items: center;
 		#include {
 			display: none;
 			@include atMedium {
@@ -534,6 +541,13 @@ $top-flag-val: 50px;
 		font-family: "Knowledge-Regular";
 		font-weight: 400;
 		line-height: 12px;
+	}
+
+	.shipping-value {
+		@include font-size(13px);
+		color: $c-gray-dark;
+		font-family: "Knowledge-Regular";
+		font-weight: 400;
 	}
 	// PRICE DO CONTROLE VTEX product page
 	.descricao-preco {
