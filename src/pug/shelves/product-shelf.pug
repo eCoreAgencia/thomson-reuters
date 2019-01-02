@@ -42,7 +42,8 @@ else
 			.product__info
 				h3.product__name
 					a.product__link(title= title, href= href)= title
-					a.product__author(title= campoProduto, href= href)= author
+					a.product__author(href= href)= author
+						!= campoProduto
 			.product__price
 				if ( global.process.env.NODE_ENV === 'production' )
 					!= '\n#if ($product.IsInStock)'
