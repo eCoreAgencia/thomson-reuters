@@ -126,6 +126,7 @@ $(document).ready(() => {
         // instead of a settings object
       ],
     });
+    $('.section__split .prateleira ul').addClass('most-visited__list');
   }
   $('.product-field ul').slick('unslick');
 });
