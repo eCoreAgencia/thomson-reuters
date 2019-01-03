@@ -63,7 +63,7 @@ $(document).ready(() => {
       ],
     });
 
-    $('.shelf__carousel--full ul').slick({
+    $('.shelf__carousel--full .prateleira > ul').slick({
       arrows: true,
       slideToShow: 1,
       slidesToScroll: 1,
