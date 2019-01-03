@@ -105,7 +105,8 @@ $top-flag-val: 50px;
 		height: 60px;
 		margin-bottom: 13px;
 	}
-	&__author {
+	&__author,
+	.product__watch-author-link {
 		display: block !important;
 		.product-field {
 			font-size: 0px;
@@ -123,6 +124,7 @@ $top-flag-val: 50px;
 			white-space: nowrap;
 		}
 	}
+
 	&__price {
 		margin-bottom: 7px;
 		height: 60px;
