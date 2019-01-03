@@ -29,11 +29,11 @@ export default (function () {
 				containerClass: 'new-structure',
 			});
 
-			if ($('div#caracteristicas').html() == "") {
-				console.log('vazio');
-				$('.product__specification').remove();
-				$('.product__description').css('width', '100%');
-			}
+      if ($('div#caracteristicas').html() == '') {
+        console.log('vazio');
+        $('.product__specification').remove();
+        $('.product__description').css('width', '100%');
+      }
 
 			const autores = $('.value-field.Autores').text();
 			const htres = `<h3 class = "autores--pgprod"><span>Autor:</span> ${autores}</h3>`;
@@ -56,122 +56,118 @@ export default (function () {
 			});
 		});
 
-		$('.product__media-top--mobile .thumbs').slick({
-			arrows: false,
-			slidesToShow: 1,
-			slidesToScroll: 1,
-			dots: true,
-			infinite: true,
-			mobileFirst: true,
-			responsive: [
-				{
-					breakpoint: 800,
-					settings: {
-						slidesToShow: 3,
-						slidesToScroll: 1,
-						dots: false,
-						infinite: true,
-						vertical: true,
-						arrows: true,
-					},
-				},
-			],
-		});
+    $('.product__media-top--mobile .thumbs').slick({
+      arrows: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots: true,
+      infinite: true,
+      mobileFirst: true,
+      responsive: [
+        {
+          breakpoint: 800,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            dots: false,
+            infinite: true,
+            vertical: true,
+            arrows: true,
+          },
+        },
+      ],
+    });
 
+    // REPEATING CODE HERE JUST TO GO LIVE
+    $(() => {
+      $(window).scroll(() => {
+        const windowTop = $(window).scrollTop();
+        const headerHeight = $('header').height();
+        const contentBelow = $('main');
+        windowTop > headerHeight - (headerHeight - 15)
+          ? $('.header').addClass('header--is-sticky')
+          : $('header').removeClass('header--is-sticky');
+      });
 
-		// REPEATING CODE HERE JUST TO GO LIVE
-		$(() => {
-			$(window).scroll(() => {
-				const windowTop = $(window).scrollTop();
-				const headerHeight = $('header').height();
-				const contentBelow = $('main');
-				windowTop > (headerHeight - (headerHeight - 15))
-					? $('.header').addClass('header--is-sticky')
-					: $('header').removeClass('header--is-sticky');
-			});
+      // Click Logo To Scroll To Top
+      $('#logo').on('click', () => {
+        $('html,body').animate(
+          {
+            scrollTop: 0,
+          },
+          500,
+        );
+      });
+    });
 
-			// Click Logo To Scroll To Top
-			$('#logo').on('click', () => {
-				$('html,body').animate(
-					{
-						scrollTop: 0,
-					},
-					500,
-				);
-			});
-		});
+    $('.shelf__carousel--full ul').slick({
+      arrows: true,
+      slideToShow: 1,
+      slidesToScroll: 1,
+      mobileFirst: true,
+      dots: true,
+      infinite: true,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 2,
+            dots: false,
+            infinite: true,
+          },
+        },
+        {
+          breakpoint: 800,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            dots: false,
+            infinite: true,
+            arrows: false,
+          },
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: true,
+            arrows: false,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true,
+            infinite: true,
+            arrows: false,
+          },
+        },
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ],
+    });
+    // Removing C letter on IBSN Code area
+    const myCode = $('.value-field.Codigo-ISBN').html();
+    $('.value-field.Codigo-ISBN').html(myCode.substring(1));
 
-		$('.shelf__carousel--full ul').slick({
-			arrows: true,
-			slideToShow: 1,
-			slidesToScroll: 1,
-			mobileFirst: true,
-			dots: true,
-			infinite: true,
-			responsive: [
-				{
-					breakpoint: 1024,
-					settings: {
-						slidesToShow: 4,
-						slidesToScroll: 2,
-						dots: false,
-						infinite: true,
-					},
-				},
-				{
-					breakpoint: 800,
-					settings: {
-						slidesToShow: 3,
-						slidesToScroll: 3,
-						dots: false,
-						infinite: true,
-						arrows: false,
-					},
-				},
-				{
-					breakpoint: 600,
-					settings: {
-						slidesToShow: 2,
-						slidesToScroll: 2,
-						infinite: true,
-						arrows: false,
-					},
-				},
-				{
-					breakpoint: 480,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1,
-						dots: true,
-						infinite: true,
-						arrows: false,
-					},
-				},
-				// You can unslick at a given breakpoint now by adding:
-				// settings: "unslick"
-				// instead of a settings object
-			],
-		});
+    class Product {
+      constructor() {
+        const self = this;
+        window.ImageControl = () => null;
+        this.skuJson = skuJson || skuJson_1;
+        this.thumbsClickEvent();
+        this.simulateShipping();
 
-		class Product {
-			constructor() {
-				const self = this;
-				window.ImageControl = () => null;
-				this.skuJson = skuJson || skuJson_1;
-				this.thumbsClickEvent();
-				this.simulateShipping();
-
-				if ($('.value-field.Autores')[0]) {
-					let autores = $('.value-field.Autores').html();
-					autores = autores.replace(/,/gi, '<br/>');
-					$('.value-field.Autores').html(autores);
-				}
-
-				$('.js-product-buy-button').on('click', (e) => {
-					e.preventDefault();
-					const quantity = $('.js-quantity-value').val();
-					addToCart(self.skuJson.skus[0], +quantity);
-				});
+        if ($('.value-field.Autores')[0]) {
+          let autores = $('.value-field.Autores').html();
+          autores = autores.replace(/,/gi, '<br/>');
+          $('.value-field.Autores').html(autores);
+        }
 
 				$('.js-product-qty-button').on('click', function (e) {
 					e.preventDefault();
@@ -220,24 +216,27 @@ export default (function () {
 		const buttonSumary = '<a href="" class= "button__preview">Ler Sumário</a>';
 		$(buttonSumary).insertBefore('.buy-button');
 
-		if ($(window).width() <= 799) {
-			$('.thumbs li').each(function (index) {
-				const url = $(this)
-					.find('a')
-					.find('img')
-					.attr('src');
-				const urlRaplace = url.replace('-55-55', '-600-600');
-				$(this)
-					.find('a')
-					.find('img')
-					.attr('src', urlRaplace);
-			});
-		}
-		$('.product__shipping-link').click((e) => {
-			$('.shipping-box').css('display', 'block');
-		});
-		$(".product__description-text").mCustomScrollbar({
-			theme: "inset-dark"
-		});
-	}
+    const buttonSumary = '<a href="" class= "button__preview">Ler Sumário</a>';
+    $(buttonSumary).insertBefore('.buy-button');
+
+    if ($(window).width() <= 799) {
+      $('.thumbs li').each(function (index) {
+        const url = $(this)
+          .find('a')
+          .find('img')
+          .attr('src');
+        const urlRaplace = url.replace('-55-55', '-600-600');
+        $(this)
+          .find('a')
+          .find('img')
+          .attr('src', urlRaplace);
+      });
+    }
+    $('.product__shipping-link').click((e) => {
+      $('.shipping-box').css('display', 'block');
+    });
+    $('.product__description-text').mCustomScrollbar({
+      theme: 'inset-dark',
+    });
+  }
 }());

@@ -15,7 +15,7 @@ if (global.process.env.NODE_ENV === 'production')
 
 else
 	- var title = 'Tratado de Direito empresarial vol VII - Direito Concorrencial…'
-	- var author = 'Nelson Nery Jr, Rosa Maria De Andra…'
+	- var campoProduto = '<div class="product-field product_field_36 product-field-type_1">Autores<ul class=""><li class="thereza-nahas--raphael-miziara--leone-pereira-luciano-martinez" style="" tabindex="0">Thereza Nahas , Raphael Miziara , Leone Pereira, Luciano Martinez</li></ul></div>'
 	- var href = '/produto.html'
 	- var dataProductId = '13'
 	- var listPrice = 'R$ 265,99'
@@ -42,7 +42,7 @@ else
 			.product__info
 				h3.product__name
 					a.product__link(title= title, href= href)= title
-					a.product__author(href= href)= author
+					.product__author
 						!= campoProduto
 			.product__price
 				if ( global.process.env.NODE_ENV === 'production' )
@@ -71,7 +71,7 @@ else
 		.show-on-hover
 			.button__shelf
 				a.button__buy(href= href) Comprar
-				a.button__preview(href=href) Sumário
+				a.button__preview(href= href) Sumário
 
 
 
