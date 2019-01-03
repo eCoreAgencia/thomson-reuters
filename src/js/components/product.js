@@ -216,9 +216,6 @@ export default (function () {
 		const buttonSumary = '<a href="" class= "button__preview">Ler Sumário</a>';
 		$(buttonSumary).insertBefore('.buy-button');
 
-    const buttonSumary = '<a href="" class= "button__preview">Ler Sumário</a>';
-    $(buttonSumary).insertBefore('.buy-button');
-
     if ($(window).width() <= 799) {
       $('.thumbs li').each(function (index) {
         const url = $(this)
