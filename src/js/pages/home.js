@@ -39,6 +39,14 @@ $(document).ready(() => {
       autoplay: true,
       autoplaySpeed: 3000,
     });
+    $('.banner--mobile').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots: true,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 3000,
+    });
 
     $('.shelf__banners').slick({
       mobileFirst: true,
@@ -146,5 +154,4 @@ $(document).ready(() => {
     });
     $('.section__split .prateleira ul').addClass('most-visited__list');
   }
-  $('.product-field ul').slick('unslick');
 });
