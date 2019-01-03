@@ -111,16 +111,16 @@ $top-flag-val: 50px;
 			font-size: 0px;
 		}
 		li {
-			width: 238px;
-			height: 20px;
+			width: 150px;
+			color: #afafaf;
 			font-family: "Knowledge-Regular";
 			font-size: 13px;
 			font-weight: 400;
 			overflow: hidden;
 			text-overflow: ellipsis;
-			margin: 0;
+			margin: auto;
 			padding: 0;
-			line-height: 1.2;
+			white-space: nowrap;
 		}
 	}
 	&__price {

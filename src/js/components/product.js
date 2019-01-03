@@ -29,10 +29,10 @@ export default (function () {
         containerClass: 'new-structure',
       });
 
-      if($('div#caracteristicas').html() == "") {
+      if ($('div#caracteristicas').html() == '') {
         console.log('vazio');
         $('.product__specification').remove();
-        $('.product__description').css('width','100%');
+        $('.product__description').css('width', '100%');
       }
 
       const autores = $('.value-field.Autores').text();
@@ -76,30 +76,29 @@ export default (function () {
           },
         },
       ],
-	});
+    });
 
+    // REPEATING CODE HERE JUST TO GO LIVE
+    $(() => {
+      $(window).scroll(() => {
+        const windowTop = $(window).scrollTop();
+        const headerHeight = $('header').height();
+        const contentBelow = $('main');
+        windowTop > headerHeight - (headerHeight - 15)
+          ? $('.header').addClass('header--is-sticky')
+          : $('header').removeClass('header--is-sticky');
+      });
 
-	// REPEATING CODE HERE JUST TO GO LIVE
-	$(() => {
-		$(window).scroll(() => {
-		  const windowTop = $(window).scrollTop();
-		  const headerHeight = $('header').height();
-		  const contentBelow = $('main');
-		  windowTop > (headerHeight - (headerHeight - 15))
-			? $('.header').addClass('header--is-sticky')
-			: $('header').removeClass('header--is-sticky');
-		});
-
-		// Click Logo To Scroll To Top
-		$('#logo').on('click', () => {
-		  $('html,body').animate(
-			{
-			  scrollTop: 0,
-			},
-			500,
-		  );
-		});
-	  });
+      // Click Logo To Scroll To Top
+      $('#logo').on('click', () => {
+        $('html,body').animate(
+          {
+            scrollTop: 0,
+          },
+          500,
+        );
+      });
+    });
 
     $('.shelf__carousel--full ul').slick({
       arrows: true,
@@ -152,6 +151,9 @@ export default (function () {
         // instead of a settings object
       ],
     });
+    // Removing C letter on IBSN Code area
+    const myCode = $('.value-field.Codigo-ISBN').html();
+    $('.value-field.Codigo-ISBN').html(myCode.substring(1));
 
     class Product {
       constructor() {
@@ -159,13 +161,13 @@ export default (function () {
         window.ImageControl = () => null;
         this.skuJson = skuJson || skuJson_1;
         this.thumbsClickEvent();
-		this.simulateShipping();
+        this.simulateShipping();
 
-		if($('.value-field.Autores')[0]){
-			let autores = $('.value-field.Autores').html();
-			autores = autores.replace(/,/gi, '<br/>');
-			$('.value-field.Autores').html(autores);
-		}
+        if ($('.value-field.Autores')[0]) {
+          let autores = $('.value-field.Autores').html();
+          autores = autores.replace(/,/gi, '<br/>');
+          $('.value-field.Autores').html(autores);
+        }
 
         $('.js-product-buy-button').on('click', (e) => {
           e.preventDefault();
@@ -235,9 +237,9 @@ export default (function () {
     }
     $('.product__shipping-link').click((e) => {
       $('.shipping-box').css('display', 'block');
-	});
-	$(".product__description-text").mCustomScrollbar({
-		theme:"inset-dark"
-	});
+    });
+    $('.product__description-text').mCustomScrollbar({
+      theme: 'inset-dark',
+    });
   }
 }());
