@@ -10,15 +10,15 @@ class Home {
       const nameSelect = _this.attr('data-name');
       const nameText = _this.text();
 
-      $('.filter__opt-item a').removeClass('active');
+      _this.parents('.filter__opt').find('.filter__opt-item a').removeClass('active');
       _this.addClass('active');
 
       $('.section__shelf .shelf__carousel--full').each(function () {
         const nameSearch = $(this).attr('data-name');
         if (nameSearch == nameSelect) {
-          $('.section__shelf .shelf__carousel--full').removeClass('active');
+          $(this).parents('.section__page.section__shelf').find('.shelf__carousel--full').removeClass('active');
           $(this).addClass('active');
-          $('.filter .filter__title').text(nameText);
+          _this.parents('.filter').find('.filter__title').text(nameText);
         }
       });
     });
