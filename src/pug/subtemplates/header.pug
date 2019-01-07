@@ -129,8 +129,7 @@ header.header
 										li.menuItem__item
 											a(href='/area-de-interesse/Tributario') Tributário
 									.banner
-										a(href='https://www.livrariart.com.br/clt-comentada-9788553212019/p')
-											img(src='/arquivos/bannerMenu-clt.png', alt='CLT Comentada')
+										+vtex-controller('<vtex.cmc:bannerMenu />')
 						li.menu__list-item
 							a(href='/busca?fq=H:139&PS=24&O=OrderByTopSaleDESC') Lançamentos
 						li.menu__list-item
