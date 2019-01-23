@@ -1,11 +1,12 @@
 class Product {
   constructor(link) {
-	this.renderSumario(link);
-	this.events();
+    this.renderSumario(link);
+    this.events();
     if ($('body').hasClass('product')) {
       this.sumario();
     }
   }
+
   sumario() {
     const idProduct = $('input#___rc-p-id').attr('value');
 
@@ -37,11 +38,7 @@ class Product {
     });
     $('body').on('click', '.modal-sumary__content .close', () => {
       $('.modal-sumary').fadeOut();
-	});
-
-	// Removing C letter on IBSN Code area
-	const myCode = $('.value-field.Codigo-ISBN').html();
-	$('.value-field.Codigo-ISBN').html(myCode.substring(1));
+    });
   }
 
   renderSumario(link) {

@@ -16,7 +16,7 @@ if (global.process.env.NODE_ENV === 'production')
 else
 	- var title = 'Curso Revisão e Treino 2ª Fase OAB - Caderno…'
 	- var href = '/produto.html'
-	- var author = 'Vários Autores'
+	- var campoProduto = '<div class="product-field product_field_36 product-field-type_1">Autores<ul class=""><li class="thereza-nahas--raphael-miziara--leone-pereira-luciano-martinez" style="" tabindex="0">Thereza Nahas , Raphael Miziara , Leone Pereira, Luciano Martinez</li></ul></div>'
 	- var dataProductId = Math.floor(Math.random() * 9999999)
 	- var listPrice = 'R$ 299,99'
 	- var bestPrice = 'R$ 199,99'
@@ -36,7 +36,7 @@ else
 			h3.product__watch-name
 				a.product__watch-link(title= title, href= href)= title
 			.product__watch-author
-				a.product__watch-author-link(title=author, href=href)= author
+				div.product__watch-author-link
 					!= campoProduto
 			a.button__buy(href= href) Comprar
 

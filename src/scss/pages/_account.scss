@@ -343,6 +343,11 @@ body.account {
 		line-height: 0;
 	}
 }
+body.orders {
+	.myo-view-order .w-100 .list.tl li:last-child {
+		display: none;
+	}
+}
 body.account {
 	//reset boostrap
 	header.header .tip-bar span.tip-bar__ct-phone {

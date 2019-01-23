@@ -51,21 +51,21 @@ block content
 				li.filter__opt-item
 					a(href="", data-name="outlet") Outlet
 		.shelf.shelf__carousel--full.wrapper--diff.active(data-name="pre-venda")
-			+vtex-controller('<vtex:contentPlaceHolder id="product shelf"/>')
+			+vtex-controller('<vtex:contentPlaceHolder id="pre-venda shelf"/>')
 				.prateleira
 					ul
 						each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 							li
 								include ../shelves/product-shelf
 		.shelf.shelf__carousel--full.wrapper--diff(data-name="lancamento")
-			+vtex-controller('<vtex:contentPlaceHolder id="product shelf"/>')
+			+vtex-controller('<vtex:contentPlaceHolder id="lacamento shelf"/>')
 				.prateleira
 					ul
 						each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 							li
 								include ../shelves/product-shelf
 		.shelf.shelf__carousel--full.wrapper--diff(data-name="outlet")
-			+vtex-controller('<vtex:contentPlaceHolder id="product shelf"/>')
+			+vtex-controller('<vtex:contentPlaceHolder id="outlet shelf"/>')
 				.prateleira
 					ul
 						each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -178,23 +178,38 @@ block content
 									img(src="/arquivos/Tributario.png", alt="")
 								span.category-nav__title Tributário
 
-	section.section__page.section-kits.section__shelf
+	//- section.section__page.section-kits.section__shelf
+	section.section__page.section__shelf
 		.filter.wrapper
-			h2.filter__title Comercial
+			h2.filter__title Pré-venda
 			ul.filter__opt
-				//- li.filter__opt-item
-				//-   a(href="") E-books
-				//- li.filter__opt-item
-				//- 	a(href="") Kits e coleções
-				//- li.filter__opt-item
-				//- 	a(href="") Comercial
-		.shelf.shelf__carousel--full.wrapper--diff
-			+vtex-controller('<vtex:contentPlaceHolder id="Colecao Kits"/>')
+				li.filter__opt-item
+					a(href="", class="active", data-name="e-books") E-Books
+				li.filter__opt-item
+					a(href="", data-name="kits-e-colecoes") Kits e coleções
+				li.filter__opt-item
+					a(href="", data-name="comercial") Comercial
+		.shelf.shelf__carousel--full.wrapper--diff.active(data-name="e-books")
+			+vtex-controller('<vtex:contentPlaceHolder id="e-books shelf"/>')
 				.prateleira
 					ul
 						each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 							li
-								include ../shelves/kit-shelf
+								include ../shelves/product-shelf
+		.shelf.shelf__carousel--full.wrapper--diff(data-name="kits-e-colecoes")
+			+vtex-controller('<vtex:contentPlaceHolder id="kits-e-colecoes shelf"/>')
+				.prateleira
+					ul
+						each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+							li
+								include ../shelves/product-shelf
+		.shelf.shelf__carousel--full.wrapper--diff(data-name="comercial")
+			+vtex-controller('<vtex:contentPlaceHolder id="comercial shelf"/>')
+				.prateleira
+					ul
+						each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+							li
+								include ../shelves/product-shelf
 	section.section__page.section__split
 		.wrapper--block.section__split-the-grid
 			.most-visited

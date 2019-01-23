@@ -2,7 +2,7 @@
 	display: grid;
 	grid-template-rows: auto auto;
 	@include atMedium {
-		border-right: 2px solid $c-gray-lighter;
+		border-right: 2px solid #d0d0d0;
 	}
 	&__select {
 		h3 {
@@ -14,14 +14,14 @@
 			letter-spacing: 0.75px;
 			margin-right: 20px;
 		}
-		
+
 		.optionSelect {
 			border: 1px solid #afafaf;
 			border-radius: 15px;
 			padding: 10px;
 			&__select {
 				display: none;
-			} 
+			}
 		}
 	}
 	&__header {
