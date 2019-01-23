@@ -10,7 +10,7 @@ class SumarioShelf {
     }
 
     sumario() {
-        $('.shelf ul li').each(function() {
+        $('.shelf .product__shelf').each(function() {
             let idProduct = $(this).find('.product-shelf__id').attr('data-product-id');
             var _this = $(this);
 
@@ -28,7 +28,8 @@ class SumarioShelf {
                     _this.find('a.button__preview').remove();
                 } else {
                     var link = sumario[0];
-                    console.log(sumario[0])
+					console.log(sumario[0])
+					_this.find('a.button__preview').show();
                     _this.find('a.button__preview').attr('href', link);
 					// _this.find('a.button__preview').attr('target', '_blank');
                 }

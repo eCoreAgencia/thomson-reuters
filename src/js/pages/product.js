@@ -51,4 +51,4 @@ class Product {
   }
 }
 
-window.filter = new Product();
+window.product = new Product();

@@ -39,7 +39,8 @@ module.exports = merge(common, {
                     'Firefox ESR',
                     'not ie < 9'
                   ],
-                  flexbox: 'no-2009',
+				  flexbox: 'no-2009',
+				  grid: 'autoplace',
                 }),
               ],
             },
