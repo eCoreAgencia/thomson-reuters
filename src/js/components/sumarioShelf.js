@@ -1,9 +1,7 @@
 class SumarioShelf {
     constructor() {
         if($('body').hasClass('catalog')) {
-            setTimeout(() => {
-                this.sumario();
-            }, 50000);
+            this.sumario();
         } else {
             this.sumario();
         }
@@ -38,10 +36,12 @@ class SumarioShelf {
     }
 }
 
-window.filter = new SumarioShelf();
 
 
 
+$(document).ready(function(){
+	window.summary = new SumarioShelf();
+})
 
 
 // <!-- Button trigger modal -->

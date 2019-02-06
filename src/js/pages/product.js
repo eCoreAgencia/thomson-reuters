@@ -37,7 +37,8 @@ class Product {
       $('.modal-sumary').fadeIn();
     });
     $('body').on('click', '.modal-sumary__content .close', () => {
-      $('.modal-sumary').fadeOut();
+	  $('.modal-sumary').fadeOut();
+	  $('.modal-sumary__content .close').show();
     });
   }
 
