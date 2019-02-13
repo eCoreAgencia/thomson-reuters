@@ -1,0 +1,39 @@
+include ../helpers.pug
+
+if (global.process.env.NODE_ENV === 'production')
+    - var title = '$product.HtmlEscapedName'
+    - var href = '$product.Uri'
+    - var dataProductId = '$product.Id'
+    - var listPrice = '$product.ListPrice'
+    - var bestPrice = '$product.BestPrice'
+    - var flags = '$product.HightLight'
+    - var getImageTag = '$product.GetImageTag(2)'
+    - var getImageTag2 = '$product.GetImageTag(2)'
+    - var categoryName = '+ $product.CategoryName'
+    - var categoryHref = '$product.CategoryLink'
+    - var productField = '$product.ProductField(36)'
+
+else
+    - var title = 'Tratado de Direito empresarial vol VII - Direito Concorrencial…'
+    - var author = 'Nelson Nery Jr, Rosa Maria De Andra…'
+    - var href = '/produto.html'
+    - var dataProductId = Math.floor(Math.random() * 9999999)
+    - var listPrice = 'R$ 265,99'
+    - var bestPrice = 'R$ 238,50'
+    - var flags = '<p class="flag destaque">destaque</p>'
+    - var getImageTag =  '<img src="http://via.placeholder.com/180x173"" width="180" height="173" />'
+    - var getImageTag2 = '<img src="http://via.placeholder.com/279x365" width="111" height="160" />'
+    - var categoryName = 'penal'
+    - var categoryHref = '/category.html'
+    - var productField = 'Nelson Nery Jr, Rosa Maria De Andrade Nery'
+
+.product.product--shelf
+    .product__image
+        != getImageTag
+    .product__info
+        h3.product__name
+            != categoryName
+        span.product__authors
+            != productField
+    .product__action
+        button.button.button--add(data-product-id=dataProductId) +

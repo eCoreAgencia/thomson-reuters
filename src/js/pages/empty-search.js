@@ -12,7 +12,7 @@ $(document).ready(() => {
     if ($('li.helperComplement')[0]) {
       $('li.helperComplement').remove();
     }
-    $('.shelf__carousel--full ul').slick({
+    $('.shelf__carousel--full .prateleira > ul').slick({
       arrows: true,
       slideToShow: 1,
       slidesToScroll: 1,

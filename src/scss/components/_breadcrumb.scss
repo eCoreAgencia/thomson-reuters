@@ -7,9 +7,9 @@
 			display: flex;
 			flex-wrap: wrap;
 			li {
-				margin: 0 5px;
+				margin: 0 10px;
 				color: #666666;
-				font-family: "Knowledge Bold";
+				font-family: "Knowledge-Bold";
 				font-size: 10px;
 				font-weight: 700;
 				text-transform: uppercase;
@@ -27,7 +27,7 @@
 				&::after {
 					content: ">";
 					display: inline-block;
-					margin-left: 5px;
+					margin-left: 10px;
 				}
 
 				&:last-child {

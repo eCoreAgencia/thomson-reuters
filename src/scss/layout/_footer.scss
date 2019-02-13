@@ -1,6 +1,9 @@
 // CHANGED DEFAULT NAME TO MAIN-FOOTER BECAUSE OF BULMA
 .main-footer {
 	display: none;
+	.search-bar {
+		background-color: #ffffff;
+	}
 	@include atMedium {
 		display: block;
 		color: $c-white;
@@ -29,7 +32,7 @@
 			padding: 10px;
 			color: $c-white;
 			font-family: "Knowledge-Medium";
-			@include font-size(16px);
+			@include font-size(13px);
 			font-weight: 500;
 			text-transform: uppercase;
 
@@ -219,7 +222,6 @@
 					color: #979797;
 					font-family: "Knowledge-Medium";
 				}
-
 			}
 		}
 	}
@@ -230,6 +232,7 @@
 		margin-top: 20px;
 		span {
 			margin: 10px 0;
+			padding: 0;
 		}
 	}
 	&__copyright {

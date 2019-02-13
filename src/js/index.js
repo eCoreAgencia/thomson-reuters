@@ -1,5 +1,6 @@
 import '../scss/main.scss';
 import './modules/vtexRequest';
+import './components/MakeYourKit/app'
 
 import './components/selectFooter';
 import './components/minicart';
@@ -16,14 +17,20 @@ import './components/menuMobile';
 import './components/login';
 
 import './components/proview';
+import './components/events';
 
 
 import './pages/home';
+import './pages/global';
 import './pages/not-found';
 import './pages/catalog';
 import './pages/empty-search';
 import './pages/institucional';
 import './pages/product';
+import './pages/account';
+
+
+
 
 
 $(document).ready(function () {

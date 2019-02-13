@@ -10,93 +10,95 @@ class Proview {
 
 	fieldError(field) {
 		console.log(field);
-	}
+    }
+    
+    sendDataForm(data) {
+        let self = this;
+        const email = data.email;
+        const name = data.name;
+        const cupom = data.cupom;
+        
+        const user = self.getUserProview(email);
 
-	sendFormToProview(data) {
-		const name = data.name;
-		const email = data.email;
-		const cupom = data.cupom;
-		const user = self.getUser(email)
+        if(user) {
+            self.sendCupomToProview(user.id, cupom);
 
-		if (user) {
-			self.sendUserAndCode(user.id, cupom);
-		} else {
-			const newUser = self.createUser(name, email);
-			self.sendUserAndCode(newUser.id, cupom);
-		}
+        }else{
+            const newUser = self.createUserProview(email, name);
+            self.sendCupomToProview(newUser.id, cupom);
+        }
+
+    }
+
+    createUserProview(email, name) {
+        const endpoint = `/user/create`;
+        const settings = {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json; charset=utf-8'
+            },
+            method: 'POST',
+            body: {
+                email: email,
+                name: name
+            }
+        }
+
+        
+        return new Promise((resolve, reject) => {
+            return fetch(endpoint, settings)
+                    .then(data => {
+                        return resolve(data.json())
+                    })
+                    .catch(err => reject(err))
+        })
+    }
+
+    getUserProview(email) {
+        const endpoint = `/user/${email}`;
+        const settings = {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json; charset=utf-8'
+            }
+        }
+
+        
+        return new Promise((resolve, reject) => {
+            return fetch(endpoint, settings)
+                    .then(data => {
+                        return resolve(data.json())
+                    })
+                    .catch(err => reject(err))
+        })
+    }
+
+    sendCupomToProview(userId, cupom) {
+        const endpoint = `/user/code`;
+        const settings = {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json; charset=utf-8'
+            },
+            method: 'POST',
+            body: {
+                userId: userId,
+                cupom: cupom
+            }
+        }
+
+        
+        return new Promise((resolve, reject) => {
+            return fetch(endpoint, settings)
+                    .then(data => {
+                        return resolve(data.json())
+                    })
+                    .catch(err => reject(err))
+        })
+    }
 
 
-	}
 
-	getUser(email) {
-		const endpoint = `/api/getuser/${email}`;
-		return new Promise((resolve, reject) => {
-			let res = user.cache[userID]
-			if (res) return resolve(res)
-			else {
-				return fetch(endpoint)
-					.then(data => {
-						user.cache[userID] = data.json()
-						return resolve(user.cache[userID])
-					})
-					.catch(err => reject(err))
-			}
-		})
-	}
-
-	createUser(email) {
-		const endpoint = `/api/createuser/`;
-		const settings = {
-			method: "POST",
-			headers: {
-				'Accept': 'application/json, text/plain, */*',
-				'Content-Type': 'application/json'
-			},
-			body: {
-				name: name,
-				email: email
-			}
-		}
-		return new Promise((resolve, reject) => {
-			let res = user.cache[userID]
-			if (res) return resolve(res)
-			else {
-				return fetch(endpoint, settings)
-					.then(data => {
-						user.cache[userID] = data.json()
-						return resolve(user.cache[userID])
-					})
-					.catch(err => reject(err))
-			}
-		})
-	}
-
-	sendUserAndCode(userID, cupom) {
-		const endpoint = `/api/createuser/`;
-		const settings = {
-			method: "POST",
-			headers: {
-				'Accept': 'application/json, text/plain, */*',
-				'Content-Type': 'application/json'
-			},
-			body: {
-				userID: userID,
-				cupom: cupom
-			}
-		}
-		return new Promise((resolve, reject) => {
-			let res = user.cache[userID]
-			if (res) return resolve(res)
-			else {
-				return fetch(endpoint, settings)
-					.then(data => {
-						user.cache[userID] = data.json()
-						return resolve(user.cache[userID])
-					})
-					.catch(err => reject(err))
-			}
-		})
-	}
 }
 
 

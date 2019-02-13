@@ -10,15 +10,6 @@
 			padding-left: 3px;
 		}
 	}
-	a.accountLink {
-		margin-left: 10px;
-		color: #5d5d5d;
-		font-weight: bold;
-		text-transform: uppercase;
-		letter-spacing: 1px;
-		border-left: 1px solid;
-		padding-left: 10px;
-	}
 	.tip-bar {
 		display: none;
 		@include atMedium {
@@ -32,16 +23,21 @@
 		}
 
 		&__login {
-			font-family: "Knowledge-Bold";
-			@include font-size(10px);
-			font-weight: 700;
-			text-transform: uppercase;
-			text-decoration: none;
-			color: $c-gray-dark;
+			display: flex;
+			align-items: center;
+			a {
+				margin-left: 5px;
+				font-family: "Knowledge-Bold";
+				@include font-size(10px);
+				font-weight: 700;
+				text-transform: uppercase;
+				text-decoration: none;
+				color: $c-gray-dark;
+			}
 		}
 		&__ct-phone {
 			color: $c-gray-dark;
-			font-family: Helvetica;
+			font-family: "Knowledge-Bold";
 			@include font-size(10px);
 			display: flex;
 		}
@@ -188,7 +184,7 @@
 	position: fixed;
 	top: 0;
 	width: 100%;
-    z-index: 99;
+	z-index: 99;
 	.search-bar {
 		display: none;
 		@include atMedium {
@@ -202,6 +198,10 @@
 	}
 	@include atMedium {
 		animation: none;
+	}
+
+	+ main {
+		padding-top: 125px;
 	}
 }
 

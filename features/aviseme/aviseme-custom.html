@@ -1,0 +1,22 @@
+<p>Para ser avisado da disponibilidade deste Produto ou a versão mais atualizada desse, basta preencher os campos abaixo.</p>
+<form action="javascript:aviseMeCustom()" method="POST" class="form-avise" data-module="aviseme">
+	<fieldset class="hold-field">
+		<input type="text" name="avisemeClientName" id="nomecliente" class="name aviseme-client-name" placeholder="Nome" data-validation="required" data-msg-required="Digite seu nome" />
+	</fieldset>
+
+	<fieldset class="hold-field">
+		<input type="text" name="avisemeClientEmail" id="emailcliente" class="email" placeholder="E-mail" data-validation="required email" data-msg-required="seu e-mail" data-msg-email="O e-mail que você inseriu está incorreto" />
+	</fieldset>
+
+	<fieldset class="hidden hold-field">
+		<input type="text" name="avisemeClientProduct" id="nomeproduto" class="produto" placeholder="Produto" />
+	</fieldset>
+
+	<fieldset class="hidden hold-field">
+		<input type="text" name="avisemeClientDate" id="dataaviseme" class="data" placeholder="Data" />
+	</fieldset>
+
+	<button type="submit" class="aviseme-button-ok submit">Enviar</button>
+</form>
+<link rel="stylesheet" type="text/css" href="/arquivos/aviseme-custom.css" />
+<script src="/arquivos/aviseme-custom.js"></script>

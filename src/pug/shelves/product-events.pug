@@ -1,0 +1,82 @@
+include ../helpers.pug
+
+if (global.process.env.NODE_ENV === 'production')
+	- var title = '$product.HtmlEscapedName'
+	- var href = '$product.Uri'
+	- var dataProductId = '$product.Id'
+	- var listPrice = '$product.ListPrice'
+	- var bestPrice = '$product.BestPrice'
+	- var flags = '$product.HightLight'
+	- var getImageTag = '$product.GetImageTag(2)'
+	- var getImageTag2 = '$product.GetImageTag(2)'
+	- var categoryName = '+ $product.CategoryName'
+	- var categoryHref = '$product.CategoryLink'
+	- var descriptiton = '$product.DescriptionShort'
+	- var dateInit     = '$product.ProductField(49)'
+	- var endereco     = '$product.ProductField(48)'
+	- var nameLocation = '$product.ProductField(47)'
+	- var hours        = '$product.ProductField(50)'
+
+else
+	- var title = 'Tratado de Direito empresarial vol VII - Direito Concorrencial…'
+	- var author = 'Nelson Nery Jr, Rosa Maria De Andra…'
+	- var href = '/produto.html'
+	- var dataProductId = '13'
+	- var listPrice = 'R$ 265,99'
+	- var bestPrice = 'R$ 238,50'
+	- var flags = '<p class="flag novidade">novidade</p>'
+	- var getImageTag = '<img src="http://via.placeholder.com/111x160" width="111" height="160" />'
+	- var getImageTag2 = '<img src="http://via.placeholder.com/180x173"" width="180" height="173" />'
+	- var categoryName = 'penal'
+	- var categoryHref = '/category.html'
+	- var descriptiton = '$product.DescriptionShort'
+	- var dateInit     = '14/06/2018'
+	- var endereco     = 'Alameda Lorena, 1.731 - São Paulo, SP'
+	- var nameLocation = 'Livraria da Vila'
+	- var hours        = '18:30'
+	- var descriptiton = 'Todos as descrições das pessoas são sobre a humanidade do atendimento, a pessoa pega no pulso, examina, olha com carinho. Então eu acho que vai ter outra coisa, que os médicos cubanos trouxeram pro brasil, um alto grau de humanidade. No meu xinélo da humildade eu gostaria muito de ver o Neymar e o Ganso. Por que eu acho que.... 11 entre 10 brasileiros gostariam. Você veja, eu já vi, parei de ver. Voltei a ver, e acho que o Neymar e o Ganso têm essa capacidade de fazer a gente olhar.'
+.productEvents
+	.productEvents__shelf
+		span.product-shelf__id(data-product-id= dataProductId)
+		.productEvents__image
+			a.productEvents__link--image(href=href)
+				!= getImageTag
+		.productEvents__info
+			h3.productEvents__name
+				a.productEvents__link--name(title= title, href= href)= title
+				a.productEvents__link--author(title= title, href= href)= author
+			.productEvents__description
+				h4= descriptiton
+			.productEvents__location
+				h4.productEvents__location--title Local
+				p.date=dateInit
+					span=hours 
+				p.name-location=nameLocation
+				p.endereco=endereco
+		.productEvents__price
+			if ( global.process.env.NODE_ENV === 'production' )
+				!= '\n#if ($product.IsInStock)'
+				!= '\n  <div class="price">'
+				!= '\n  	#if ($product.HasBestPrice)'
+				!= '\n    	<span class="price__list-line">De ' + listPrice + '</span>'
+				!= '\n    	<span class="price__best">Por R$' + bestPrice + '</span>'
+				!= '\n    #else'
+				!= '\n    	<span class="price__list">' + listPrice + '</span>'
+				!= '\n    #end'
+				!= '\n    #if ($product.NumbersOfInstallment > 1)'
+				!= '\n      <span class="price__installment">'
+				!= '\n        ou ${product.NumbersOfInstallment}X de ${product.InstallmentValue}'
+				!= '\n      </span>'
+				!= '\n    #end'
+				!= '\n  </div>'
+				!= '\n#else'
+				!= '\n  <span class="product__unavailable">Indisponível</span>"'
+				!= '\n#end\n'
+			else
+				.price
+					span.price__list-line de R$ 265,00
+					span.price__best Por R$ 238,50
+					span.price__installment ou 4x de 56,25
+			.button__shelf
+				a.button__buy(href= href) Comprar
+				a.button__preview(href=href) Sumário
