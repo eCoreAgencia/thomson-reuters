@@ -89,3 +89,25 @@ export const getProductsByTerm = (term) => {
 
 
 }
+
+export const getProductsById = (id) => {
+
+	//getProductsByTerm.cache = getProductsByTerm.cache || {}
+	const endpoint = `/api/catalog_system/pub/products/search?fq=productId:${id}`;
+
+
+	return new Promise((resolve, reject) => {
+		if (isLocalhost) return resolve(window.products)
+		else {
+			return fetch(endpoint)
+				.then(data => {
+					const result = data.json()
+					return resolve(result)
+				})
+				.catch(err => reject(err))
+		}
+		return reject("Couldn't get product.")
+	})
+
+
+}

@@ -1,6 +1,7 @@
 import '../scss/main.scss';
 import './modules/vtexRequest';
-import './components/MakeYourKit/app'
+import './components/MakeYourKit/app';
+import './components/authors/index';
 
 import './components/selectFooter';
 import './components/minicart';

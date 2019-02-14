@@ -67,7 +67,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ramda": "^0.26.1",
     "react": "^16.6.3",
-    "react-dom": "^16.6.3"
+    "react-dom": "^16.6.3",
+    "react-pagify": "^2.4.0"
   }
 }

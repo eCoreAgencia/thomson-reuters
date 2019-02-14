@@ -1,0 +1,22 @@
+extends ../layouts/default.pug
+
+block vars
+	- var pageTitle = 'Autores'
+	- var bodyClass = 'autores page--authors'
+
+block content
+	section.breadCrumb
+		.container
+			+vtex-controller('<vtex.cmc:breadCrumb />')
+				.bread-crumb
+					ul
+						li
+							a(title='thompsonreuters', href='/') thompsonreuters
+						li.last
+							strong
+								a(title='Autores', href='') Autores
+	section.section__page.section__authors
+		.container
+			#app
+block scripts
+	script(src='/arquivos/vtex-SmartResearch.js?v=%PROJECT_VERSION%')
