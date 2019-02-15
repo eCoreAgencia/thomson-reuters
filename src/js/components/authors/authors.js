@@ -1,17 +1,47 @@
 import React, { Component } from 'react'
+import Author from './author';
 
 export default class Authors extends Component {
 	state = {
 		letters: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "X", "W", "Y", "Z"],
 		authors: [],
+		filtered: [],
+		currentPage: 1,
+		itemsPerPage: 5
 	}
 
 	async componentWillMount(){
 		const authors = await this.getAuthors();
-		this.setState({authors: [...authors]})
+		this.setState({authors: [...authors], filtered: [...authors]})
 
-		console.log(authors);
+		//this.filterAuthors('all');
 	}
+	filterAuthors = (e) =>{
+		const letter = e.target.innerHTML;
+		if(filter === 'all') {
+			console.log(this.state.authors)
+			this.setState({filtered: [...this.state.authors], currentPage: 1})
+		}else {
+			console.log(letter, 'letter')
+			const filterMatches = (words, letter) => {
+				return words.filter(function (word) {
+					console.log(word.nomeautor.charAt(0), letter)
+					return word.nomeautor.charAt(0) === letter;
+				});
+			}
+			const filter = filterMatches(this.state.authors, letter)
+			this.setState({filtered: [...filter], currentPage: 1})
+
+		}
+
+
+	}
+
+	handleClick = (event) => {
+        this.setState({
+          currentPage: Number(event.target.id)
+        });
+      }
 
 	getAuthors() {
 		const endpoint = 'http://api.vtex.com/thomsonreuters/dataentities/AT/search?_fields=fotoautor,id,nomeautor,descricaoautor,link'
@@ -39,6 +69,19 @@ export default class Authors extends Component {
 		})
 	}
 	render() {
+		const { authors, currentPage, itemsPerPage, letters, filtered } = this.state;
+		const indexOfLastAuthor = currentPage * itemsPerPage;
+		const indexOfFirstAuthor = indexOfLastAuthor - itemsPerPage;
+		const currentAuthors = filtered.slice(indexOfFirstAuthor, indexOfLastAuthor);
+		const pageNumbers = [];
+		for (let i = 1; i <= Math.ceil(filtered.length / itemsPerPage); i++) {
+			pageNumbers.push(i);
+		  }
+		const renderPageNumbers = pageNumbers.map(number => {
+			<li key={number} id={number} onClick={this.handleClick} >{number}</li>
+
+		});
+
 		return (
 			<div className="authors">
 				<h2 className="authors__title">Autores</h2>
@@ -46,32 +89,16 @@ export default class Authors extends Component {
 					<span className="authors__total"> 16 resultados</span>
 					<div className="authors__filter">
 						<span className="authors__filter-all">Todas</span>
-						{this.state.letters.map(letter => ( <span className="authors__filter-letter">{letter}</span> ))}
+						{letters.map((letter, index) => ( <span key={index} onClick={this.filterAuthors} className="authors__filter-letter">{letter}</span> ))}
 					</div>
+
 				</div>
 				<div className="authors__content">
-					<ul className="authors__list">
-						{this.state.authors.map(author => (
-
-							<li className="authors__item">
-								<div className="author">
-									<div className="author__media">
-										<img className="author__image" src={`http://thomsonreuters.vtexcrm.com.br/DynamicForm/GetFile?dataEntityInstanceId=AT-${author.id}&fileName=${author.fotoautor}`} width="160" />
-									</div>
-									<div className="author__info">
-										<h3 className="author__name">{author.nomeautor}</h3>
-										<div className="author__description">
-											{author.descricaoautor}
-										</div>
-										<a className="author__link" href=""> Veja Mais</a>
-									</div>
-									<div className="author__books">
-										<h3 className="author__books-tilte">Obras do Autor</h3>
-									</div>
-								</div>
-							</li>
-						))}
-
+					<Author authors={currentAuthors} />
+				</div>
+				<div className="authors__footer">
+					<ul id="page-numbers">
+						{ pageNumbers.map(number => ( <li key={number} id={number} onClick={this.handleClick} >{number}</li>))}
 					</ul>
 				</div>
 			</div>
