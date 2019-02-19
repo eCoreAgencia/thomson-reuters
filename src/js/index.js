@@ -19,6 +19,7 @@ import './components/login';
 
 import './components/proview';
 import './components/events';
+import './components/countdown';
 
 
 import './pages/home';

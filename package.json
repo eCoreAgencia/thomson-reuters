@@ -67,9 +67,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "moment": "^2.24.0",
+    "momentjs": "^2.0.0",
     "ramda": "^0.26.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-dotdotdot": "^1.2.3",
     "react-pagify": "^2.4.0"
   }
 }

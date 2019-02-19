@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
+import Dotdotdot from 'react-dotdotdot'
 
 export default class Author extends Component {
-	constructor(props){
-		super(props)
 
-
-	}
 
 
 
@@ -15,7 +12,6 @@ export default class Author extends Component {
 			return (
 				<ul className="authors__list">
 					{authors.map((author, index) => (
-
 						<li key={index} className="authors__item">
 							<div className="author">
 								<div className="author__media">
@@ -24,7 +20,9 @@ export default class Author extends Component {
 								<div className="author__info">
 									<h3 className="author__name">{author.nomeautor}</h3>
 									<div className="author__description">
-										{author.descricaoautor}
+										<Dotdotdot clamp={7}>
+											{author.descricaoautor}
+										</Dotdotdot>
 									</div>
 									<a className="author__link" href=""> Veja Mais</a>
 								</div>
@@ -39,7 +37,7 @@ export default class Author extends Component {
 			)
 		}else {
 			return (
-				<span> Sem Resultados </span>
+				<span className="author__not-found"> Sem Resultados </span>
 			)
 		}
 

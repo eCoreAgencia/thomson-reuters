@@ -55,10 +55,8 @@ $top-flag-val: 50px;
 	}
 	padding: 0;
 	&__shelf {
-		display: grid;
-		justify-content: center;
+
 		background-color: $c-white;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
 		padding: 0 10px;
 	}
 	a {
@@ -102,8 +100,7 @@ $top-flag-val: 50px;
 	}
 	&__info {
 		text-align: center;
-		height: 60px;
-		margin-bottom: 13px;
+		min-height: 60px;
 	}
 	&__author,
 	.product__watch-author-link {
@@ -117,11 +114,13 @@ $top-flag-val: 50px;
 			font-family: "Knowledge-Regular";
 			font-size: 13px;
 			font-weight: 400;
-			overflow: hidden;
-			text-overflow: ellipsis;
 			margin: auto;
 			padding: 0;
 			white-space: nowrap;
+			box-shadow: none !important;
+			margin: 0 !important;
+			width: 100% !important;
+
 		}
 	}
 
@@ -245,8 +244,8 @@ $top-flag-val: 50px;
 
 	// PRODUCT "WATCH" STYLES *** this is the LAST SHELF ON HOME
 	&__watch {
-		display: grid;
-		grid-template-columns: auto 1.5fr;
+		display: flex;
+		flex-wrap: wrap;
 		padding: 0 20px;
 		@include atMedium {
 			padding: 0;
@@ -276,12 +275,22 @@ $top-flag-val: 50px;
 	}
 	&__watch-info {
 		padding-left: 10px;
+		max-width: 274px;
 		@include atMedium {
 			padding: 20px;
+		}
+
+		@include atSmall {
+			max-width: 174px;
 		}
 	}
 	&__watch-author {
 		margin-bottom: 10px;
+		display: none;
+	}
+
+	&__watch-author-name {
+		min-height: 42px;
 	}
 	&__watch-author-link {
 		color: $c-gray-lighter;

@@ -472,9 +472,16 @@
 			ul {
 				display: flex;
 				justify-content: center;
-				@include atMedium {
-					display: block;
-				}
+				align-items: stretch;
+			}
+
+			.button__shelf {
+				height: auto;
+				margin-bottom: 0;
+			}
+
+			.button__preview {
+				margin-top: 10px;
 			}
 		}
 
@@ -796,7 +803,7 @@
 	}
 
 	.btn-load-more {
-		display: flex;
+		display: none;
 		margin: 10px auto;
 		width: 200px;
 		border-color: #9e9e9e;

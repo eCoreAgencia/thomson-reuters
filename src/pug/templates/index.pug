@@ -2,7 +2,7 @@ extends ../layouts/default.pug
 
 block vars
 	- var pageTitle = 'Home'
-	- var bodyClass = 'home '
+	- var bodyClass = 'home page--countdown'
 
 block content
 	section.section__hero
@@ -179,6 +179,24 @@ block content
 								span.category-nav__title Tributário
 
 	//- section.section__page.section-kits.section__shelf
+	section.section__page.section--countdown
+		.container
+			.shelf__countdown
+				span#promocao
+					+vtex-controller('<vtex.cmc:countdown />')
+						| 27-02-2019 12:30:00
+				.countdown
+					span.countdown__text Essa promoção acaba em:
+					#clock
+
+				.shelf.shelf__carousel--countdown
+					+vtex-controller('<vtex:contentPlaceHolder id="e-books shelf"/>')
+						.prateleira
+							ul
+								each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+									li
+										include ../shelves/product-shelf
+
 	section.section__page.section__shelf
 		.filter.wrapper
 			h2.filter__title Pré-venda
