@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Dotdotdot from 'react-dotdotdot'
+import Shelf from './shelf'
+
+
 
 export default class Author extends Component {
 
@@ -28,6 +31,7 @@ export default class Author extends Component {
 								</div>
 								<div className="author__books">
 									<h3 className="author__books-tilte">Obras do Autor</h3>
+									<Shelf products={author.products} />
 								</div>
 							</div>
 						</li>

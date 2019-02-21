@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Author from './author';
+import { getProductsByTerm } from '../../modules/vtexRequest';
 
 export default class Authors extends Component {
 	state = {
@@ -13,6 +14,14 @@ export default class Authors extends Component {
 
 	async componentWillMount(){
 		const authors = await this.getAuthors();
+
+		await authors.map( author => {
+			getProductsByTerm(author.nomeautor).then(product => {
+				author.products = product;
+			});
+		});
+
+		console.log(authors);
 		this.setState({authors: [...authors], filtered: [...authors]})
 
 		//this.filterAuthors('all');
@@ -24,20 +33,15 @@ export default class Authors extends Component {
 		e.target.classList.add('is-active');
 
 		if (letter === 'Todos') {
-			console.log(letter);
-			console.log(this.state.authors)
 			this.setState({filtered: [...this.state.authors], currentPage: 1})
-		}else {
-			console.log(letter, 'letter')
+		} else {
 			const filterMatches = (words, letter) => {
 				return words.filter(function (word) {
-					console.log(word.nomeautor.charAt(0), letter)
 					return word.nomeautor.charAt(0) === letter;
 				});
 			}
 			const filter = filterMatches(this.state.authors, letter)
 			this.setState({filtered: [...filter], currentPage: 1})
-
 		}
 
 
@@ -48,7 +52,7 @@ export default class Authors extends Component {
 		dots.classList.remove('is-active');
 		event.target.classList.add('is-active');
         this.setState({
-          currentPage: Number(event.target.id)
+          currentPage: Number(event.target.getAttribute('data-page'))
         });
 	}
 
@@ -56,11 +60,14 @@ export default class Authors extends Component {
 		const page = this.state.currentPage + parseInt(e.target.getAttribute('data-page'));
 		const pageNumbers = document.querySelectorAll('.page-item');
 		console.log(page);
-		if(page > 0 && page < pageNumbers.length){
+		if(page > 0 && page <= pageNumbers.length){
 			const dots = document.querySelector('li.is-active');
-			const currentDot = document.querySelector(`li#${page}`);
+			const currentDot = document.querySelector(`#page-${page}`);
 			dots.classList.remove('is-active');
 			currentDot.classList.add('is-active');
+			this.setState({
+				currentPage: Number(page)
+			});
 		}
 
 	}
@@ -77,10 +84,6 @@ export default class Authors extends Component {
 			}
 
 		}
-
-		//getAuthors.cache = getAuthors.cache || {}
-
-
 
 		return new Promise((resolve, reject) => {
 			return fetch(endpoint, headers)
@@ -102,8 +105,7 @@ export default class Authors extends Component {
 
 		//this.setState({pageNumbers: pageNumbers.length});
 		const renderPageNumbers = pageNumbers.map(number => {
-			<li key={number} id={number} className="page-item" onClick={this.handleClick} >{number}</li>
-
+			<li key={number} id={`page-${number}`} className="page-item" onClick={this.handleClick} >{number}</li>
 		});
 
 		return (
@@ -123,7 +125,7 @@ export default class Authors extends Component {
 				<div className="authors__footer">
 					<ul id="page-numbers">
 						<li onClick={this.arrowClick} data-page="-1">Anterior</li>
-						{ pageNumbers.map(number => ( <li className={number == 1 ? 'page-item is-active' : 'page-item'} key={number} id={number} onClick={this.handleClick} >{number}</li>))}
+						{ pageNumbers.map(number => ( <li className={number == 1 ? 'page-item is-active' : 'page-item'} key={number} id={`page-${number}`} onClick={this.handleClick} data-page={number} >{number}</li>))}
 						<li onClick={this.arrowClick} data-page="+1">Próximo</li>
 					</ul>
 				</div>
