@@ -18,3 +18,5 @@ class account {
 		}, 500);
 	}
 }
+
+window.account = new account();
