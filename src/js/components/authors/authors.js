@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Author from './author';
 import { getProductsByTerm } from '../../modules/vtexRequest';
 
+
 export default class Authors extends Component {
 	state = {
 		letters: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "X", "W", "Y", "Z"],
@@ -14,17 +15,25 @@ export default class Authors extends Component {
 
 	async componentWillMount(){
 		const authors = await this.getAuthors();
+		let arrayAuthors = [];
 
 		await authors.map( author => {
 			getProductsByTerm(author.nomeautor).then(product => {
 				author.products = product;
+				arrayAuthors.push(author);
+				this.setState({
+					authors: [...arrayAuthors],
+					filtered: [...arrayAuthors]
+				})
 			});
 		});
 
-		console.log(authors);
-		this.setState({authors: [...authors], filtered: [...authors]})
 
-		//this.filterAuthors('all');
+	}
+
+	componentDidUpdate(){
+		var event = new Event('build');
+		document.dispatchEvent(event);
 	}
 	filterAuthors = (e) =>{
 		const letter = e.target.innerHTML;
@@ -124,9 +133,9 @@ export default class Authors extends Component {
 				</div>
 				<div className="authors__footer">
 					<ul id="page-numbers">
-						<li onClick={this.arrowClick} data-page="-1">Anterior</li>
+						<li className="page-arrow page-arrow-prev" onClick={this.arrowClick} data-page="-1">Anterior</li>
 						{ pageNumbers.map(number => ( <li className={number == 1 ? 'page-item is-active' : 'page-item'} key={number} id={`page-${number}`} onClick={this.handleClick} data-page={number} >{number}</li>))}
-						<li onClick={this.arrowClick} data-page="+1">Próximo</li>
+						<li className="page-arrow page-arrow-next" onClick={this.arrowClick} data-page="+1">Próximo</li>
 					</ul>
 				</div>
 			</div>

@@ -22,7 +22,7 @@ module.exports = merge(common, {
     new UglifyJSPlugin({
       compress: {
 		screw_ie8: true,
-		drop_console: true,
+		drop_console: false,
         warnings: false
       },
       mangle: {

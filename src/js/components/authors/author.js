@@ -29,9 +29,9 @@ export default class Author extends Component {
 									</div>
 									<a className="author__link" href=""> Veja Mais</a>
 								</div>
-								<div className="author__books">
-									<h3 className="author__books-tilte">Obras do Autor</h3>
-									<Shelf products={author.products} />
+								<div className="author__books" data-author={author.nomeautor}>
+									<h3 className="author__books-title">Obras do Autor</h3>
+									<ul className="products__list"></ul>
 								</div>
 							</div>
 						</li>

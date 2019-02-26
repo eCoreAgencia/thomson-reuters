@@ -70,6 +70,22 @@
 			}
 		}
 	}
+	.slick-arrow {
+		border: none;
+	}
+
+	.slick-prev {
+		left: -20px;
+	}
+
+	.slick-next {
+		right: -20px;
+	}
+
+	.page-arrow {
+		font-size: 0;
+		position: relative;
+	}
 }
 
 .author {
@@ -134,6 +150,11 @@
 	.shelf {
 		&__media {
 			max-width: 100px;
+			margin: auto;
+		}
+
+		&__name {
+			padding: 5px 0;
 		}
 	}
 
@@ -144,9 +165,9 @@
 			flex-wrap: wrap;
 		}
 		&__item {
-			max-width: 145px;
 			width: 145px;
-			
+			padding: 0 10px;
+
 		}
 	}
 
