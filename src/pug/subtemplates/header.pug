@@ -1,173 +1,197 @@
-//- header.header
-//- 	.tip-bar
-//- 		.wrapper
-//- 			span.tip-bar__ct-phone
-//- 				i.simple-phone
-//- 				p (11) 4935-2387
-//- 			.loginContent
-//- 				//+vtex-controller('<vtex.cmc:welcomeMessage/>')
-//- 				//- a(href="/login").tip-bar__login
-//- 				//- 	| LOGIN / CADASTRE-SE
-//- 				.loginContent(style="display: flex")
-//- 					a(href="/account", class="accountLink") Minha conta
-//- 					a(href="/account/orders", class="accountLink") Meus Pedidos
-//- 	.main-header
-//- 		.wrapper
-//- 			.header__menu-icon
-//- 				.header__menu-icon__middle
-//- 			h1.main-header__logos
-//- 				a.main-header__logos-link(href="/")
-//- 					span.logo1
-//- 						include ../../svg/name-logo.svg
-//- 					span.logo2
-//- 						include ../../svg/name-logo-revista.svg
-//- 			.search-bar
-//- 				.orderBy__ecoreHeader
-//- 					.orderBy__ecoreHeader__select
-//- 						.orderBy__ecoreHeader__select--title
-//- 							p(data-id='todos') Todos
-//- 							i.icon-arrow
-//- 						.orderBy__ecoreHeader__select--option
-//- 							ul
-//- 								li(data-id='todos') Todos
-//- 								li(data-id='0') Titulo
-//- 								li(data-id='36') Autor
-//- 								li(data-id='24') Editora
-//- 								li(data-id='23') ISBN
-//- 								li(data-id='24') E-book
-//- 								li(data-id='33') Coleção
-//- 				.header__search-form
-//- 					.search-form#header-form
-//- 						form.search-form(action="/busca")
-//- 							.field.has-addons
-//- 								.control.is-expanded
-//- 									input.input(type='text', placeholder='Digite o nome do produto...')/
-//- 								.control
-//- 									button.button
-//- 										span.icon-search.simple-magnifier
-//- 			.main-header__carrinho
-//- .menu
-//- 	.wrapper
-//- 		.main-header__menu-content
-//- 			+vtex-controller('<vtex.cmc:menuThomsonDesktop />')
-//- 				nav.menu__nav
-//- 					ul.menu__list
-//- 						li.menu__list-item.area-de-interesse
-//- 							a(href="/area-de-interesse") Área de Interesse
-//- 							ul.submenu
-//- 								.wrapper
-//- 									.menuItem
-//- 										li.menuItem__item
-//- 											a(href="/area-de-interesse/Administrativo") Administrativo
-//- 										li.menuItem__item
-//- 											a(href="/area-de-interesse/Civil") Civil
-//- 										//- li.menuItem__item
-//- 										//- 	a(href="/area-de-interesse/Comercial") Comercial
-//- 										li.menuItem__item
-//- 											a(href="/area-de-interesse/Constitucional") Constitucional
-//- 										li.menuItem__item
-//- 											a(href="/area-de-interesse/Difusos-e-Coletivos") Difusos e Coletivos
-//- 										li.menuItem__item
-//- 											a(href="/area-de-interesse/Direito-Digital") Direito Digital
-//- 										li.menuItem__item
-//- 											a(href="/area-de-interesse/Direito-Previdenciario") Direito Previdenciário
-//- 										//- li.menuItem__item
-//- 										//- 	a(href="/area-de-interesse/Empresarial") Empresarial
-//- 										li.menuItem__item
-//- 											a(href="/area-de-interesse/Estudantes") Estudantes
-//- 										li.menuItem__item
-//- 											a(href="/area-de-interesse/Financeiro") Financeiro
-//- 										//- li.menuItem__item
-//- 										//- 	a(href="/area-de-interesse/Historia---IED---etica") História - IED - Ética
-//- 										li.menuItem__item
-//- 											a(href="/area-de-interesse/Internacional") Internacional
-//- 										li.menuItem__item
-//- 											a(href="/area-de-interesse/Legislacao") Legislação
-//- 										li.menuItem__item
-//- 											a(href="/area-de-interesse/OAB---Concursos") OAB - Concursos
-//- 										li.menuItem__item
-//- 											a(href="/area-de-interesse/Outras-areas") Outras áreas
-//- 										li.menuItem__item
-//- 											a(href="/area-de-interesse/Penal") Penal
-//- 										li.menuItem__item
-//- 											a(href="/area-de-interesse/Processo-Civil") Processo Civil
-//- 										li.menuItem__item
-//- 											a(href="/area-de-interesse/Processo-Penal") Processo Penal
-//- 										li.menuItem__item
-//- 											a(href="/area-de-interesse/Tributario") Tributário
-//- 									.banner
-//- 										a(href="/clt-comentada-9788553212019/p")
-//- 											img(src="/arquivos/bannerMenu.jpg", alt="")/
-//- 						li.menu__list-item
-//- 							a(href="/busca?fq=H:139&amp;PS=24&amp;O=OrderByTopSaleDESC") Lançamentos
-//- 						li.menu__list-item
-//- 							a(href="/busca?fq=H:137&amp;PS=24&amp;O=OrderByTopSaleDESC") Mais Vendidos
-//- 						//- li.menu__list-item
-//- 						//- 	a(href="kits-e-colecoes") Kits e Coleções
-//- 						li.menu__list-item
-//- 							a(href="/area-de-interesse/OAB---Concursos") OAB e concursos
-//- 						//- li.menu__list-item
-//- 						//- 	a(href="/outlet") Outlet
-//- 	.menu__mobile
-//- 		.menu__mobile-welcome Bem-Vindo,
-//- 		a(href="/account").menu__mobile-dynamic-login Entrar
-//- 		a(href="/account").menu__mobile-dynamic-login1 Cadastre-se
-//- 		+vtex-controller('<vtex.cmc:menuThomsonMobile />')
-//- 			ul.menu__mobile-main-menu
-//- 				li.menu__mobile-items
-//- 					.titleMenu
-//- 						span Área de Interesse
-//- 						i.simple-arrow-right
-//- 					ul.submenu
-//- 						.wrapper
-//- 							.menuItem
-//- 								li.menuItem__item
-//- 									a(href="/area-de-interesse/Administrativo") Administrativo
-//- 								li.menuItem__item
-//- 									a(href="/area-de-interesse/Civil") Civil
-//- 								//- li.menuItem__item
-//- 								//- 	a(href="/area-de-interesse/Comercial") Comercial
-//- 								li.menuItem__item
-//- 									a(href="/area-de-interesse/Constitucional") Constitucional
-//- 								li.menuItem__item
-//- 									a(href="/area-de-interesse/Difusos-e-Coletivos") Difusos e Coletivos
-//- 								li.menuItem__item
-//- 									a(href="/area-de-interesse/Direito-Digital") Direito Digital
-//- 								li.menuItem__item
-//- 									a(href="/area-de-interesse/Direito-Previdenciario") Direito Previdenciário
-//- 								li.menuItem__item
-//- 									a(href="/area-de-interesse/Empresarial") Empresarial
-//- 								li.menuItem__item
-//- 									a(href="/area-de-interesse/Estudantes") Estudantes
-//- 								li.menuItem__item
-//- 									a(href="/area-de-interesse/Financeiro") Financeiro
-//- 								//- li.menuItem__item
-//- 								//- 	a(href="/area-de-interesse/Historia---IED---etica") História - IED - Ética
-//- 								li.menuItem__item
-//- 									a(href="/area-de-interesse/Internacional") Internacional
-//- 								li.menuItem__item
-//- 									a(href="/area-de-interesse/Legislacao") Legislação
-//- 								li.menuItem__item
-//- 									a(href="/area-de-interesse/OAB---Concursos") OAB - Concursos
-//- 								li.menuItem__item
-//- 									a(href="/area-de-interesse/Outras-areas") Outras áreas
-//- 								li.menuItem__item
-//- 									a(href="/area-de-interesse/Penal") Penal
-//- 								li.menuItem__item
-//- 									a(href="/area-de-interesse/Processo-Civil") Processo Civil
-//- 								li.menuItem__item
-//- 									a(href="/area-de-interesse/Processo-Penal") Processo Penal
-//- 								li.menuItem__item
-//- 									a(href="/area-de-interesse/Tributario") Tributário
-//- 				li.menu__mobile-items
-//- 					.titleMenu
-//- 						a(href="/account") Meu Cadastro
-//- 				li.menu__mobile-items
-//- 					.titleMenu
-//- 						a(href="/account/orders") Meus Pedidos
-//- 				li.menu__mobile-items
-//- 					.titleMenu
-//- 						a(href="/account") Meus Endereços
-//- 				li.menu__mobile-items
-//- 					.titleMenu
-//- 						a(href="/login") Esqueci Minha Senha
+include ../helpers
+header.header
+	.tip-bar
+		.wrapper
+			span.tip-bar__ct-phone
+				i.simple-phone
+				p (11) 4935-2387
+			.tip-bar__login
+				img(src="/arquivos/user-anticon.png")/
+				a(href="/login").tip-bar__login-link LOGIN/CADASTRE-SE
+	.main-header
+		.wrapper
+			.header__menu-icon
+				.header__menu-icon__middle
+			h1.main-header__logos
+				a.main-header__logos-link(href='/')
+					span.logo1
+						svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='93', height='7', viewBox='0 0 93 7')
+							defs
+								path#brpea(d='M415.14 52.89v5.1h-1.38v-5.1H412v-1.2h4.9v1.2zm3.06-1.2h1.38v2.51h2.52v-2.5h1.38V58h-1.38v-2.57h-2.52v2.56h-1.38zm12.52 3.15c0 1.88-.97 3.27-3.01 3.27-2.05 0-3.02-1.4-3.02-3.27s.97-3.26 3.02-3.26c2.04 0 3.01 1.39 3.01 3.26zm-3.01-2.09c-1.16 0-1.64.86-1.64 2.1 0 1.22.48 2.08 1.64 2.08 1.15 0 1.63-.86 1.63-2.09s-.48-2.09-1.63-2.09zm4.23-1.06h1.39l1.96 4.16 1.97-4.16h1.38V58h-1.33v-3.6l-1.35 2.8h-1.34l-1.34-2.8V58h-1.34zm8.04 5.95l.3-1.1c.64.25 1.35.43 1.96.43.7 0 1.12-.17 1.12-.68 0-.5-.3-.64-1.25-.83-1.38-.28-2.15-.76-2.15-1.94 0-1.49 1-1.94 2.4-1.94.85 0 1.52.15 2.16.44l-.25 1.1a4.95 4.95 0 0 0-1.9-.41c-.69 0-1.03.14-1.03.66 0 .47.31.57 1.32.81 1.35.32 2.09.72 2.09 1.95 0 1.25-.91 1.98-2.5 1.98-.74 0-1.6-.2-2.27-.47zm11.7-2.8c0 1.88-.97 3.27-3.02 3.27-2.04 0-3.01-1.4-3.01-3.27s.97-3.26 3.01-3.26c2.05 0 3.02 1.39 3.02 3.26zm-3.02-2.09c-1.15 0-1.63.86-1.63 2.1 0 1.22.48 2.08 1.63 2.08 1.16 0 1.64-.86 1.64-2.09s-.48-2.09-1.64-2.09zm4.18-1.06h1.37l2.8 4.01v-4h1.35V58h-1.37l-2.8-4.02V58h-1.35zm15.55 6.3h-1.74l-1.4-2.23h-1.01v2.23h-1.39v-6.3h3.02c1.32 0 2.13.8 2.13 2.04 0 .87-.5 1.57-1.27 1.87zm-4.15-5.19v1.87h1.4c.57 0 .97-.33.97-.94 0-.6-.4-.93-.97-.93zm5.17-1.1h4.33v1.19h-2.95v1.28h2.76v1.2h-2.76v1.43h2.95V58h-4.33zm11 3.9c0 1.37-.87 2.52-2.66 2.52s-2.66-1.15-2.66-2.52v-3.9h1.38v3.97c0 .83.5 1.27 1.28 1.27s1.28-.44 1.28-1.27V51.7h1.38zm4.27-2.71v5.1h-1.38v-5.1h-1.76v-1.2h4.9v1.2zm3-1.2h4.34v1.2h-2.95v1.28h2.76v1.2h-2.76v1.43h2.95V58h-4.33zm11.17 6.3h-1.73l-1.41-2.23h-1v2.23h-1.38v-6.3h3c1.33 0 2.13.8 2.13 2.04 0 .87-.49 1.57-1.27 1.87zm-4.14-5.19v1.87h1.4c.57 0 .97-.33.97-.94 0-.6-.4-.93-.96-.93zm4.93 4.84l.3-1.1c.64.25 1.36.43 1.97.43.7 0 1.13-.17 1.13-.68 0-.5-.32-.64-1.26-.83-1.39-.28-2.16-.76-2.16-1.94 0-1.49 1-1.94 2.4-1.94a5 5 0 0 1 2.17.44l-.24 1.1a4.97 4.97 0 0 0-1.9-.41c-.7 0-1.04.14-1.04.66 0 .47.31.57 1.32.81 1.35.32 2.09.72 2.09 1.95 0 1.25-.91 1.98-2.5 1.98a6.4 6.4 0 0 1-2.28-.47z')
+							g
+								g(clip-path='url(#clip-50C83BE8-3ECB-09A7-E77E-CAAADDF1B9B5)', transform='translate(-412 -51)')
+									use(fill='#85878a', xlink:href='#brpea')
+					span.logo2
+						svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='399', height='28', viewBox='0 0 399 28')
+							defs
+								path#yrcvb(d='M422.08 76.52l4.66 6.83h-4.09l-4.14-6.5h-3.22v6.5h-3.26V65.99h7.94c.9 0 1.71.13 2.42.4a4.62 4.62 0 0 1 2.93 2.83c.26.66.38 1.4.38 2.2a5.3 5.3 0 0 1-3.62 5.1zm-2.6-7.9h-4.2v5.65h4.2c.9 0 1.62-.24 2.16-.74s.8-1.2.8-2.12c0-.89-.26-1.57-.8-2.06a3.1 3.1 0 0 0-2.16-.73zM428.5 66h11.67v2.82h-8.42v4.22h7.87v2.81h-7.87v4.7h8.42v2.8H428.5zm12.92 0h3.4l4.14 13.66 4.11-13.66h3.41l-5.64 17.36h-3.78zm16.67 0h3.24v17.36h-3.24zm11.96 17.66a16.65 16.65 0 0 1-6.19-1.28l.71-2.63c.89.37 1.8.66 2.75.89.94.22 1.85.34 2.72.34a5.3 5.3 0 0 0 2.49-.5c.61-.33.92-.9.92-1.72 0-.4-.07-.73-.2-1-.15-.27-.36-.5-.66-.7-.3-.2-.68-.38-1.17-.52-.49-.15-1.08-.3-1.77-.46a17.1 17.1 0 0 1-2.54-.73 6.34 6.34 0 0 1-1.82-1.04c-.5-.42-.87-.9-1.1-1.47a5.01 5.01 0 0 1-.37-2c0-.95.15-1.76.47-2.42a4.1 4.1 0 0 1 1.31-1.6c.56-.4 1.24-.7 2.03-.87a15.22 15.22 0 0 1 5.8.04c.93.2 1.83.5 2.68.9l-.6 2.6c-.75-.33-1.57-.6-2.46-.82-.9-.21-1.8-.32-2.72-.32-1.08 0-1.9.15-2.44.45-.55.3-.82.87-.82 1.7 0 .37.07.68.2.93.15.25.37.47.67.65.3.19.7.35 1.18.51.49.16 1.09.32 1.8.5.93.22 1.76.47 2.48.74.71.27 1.32.6 1.81 1 .5.4.87.89 1.12 1.46.25.57.38 1.28.38 2.1 0 1.68-.59 2.97-1.76 3.89-1.17.92-2.8 1.38-4.9 1.38zm15.85-14.84v14.54h-3.26V68.8h-4.97v-2.82h13.23v2.82zm9.63-2.82h3.62l6.36 17.36h-3.31l-1.38-4.1h-6.95l-1.38 4.1h-3.31zm-.75 10.52h5.13l-2.55-7.6zM512.57 66h6.51c1.27 0 2.43.21 3.48.63a7.67 7.67 0 0 1 4.43 4.52c.4 1.07.6 2.24.6 3.53 0 1.29-.2 2.46-.6 3.53a7.66 7.66 0 0 1-4.43 4.52c-1.05.42-2.21.63-3.48.63h-6.5zm6.36 14.56c.74 0 1.45-.12 2.1-.36.67-.25 1.24-.61 1.73-1.1.48-.48.87-1.1 1.15-1.83.29-.74.43-1.6.43-2.6 0-.98-.14-1.85-.43-2.59a5.23 5.23 0 0 0-1.15-1.83 4.7 4.7 0 0 0-1.72-1.1 6.07 6.07 0 0 0-2.11-.36h-3.1v11.77zm12.1-12.3a7.13 7.13 0 0 1 2.55-1.88 8.67 8.67 0 0 1 3.6-.69 8.7 8.7 0 0 1 3.6.69 7.1 7.1 0 0 1 2.55 1.89 7.8 7.8 0 0 1 1.5 2.85c.34 1.1.5 2.29.5 3.55 0 1.29-.16 2.48-.5 3.57a7.82 7.82 0 0 1-1.5 2.84 7.1 7.1 0 0 1-2.55 1.89c-1.03.46-2.23.69-3.6.69-1.39 0-2.59-.23-3.6-.7a7.13 7.13 0 0 1-2.54-1.88 7.83 7.83 0 0 1-1.51-2.84c-.33-1.1-.5-2.28-.5-3.57 0-1.26.17-2.45.5-3.55.33-1.1.83-2.05 1.5-2.85zm9.88 10.87c.4-.54.7-1.2.88-1.95.2-.75.29-1.6.29-2.51 0-.9-.1-1.73-.29-2.5a5.6 5.6 0 0 0-.88-1.96 4.1 4.1 0 0 0-1.53-1.28 4.95 4.95 0 0 0-2.2-.45c-.85 0-1.58.15-2.2.45a4.1 4.1 0 0 0-1.52 1.28c-.4.54-.7 1.2-.89 1.96-.19.77-.28 1.6-.28 2.5 0 .92.1 1.76.28 2.51.2.76.49 1.4.89 1.95s.9.97 1.52 1.28c.62.3 1.35.45 2.2.45.85 0 1.59-.15 2.2-.45a4.1 4.1 0 0 0 1.53-1.28zm12 4.53a16.68 16.68 0 0 1-6.19-1.28l.72-2.63c.88.37 1.8.66 2.75.89.94.22 1.85.34 2.72.34a5.3 5.3 0 0 0 2.48-.5c.62-.33.93-.9.93-1.72 0-.4-.07-.73-.21-1-.14-.27-.36-.5-.65-.7a4.4 4.4 0 0 0-1.17-.52c-.49-.15-1.08-.3-1.77-.46-.98-.2-1.82-.45-2.54-.73a6.35 6.35 0 0 1-1.83-1.04c-.5-.42-.86-.9-1.1-1.47a5.02 5.02 0 0 1-.37-2c0-.95.16-1.76.47-2.42a4.1 4.1 0 0 1 1.32-1.6 5.4 5.4 0 0 1 2.03-.87 15.22 15.22 0 0 1 5.8.04c.93.2 1.82.5 2.67.9l-.6 2.6a14.8 14.8 0 0 0-2.46-.82c-.89-.21-1.8-.32-2.72-.32-1.07 0-1.89.15-2.43.45-.55.3-.82.87-.82 1.7 0 .37.07.68.2.93.14.25.36.47.67.65.3.19.7.35 1.18.51.48.16 1.08.32 1.8.5.93.22 1.75.47 2.47.74.72.27 1.33.6 1.82 1 .5.4.87.89 1.12 1.46.25.57.37 1.28.37 2.1 0 1.68-.58 2.97-1.75 3.89-1.17.92-2.8 1.38-4.9 1.38zm21.01-14.84v14.54h-3.25V68.8h-4.98v-2.82h13.23v2.82zm16.77 7.7l4.66 6.84h-4.08l-4.15-6.5h-3.22v6.5h-3.26V65.99h7.94c.9 0 1.71.13 2.42.4a4.63 4.63 0 0 1 2.93 2.83c.26.66.38 1.4.38 2.2a5.3 5.3 0 0 1-3.62 5.1zm-2.6-7.89h-4.2v5.65h4.2c.9 0 1.62-.24 2.16-.74s.8-1.2.8-2.12c0-.89-.26-1.57-.8-2.06a3.1 3.1 0 0 0-2.16-.73zm9.09-2.63h3.24v17.36h-3.24zm6.48.03h7.73c1.61 0 2.85.38 3.71 1.13.86.75 1.3 1.78 1.3 3.08a4.4 4.4 0 0 1-.78 2.59 4.6 4.6 0 0 1-2.35 1.65 5 5 0 0 1 2.62 1.35c.67.68 1 1.6 1 2.78a4.7 4.7 0 0 1-.39 1.94 4.2 4.2 0 0 1-1.12 1.5c-.48.41-1.07.73-1.75.96-.69.22-1.44.34-2.28.34h-7.69zm6.79 7.34c.92 0 1.6-.25 2.04-.77a2.7 2.7 0 0 0 .65-1.8c0-.7-.22-1.24-.67-1.64-.44-.4-1.1-.6-2-.6h-3.63v4.81zm.5 7.45c.93 0 1.63-.23 2.08-.7.46-.46.68-1.06.68-1.81a2.2 2.2 0 0 0-.75-1.76c-.51-.43-1.25-.65-2.23-.65h-3.9v4.92zm22.09-3.9c0 .91-.15 1.78-.44 2.6a5.91 5.91 0 0 1-3.55 3.6c-.9.36-1.94.54-3.13.54-1.2 0-2.24-.18-3.14-.55a5.91 5.91 0 0 1-3.55-3.6 7.61 7.61 0 0 1-.44-2.6V66h3.26v11.09c0 1.21.35 2.14 1.04 2.8.7.65 1.64.97 2.84.97 1.18 0 2.12-.32 2.81-.97.7-.66 1.04-1.59 1.04-2.8v-11.1h3.26zm2.83-10.92h3.26l8.33 11.96V66h3.18v17.36h-3.23l-8.36-11.96v11.96h-3.18zm22.68 0h3.62l6.36 17.36h-3.3l-1.39-4.1h-6.95l-1.38 4.1h-3.31zm-.75 10.52h5.13l-2.55-7.6zM670.16 66h3.25v17.36h-3.25zm11.96 17.66a16.69 16.69 0 0 1-6.19-1.28l.71-2.63c.89.37 1.8.66 2.75.89.94.22 1.85.34 2.72.34a5.3 5.3 0 0 0 2.49-.5c.61-.33.92-.9.92-1.72 0-.4-.07-.73-.2-1-.15-.27-.36-.5-.66-.7-.3-.2-.68-.38-1.17-.52-.49-.15-1.08-.3-1.77-.46a17.1 17.1 0 0 1-2.54-.73 6.36 6.36 0 0 1-1.82-1.04c-.5-.42-.87-.9-1.1-1.47a5.02 5.02 0 0 1-.37-2c0-.95.15-1.76.47-2.42a4.1 4.1 0 0 1 1.31-1.6c.56-.4 1.24-.7 2.03-.87a15.21 15.21 0 0 1 5.8.04c.93.2 1.83.5 2.68.9l-.6 2.6a14.8 14.8 0 0 0-2.46-.82c-.9-.21-1.8-.32-2.72-.32-1.08 0-1.9.15-2.44.45-.54.3-.82.87-.82 1.7 0 .37.07.68.2.93.15.25.37.47.67.65.3.19.7.35 1.18.51.49.16 1.09.32 1.8.5.93.22 1.76.47 2.48.74.71.27 1.32.6 1.81 1 .5.4.87.89 1.12 1.46.25.57.38 1.28.38 2.1 0 1.68-.59 2.97-1.76 3.89-1.17.92-2.8 1.38-4.9 1.38z')
+								path#yrcva(d='M700.15 60.97h.58v27.4h-.58z')
+								path#yrcvd(d='M700.15 60.97v27.4')
+								path#yrcve(d='M711.87 66.27h1.44v15.57h8.42v1.23h-9.86z')
+								path#yrcvf(d='M724.61 83.07h1.44v-16.8h-1.44z')
+								path#yrcvg(d='M728.65 66.27h1.46l5.25 15.31 5.22-15.31h1.47l-5.88 16.8h-1.64z')
+								path#yrcvh(d='M752.3 75.66l4.91 7.41h-1.64l-4.82-7.31h-4.8v7.31h-1.43v-16.8h6.64c3.5 0 5.2 2.07 5.2 4.72a4.7 4.7 0 0 1-4.07 4.67m-1.29-8.2h-5.04v7.11H751c2.48 0 3.89-1.46 3.89-3.58 0-2.2-1.36-3.53-3.89-3.53')
+								path#yrcvi(d='M765.46 66.27h1.57l6.3 16.8h-1.43l-1.77-4.8h-7.82l-1.74 4.8h-1.44zm-2.7 10.77h6.94l-3.46-9.6z')
+								path#yrcvj(d='M783.83 75.66l4.92 7.41h-1.64l-4.82-7.31h-4.8v7.31h-1.43v-16.8h6.64c3.5 0 5.2 2.07 5.2 4.72a4.7 4.7 0 0 1-4.07 4.67m-1.29-8.2h-5.04v7.11h5.04c2.48 0 3.89-1.46 3.89-3.58 0-2.2-1.36-3.53-3.89-3.53')
+								path#yrcvk(d='M792.13 83.07h1.44v-16.8h-1.44z')
+								path#yrcvl(d='M802.75 66.27h1.57l6.3 16.8h-1.43l-1.77-4.8h-7.82l-1.74 4.8h-1.44zm-2.7 10.77H807l-3.46-9.6z')
+								clippath#yrcvc
+									use(xlink:href='#yrcva')
+							g
+								g(transform='translate(-412 -61)')
+									use(fill='#f5891f', xlink:href='#yrcvb')
+								g(transform='translate(-412 -61)')
+									g
+									g(clip-path='url(#yrcvc)')
+										use(fill='#fff', fill-opacity='0', stroke='#f5891f', stroke-miterlimit='50', stroke-width='2', xlink:href='#yrcvd')
+								g(transform='translate(-412 -61)')
+									use(fill='#f58820', xlink:href='#yrcve')
+								g(clip-path='url(#clip-FA139112-5304-890F-5EE8-D60280F9B4C8)', transform='translate(-412 -61)')
+									use(fill='#f58820', xlink:href='#yrcvf')
+								g(clip-path='url(#clip-FA139112-5304-890F-5EE8-D60280F9B4C8)', transform='translate(-412 -61)')
+									use(fill='#f58820', xlink:href='#yrcvg')
+								g(clip-path='url(#clip-FA139112-5304-890F-5EE8-D60280F9B4C8)', transform='translate(-412 -61)')
+									use(fill='#f58820', xlink:href='#yrcvh')
+								g(clip-path='url(#clip-FA139112-5304-890F-5EE8-D60280F9B4C8)', transform='translate(-412 -61)')
+									use(fill='#f58820', xlink:href='#yrcvi')
+								g(clip-path='url(#clip-FA139112-5304-890F-5EE8-D60280F9B4C8)', transform='translate(-412 -61)')
+									use(fill='#f58820', xlink:href='#yrcvj')
+								g(clip-path='url(#clip-FA139112-5304-890F-5EE8-D60280F9B4C8)', transform='translate(-412 -61)')
+									use(fill='#f58820', xlink:href='#yrcvk')
+								g(clip-path='url(#clip-FA139112-5304-890F-5EE8-D60280F9B4C8)', transform='translate(-412 -61)')
+									use(fill='#f58820', xlink:href='#yrcvl')
+			.search-bar
+				.orderBy__ecoreHeader
+					.orderBy__ecoreHeader__select
+						.orderBy__ecoreHeader__select--title
+							p(data-id='todos') Todos
+							i.icon-arrow
+						.orderBy__ecoreHeader__select--option
+							ul
+								li(data-id='todos') Todos
+								li(data-id='0') Titulo
+								li(data-id='36') Autor
+								li(data-id='24') Editora
+								li(data-id='23') ISBN
+								li(data-id='24') E-book
+								li(data-id='33') Coleção
+				.header__search-form
+					#header-form.search-form
+						form.search-form(action='/busca')
+							.field.has-addons
+								.control.is-expanded
+									input.input(type='text', placeholder='O que você procura?')
+								.control
+									button.button
+										span.icon-search.simple-magnifier
+			.main-header__carrinho
+	.menu
+		.wrapper
+			.main-header__menu-content
+				nav.menu__nav
+					ul.menu__list
+						li.menu__list-item.area-de-interesse
+							a(href='/area-de-interesse') Área de Interesse
+							ul.submenu
+								.wrapper
+									.menuItem
+										li.menuItem__item
+											a(href='/area-de-interesse/Administrativo') Administrativo
+										li.menuItem__item
+											a(href='/area-de-interesse/Civil') Civil
+										li.menuItem__item
+											a(href='/area-de-interesse/Constitucional') Constitucional
+										li.menuItem__item
+											a(href='/area-de-interesse/Difusos-e-Coletivos') Difusos e Coletivos
+										li.menuItem__item
+											a(href='/area-de-interesse/Direito-Digital') Direito Digital
+										li.menuItem__item
+											a(href='/area-de-interesse/Direito-Previdenciario') Direito Previdenciário
+										li.menuItem__item
+											a(href='/area-de-interesse/Empresarial') Empresarial
+										li.menuItem__item
+											a(href='/area-de-interesse/Estudantes') Estudantes
+										li.menuItem__item
+											a(href='/area-de-interesse/Financeiro') Financeiro
+										li.menuItem__item
+											a(href='/area-de-interesse/Internacional') Internacional
+										li.menuItem__item
+											a(href='/area-de-interesse/Legislacao') Legislação
+										li.menuItem__item
+											a(href='/area-de-interesse/OAB---Concursos') OAB - Concursos
+										li.menuItem__item
+											a(href='/area-de-interesse/Outras-areas') Outras áreas
+										li.menuItem__item
+											a(href='/area-de-interesse/Penal') Penal
+										li.menuItem__item
+											a(href='/area-de-interesse/Processo-Civil') Processo Civil
+										li.menuItem__item
+											a(href='/area-de-interesse/Processo-Penal') Processo Penal
+										li.menuItem__item
+											a(href='/area-de-interesse/Tributario') Tributário
+									.banner
+										+vtex-controller('<vtex.cmc:bannerMenu />')
+						li.menu__list-item
+							a(href='/busca?fq=H:139&PS=24&O=OrderByTopSaleDESC') Lançamentos
+						li.menu__list-item
+							a(href='/busca?fq=H:137&amp;PS=24&amp;O=OrderByTopSaleDESC') Mais Vendidos
+						li.menu__list-item
+							a(href='/area-de-interesse/OAB---Concursos') OAB e concursos
+	.menu__mobile
+		.menu__mobile-welcome Bem-Vindo,
+		a.menu__mobile-dynamic-login(href='/account') Entrar
+		a.menu__mobile-dynamic-login1(href='/account') Cadastre-se
+		ul.menu__mobile-main-menu
+			li.menu__mobile-items
+				.titleMenu
+					span Área de Interesse
+					i.simple-arrow-right
+				ul.submenu
+					.wrapper
+						.menuItem
+							li.menuItem__item
+								a(href='/area-de-interesse/Administrativo') Administrativo
+							li.menuItem__item
+								a(href='/area-de-interesse/Civil') Civil
+							li.menuItem__item
+								a(href='/area-de-interesse/Constitucional') Constitucional
+							li.menuItem__item
+								a(href='/area-de-interesse/Difusos-e-Coletivos') Difusos e Coletivos
+							li.menuItem__item
+								a(href='/area-de-interesse/Direito-Digital') Direito Digital
+							li.menuItem__item
+								a(href='/area-de-interesse/Direito-Previdenciario') Direito Previdenciário
+							li.menuItem__item
+								a(href='/area-de-interesse/Empresarial') Empresarial
+							li.menuItem__item
+								a(href='/area-de-interesse/Estudantes') Estudantes
+							li.menuItem__item
+								a(href='/area-de-interesse/Financeiro') Financeiro
+							li.menuItem__item
+								a(href='/area-de-interesse/Internacional') Internacional
+							li.menuItem__item
+								a(href='/area-de-interesse/Legislacao') Legislação
+							li.menuItem__item
+								a(href='/area-de-interesse/OAB---Concursos') OAB - Concursos
+							li.menuItem__item
+								a(href='/area-de-interesse/Outras-areas') Outras áreas
+							li.menuItem__item
+								a(href='/area-de-interesse/Penal') Penal
+							li.menuItem__item
+								a(href='/area-de-interesse/Processo-Civil') Processo Civil
+							li.menuItem__item
+								a(href='/area-de-interesse/Processo-Penal') Processo Penal
+							li.menuItem__item
+								a(href='/area-de-interesse/Tributario') Tributário
+			li.menu__mobile-items
+				.titleMenu
+					a(href='/account') Meu Cadastro
+			li.menu__mobile-items
+				.titleMenu
+					a(href='/account/orders') Meus Pedidos
+			li.menu__mobile-items
+				.titleMenu
+					a(href='/account') Meus Endereços
+			li.menu__mobile-items
+				.titleMenu
+					a(href='/login') Esqueci Minha Senha

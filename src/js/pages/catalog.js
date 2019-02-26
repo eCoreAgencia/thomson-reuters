@@ -63,8 +63,13 @@ class Catalog {
       const orderBy = $(this).attr('data-value');
       const text = $(this).text();
 
-      $('.orderBy__ecore__select--title p').text(text);
-      window.location = `${window.location.pathname}?O=${orderBy}`;
+	  $('.orderBy__ecore__select--title p').text(text);
+	  if(window.location.search){
+		window.location = `${window.location.pathname}${window.location.search}&O=${orderBy}`;
+	  }else {
+		window.location = `${window.location.pathname}?O=${orderBy}`;
+	  }
+
     });
   }
 
@@ -96,5 +101,7 @@ class Catalog {
 	$(pagger).before(top);
   }
 }
+
+
 
 window.menu = new Catalog();

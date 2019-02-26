@@ -41,12 +41,11 @@
 	}
 
 	&__split-the-grid {
-		grid-template-columns: 1fr;
 		@include atMedium {
 			height: initial;
-			display: grid;
+			display: flex;
 			padding: 38px 0 54px 0;
-			grid-template-columns: 2fr 1fr;
+
 		}
 	}
 	&__not-found {

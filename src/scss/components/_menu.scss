@@ -28,7 +28,7 @@
 					.submenu {
 						transition: 1s ease;
 						display: block;
-						box-shadow: 1px 0px 10px #ccc;
+						box-shadow: 0px 8px 10px #ccc;
 					}
 					> a {
 						&:after {
@@ -38,7 +38,7 @@
 							top: -11px;
 						}
 						&:before {
-							content: '';
+							content: "";
 							display: inline-block;
 							width: 0;
 							height: 0;
@@ -79,7 +79,7 @@
 		transition: 1s ease;
 		.menuItem {
 			width: 35%;
-			&__item  {
+			&__item {
 				display: inline-block;
 				width: 49%;
 				a {
@@ -118,13 +118,13 @@
 		font-size: 18px;
 		font-weight: 500;
 		line-height: 21.5px;
-		transition: left .3s ease-out;
+		transition: left 0.3s ease-out;
 		@include atMedium {
 			display: none;
 		}
-		&--is-visible{
+		&--is-visible {
 			left: 0%;
-			transition: left .3s ease-out;
+			transition: left 0.3s ease-out;
 		}
 	}
 	&__mobile-welcome {
@@ -152,7 +152,7 @@
 		align-items: center;
 		justify-content: center;
 		color: $c-white;
-		height: 60px;
+		height: 40px;
 	}
 	&__mobile-main-menu {
 		//display: grid;

@@ -4,7 +4,11 @@
 		"browser": true
 	},
 	"extends": "airbnb",
+	"plugins": [
+		"prettier"
+	],
 	"rules": {
-		"no-console": 0
+		"no-console": 0,
+		"prettier/prettier": "error"
 	}
 }

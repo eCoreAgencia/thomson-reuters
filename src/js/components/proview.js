@@ -1,8 +1,10 @@
 class Proview {
 	constructor() {
+		let self = this;
 		$('.proview__form').on('submit', function (e) {
 			e.preventDefault();
 			$(this).addClass('is-loading');
+			self.sendFormToProview();
 		});
 	}
 

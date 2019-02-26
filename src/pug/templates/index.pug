@@ -2,7 +2,7 @@ extends ../layouts/default.pug
 
 block vars
 	- var pageTitle = 'Home'
-	- var bodyClass = 'home '
+	- var bodyClass = 'home page--countdown'
 
 block content
 	section.section__hero
@@ -42,16 +42,30 @@ block content
 								img(src='/arquivos/banner-direita-top.jpg')/
 	section.section__page.section__shelf
 		.filter.wrapper
-			h2.filter__title Lançamentos
+			h2.filter__title Pré-venda
 			ul.filter__opt
-				//- li.filter__opt-item
-				//- 	a(href="") Pré-venda
 				li.filter__opt-item
-					a(href="") Lançamentos
-				//- li.filter__opt-item
-				//- 	a(href="") Outlet
-		.shelf.shelf__carousel--full.wrapper--diff
-			+vtex-controller('<vtex:contentPlaceHolder id="product shelf"/>')
+					a(href="", class="active", data-name="pre-venda") Pré-venda
+				li.filter__opt-item
+					a(href="", data-name="lancamento") Lançamentos
+				li.filter__opt-item
+					a(href="", data-name="outlet") Outlet
+		.shelf.shelf__carousel--full.wrapper--diff.active(data-name="pre-venda")
+			+vtex-controller('<vtex:contentPlaceHolder id="pre-venda shelf"/>')
+				.prateleira
+					ul
+						each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+							li
+								include ../shelves/product-shelf
+		.shelf.shelf__carousel--full.wrapper--diff(data-name="lancamento")
+			+vtex-controller('<vtex:contentPlaceHolder id="lacamento shelf"/>')
+				.prateleira
+					ul
+						each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+							li
+								include ../shelves/product-shelf
+		.shelf.shelf__carousel--full.wrapper--diff(data-name="outlet")
+			+vtex-controller('<vtex:contentPlaceHolder id="outlet shelf"/>')
 				.prateleira
 					ul
 						each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -164,33 +178,104 @@ block content
 									img(src="/arquivos/Tributario.png", alt="")
 								span.category-nav__title Tributário
 
-	section.section__page.section-kits.section__shelf
+	//- section.section__page.section-kits.section__shelf
+	section.section__page.section--countdown
+		.container
+			.shelf__countdown
+				span#promocao
+					+vtex-controller('<vtex.cmc:countdown />')
+						| 27-02-2019 12:30:00
+				.countdown
+					span.countdown__text Essa promoção acaba em:
+					#clock
+
+				.shelf.shelf__carousel--countdown
+					+vtex-controller('<vtex:contentPlaceHolder id="e-books shelf"/>')
+						.prateleira
+							ul
+								each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+									li
+										include ../shelves/product-shelf
+
+	section.section__page.section__shelf
 		.filter.wrapper
-			h2.filter__title Comercial
+			h2.filter__title Pré-venda
 			ul.filter__opt
-				//- li.filter__opt-item
-				//-   a(href="") E-books
-				//- li.filter__opt-item
-				//- 	a(href="") Kits e coleções
-				//- li.filter__opt-item
-				//- 	a(href="") Comercial
-		.shelf.shelf__carousel--full.wrapper--diff
-			+vtex-controller('<vtex:contentPlaceHolder id="Colecao Kits"/>')
+				li.filter__opt-item
+					a(href="", class="active", data-name="e-books") E-Books
+				li.filter__opt-item
+					a(href="", data-name="kits-e-colecoes") Kits e coleções
+				li.filter__opt-item
+					a(href="", data-name="comercial") Comercial
+		.shelf.shelf__carousel--full.wrapper--diff.active(data-name="e-books")
+			+vtex-controller('<vtex:contentPlaceHolder id="e-books shelf"/>')
 				.prateleira
 					ul
 						each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 							li
-								include ../shelves/kit-shelf
+								include ../shelves/product-shelf
+		.shelf.shelf__carousel--full.wrapper--diff(data-name="kits-e-colecoes")
+			+vtex-controller('<vtex:contentPlaceHolder id="kits-e-colecoes shelf"/>')
+				.prateleira
+					ul
+						each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+							li
+								include ../shelves/product-shelf
+		.shelf.shelf__carousel--full.wrapper--diff(data-name="comercial")
+			+vtex-controller('<vtex:contentPlaceHolder id="comercial shelf"/>')
+				.prateleira
+					ul
+						each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+							li
+								include ../shelves/product-shelf
 	section.section__page.section__split
 		.wrapper--block.section__split-the-grid
 			.most-visited
 				.most-visited__header
 					h2.most-visited__title Livros mais visitados
-					//- ul.most-visited__select
-					//- 	li.most-visited__opt
-					//- 		a.most-visited__choose(href="") Escolher Área
-					//- 	li.most-visited__opt
-					//- 		a.most-visited__result(href="") OAB e Concurso
+					.most-visited__select
+						h3 Escolher Área
+						.most-visited__select--options.optionSelect
+							.optionSelect__title
+								p OAB e Concurso
+							.optionSelect__select
+								ul
+									li.menuItem__item
+									a(href='/area-de-interesse/Administrativo') Administrativo
+									li.menuItem__item
+									a(href='/area-de-interesse/Civil') Civil
+									// <li class="menuItem__item"><a href="/area-de-interesse/Comercial">Comercial</a></li>
+									li.menuItem__item
+									a(href='/area-de-interesse/Constitucional') Constitucional
+									li.menuItem__item
+									a(href='/area-de-interesse/Difusos-e-Coletivos') Difusos e Coletivos
+									li.menuItem__item
+									a(href='/area-de-interesse/Direito-Digital') Direito Digital
+									li.menuItem__item
+									a(href='/area-de-interesse/Direito-Previdenciario') Direito Previdenciário
+									li.menuItem__item
+									a(href='/area-de-interesse/Empresarial') Empresarial
+									li.menuItem__item
+									a(href='/area-de-interesse/Estudantes') Estudantes
+									li.menuItem__item
+									a(href='/area-de-interesse/Financeiro') Financeiro
+									li.menuItem__item
+									a(href='/area-de-interesse/Historia---IED---etica') História / IED / Ética
+									// <li class="menuItem__item"><a href="/area-de-interesse/Internacional">Internacional</a></li>
+									li.menuItem__item
+									a(href='/area-de-interesse/Legislacao') Legislação
+									li.menuItem__item
+									a(href='/area-de-interesse/OAB---Concursos') OAB / Concursos
+									li.menuItem__item
+									a(href='/area-de-interesse/Outras-areas') Outras áreas
+									li.menuItem__item
+									a(href='/area-de-interesse/Penal') Penal
+									li.menuItem__item
+									a(href='/area-de-interesse/Processo-Civil') Processo Civil
+									li.menuItem__item
+									a(href='/area-de-interesse/Processo-Penal') Processo Penal
+									li.menuItem__item
+									a(href='/area-de-interesse/Tributario') Tributário
 				ul.most-visited__grid
 					.shelf
 						.shelf__visited

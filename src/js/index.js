@@ -1,6 +1,7 @@
 import '../scss/main.scss';
 import './modules/vtexRequest';
-import './components/MakeYourKit/app'
+import './components/MakeYourKit/app';
+import './components/authors/index';
 
 import './components/selectFooter';
 import './components/minicart';
@@ -18,9 +19,11 @@ import './components/login';
 
 import './components/proview';
 import './components/events';
+import './components/countdown';
 
 
 import './pages/home';
+import './pages/global';
 import './pages/not-found';
 import './pages/catalog';
 import './pages/empty-search';
@@ -36,6 +39,4 @@ $(document).ready(function () {
 	if ($('li.helperComplement')[0]) {
 		$('li.helperComplement').remove();
 	}
-
-
 })

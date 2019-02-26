@@ -21,7 +21,8 @@ module.exports = merge(common, {
     ExtractCSS,
     new UglifyJSPlugin({
       compress: {
-        screw_ie8: true,
+		screw_ie8: true,
+		drop_console: false,
         warnings: false
       },
       mangle: {
@@ -61,7 +62,8 @@ module.exports = merge(common, {
                               'Firefox ESR',
                               'not ie < 9'
                             ],
-                            flexbox: 'no-2009',
+							flexbox: 'no-2009',
+							grid: 'autoplace',
                           }),
                         ],
                       },

@@ -95,3 +95,13 @@
 		}
 	}
 }
+
+body.units {
+	.orderBy__ecoreHeader {
+		display: none !important;
+	}
+
+	.product__units {
+		min-height: 30px;
+	}
+}

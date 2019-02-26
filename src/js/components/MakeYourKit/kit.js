@@ -18,7 +18,7 @@ export default class Kit extends Component {
 		if(this.props.kit.length > 0) {
 			return (
 				<div className="kit__mount">
-					<Products list={this.props.kit}/>
+					<Products list={this.props.kit} remove={this.props.remove}/>
 					<Price list={this.props.kit} action={this.props.action} />
 				</div>
 			)

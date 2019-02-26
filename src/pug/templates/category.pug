@@ -738,13 +738,12 @@ block content
 						li.next.pgEmpty próximo
 						li.last.pgEmpty último
 					#ResultItems_52435197.prateleira
-					.shelf.prateleira
-						ul
-							each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-								li
-									//include ../shelves/prateleira
-									include ../shelves/product-shelf
-								li#helperComplement_19.helperComplement(style='display:none')
+						.shelf.prateleira
+							ul
+								each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+									li
+										include ../shelves/product-shelf
+									li#helperComplement_19.helperComplement(style='display:none')
 					#PagerBottom_52435197.pager.bottom
 						ul.pages
 							li.first.pgEmpty primeiro
@@ -789,4 +788,4 @@ block content
 						span#NumeroSuperior.compare-selection-count 0
 						a.btn-comparar(title='Comparar', href='#') Comparar
 block scripts
-	script(src='/arquivos/vtex-SmartResearch.js?v=%PROJECT_VERSION%')
+	script(src='/arquivos/vtex-smartResearch.js?v=%PROJECT_VERSION%')

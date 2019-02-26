@@ -12,7 +12,7 @@ export default props => {
 			<div className="price">
 				<span className="kit__price-economy">economize R$ {ecom.formatMoney()} </span>
 				<span className="kit__price-old">de R$ {total.formatMoney()} </span>
-				<span className="kit__price-best">de R$ {desc.formatMoney()}</span>
+				<span className="kit__price-best">por R$ {desc.formatMoney()}</span>
 			</div>
 		)
 	}
