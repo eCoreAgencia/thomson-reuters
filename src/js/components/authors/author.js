@@ -31,7 +31,7 @@ export default class Author extends Component {
 								</div>
 								<div className="author__books" data-author={author.nomeautor}>
 									<h3 className="author__books-title">Obras do Autor</h3>
-									<ul className="products__list"></ul>
+									<Shelf products={author.products} />
 								</div>
 							</div>
 						</li>

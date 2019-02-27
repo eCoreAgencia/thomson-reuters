@@ -133,9 +133,9 @@ export default class Authors extends Component {
 				</div>
 				<div className="authors__footer">
 					<ul id="page-numbers">
-						<li className="page-arrow page-arrow-prev" onClick={this.arrowClick} data-page="-1">Anterior</li>
-						{ pageNumbers.map(number => ( <li className={number == 1 ? 'page-item is-active' : 'page-item'} key={number} id={`page-${number}`} onClick={this.handleClick} data-page={number} >{number}</li>))}
-						<li className="page-arrow page-arrow-next" onClick={this.arrowClick} data-page="+1">Próximo</li>
+						{/* <li className="page-arrow page-arrow-prev" style="display: none" onClick={this.arrowClick} data-page="-1">Anterior</li> */}
+						{ pageNumbers.map(number => ( <li className={number == 1 ? 'page-item is-active' : 'page-item'} key={number} id={`page-${number}`}  onClick={this.handleClick} data-page={number} >{number}</li>))}
+						{/* <li className="page-arrow page-arrow-next"  style="display: none" onClick={this.arrowClick} data-page="+1">Próximo</li> */}
 					</ul>
 				</div>
 			</div>

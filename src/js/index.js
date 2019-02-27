@@ -35,6 +35,9 @@ import './pages/account';
 
 
 
+
+
+
 $(document).ready(function () {
 	if ($('li.helperComplement')[0]) {
 		$('li.helperComplement').remove();

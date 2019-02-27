@@ -6,6 +6,7 @@ import {
 } from '../../modules/vtexRequest';
 const R = require('ramda');
 
+
 $(document).ready(function () {
 	if ($('li.helperComplement')[0]) {
 		$('li.helperComplement').remove();
@@ -20,15 +21,7 @@ $(document).ready(function () {
 	$(document).on('build', function(){
 
 
-		$('.author__books').each( async function() {
-			const self = this;
-			const name = $(this).data('author');
-			await getProductShelfByTerm(name).then(res => {
-				$(res).insertAfter(`.author__books[data-author="${name}"] .author__books-title`);
-			})
 
-
-		})
 
 		$('.products__list .shelf').each(function () {
 			$('.shelf__name', this).ellipsis({

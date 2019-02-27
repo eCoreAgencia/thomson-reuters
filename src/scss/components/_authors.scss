@@ -160,15 +160,16 @@
 
 	.products {
 		&__list {
-			display: flex;
+			display: block;
 			justify-content: space-between;
 			flex-wrap: wrap;
 		}
 		&__item {
-			width: 145px;
 			padding: 0 10px;
 
 		}
 	}
+
+
 
 }
