@@ -5,6 +5,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const InterpolateHtmlPlugin = require('interpolate-html-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const UnCSSPlugin = require('uncss-webpack-plugin');
 
 const paths = require('./paths');
 const PROJECT_VARS = require('./variables');
@@ -13,7 +14,8 @@ module.exports = {
   plugins: [
     new InterpolateHtmlPlugin(PROJECT_VARS),
     new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
-    new CopyWebpackPlugin([ { from: paths.public, to: paths.dist } ])
+	new CopyWebpackPlugin([ { from: paths.public, to: paths.dist } ]),
+	new UnCSSPlugin()
   ],
   output: {
     filename: 'arquivos/[name].min.js',
