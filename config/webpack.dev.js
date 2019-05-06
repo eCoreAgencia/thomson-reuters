@@ -8,7 +8,7 @@ const paths = require('./paths');
 
 module.exports = merge(common, {
   entry: {
-    [PROJECT_VARS.PROJECT_ID]: ['./config/polyfills.js', paths.indexJs]
+  	[PROJECT_VARS.PROJECT_ID]: ['./config/polyfills.js', paths.indexJs]
   },
   devtool: 'inline-source-map',
   devServer: {

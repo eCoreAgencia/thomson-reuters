@@ -2,7 +2,8 @@
 	.searchResultsTime,
 	.sub,
 	.pages,
-	.pager {
+	.pager,
+	.navCatalog__filter {
 		display: none;
 	}
 
@@ -18,11 +19,15 @@
 		&.bottom {
 			display: block;
 			.pages {
-				display: block;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 				text-align: center;
 				padding: 50px 0;
 				li {
 					width: initial;
+					max-width: 30px;
+					max-height: 30px;
 					cursor: pointer;
 					vertical-align: middle;
 					&.page-number {
@@ -193,11 +198,10 @@
 		@include atMedium {
 			display: none;
 		}
-		.search-single-navigator {
-			display: none !important;
-		}
+		.search-single-navigator,
 		.menu-navegue {
-			display: none;
+
+			display: none !important;
 		}
 		.search-multiple-navigator {
 			& > :not(fieldset) {
@@ -309,7 +313,6 @@
 					color: #979797;
 					font-family: "Knowledge-Medium";
 					font-size: 14px;
-					font-weight: 500;
 					height: 45px;
 					display: flex;
 					align-items: center;
@@ -348,7 +351,6 @@
 				color: $c-gray-dark;
 				font-family: "Knowledge-Bold";
 				font-size: 15px;
-				font-weight: 700;
 				text-transform: uppercase;
 			}
 			@include atMedium {
@@ -376,24 +378,19 @@
 							display: block;
 							width: 23px;
 							height: 23px;
-							background: url(/arquivos/icon-grid.jpg) no-repeat
-								center;
+							background-repeat: no-repeat;
+							background-position: center;
+							background-image: url(/arquivos/icon-grid.jpg);
 							background-size: contain;
 							&.icon-list {
-								background: url(/arquivos/icon-list.jpg)
-									no-repeat center;
-								background-size: contain;
+								background-image: url(/arquivos/icon-list.jpg);
 							}
 							&.active {
 								&.icon-list {
-									background: url(/arquivos/icon-list-active.jpg)
-										no-repeat center;
-									background-size: contain;
+									background-image: url(/arquivos/icon-list-active.jpg);
 								}
 								&.icon-grid {
-									background: url(/arquivos/icon-grid-active.jpg)
-										no-repeat center;
-									background-size: contain;
+									background-image: url(/arquivos/icon-grid-active.jpg);
 								}
 							}
 						}
@@ -412,7 +409,6 @@
 				z-index: 4;
 				position: relative;
 				cursor: pointer;
-				position: relative;
 
 				&.active {
 					.orderBy__ecore__select {
@@ -471,7 +467,7 @@
 		.prateleira {
 			ul {
 				display: flex;
-				justify-content: center;
+				justify-content: flex-start;
 				align-items: stretch;
 			}
 
@@ -548,16 +544,7 @@
 			width: 262px;
 			overflow: hidden;
 			transition: 0.5s ease;
-			@include atMedium {
-				//margin: 1.2rem;
-			}
-			&:hover {
-				// .product .show-on-hover {
-				//     top: initial;
-				//     opacity: 1;
-				//     bottom: 27px;
-				// }
-			}
+
 			.product {
 				padding-bottom: 10px;
 				.flag {
@@ -575,15 +562,10 @@
 						@include font-size(8px);
 						color: $c-white;
 						font-family: "Knowledge-Medium";
-						font-weight: 500;
 						text-transform: uppercase;
 					}
 
-					&.black-friday {
-						font-size: 10px;
-						text-align: center;
-						background-color: #000;
-					}
+
 
 					&--e-book {
 						display: none;
@@ -601,7 +583,6 @@
 					font-size: 0.5rem;
 					color: #fff;
 					font-family: "Knowledge-Medium";
-					font-weight: 500;
 					text-transform: uppercase;
 				}
 				.show-on-hover {
@@ -626,20 +607,16 @@
 					&__link {
 						color: #222;
 						font-size: 20px;
-						font-weight: 700;
 						font-style: italic;
-						font-family: $f-base;
 						letter-spacing: 0.24px;
 						text-transform: uppercase;
 						@include atMedium {
 							line-height: 24px;
-							line-height: 22px;
 						}
 					}
 					&__skuname {
 						color: #222;
 						font-size: 14px;
-						font-weight: 700;
 						font-style: italic;
 						text-transform: uppercase;
 						padding: 0 10px;
@@ -662,7 +639,6 @@
 							color: #808080;
 							font-style: italic;
 							letter-spacing: 0.17px;
-							font-family: "Open Sans";
 							text-transform: uppercase;
 							text-decoration: line-through;
 							line-height: 1.2;
@@ -671,10 +647,8 @@
 							color: #222;
 							display: block;
 							font-size: 22px;
-							font-weight: 700;
 							font-style: italic;
 							letter-spacing: 0.36px;
-							font-family: $f-base;
 							text-transform: uppercase;
 							line-height: 1.2;
 							@include atMedium {
@@ -687,7 +661,6 @@
 							color: #808080;
 							font-weight: 400;
 							font-style: italic;
-							font-family: "Open Sans";
 							@include atMedium {
 								font-size: 14px;
 							}
@@ -703,11 +676,9 @@
 							color: #fff;
 							display: flex;
 							font-size: 14px;
-							font-weight: bold;
 							line-height: 64px;
 							text-align: center;
 							font-style: italic;
-							font-family: $f-base;
 							letter-spacing: 0.35px;
 							text-transform: uppercase;
 							background-color: #f22100;
@@ -754,6 +725,14 @@
 				}
 			}
 		}
+		.titulo-sessao {
+			font-family: "Knowledge-Bold";
+			font-size: 25px;
+			color: #ff8000;
+		}
+		.titulo-sessao + .titulo-sessao {
+			display: none;
+		}
 	}
 	.bread-crumb ul {
 		display: flex;
@@ -778,11 +757,7 @@
 				height: 0.625em;
 				margin-top: 3px;
 				pointer-events: none;
-				-webkit-transform: rotate(-45deg);
-				-ms-transform: rotate(-45deg);
 				transform: rotate(227deg);
-				-webkit-transform-origin: center;
-				-ms-transform-origin: center;
 				transform-origin: center;
 				width: 0.625em;
 			}
@@ -825,7 +800,6 @@
 			color: #636466;
 			font-family: "Knowledge-Medium";
 			font-size: 10px;
-			font-weight: 500;
 			text-transform: uppercase;
 			margin: 10px auto;
 		}

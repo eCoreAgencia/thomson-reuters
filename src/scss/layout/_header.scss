@@ -29,7 +29,6 @@
 				margin-left: 5px;
 				font-family: "Knowledge-Bold";
 				@include font-size(10px);
-				font-weight: 700;
 				text-transform: uppercase;
 				text-decoration: none;
 				color: $c-gray-dark;
@@ -55,16 +54,19 @@
 		left: 18px;
 		margin: 4% 0;
 
-		&::before {
+		&::before,
+		&::after {
 			content: "";
 			position: absolute;
-			top: 0;
 			left: 0;
 			width: 23px;
 			height: 2px;
 			background-color: $c-gray-dark;
-			transform-origin: 0 0;
 			transition: transform 0.3s ease-out;
+		}
+		&::before {
+			transform-origin: 0 0;
+			top: 0;
 		}
 		&__middle {
 			position: absolute;
@@ -77,15 +79,8 @@
 			transform-origin: 0 50%;
 		}
 		&::after {
-			content: "";
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 23px;
-			height: 2px;
-			background-color: $c-gray-dark;
 			transform-origin: 0% 100%;
-			transition: transform 0.3s ease-out;
+			bottom: 0;
 		}
 		@include atMedium {
 			display: none;
@@ -119,9 +114,6 @@
 		background-color: $c-white;
 		@include atMedium {
 			height: 80px;
-			display: flex;
-			align-items: center;
-			background-color: $c-white;
 		}
 
 		&__logos {
@@ -185,6 +177,9 @@
 	top: 0;
 	width: 100%;
 	z-index: 99;
+	@include atMedium {
+		animation: none;
+	}
 	.search-bar {
 		display: none;
 		@include atMedium {
@@ -196,9 +191,7 @@
 			display: none;
 		}
 	}
-	@include atMedium {
-		animation: none;
-	}
+
 
 	+ main {
 		padding-top: 125px;

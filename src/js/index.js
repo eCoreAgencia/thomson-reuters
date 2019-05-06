@@ -1,10 +1,10 @@
 import '../scss/main.scss';
 import './modules/vtexRequest';
-import './components/MakeYourKit/app';
-import './components/authors/index';
+//import './components/MakeYourKit/app';
+//import './components/authors/index';
 
 import './components/selectFooter';
-import './components/minicart';
+//import './components/minicart';
 import './components/searchForm';
 import './components/shelf';
 import './components/filter';
@@ -16,10 +16,12 @@ import './components/newsletter';
 import './components/sumarioShelf';
 import './components/menuMobile';
 import './components/login';
+import './components/notify';
 
 import './components/proview';
 import './components/events';
-import './components/countdown';
+//import './components/countdown';
+
 
 
 import './pages/home';

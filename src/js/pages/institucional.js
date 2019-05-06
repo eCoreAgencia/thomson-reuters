@@ -13,6 +13,23 @@ $(document).ready(() => {
       list.hasClass('is-active') ? arrow.css({'transform': ' rotate(90deg)'})  :  arrow.css({'transform': ' rotate(0deg)'});
 	});
 
+	if(window.location.hash){
+		const text = window.location.hash.replace('#', '');
+
+		if($('.list__block').hasClass(text)){
+			$('.list__block.'+text+' .list__content').addClass('is-active');
+		}
+	}
+
+	$('.institucional__item a').on('click', function(){
+		var href = $(this).attr('href').replace('#', '');
+
+		if ($('.list__block').hasClass(text)) {
+			$('.list__block.' + text + ' .list__content').addClass('is-active');
+		}
+
+	});
+
 
   }
 });

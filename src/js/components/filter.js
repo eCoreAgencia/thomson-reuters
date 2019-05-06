@@ -6,8 +6,11 @@ class Filter {
 
   init(){
     $('.orderBy .select select').on('change', function(){
-      const value = $(this).val();
-      window.location.href = window.location.pathname + '?PS=12&' + value;
+		const url = window.location.href
+		const patt = new RegExp("&O=");
+		const value = $(this).val();
+		const res = patt.test(url);
+		console.log(res);
     })
 
     if(this.isExist(this.menu)){

@@ -302,8 +302,10 @@ $top-flag-val: 50px;
 	// PRODUCT PAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 	// THE MAIN GRID
 	&__main {
-		display: grid;
+		display: flex;
 		align-items: center;
+		justify-content: space-between;
+
 		#include {
 			display: none;
 			@include atMedium {
@@ -311,8 +313,7 @@ $top-flag-val: 50px;
 			}
 		}
 		@include atMedium {
-			grid-template-columns: 1fr 1fr;
-			grid-gap: 50px;
+
 		}
 		.product__media {
 			margin: 0;
@@ -479,8 +480,8 @@ $top-flag-val: 50px;
 	// GRID DENTRO DE INFO
 	&__info {
 		&--pgprod {
-			display: grid;
-			grid-auto-rows: min-content;
+			margin-left: 50px;
+			max-width: 539px;
 		}
 	}
 	&__shipping {
@@ -562,9 +563,7 @@ $top-flag-val: 50px;
 	}
 	// PRICE DO CONTROLE VTEX product page
 	.descricao-preco {
-		display: grid;
-		justify-content: center;
-		text-align: center;
+
 		font-family: "Knowledge-Regular";
 		margin: 18px 0;
 		em {

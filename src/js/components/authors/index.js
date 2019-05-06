@@ -24,9 +24,15 @@ $(document).ready(function () {
 
 
 		$('.products__list .shelf').each(function () {
-			$('.shelf__name', this).ellipsis({
+			$('.shelf__name .shelf__link', this).ellipsis({
 				lines: 1
 			});
 		});
+
+		$('.author__link').on('click', function (e) {
+			e.preventDefault();
+			$(this).parent().find('div').attr('style', '');
+			$(this).hide();
+		})
 	})
 })

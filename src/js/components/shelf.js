@@ -2,14 +2,6 @@ import {
   addToCart
 } from '../utils';
 
-import Price from '../modules/price';
-
-import vtexRequest, {
-	getProductsById
-} from '../modules/vtexRequest';
-
-const R = require('ramda');
-
 
 
 
@@ -44,45 +36,44 @@ $(document).ready(function () {
 		addToCart(productID);
 	});
 
-	if($('body').hasClass('units')){
-		const getUnits = () => {
-			$('.product__shelf').each(function () {
-				const self = this;
-				const price = $('.product__units', this);
 
-				const id = $('.product-shelf__id', this).data('product-id');
-				fetch(`/api/catalog_system/pub/products/search?fq=productId:${id}`)
-					.then(res => res.json())
-					.then((product) => {
-						const unidades = product[0].items[0].sellers[0].commertialOffer.AvailableQuantity;
-						if (unidades > 0 && unidades < 10) {
-							console.log(unidades);
-							if (unidades === 1) {
-								console.log(self);
+	const getUnits = () => {
+		$('.product__shelf').each(function () {
+			const self = this;
+			const price = $('.product__units', this);
 
-								const elem1 = `Resta <strong>1</strong> unidade desse produto`;
-								$(price).html(elem1);
+			const id = $('.product-shelf__id', this).data('product-id');
+			fetch(`/api/catalog_system/pub/products/search?fq=productId:${id}`)
+				.then(res => res.json())
+				.then((product) => {
+					const unidades = product[0].items[0].sellers[0].commertialOffer.AvailableQuantity;
+					if (unidades > 0 && unidades < 10) {
+						console.log(unidades);
+						if (unidades === 1) {
+							console.log(self);
 
-							} else {
-								console.log(self);
-								const elem = `Restam <strong>${unidades}</strong> unidades desse produto`;
-								$(price).html(elem);
-							}
+							const elem1 = `Resta <strong>1</strong> unidade desse produto`;
+							$(price).html(elem1);
 
-
+						} else {
+							console.log(self);
+							const elem = `Restam <strong>${unidades}</strong> unidades desse produto`;
+							$(price).html(elem);
 						}
-					})
-			});
-		}
 
 
-		getUnits();
-
-
-		$('.page-number').on('click', () => {
-			$('body').ajaxStop(function(){
-				getUnits();
-			});
-		})
+					}
+				})
+		});
 	}
+
+
+	//getUnits();
+
+
+	$('.page-number').on('click', () => {
+		$('body').ajaxStop(function(){
+			//getUnits();
+		});
+	})
 });

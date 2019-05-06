@@ -1,33 +1,27 @@
-class Home {
-  constructor() {
-    this.carroselOption();
-  }
 
-  carroselOption() {
-    $('.filter__opt-item a').on('click', function (e) {
-      e.preventDefault();
-      const _this = $(this);
-      const nameSelect = _this.attr('data-name');
-      const nameText = _this.text();
-
-      _this.parents('.filter__opt').find('.filter__opt-item a').removeClass('active');
-      _this.addClass('active');
-
-      $('.section__shelf .shelf__carousel--full').each(function () {
-        const nameSearch = $(this).attr('data-name');
-        if (nameSearch == nameSelect) {
-          $(this).parents('.section__page.section__shelf').find('.shelf__carousel--full').removeClass('active');
-          $(this).addClass('active');
-          _this.parents('.filter').find('.filter__title').text(nameText);
-        }
-      });
-    });
-  }
-}
 
 $(document).ready(() => {
   if ($('body').hasClass('home')) {
-    window.Home = new Home();
+
+	 $('.filter__opt-item a').on('click', function (e) {
+	 	e.preventDefault();
+	 	const _this = $(this);
+	 	const nameSelect = _this.attr('data-name');
+	 	const nameText = _this.text();
+
+	 	_this.parents('.filter__opt').find('.filter__opt-item a').removeClass('active');
+	 	_this.addClass('active');
+
+	 	$('.section__shelf .shelf__carousel--full').each(function () {
+	 		const nameSearch = $(this).attr('data-name');
+	 		if (nameSearch == nameSelect) {
+	 			$(this).parents('.section__page.section__shelf').find('.shelf__carousel--full').removeClass('active');
+	 			$(this).addClass('active');
+	 			_this.parents('.filter').find('.filter__title').text(nameText);
+	 		}
+	 	});
+	 });
+
     if ($('li.helperComplement')[0]) {
       $('li.helperComplement').remove();
     }
@@ -164,6 +158,30 @@ $(document).ready(() => {
         // instead of a settings object
       ],
     });
-    $('.section__split .prateleira ul').addClass('most-visited__list');
+	$('.section__split .prateleira ul').addClass('most-visited__list');
+
+	$('.optionSelect__title').on('click', function(){
+		$(this).parent().find('.optionSelect__select').addClass('active');
+	});
+
+	$('.optionSelect__select a').on('click', function(e){
+		e.preventDefault()
+		var id = $(this).parent().data('id');
+		$('.optionSelect__title p').text($(this).text());
+		var settings = {
+			"async": true,
+			"crossDomain": true,
+			"url": "/buscapagina?fq=C:1/" + id + "/&PS=4&sl=d8869f9f-40b4-d582-593c-a536d2c52637&cc=4&sm=0&PageNumber=1",
+			"method": "GET",
+			"processData": false,
+			"contentType": false
+		}
+
+		$.ajax(settings).done(function (response) {
+
+			$('.optionSelect__select').removeClass('active');
+			$('.shelf__visited').html(response);
+		});
+	})
   }
 });

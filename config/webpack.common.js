@@ -15,7 +15,7 @@ module.exports = {
     new InterpolateHtmlPlugin(PROJECT_VARS),
     new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
 	new CopyWebpackPlugin([ { from: paths.public, to: paths.dist } ]),
-	new UnCSSPlugin()
+	new UnCSSPlugin({ htmlroot: 'public', html: ['index.html', 'autores.html']})
   ],
   output: {
     filename: 'arquivos/[name].min.js',

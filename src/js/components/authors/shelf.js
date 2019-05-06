@@ -18,6 +18,8 @@ export default class Shelf extends Component {
 			slidesToScroll: 1
 		};
 
+		console.log(products);
+
 		if (R.isEmpty(products)) {
 			return (
 				<span className="author__not-found"> Sem Resultados </span>
@@ -34,10 +36,17 @@ export default class Shelf extends Component {
 								<li key={index} className="products__item">
 									<div className="shelf">
 										<div className="shelf__media">
-											<img className="author__image" src={product.items[0].images[0].imageUrl} width="160" />
+											<a className="shelf__link" href={`/${product.linkText}/p`}>
+												<img className="author__image" src={product.items[0].images[0].imageUrl} width="160" />
+											</a>
+
 										</div>
 										<div className="shelf__info">
-											<h3 className="shelf__name">{product.productName}</h3>
+											<h3 className="shelf__name">
+												<a className="shelf__link" href={`/${product.linkText}/p`}>
+													{product.productName}
+												</a>
+											</h3>
 
 										</div>
 									</div>

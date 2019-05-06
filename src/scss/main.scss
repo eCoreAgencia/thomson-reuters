@@ -1,11 +1,17 @@
 @charset "utf-8";
 //@import "~bulma/bulma";
-
+/* Mark - Global */
 @import 'base/all';
 @import 'utils/all';
+/* Mark - Components */
 @import 'components/all';
+/* Mark - Layouts */
 @import 'layout/all';
+
+/* Mark - Pages */
 @import 'pages/all';
+
+/* Mark - Outers */
 @import 'themes/all';
 
 @import 'vendors/all';

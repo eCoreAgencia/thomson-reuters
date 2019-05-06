@@ -13,7 +13,11 @@ const ExtractCSS = new ExtractTextPlugin(`arquivos/${PROJECT_VARS.PROJECT_ID}.mi
 
 module.exports = merge(common, {
   entry: {
-    [PROJECT_VARS.PROJECT_ID]: ['./config/polyfills.js', paths.indexJs]
+    [`${PROJECT_VARS.PROJECT_ID}-main`]: ['./config/polyfills.js', paths.indexJs],
+    [`${PROJECT_VARS.PROJECT_ID}-minicart`]: ['./config/polyfills.js', paths.minicartJs],
+    [`${PROJECT_VARS.PROJECT_ID}-countdown`]: ['./config/polyfills.js', paths.countdownJs],
+    [`${PROJECT_VARS.PROJECT_ID}-kit`]: ['./config/polyfills.js', paths.kitsJs],
+    [`${PROJECT_VARS.PROJECT_ID}-authors`]: ['./config/polyfills.js', paths.authorsJs]
   },
   plugins: [
     new CleanWebpackPlugin([paths.dist], {root: paths.root}),
@@ -42,8 +46,8 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-            test: /\.(css|scss)$/,
-            loader: ExtractTextPlugin.extract(
+            test: (/\.(css|scss)$/),
+            loader: ExtractCSS.extract(
               Object.assign(
                 {
                   fallback: require.resolve('style-loader'),

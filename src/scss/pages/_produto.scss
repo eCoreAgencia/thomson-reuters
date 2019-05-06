@@ -45,12 +45,7 @@ body.product {
 		fieldset .opiniao {
 			border: none;
 		}
-		#publishUserReview .formUserComment .close {
-			position: absolute;
-			top: 0;
-			right: 0;
-			display: none;
-		}
+
 		#publishUserReview .formUserComment .close a:before {
 			content: "x";
 			font-size: 25px;

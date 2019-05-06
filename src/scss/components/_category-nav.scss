@@ -6,20 +6,13 @@
     color: $c-black;
     font-family: "Knowledge-Black";
     font-size: 25px;
-    font-weight: 900;
 	margin-bottom: 40px;
 	@include atMedium {
 		text-align: left;
 	}
   }
   &__items {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-  }
-  &__link {
-
   }
   &__icon {
 	display: block;
@@ -30,11 +23,9 @@
   &__title {
     font-family: "Knowledge-Black";
     font-size: 20px;
-    font-weight: 900;
     color: $c-gray-dark;
   }
   li {
-    display: inline-flex;
     &.newItens {
       .category-nav__icon {
        	img {

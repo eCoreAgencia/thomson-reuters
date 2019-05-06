@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  if ($('body').hasClass('not-found')) {
+  if ($('body').hasClass('not-found') || $('body').hasClass('empty-search')) {
     if ($('li.helperComplement')[0]) {
       $('li.helperComplement').remove();
     }
