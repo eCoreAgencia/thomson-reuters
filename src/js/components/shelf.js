@@ -17,6 +17,8 @@ $(document).ready(function () {
 		$('.product__name .product__author li', this).ellipsis({
 			lines: 1
 		});
+
+
 	});
 
 	$('.product__watch').each(function () {
