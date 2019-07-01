@@ -1,5 +1,3 @@
-//import moment from 'moment/src/moment';
-
 function countdown(endDate) {
 	let days, hours, minutes, seconds;
 
@@ -46,6 +44,6 @@ function countdown(endDate) {
 }
 
 $(document).ready(function() {
-	alert("teste");
-	countdown("12/01/2020 05:00:00 PM");
+	var date = $("#promocao").html();
+	countdown(date);
 });
