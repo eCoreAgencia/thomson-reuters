@@ -1,126 +1,34 @@
+.timer span {
+	font-size: 52px;
+	font-weight: 700;
+}
+
+.timer {
+	font-weight: 300;
+	font-size: 28px;
+}
+
+.banner-countown .box-banner {
+	display: block !important;
+}
+
 .countdown {
-	background-color: #fbfbfb;
-	color: #727272;
-	padding: 20px;
-
-
-
-
-	&__text {
-		margin: 0 0 10px;
-		text-align: center;
-		display: block;
-		color: #4d4d4d;
-		font-family: "Knowledge-Black";
-		font-size: 25px;
-	}
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: transparent;
+	color: #fff;
+	right: 0;
+	bottom: 0;
+	width: 100%;
 }
 
-.legend {
-	justify-content: center;
-	text-transform: uppercase;
-
-	&__inner {
-		justify-content: space-between;
-		display: flex;
-
-		span:first-child {
-			margin-left: 48px;
-		}
-
-		span:last-child {
-			margin-right: 55px;
-		}
-	}
-}
-
-#clock {
-
+.countdown-wrapper {
+	width: 100%;
+	max-width: 1140px;
+	margin: 0 auto;
 	display: flex;
-
-	justify-content: center;
+	justify-content: flex-end;
+	height: 100%;
 	align-items: center;
-
-	.digital {
-		.value {
-			border: 1px solid #ccc;
-			padding: 10px;
-			border-radius: 5px;
-			font-size: 25px;
-			font-weight: 900;
-			position: relative;
-			justify-content: center;
-			color: #ff8000;
-
-			display: flex;
-			min-width: 60px;
-			height: 60px;
-			&::after {
-				content: ':';
-				position: absolute;
-				right: -15px;
-				color: #757575;
-			}
-		}
-		.text {
-			display: block;
-			text-align: center;
-			text-transform: uppercase;
-			margin-top: 5px;
-		}
-
-
-		margin: 10px;
-		color: #757575;
-
-
-
-		&:last-child,
-		&.days {
-			.value {
-				&::after {
-					display: none;
-				}
-			}
-
-		}
-
-		&.days {
-			.value {
-				border: none;
-			}
-
-		}
-	}
-}
-
-.shelf__countdown {
-	display: flex;
-
-	flex-wrap: wrap;
-	align-items: center;
-
-	#promocao {
-		display: none;
-	}
-	.shelf {
-		max-width: 732px;
-		width: auto;
-		position: relative;
-		padding: 0 50px;
-	}
-
-	li {
-		padding: 0 20px;
-	}
-
-	.product__shelf {
-		padding: 0 10px 20px;
-	}
-
-	.show-on-hover {
-		display: none !important;
-	}
-
-
 }
