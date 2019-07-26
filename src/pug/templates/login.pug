@@ -122,16 +122,16 @@ block content
               .modal-body
                 .control-group.vtexIdUI-classic-login-control.email-model(ng-show='!auth.systemProvidedEmail')
                   label.control-label(for='inputEmail')
-                    span(data-i18n='vtexid.email') Seu email
+                    span(data-i18n='vtexid.email') E-mail
                   .controls
                     input#inputEmail.ng-pristine.ng-valid.ng-valid-email(autofocus='', type='email', tabindex='1', ng-model='auth.email', data-i18n='[placeholder]vtexid.egEmail', placeholder='Ex: jose@email.com')
                 .control-group.vtexIdUI-classic-login-control
                   label.control-label(for='inputPassword')
                     span(data-i18n='vtexid.password') Senha
-                    a.dead-link.pull-right(href='#', data-i18n='vtexid.forgotPswd', tabindex='4', ng-click='changePswd()') Esqueci minha senha
                   .controls
                     input#inputPassword.ng-pristine.ng-invalid.ng-invalid-required(type='password', tabindex='2', autocomplete='off', required='', ng-model='password')
-                  a.dead-link.pull-right(data-i18n='vtexid.forgotPswdHelper', href='#', tabindex='5', ng-click='changePswd()') Não tem uma senha? Cadastre agora
+                    a.dead-link(href='#', data-i18n='vtexid.forgotPswd', tabindex='4', ng-click='changePswd()') Esqueceu sua senha ?
+                  //- a.dead-link.pull-right(data-i18n='vtexid.forgotPswdHelper', href='#', tabindex='5', ng-click='changePswd()') Não tem uma senha? Cadastre agora
                 p.alert.alert-info.ng-hide(ng-show='wrongPswdSubmits == 3')
                   i.icon-warning-sign
                   span(data-i18n='vtexid.threeWrongPswds')
@@ -149,7 +149,7 @@ block content
                 a.vtexIdUI-back-link.pull-left.dead-link(tabindex='6', href='#', ng-show="auth.flow !== 'classicLogin'", ng-click="updatePage('auth-selector', false, true)")
                   i.vtexid-icon-arrow-left
                   span(data-i18n='vtexid.backLink') Voltar
-                button#classicLoginBtn.btn.btn-large.btn-success.pull-right(ng-disabled='isSendingClassicForm', type='submit', tabindex='3', data-i18n='vtexid.enter') Entrar
+                button#classicLoginBtn.btn.btn-large.btn-success.pull-right(ng-disabled='isSendingClassicForm', type='submit', tabindex='3', data-i18n='vtexid.enter') CONFIRMAR
           // /ngInclude: 'includes/classic-authentication.html'
         div
           // ngInclude: 'includes/confirm-email.html'

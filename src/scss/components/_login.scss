@@ -184,12 +184,30 @@ body.login {
 
   // LOGIN COM EMAIL E SENHA
 
-  .vtexIdUI-classic-login {
+  .vtexIdUI-classic-login, .vtexIdUI-confirm-email, .vtexIdUI-change-pswd {
     z-index: 99999;
     .modal-header {
       display: flex !important;
       align-items: center !important;
       justify-content: left !important;
+      padding-left: 40px !important;
+      padding-right: 40px !important;
+    }
+    .modal-body {
+      padding-left: 40px !important;
+      padding-right: 40px !important;
+    }
+    .modal-footer {
+      padding-left: 40px !important;
+      padding-right: 40px !important;
+      button {
+        font-size: 0;
+        :before {
+          content: "Confirmar";
+          font-size: 16px;
+          text-transform: uppercase;
+        }
+      }
     }
     .vtexIdUI-heading {
       color: $c-gray-dark !important;
@@ -201,12 +219,63 @@ body.login {
     }
     .control-label {
       color: $c-gray-dark !important;
-      font-family: "Knowledge-bold", "Rubik", Arial !important;
-      font-size: 17px;
+      font-family: "Knowledge", "Rubik", Arial !important;
+      font-size: 15px;
       font-weight: normal !important;
+      font-weight: bold !important;
     }
+    .email-model .control-label span {
+      font-size: 0;
+      &:before {
+        content: "E-mail";
+        font-size: 15px;
+        font-weight: bold;
+      }
+    }
+    
+    .vtexIdUI-classic-login-control {
+      .control-label a {
+        display: none;
+      }
+      a {
+        font-size: 0;
+        float: none;
+        &:before {
+          content: "Esqueçeu sua senha?";
+          font-size: 14px;
+        }
+      }
+    } 
     .ng-pristine {
       border-radius: 20px;
+
+      &::placeholder {
+        color: #989898;
+      }
+    }
+    
+      .dead-link {
+        display:block;
+        line-height: 2.14;
+        letter-spacing: 0.3px;
+        text-align: center;
+        color: #989898;
+        font-family: "Knowledge", "Rubik", Arial !important;
+      }
+    input {
+      border-radius: 26px;
+    }
+
+    .modal-footer {
+      .btn {
+        font-size: 0;
+      }
+      .btn:before {
+        font-size: 15px;
+        content: "CONFIRMAR";
+        text-transform: uppercase;
+        font-weight: bold;
+    }
     }
   }
 }
