@@ -20,9 +20,10 @@
 		background-color: #f4f4f4;
 		border: 0;
 		padding: 2px 20px;
+		text-align: center;
 		@include atMedium {
-			width: 23rem;
-			margin: 0;
+			width: 80%;
+			margin: 0 auto;
 		}
 	}
 	&__icon {
