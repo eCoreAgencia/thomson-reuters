@@ -1,11 +1,37 @@
+.timer div {
+	text-align: center;
+}
 .timer span {
+	font-weight: 300;
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+.timer .digital {
 	font-size: 52px;
 	font-weight: 700;
+	display: flex;
+}
+
+.timer .digital::after {
+	content: ":";
+	font-size: 40px;
+	font-weight: 500;
+	margin: 0 10px;
+}
+
+.timer div:last-child .digital::after {
+	display: none;
 }
 
 .timer {
 	font-weight: 300;
 	font-size: 28px;
+	width: 500px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .banner-countown .box-banner {
@@ -27,8 +53,11 @@
 	width: 100%;
 	max-width: 1140px;
 	margin: 0 auto;
+	display: -ms-flexbox;
 	display: flex;
+	-ms-flex-pack: end;
 	justify-content: flex-end;
 	height: 100%;
+	-ms-flex-align: center;
 	align-items: center;
 }
