@@ -51,11 +51,21 @@
 	}
 
 	.header__search-form {
+		.field {
+			display: flex;
+			align-content: center;
+			flex-direction: row-reverse;
+			justify-content: flex-end;
+			@include atMedium {
+				justify-content: space-between;
+				flex-direction: row;
+			}
+		}
 		.control.is-expanded {
-			display: block;
+			display: flex;
 			input {
 				background: transparent;
-				padding-left: 60px;
+				// padding-left: 60px;
 				font-family: "Knowledge-Regular";
 				@include font-size(14px);
 				&::placeholder {
@@ -67,11 +77,18 @@
 				@include atMedium {
 					padding-left: 30px;
 				}
+				// @include atSmall {
+				// 	padding-top: 0;
+				// }
+				// @include atLarger{
+				// 	padding-top: 15px;
+				// }
 			}
 			+ .control {
 				display: block;
-				position: absolute;
-				left: 10px;
+				// position: absolute;
+				// left: 10px;
+				// top: 0;
 				a {
 					color: #fff;
 					@include atMedium {

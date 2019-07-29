@@ -19,7 +19,7 @@
 					font-size: 10px;
 					flex-wrap: nowrap;
 					flex-shrink: 0;
-					&:hover {
+					&:hover,&.active {
 						color: $c-orange;
 					}
 				}
