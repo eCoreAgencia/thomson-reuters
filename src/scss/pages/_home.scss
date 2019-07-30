@@ -1,6 +1,7 @@
 body.home {
 	.section__shelf {
 		height: 560px;
+		margin-top: 20px;
 		@include atMedium {
 			z-index: 5;
 			.slick-track {
