@@ -21,7 +21,15 @@ $(document).ready(() => {
       const elementWelcome = `<a href="/account">Bem Vindo, ${
         orderForm.clientProfileData.email
       }</a>`;
-      $('.tip-bar__login').html(elementWelcome);
+      const elementWelcomeName = `<a href="/account">Bem Vindo, ${
+        orderForm.clientProfileData.firstName
+      }</a>`;
+
+      if(elementWelcomeName.length) {
+        $('.tip-bar__login').html(elementWelcomeName);
+      }else {
+        $('.tip-bar__login').html(elementWelcome);
+      }
     }
   });
 });
