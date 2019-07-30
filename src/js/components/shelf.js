@@ -25,7 +25,7 @@ $(document).ready(function () {
 		$('.product__watch-name .product__watch-link', this).ellipsis({
 			lines: 2
 		});
-		$('.product__watch-author .most-visited__list li', this).ellipsis({
+		$('.product__watch-author li', this).ellipsis({
 			lines: 1
 		});
 	});

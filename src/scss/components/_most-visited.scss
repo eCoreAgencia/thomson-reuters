@@ -24,6 +24,10 @@
 			padding: 10px;
 			&__select {
 				display: none;
+
+				&.active {
+					display: block;
+				}
 			}
 		}
 	}
