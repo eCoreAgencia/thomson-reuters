@@ -1,4 +1,4 @@
-$top-flag-val: 50px;
+$top-flag-val: 35px;
 .product {
 	.flag {
 		width: 55px;
@@ -9,13 +9,14 @@ $top-flag-val: 50px;
 		justify-content: center;
 		align-items: center;
 		position: absolute;
-		right: 5px;
+		right: 5px !important;
 		top: $top-flag-val;
-		@include font-size(8px);
+		@include font-size(7px);
 		color: $c-white;
-		font-family: "Knowledge-Medium";
+		font-family: $f-base;
 		font-weight: 500;
 		text-transform: uppercase;
+		z-index: 10;
 		// &--novidade,
 		// &--e-book {
 		// 	@include font-size(8px);
@@ -32,10 +33,10 @@ $top-flag-val: 50px;
 		}
 
 		&:nth-of-type(2) {
-			top: calc(#{$top-flag-val} + 50px);
+			top: calc(#{$top-flag-val} + 60px);
 		}
 		&:nth-of-type(3) {
-			top: calc(#{$top-flag-val} + 100px);
+			top: calc(#{$top-flag-val} + 120px);
 		}
 	}
 	.flag--e-book {
@@ -318,6 +319,15 @@ $top-flag-val: 50px;
 		.product__media {
 			margin: 0;
 		}
+		.product__share {
+			display: none;
+		}
+
+		.flag {
+			@include atMedium {
+				right: -55px !important;
+			}
+		}
 	}
 	.autores--pgprod {
 		color: $c-gray-dark;
@@ -325,6 +335,8 @@ $top-flag-val: 50px;
 		font-size: 13px;
 		font-weight: 400;
 		line-height: 15px;
+		letter-spacing: normal;
+		margin-top: 10px;
 		span {
 			font-family: "Knowledge-Medium";
 			font-weight: 500;
@@ -348,13 +360,14 @@ $top-flag-val: 50px;
 			&-mobile {
 				display: block;
 				text-align: center;
-				padding: 10px 0;
+				padding: 10px 20px;
 				color: #414141;
 				font-family: "Knowledge-Medium";
 				@include font-size(24px);
 				font-weight: 500;
 				letter-spacing: -0.4px;
 				width: 100vw;
+				line-height: normal;
 				@include atMedium {
 					display: none;
 					width: auto;
@@ -566,6 +579,7 @@ $top-flag-val: 50px;
 
 		font-family: "Knowledge-Regular";
 		margin: 18px 0;
+		text-align: center;
 		em {
 			font-style: normal;
 		}
@@ -681,7 +695,7 @@ $top-flag-val: 50px;
 			width: 100vw;
 			img {
 				width: 100%;
-				margin: 18px 10px;
+				margin: 18px 0;
 			}
 			.thumbs {
 				display: flex;
