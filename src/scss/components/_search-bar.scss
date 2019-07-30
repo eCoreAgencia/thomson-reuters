@@ -221,8 +221,11 @@
 			.control {
 				.button {
 					width: 48px;
+					color: $c-white;
 					@include atMedium {
 						width: auto;
+						border-radius: 50%;
+						background-color: $c-gray-dark;
 					}
 				}
 			}

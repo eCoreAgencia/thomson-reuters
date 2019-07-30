@@ -16,17 +16,63 @@
 			text-transform: uppercase;
 			letter-spacing: 0.75px;
 			margin-right: 20px;
+			width: 50%;
+			text-align: right;
 		}
 
 		.optionSelect {
 			border: 1px solid #afafaf;
-			border-radius: 15px;
-			padding: 10px;
+			border-radius: 25px;
+			padding: 5px;
+			width: 100%;
+			text-align: center;
+			max-width: 320px;
+				@include atMedium {
+					position: relative;
+					cursor: pointer;
+				}
 			&__select {
 				display: none;
 
 				&.active {
 					display: block;
+					@include atMedium {
+						position: absolute;
+						background-color: #fff;
+						width: 101%;
+						/* display: block; */
+						border: 1px solid #afafaf;
+						left: -1px;
+						top: 23px;
+						border-radius: 0px 0px 25px 25px;
+						border-top: 0;
+						z-index: 10;
+						padding: 5px;
+						padding-top: 10px;
+					}
+				}
+				ul {
+					display: flex;
+					flex-direction: column;
+					li.menuItem__item {
+						text-align: center;
+						padding: 5px 0;
+						a {
+							color: $c-primary;
+						}
+					}
+				}
+			}
+			&__title {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				p {
+					min-width: 80%;
+				}
+				i.simple-arrow-right {
+					font-size: 14px;
+					transform: rotate(90deg);
 				}
 			}
 		}
@@ -35,8 +81,11 @@
 		display: flex;
 		flex-direction: column;
 		margin-bottom: 45px;
+		padding: 0 20px;
 		@include atMedium {
 			flex-direction: row;
+			padding: 0;
+			justify-content: space-between;
 		}
 	}
 	&__title {
@@ -46,7 +95,7 @@
 		font-weight: 900;
 		display: flex;
 		align-items: center;
-		flex: 1;
+		// flex: 1;
 		justify-content: center;
 		margin: 20px auto;
 		@include atMedium {
@@ -65,8 +114,9 @@
 		@include atMedium {
 			margin-right: 50px;
 			justify-content: flex-end;
+			width: 50%;
 			li:first-of-type {
-				display: flex;
+				display: block;
 			}
 		}
 	}

@@ -161,7 +161,7 @@ $(document).ready(() => {
 	$('.section__split .prateleira ul').addClass('most-visited__list');
 
 	$('.optionSelect__title').on('click', function(){
-		$(this).parent().find('.optionSelect__select').addClass('active');
+		$(this).parent().find('.optionSelect__select').toggleClass('active');
 	});
 
 	$('.optionSelect__select a').on('click', function(e){
