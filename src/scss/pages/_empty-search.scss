@@ -21,10 +21,9 @@
 		border: 0;
 		padding: 2px 20px;
 		text-align: center;
-		@include atMedium {
-			width: 80%;
-			margin: 0 auto;
-		}
+		width: 80%;
+		margin: 0 auto;
+		
 	}
 	&__icon {
 		font-size: 6.5em;
