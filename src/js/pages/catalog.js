@@ -102,6 +102,7 @@ $(document).ready(function(){
 		}
 	}
 
+
 	if($('h2.titulo-sessao')[0]){
 		const text = $('h2.titulo-sessao').html();
 		//alert(text);
@@ -121,5 +122,12 @@ $(document).ready(function(){
 				$(".helperComplement").remove();
 			}
 		})
+
+		// $('.product__shelf').each(function () {
+		// 	$('.product__name .product__link', this).ellipsis({
+		// 		lines: 1
+		// 	});
+	
+		// });
 	}
 })

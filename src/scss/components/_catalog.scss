@@ -692,6 +692,52 @@
 				}
 			}
 		}
+
+		@media (max-width: 798px) {
+			li {
+				box-shadow:none;
+				width: 100%;
+			}
+			.product {
+				&__category, &__reviews, &__author {
+					display: none !important;
+				}
+				&__header {
+					float: left;
+				}
+				&__info {
+					float: left;
+					width: 69%;
+					margin: 16px 0 0 16px;
+					text-align: left;
+					min-height: auto;
+				}
+				&__price {
+					float: left;
+					margin-left: 16px;
+					.price {
+						&__list-line, &__best, &__installment {
+							text-align: left;
+						}
+					}
+				}
+				&__media {
+					height: 90px;
+					width: 62px;
+				}
+				&__link {
+					line-height: normal;
+					img {
+						height: 90px;
+						width: 62px;
+					}
+				}
+
+			}
+			.show-on-hover, .flag {
+				display: none;
+			}
+		}
 	}
 
 	.orderBy {
@@ -729,6 +775,10 @@
 			font-family: "Knowledge-Bold";
 			font-size: 25px;
 			color: #ff8000;
+			text-align: center;
+			@include atMedium {
+				text-align: left;
+			}
 		}
 		.titulo-sessao + .titulo-sessao {
 			display: none;
