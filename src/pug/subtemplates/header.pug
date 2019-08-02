@@ -61,6 +61,20 @@ header.header
 								g(clip-path='url(#clip-FA139112-5304-890F-5EE8-D60280F9B4C8)', transform='translate(-412 -61)')
 									use(fill='#f58820', xlink:href='#yrcvl')
 			.search-bar
+				.orderBy__ecoreHeader
+					.orderBy__ecoreHeader__select
+						.orderBy__ecoreHeader__select--title
+							p(data-id='todos') Todos
+							i.icon-arrow
+						.orderBy__ecoreHeader__select--option
+							ul
+								li(data-id='todos') Todos
+								li(data-id='0') Titulo
+								li(data-id='36') Autor
+								li(data-id='24') Editora
+								li(data-id='23') ISBN
+								li(data-id='24') E-book
+								li(data-id='33') Coleção
 				.header__search-form
 					#header-form.search-form
 						form.search-form(action='/busca')
@@ -124,6 +138,7 @@ header.header
 						li.menu__list-item
 							a(href='/area-de-interesse/OAB---Concursos') OAB e concursos
 	.menu__mobile
+		.menu__mobile-overlay
 		.menu__mobile-welcome Bem-Vindo,
 		a.menu__mobile-dynamic-login(href='/account') Entrar
 		a.menu__mobile-dynamic-login1(href='/account') Cadastre-se
@@ -135,6 +150,9 @@ header.header
 				ul.submenu
 					.wrapper
 						.menuItem
+							li.menuItem__item.menuItem__title
+								i.simple-arrow-left
+								span Área de Interesse
 							li.menuItem__item
 								a(href='/area-de-interesse/Administrativo') Administrativo
 							li.menuItem__item

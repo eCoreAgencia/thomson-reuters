@@ -95,20 +95,64 @@ class searchFilter {
 	}
 }
 
-$(document).ready(function() {
-	const isISBN = n => {
-		return /^(?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+$/gm.test(n);
-	};
+// $(document).ready(function() {
+	// const isISBN = n => {
+	// 	return /^(?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+$/gm.test(n);
+	// };
 
-	$(".search-form").on("submit", function(e) {
-		e.preventDefault();
-		const word = $(".search-form input").val();
-		const term = word.replace(" ", "");
-		if (isISBN(term)) {
-			let urlSearch = "/busca?fq=specificationFilter_23:c" + term;
-			window.location = urlSearch;
-		} else {
-			window.location = `/busca?ft=${word}`;
-		}
+	// $(".search-form").on("submit", function(e) {
+	// 	e.preventDefault();
+	// 	const word = $(".search-form input").val();
+	// 	const term = word.replace(" ", "");
+	// 	if (isISBN(term)) {
+	// 		let urlSearch = "/busca?fq=specificationFilter_23:c" + term;
+	// 		window.location = urlSearch;
+	// 	} else {
+	// 		window.location = `/busca?ft=${word}`;
+	// 	}
+	// });
+// });
+
+	$(document).ready(function() {
+		$('.orderBy__ecoreHeader__select--title').on('click', function() {
+			let _this = $(this);
+			_this.parents('.orderBy__ecoreHeader').find('.orderBy__ecoreHeader__select--option').toggleClass('active');
+	
+			let selectChange = $('#header-form .orderBy__ecoreHeader__select--title').attr('data-id');
+			
+			if(!selectChange == "todos") {
+				$('.search-form__result-list').css('display', 'none !important');
+			}
+		});
+	
+		$('.orderBy__ecoreHeader__select--option ul li').on('click', function() {
+			let _this  = $(this);
+			let dataId = _this.attr('data-id');
+			let text   = _this.text(); 
+	
+			_this.parents('.orderBy__ecoreHeader').find('.orderBy__ecoreHeader__select--title p').text(text);
+			_this.parents('.orderBy__ecoreHeader').find('.orderBy__ecoreHeader__select--title p').attr('data-id',dataId);
+			_this.parents('.orderBy__ecoreHeader__select--option').removeClass('active');
+		});
+		
+		$('.search-bar .control button').on('click', function(e) {
+			e.preventDefault();
+	
+			let selectChange = $('header .orderBy__ecoreHeader__select--title p').attr('data-id');
+			let termo		 = $('header input').val();
+			console.log(selectChange);
+			
+			window.searchFilter = new searchFilter(selectChange, termo);
+	  });
+	
+	  $( "form.search-form" ).on("submit", function(event) {
+		event.preventDefault();
+	
+		let selectChange = $('header .orderBy__ecoreHeader__select--title p').attr('data-id');
+			let termo		 = $('header input').val();
+			console.log(selectChange);
+			
+			window.searchFilter = new searchFilter(selectChange, termo);
+	  });
 	});
-});
+
