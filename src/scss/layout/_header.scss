@@ -88,6 +88,7 @@
 	}
 
 	&__menu-icon--close-x {
+		left: 90%;
 		&::before {
 			transform: rotate(45deg) scaleX(1.25);
 			background-color: $c-white;

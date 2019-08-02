@@ -58,6 +58,9 @@ body.login {
         display: block !important;
         color: $c-white !important;
         font-size: 16px !important;
+        @media (max-width: 798px) {
+          font-size: 13px !important;
+        }
       }
       &::after {
         content: "\e01f" !important;
@@ -68,6 +71,9 @@ body.login {
         top: 10px !important;
         left: 15px !important;
         font-size: 24px !important;
+        @media (max-width: 798px) {
+          font-size: 13px !important;
+        }
       }
     }
     &#vtexIdUI-google-plus {
@@ -87,6 +93,9 @@ body.login {
         display: block !important;
         color: $c-white !important;
         font-size: 16px !important;
+        @media (max-width: 798px) {
+          font-size: 13px !important;
+        }
       }
       &::after {
         content: "\e60d" !important;
@@ -97,6 +106,9 @@ body.login {
         top: 10px !important;
         left: 15px !important;
         font-size: 24px !important;
+        @media (max-width: 798px) {
+          font-size: 13px !important;
+        }
       }
       p {
         span {
@@ -121,6 +133,9 @@ body.login {
         display: block !important;
         color: $c-white !important;
         font-size: 16px !important;
+        @media (max-width: 798px) {
+          font-size: 13px !important;
+        }
       }
       &::after {
         content: "\e00b" !important;
@@ -131,6 +146,9 @@ body.login {
         top: 10px !important;
         left: 15px !important;
         font-size: 24px !important;
+        @media (max-width: 798px) {
+          font-size: 13px !important;
+        }
       }
       p {
         span {
@@ -155,6 +173,9 @@ body.login {
         display: block !important;
         color: $c-white !important;
         font-size: 16px !important;
+        @media (max-width: 798px) {
+          font-size: 13px !important;
+        }
       }
       &::after {
         content: "\e066" !important;
@@ -165,6 +186,9 @@ body.login {
         top: 10px !important;
         left: 15px !important;
         font-size: 24px !important;
+        @media (max-width: 798px) {
+          font-size: 13px !important;
+        }
       }
       p {
         span {
@@ -184,7 +208,7 @@ body.login {
 
   // LOGIN COM EMAIL E SENHA
 
-  .vtexIdUI-classic-login, .vtexIdUI-confirm-email, .vtexIdUI-change-pswd, .vtexIdUI-page-active {
+  .vtexIdUI-classic-login, .vtexIdUI-confirm-email, .vtexIdUI-change-pswd {
     z-index: 99999;
     .modal-header {
       display: flex !important;
@@ -216,6 +240,9 @@ body.login {
       text-align: center !important;
       font-weight: bold !important ;
       display: inline !important ;
+      @media (max-width: 798px) {
+        font-size: 19px !important;
+      }
     }
     .control-label {
       color: $c-gray-dark !important;
