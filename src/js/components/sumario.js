@@ -13,7 +13,6 @@ class ProductSumary {
 	getDomIds() {
 		this.shelf.each(()=> {
 			let idProd = $(this).find(this.idProdShelf);
-			console.log(idProd);
 		});
 	}
 }

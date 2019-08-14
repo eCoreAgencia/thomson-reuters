@@ -26,7 +26,7 @@ module.exports = merge(common, {
     new UglifyJSPlugin({
       compress: {
 		screw_ie8: true,
-		drop_console: false,
+		drop_console: true,
         warnings: false
       },
       mangle: {
