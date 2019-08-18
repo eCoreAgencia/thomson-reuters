@@ -8,6 +8,21 @@
 		@include atMedium{
 			display: block;
 		}
+
+		.slick-arrow.slick-prev {
+			left: calc((100vw - 1100px - 80px)/2);
+
+			@include mq('container', 'max'){
+				left: 0;
+			}
+		}
+
+		.slick-arrow.slick-next {
+			right: calc((100vw - 1100px - 80px)/2);
+			@include mq('container', 'max') {
+				right: 0;
+			}
+		}
 	}
 	&--mobile {
 		img {

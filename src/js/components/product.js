@@ -39,6 +39,7 @@ export default (function () {
 		const shelf__next = '<button type=\'button\' class=\'slick-next shelf__button\'><svg data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.96 62.45"><path fill="#9e9e9e" d="M32.95 29.98L2.72 0 .1 2.49l28.66 28.74L0 59.96l2.73 2.49 30.22-29.98v-2.49z"/></svg></button>';
 
 		$(document).ready(() => {
+      alert('teste');
 			$('.group.Especificacoes').tableanarchy({
 				containerClass: 'new-structure',
 			});
@@ -67,7 +68,36 @@ export default (function () {
 					: $(e.target)
 						.find('i')
 						.css('transform', 'rotate(0deg)');
-			});
+      });
+      
+      $("#___rc-p-id").each(function(index) {
+      
+        var id = $(this).attr("value");
+        var data = "/api/catalog_system/pub/products/search/?fq=productId:"+id;
+  
+        $.getJSON(data, function(data) {
+          $.each(data, function(key, val) {
+            alert('teste');
+            if(val.MeuVideo) {
+              var myVideo = val.MeuVideo;
+              var myPosition = val.Posicao;
+              var myIdVideo = val.IdDocumento;
+  
+              $('<li class="my-video"><span></span><video width="80"><source src="https://thomsonreuters.vtexcommercestable.com.br/api/dataentities/VD/documents/'+myIdVideo+'/MeuVideo/attachments/'+myVideo+'"></source></video></li>').appendTo('.thumbs .slick-track');
+              $('<video width="300"><source src="https://thomsonreuters.vtexcommercestable.com.br/api/dataentities/VD/documents/'+myIdVideo+'/MeuVideo/attachments/'+myVideo+'"></source></video>').appendTo('.modal-video .modal-container');
+              $('.my-video').on('click', function(e){
+                $('.modal-video').addClass('active');
+                var myvideo = $('.modal-video .modal-container video');
+                $(myvideo).trigger('play');
+              });
+  
+              $('.modal-video .close').on('click', function(e){
+                $('.modal-video').removeClass('active');
+              });
+            }
+          });
+        });
+      });
 		});
 
     $('.product__media-top--mobile .thumbs').slick({

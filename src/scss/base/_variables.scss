@@ -88,3 +88,11 @@ $logo-cart-bg: 'data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.
 
 
 
+$breakpoints: (
+	"mobile": 320px,
+	"tablet": 768px,
+	"tablet-wide": 1024px,
+	"container": 1100px,
+	"desktop": 1248px,
+	"desktop-wide": 1440px
+);
